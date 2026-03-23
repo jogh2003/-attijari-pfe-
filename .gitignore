@@ -1,0 +1,15 @@
+venv/
+__pycache__/
+*.pyc
+.env
+data/raw/
+data/cleaned/
+backups/
+models/*.h5
+models/*.pkl
+mlruns/
+.ipynb_checkpoints/
+.vscode/
+.DS_Store
+.coverage
+.pytest_cache/
