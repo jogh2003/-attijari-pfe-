@@ -1,0 +1,11 @@
+{
+  "date_entrainement": "2026-04-15T00:58:26",
+  "accuracy": 0.9133333563804626,
+  "auc": 0.6022599935531616,
+  "loss": 0.30592676997184753,
+  "epochs": 25,
+  "n_train": 1200,
+  "n_test": 300,
+  "fenetre_jours": 7,
+  "taux_retard_train": 0.1391666680574417
+}

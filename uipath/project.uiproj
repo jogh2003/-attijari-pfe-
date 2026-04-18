@@ -1,0 +1,6 @@
+{
+  "Name": "AttijariBank_RPA",
+  "ProjectType": "Process",
+  "Description": "Système RPA PFE Attijari bank - Sujet 21 - Automatisation actions correctives",
+  "MainFile": "Main.xaml"
+}

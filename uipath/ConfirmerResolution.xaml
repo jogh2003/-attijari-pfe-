@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Activity mc:Ignorable="sap sap2010" x:Class="ConfirmerResolution"
+  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+  xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+  xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib"
+  xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib"
+  xmlns:ui="http://schemas.uipath.com/workflow/activities"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>UiPath.Core</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+
+  <Sequence DisplayName="Robot 3 — Confirmer résolution et enrichir LSTM" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="http://localhost:8000" Name="API_BASE_URL" />
+      <Variable x:TypeArguments="x:String" Default="rec-secu-001" Name="strAlertId" />
+      <Variable x:TypeArguments="x:String" Default="Nécessaire fait" Name="strActionEffectuee" />
+      <Variable x:TypeArguments="x:Boolean" Default="True" Name="bActionReussie" />
+      <Variable x:TypeArguments="x:String" Name="strStatutFinal" />
+      <Variable x:TypeArguments="x:String" Name="strPayload" />
+      <Variable x:TypeArguments="x:String" Name="strApiResponse" />
+    </Sequence.Variables>
+
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+
+    <!-- Déterminer statut final -->
+    <Assign DisplayName="Statut final">
+      <Assign.To><OutArgument x:TypeArguments="x:String">[strStatutFinal]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:String">[If(bActionReussie, "resolue", "escaladee")]</InArgument></Assign.Value>
+    </Assign>
+
+    <ui:LogMessage DisplayName="LOG - Confirmation"
+      Level="Info"
+      Message="[&quot;[ConfirmerResolution] ID: &quot; + strAlertId + &quot; | Statut: &quot; + strStatutFinal + &quot; | Action: &quot; + strActionEffectuee]" />
+
+    <!-- Préparer payload JSON -->
+    <Assign DisplayName="Préparer payload API">
+      <Assign.To><OutArgument x:TypeArguments="x:String">[strPayload]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:String">["{""alerte_id"":""" + strAlertId + """,""action_effectuee"":""" + strActionEffectuee + """,""statut_final"":""" + strStatutFinal + """,""date_resolution"":""" + DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss") + """,""execute_par"":""robot_uipath""}"]</InArgument></Assign.Value>
+    </Assign>
+
+    <!-- ══ Appel API pour clôturer l'alerte ══
+         POST http://localhost:8000/api/alertes/{id}/cloturer
+         DÉCOMMENTER quand API disponible :
+    <ui:HttpClientActivity DisplayName="POST /api/alertes/cloturer"
+      Endpoint="[API_BASE_URL + &quot;/api/alertes/&quot; + strAlertId + &quot;/cloturer?action_effectuee=&quot; + strActionEffectuee + &quot;&amp;statut_final=&quot; + strStatutFinal]"
+      Method="POST"
+      Body="[strPayload]"
+      ContentType="application/json"
+      Response="{x:Reference strApiResponse}" />
+    -->
+
+    <!-- [SIMULATION] Réponse API -->
+    <Assign DisplayName="[SIMULATION] Réponse API clôture">
+      <Assign.To><OutArgument x:TypeArguments="x:String">[strApiResponse]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:String">["{""message"":""Alerte " + strAlertId + " clôturée"",""apprentissage"":""Ticket ajouté base LSTM"",""prochain_retrain"":""Lundi 02h00""}"]</InArgument></Assign.Value>
+    </Assign>
+
+    <!-- Vérifier résultat -->
+    <If Condition="[strApiResponse.Contains(&quot;clôturée&quot;) OrElse strApiResponse.Contains(&quot;resolue&quot;) OrElse strApiResponse.Contains(&quot;clotur&quot;)]"
+        DisplayName="API confirmée ?">
+      <If.Then>
+        <Sequence DisplayName="Succès clôture">
+          <ui:LogMessage Level="Info"
+            Message="[&quot;[ConfirmerResolution] ✓ Alerte &quot; + strAlertId + &quot; clôturée avec succès&quot;]" />
+          <ui:LogMessage Level="Info"
+            Message="[&quot;[ConfirmerResolution] ✓ Ticket ajouté à la base d'apprentissage LSTM&quot;]" />
+          <ui:LogMessage Level="Info"
+            Message="[&quot;[ConfirmerResolution] ✓ Réentraînement LSTM planifié : Lundi 02h00&quot;]" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <ui:LogMessage Level="Error"
+          Message="[&quot;[ConfirmerResolution] ✗ Erreur API — réponse: &quot; + strApiResponse]" />
+      </If.Else>
+    </If>
+
+    <ui:LogMessage DisplayName="LOG - Robot 3 terminé"
+      Level="Info"
+      Message="[&quot;[ConfirmerResolution] Terminé — &quot; + DateTime.Now.ToString(&quot;HH:mm:ss&quot;)]" />
+
+  </Sequence>
+</Activity>

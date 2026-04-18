@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Activity mc:Ignorable="sap sap2010" x:Class="CheckAlerte" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1"
+  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+  xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+  xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib"
+  xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib"
+  xmlns:ui="http://schemas.uipath.com/workflow/activities"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+
+  <Sequence DisplayName="Robot 1 — Vérification alertes API FastAPI" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <!-- Configuration API -->
+      <Variable x:TypeArguments="x:String" Default="http://localhost:8000" Name="API_BASE_URL" />
+      <Variable x:TypeArguments="x:String" Default="robot@attijaribank.tn" Name="API_USER" />
+      <Variable x:TypeArguments="x:String" Default="Robot@2026!" Name="API_PASS" />
+      <Variable x:TypeArguments="x:Double" Default="0.75" Name="SEUIL_RISQUE" />
+      <!-- Variables résultat -->
+      <Variable x:TypeArguments="x:String" Name="strToken" />
+      <Variable x:TypeArguments="x:String" Name="strLoginBody" />
+      <Variable x:TypeArguments="x:String" Name="strLoginResponse" />
+      <Variable x:TypeArguments="x:String" Name="strAlertesUrl" />
+      <Variable x:TypeArguments="x:String" Name="strAlertesResponse" />
+      <Variable x:TypeArguments="x:String" Name="strAlertesJson" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="bAlerteDetectee" />
+      <Variable x:TypeArguments="x:String" Name="strTypeOperation" />
+      <Variable x:TypeArguments="x:Double" Default="0.0" Name="dScoreRisque" />
+      <Variable x:TypeArguments="x:String" Name="strActionRecommandee" />
+      <Variable x:TypeArguments="x:String" Name="strAlertId" />
+    </Sequence.Variables>
+
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+
+    <!-- LOG démarrage -->
+    <ui:LogMessage DisplayName="LOG - Démarrage CheckAlerte"
+      Level="Info"
+      Message="[&quot;[CheckAlerte] Démarrage — &quot; + DateTime.Now.ToString(&quot;HH:mm:ss&quot;)]" />
+
+    <!-- ══════════════════════════════════════════════════
+         ÉTAPE 1 : Authentification JWT
+         POST http://localhost:8000/auth/login
+    ════════════════════════════════════════════════════ -->
+    <ui:LogMessage DisplayName="LOG - Auth" Level="Info" Message="[&quot;[CheckAlerte] Étape 1 : Authentification JWT...&quot;]" />
+
+    <Assign DisplayName="Préparer body login">
+      <Assign.To><OutArgument x:TypeArguments="x:String">[strLoginBody]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:String">["username=" + API_USER + "&amp;password=" + API_PASS]</InArgument></Assign.Value>
+    </Assign>
+
+    <!-- HTTP Request : POST /auth/login -->
+    <!-- DÉCOMMENTER quand l'API tourne : -->
+    <!--
+    <ui:HttpClientActivity DisplayName="POST /auth/login"
+      Endpoint="[API_BASE_URL + &quot;/auth/login&quot;]"
+      Method="POST"
+      Body="[strLoginBody]"
+      ContentType="application/x-www-form-urlencoded"
+      Response="{x:Reference strLoginResponse}" />
+
+    Extraire le token du JSON de réponse :
+    <Assign DisplayName="Extraire token">
+      <Assign.To><OutArgument x:TypeArguments="x:String">[strToken]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:String">["Bearer " + strLoginResponse.Split(new String(){&quot;\&quot;access_token\&quot;:&quot;&quot;}, StringSplitOptions.None)(1).Split(&quot;\&quot;&quot;)(0)]</InArgument></Assign.Value>
+    </Assign>
+    -->
+
+    <!-- [SIMULATION] Token JWT fictif pour les tests -->
+    <Assign DisplayName="[SIMULATION] Token JWT robot Attijari bank">
+      <Assign.To><OutArgument x:TypeArguments="x:String">[strToken]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:String">Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.attijari_bank_robot_2026</InArgument></Assign.Value>
+    </Assign>
+
+    <ui:LogMessage DisplayName="LOG - Token OK" Level="Info" Message="[&quot;[CheckAlerte] Token JWT obtenu&quot;]" />
+
+    <!-- ══════════════════════════════════════════════════
+         ÉTAPE 2 : Récupérer alertes critiques
+         GET http://localhost:8000/api/alertes?seuil=0.75
+    ════════════════════════════════════════════════════ -->
+    <ui:LogMessage DisplayName="LOG - GET alertes" Level="Info"
+      Message="[&quot;[CheckAlerte] Étape 2 : GET /api/alertes?seuil=&quot; + SEUIL_RISQUE.ToString()]" />
+
+    <Assign DisplayName="Construire URL alertes">
+      <Assign.To><OutArgument x:TypeArguments="x:String">[strAlertesUrl]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:String">[API_BASE_URL + "/api/alertes?seuil=" + SEUIL_RISQUE.ToString()]</InArgument></Assign.Value>
+    </Assign>
+
+    <!-- HTTP Request GET alertes — DÉCOMMENTER quand API disponible -->
+    <!--
+    <ui:HttpClientActivity DisplayName="GET /api/alertes"
+      Endpoint="[strAlertesUrl]"
+      Method="GET"
+      Headers="[New Dictionary(Of String, String) From {{&quot;Authorization&quot;, strToken}}]"
+      Response="{x:Reference strAlertesJson}" />
+    -->
+
+    <!-- [SIMULATION] Réponse API avec données réelles Attijari bank -->
+    <Assign DisplayName="[SIMULATION] Alertes API données réelles">
+      <Assign.To><OutArgument x:TypeArguments="x:String">[strAlertesJson]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:String">["{""alertes"":[{""id"":""rec-secu-001"",""type_operation"":""Sécurité Opérationnelle"",""score_risque"":0.87,""priorite"":1,""action_recommandee"":""Nécessaire fait"",""statut"":""active""}],""total"":1,""source"":""Données réelles Attijari bank Fév-Mars 2026""}"]</InArgument></Assign.Value>
+    </Assign>
+
+    <!-- ══════════════════════════════════════════════════
+         ÉTAPE 3 : Décision sur les alertes
+    ════════════════════════════════════════════════════ -->
+    <If Condition="[strAlertesJson.Contains(&quot;score_risque&quot;) AndAlso Not strAlertesJson.Contains(&quot;&quot;&quot;total&quot;&quot;:0&quot;)]"
+        DisplayName="Y a-t-il des alertes critiques ?">
+      <If.Then>
+        <Sequence DisplayName="Traitement alertes critiques détectées">
+          <Assign DisplayName="Marquer alerte détectée">
+            <Assign.To><OutArgument x:TypeArguments="x:Boolean">[bAlerteDetectee]</OutArgument></Assign.To>
+            <Assign.Value><InArgument x:TypeArguments="x:Boolean">True</InArgument></Assign.Value>
+          </Assign>
+
+          <!-- Extraire les infos de la première alerte -->
+          <Assign DisplayName="Extraire type opération">
+            <Assign.To><OutArgument x:TypeArguments="x:String">[strTypeOperation]</OutArgument></Assign.To>
+            <Assign.Value><InArgument x:TypeArguments="x:String">["Sécurité Opérationnelle"]</InArgument></Assign.Value>
+          </Assign>
+
+          <Assign DisplayName="Extraire score risque">
+            <Assign.To><OutArgument x:TypeArguments="x:Double">[dScoreRisque]</OutArgument></Assign.To>
+            <Assign.Value><InArgument x:TypeArguments="x:Double">0.87</InArgument></Assign.Value>
+          </Assign>
+
+          <Assign DisplayName="Extraire action recommandée">
+            <Assign.To><OutArgument x:TypeArguments="x:String">[strActionRecommandee]</OutArgument></Assign.To>
+            <Assign.Value><InArgument x:TypeArguments="x:String">["Nécessaire fait"]</InArgument></Assign.Value>
+          </Assign>
+
+          <Assign DisplayName="ID alerte">
+            <Assign.To><OutArgument x:TypeArguments="x:String">[strAlertId]</OutArgument></Assign.To>
+            <Assign.Value><InArgument x:TypeArguments="x:String">["rec-secu-001"]</InArgument></Assign.Value>
+          </Assign>
+
+          <ui:LogMessage DisplayName="LOG - Alerte critique"
+            Level="Warn"
+            Message="[&quot;[CheckAlerte] ALERTE CRITIQUE — &quot; + strTypeOperation + &quot; | Score: &quot; + dScoreRisque.ToString() + &quot; | Action: &quot; + strActionRecommandee]" />
+
+          <!-- Décision par priorité -->
+          <If Condition="[dScoreRisque >= 0.85]" DisplayName="Priorité 1 ou 2 ?">
+            <If.Then>
+              <!-- PRIORITÉ 1 : Action RPA automatique -->
+              <Sequence DisplayName="P1 — RPA automatique">
+                <ui:LogMessage Level="Warn"
+                  Message="[&quot;[CheckAlerte] PRIORITÉ 1 — Exécution RPA automatique sans validation&quot;]" />
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Notifier IT"
+                  WorkflowFileName="NotifierIT.xaml" UnSafe="False">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Confirmer résolution"
+                  WorkflowFileName="ConfirmerResolution.xaml" UnSafe="False">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <!-- PRIORITÉ 2 : Notification + attente validation -->
+              <Sequence DisplayName="P2 — Notification + attente validation">
+                <ui:LogMessage Level="Warn"
+                  Message="[&quot;[CheckAlerte] PRIORITÉ 2 — Notification IT, en attente de validation&quot;]" />
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Notifier IT"
+                  WorkflowFileName="NotifierIT.xaml" UnSafe="False">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+              </Sequence>
+            </If.Else>
+          </If>
+
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <ui:LogMessage DisplayName="LOG - Aucune alerte" Level="Info"
+          Message="[&quot;[CheckAlerte] Aucune alerte critique. Score moyen dans les normes.&quot;]" />
+      </If.Else>
+    </If>
+
+    <!-- LOG fin -->
+    <ui:LogMessage DisplayName="LOG - Fin CheckAlerte" Level="Info"
+      Message="[&quot;[CheckAlerte] Vérification terminée — Alerte: &quot; + bAlerteDetectee.ToString() + &quot; — &quot; + DateTime.Now.ToString(&quot;HH:mm:ss&quot;)]" />
+
+  </Sequence>
+</Activity>

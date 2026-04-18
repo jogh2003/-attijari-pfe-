@@ -1,7 +1,71 @@
-version: "3.8"
+# ============================================================
+# docker-compose.yml — Infrastructure complète PFE Attijari bank
+# Lancer : docker-compose up -d
+# ============================================================
+
 services:
+
+  # ── Base de données PostgreSQL ──────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    container_name: attijari_postgres
+    environment:
+      POSTGRES_DB: attijari_pfe
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d attijari_pfe"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # ── API FastAPI (Application principale) ────────────────────
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: attijari_api
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/attijari_pfe
+      - JWT_SECRET_KEY=AttijariPFE2026SecretKeyTresLongueEtSecurisee!
+      - JWT_ALGORITHM=HS256
+      - JWT_EXPIRE_MINUTES=480
+      - AES_KEY=attijari_pfe_2026_security_key_32
+      - DEBUG=false
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - ES_HOST=elasticsearch
+      - ES_PORT=9200
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./logs:/app/logs
+      - ./backups:/app/backups
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    restart: unless-stopped
+
+  # ── Elasticsearch ────────────────────────────────────────────
   elasticsearch:
     image: elasticsearch:8.11.1
+    container_name: attijari_elasticsearch
     environment:
       - discovery.type=single-node
       - xpack.security.enabled=false
@@ -10,20 +74,44 @@ services:
       - "9200:9200"
     volumes:
       - es_data:/usr/share/elasticsearch/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9200"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
 
+  # ── Redis ─────────────────────────────────────────────────────
   redis:
     image: redis:7-alpine
+    container_name: attijari_redis
     ports:
       - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
 
+  # ── MLflow ────────────────────────────────────────────────────
   mlflow:
-    image: ghcr.io/mlflow/mlflow:v2.9.2
+    image: python:3.11-slim
+    container_name: attijari_mlflow
     ports:
       - "5000:5000"
-    command: mlflow server --host 0.0.0.0 --port 5000
+    command: >
+      bash -c "pip install mlflow -q &&
+               mlflow server --host 0.0.0.0 --port 5000
+               --backend-store-uri sqlite:///mlflow.db"
     volumes:
       - mlflow_data:/mlflow
+    restart: unless-stopped
 
 volumes:
+  postgres_data:
   es_data:
+  redis_data:
   mlflow_data:

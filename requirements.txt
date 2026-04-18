@@ -9,6 +9,7 @@ numpy==1.26.2
 matplotlib==3.8.2
 seaborn==0.13.0
 openpyxl==3.1.2          # lecture fichiers Excel si besoin
+xlrd==2.0.1               # lecture fichiers .xls Attijari bank (legacy Excel)
 
 # ── Base de données ──────────────────────────────────────────
 sqlalchemy==2.0.23
@@ -54,4 +55,5 @@ pydantic-settings==2.1.0
 python-dateutil==2.8.2
 tqdm==4.66.1              # barres de progression
 loguru==0.7.2             # logging avancé
-schedule==1.2.1           # scheduler CRON Python
+schedule==1.2.1           # scheduler CRON Python (simple)
+apscheduler==3.10.4       # scheduler avancé en arrière-plan (réentraînement LSTM)

@@ -59,7 +59,9 @@ CREATE TABLE IF NOT EXISTS roles (
 -- Table : audit trail (traçabilité obligatoire bancaire)
 CREATE TABLE IF NOT EXISTS audit_logs (
     id              VARCHAR(36)  PRIMARY KEY,
-    utilisateur_id  VARCHAR(36)  NULL,
+    utilisateur     VARCHAR(150) NULL,       -- email ou identifiant de l'utilisateur
+    utilisateur_id  VARCHAR(36)  NULL,       -- UUID si disponible
+    role            VARCHAR(50)  NULL,       -- rôle de l'utilisateur
     action          VARCHAR(200) NOT NULL,
     details         TEXT         NULL,
     ip_address      VARCHAR(50)  NULL,
@@ -68,6 +70,7 @@ CREATE TABLE IF NOT EXISTS audit_logs (
 
 CREATE INDEX IF NOT EXISTS idx_audit_timestamp       ON audit_logs(timestamp DESC);
 CREATE INDEX IF NOT EXISTS idx_audit_utilisateur     ON audit_logs(utilisateur_id);
+CREATE INDEX IF NOT EXISTS idx_audit_action          ON audit_logs(action);
 
 -- Table : prédictions du modèle LSTM
 CREATE TABLE IF NOT EXISTS predictions (

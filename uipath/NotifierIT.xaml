@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Activity mc:Ignorable="sap sap2010" x:Class="NotifierIT"
+  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+  xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+  xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib"
+  xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib"
+  xmlns:ui="http://schemas.uipath.com/workflow/activities"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>UiPath.Core</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+
+  <Sequence DisplayName="Robot 2 — Notification Responsable IT" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="responsable.it@attijaribank.tn" Name="EMAIL_DEST" />
+      <Variable x:TypeArguments="x:String" Default="noreply@attijaribank.tn" Name="EMAIL_FROM" />
+      <Variable x:TypeArguments="x:String" Default="smtp.attijaribank.tn" Name="SMTP_HOST" />
+      <Variable x:TypeArguments="x:Int32"  Default="587" Name="SMTP_PORT" />
+      <!-- Infos alerte (reçues de CheckAlerte) -->
+      <Variable x:TypeArguments="x:String" Default="Sécurité Opérationnelle" Name="strTypeOperation" />
+      <Variable x:TypeArguments="x:Double" Default="0.87" Name="dScoreRisque" />
+      <Variable x:TypeArguments="x:String" Default="Nécessaire fait" Name="strActionRecommandee" />
+      <Variable x:TypeArguments="x:Int32"  Default="1" Name="iPriorite" />
+      <Variable x:TypeArguments="x:String" Default="rec-secu-001" Name="strAlertId" />
+      <!-- Email -->
+      <Variable x:TypeArguments="x:String" Name="strSujet" />
+      <Variable x:TypeArguments="x:String" Name="strCorps" />
+      <Variable x:TypeArguments="x:String" Name="strPostBody" />
+      <Variable x:TypeArguments="x:String" Name="strApiResponse" />
+    </Sequence.Variables>
+
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+
+    <!-- Préparer le sujet -->
+    <Assign DisplayName="Préparer sujet email">
+      <Assign.To><OutArgument x:TypeArguments="x:String">[strSujet]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:String">["[ALERTE P" + iPriorite.ToString() + "] Incident critique — " + strTypeOperation + " — Score: " + dScoreRisque.ToString("F2")]</InArgument></Assign.Value>
+    </Assign>
+
+    <!-- Préparer le corps -->
+    <Assign DisplayName="Préparer corps email">
+      <Assign.To><OutArgument x:TypeArguments="x:String">[strCorps]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:String">["Bonjour," + Environment.NewLine + Environment.NewLine +
+"Le système de détection IA d'Attijari bank a identifié une anomalie critique." + Environment.NewLine + Environment.NewLine +
+"══════════════════════════════════" + Environment.NewLine +
+"DÉTAILS DE L'ALERTE" + Environment.NewLine +
+"══════════════════════════════════" + Environment.NewLine +
+"Groupe concerné : " + strTypeOperation + Environment.NewLine +
+"Score de risque : " + dScoreRisque.ToString("F2") + " / 1.00" + Environment.NewLine +
+"Priorité        : P" + iPriorite.ToString() + Environment.NewLine +
+"ID alerte       : " + strAlertId + Environment.NewLine +
+"Date/Heure      : " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + Environment.NewLine + Environment.NewLine +
+"══════════════════════════════════" + Environment.NewLine +
+"ACTION RECOMMANDÉE (KNN — données réelles Attijari bank)" + Environment.NewLine +
+"══════════════════════════════════" + Environment.NewLine +
+strActionRecommandee + Environment.NewLine + Environment.NewLine +
+"Cette action a été recommandée par le moteur KNN basé sur 1431 tickets historiques." + Environment.NewLine + Environment.NewLine +
+"Connectez-vous au dashboard pour valider :" + Environment.NewLine +
+"http://localhost:8080/dashboard" + Environment.NewLine + Environment.NewLine +
+"Cordialement," + Environment.NewLine +
+"Système IA Attijari bank — PFE 2026"]</InArgument></Assign.Value>
+    </Assign>
+
+    <!-- LOG email -->
+    <ui:LogMessage DisplayName="LOG - Envoi notification"
+      Level="Warn"
+      Message="[&quot;[NotifierIT] Envoi email à : &quot; + EMAIL_DEST + &quot; | Sujet: &quot; + strSujet]" />
+
+    <!-- Contenu email -->
+    <ui:LogMessage DisplayName="LOG - Contenu email"
+      Level="Info"
+      Message="[strCorps]" />
+
+    <!-- ══ Envoi email réel ══
+         DÉCOMMENTER quand serveur SMTP Attijari bank disponible :
+    <ui:SendMailActivity DisplayName="Envoyer email alerte"
+      MailTo="[EMAIL_DEST]"
+      Subject="[strSujet]"
+      Body="[strCorps]"
+      From="[EMAIL_FROM]"
+      SmtpServer="[SMTP_HOST]"
+      Port="[SMTP_PORT]"
+      EnableSsl="True" />
+    -->
+
+    <!-- ══ Mise à jour statut via API ══
+         DÉCOMMENTER quand API disponible :
+    <Assign DisplayName="Body API update">
+      <Assign.To><OutArgument x:TypeArguments="x:String">[strPostBody]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:String">["{""alerte_id"":""" + strAlertId + """,""notifie"":true,""timestamp"":""" + DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss") + """}"]</InArgument></Assign.Value>
+    </Assign>
+    <ui:HttpClientActivity DisplayName="PUT Statut notifié"
+      Endpoint="[&quot;http://localhost:8000/api/alertes/&quot; + strAlertId + &quot;/notifier&quot;]"
+      Method="PUT"
+      Body="[strPostBody]"
+      ContentType="application/json"
+      Response="{x:Reference strApiResponse}" />
+    -->
+
+    <ui:LogMessage DisplayName="LOG - Notification terminée"
+      Level="Info"
+      Message="[&quot;[NotifierIT] Email simulé envoyé — statut: OK — &quot; + DateTime.Now.ToString(&quot;HH:mm:ss&quot;)]" />
+
+  </Sequence>
+</Activity>
