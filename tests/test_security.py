@@ -14,6 +14,13 @@ if sys.platform == "win32":
     import io
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
+# Lorsque ce fichier est exécuté via pytest, il doit être ignoré
+# (c'est un script autonome conçu pour `python tests/test_security.py`).
+import os
+if os.getenv("PYTEST_CURRENT_TEST") is not None:
+    import pytest
+    pytest.skip("Module de tests de sécurité exécuté en mode script; ignorer sous pytest.", allow_module_level=True)
+
 # ════════════════════════════════════════════════════════════
 # COULEURS TERMINAL
 # ════════════════════════════════════════════════════════════
@@ -26,7 +33,7 @@ BOLD   = "\033[1m"
 
 resultats = []
 
-def test(nom, fn):
+def run_test(nom, fn):
     try:
         fn()
         resultats.append((nom, True, None))
@@ -62,10 +69,10 @@ def test_hash_vide():
     h = pwd_ctx.hash("")
     assert not pwd_ctx.verify("autre", h)
 
-test("Hash bcrypt basique",           test_hash_basique)
-test("Rejet mauvais mot de passe",    test_hash_mauvais_mdp)
-test("Deux hashs différents (salt)",  test_deux_hash_differents)
-test("Hash chaîne vide",              test_hash_vide)
+run_test("Hash bcrypt basique",           test_hash_basique)
+run_test("Rejet mauvais mot de passe",    test_hash_mauvais_mdp)
+run_test("Deux hashs différents (salt)",  test_deux_hash_differents)
+run_test("Hash chaîne vide",              test_hash_vide)
 
 # ════════════════════════════════════════════════════════════
 # 2. TESTS JWT
@@ -116,11 +123,11 @@ def test_jwt_expire():
     except JWTError:
         pass  # Comportement attendu
 
-test("Création token JWT",             test_jwt_creation)
-test("Décodage et contenu JWT",        test_jwt_decode)
-test("Role admin dans le token",       test_jwt_role_admin)
-test("Rejet avec mauvaise clé",        test_jwt_mauvaise_cle)
-test("Rejet token expiré",             test_jwt_expire)
+run_test("Création token JWT",             test_jwt_creation)
+run_test("Décodage et contenu JWT",        test_jwt_decode)
+run_test("Role admin dans le token",       test_jwt_role_admin)
+run_test("Rejet avec mauvaise clé",        test_jwt_mauvaise_cle)
+run_test("Rejet token expiré",             test_jwt_expire)
 
 # ════════════════════════════════════════════════════════════
 # 3. TESTS CHIFFREMENT AES-256
@@ -172,11 +179,11 @@ def test_aes_description_reclamation():
     dec  = f.decrypt(enc.encode()).decode()
     assert dec == desc
 
-test("Chiffrement produit texte différent",    test_aes_chiffrement)
-test("Déchiffrement retourne texte original",  test_aes_dechiffrement)
-test("Deux chiffrements différents (IV)",      test_aes_deux_chiffrements_differents)
-test("Rejet avec mauvaise clé AES",            test_aes_mauvaise_cle)
-test("Chiffrement description réclamation",    test_aes_description_reclamation)
+run_test("Chiffrement produit texte différent",    test_aes_chiffrement)
+run_test("Déchiffrement retourne texte original",  test_aes_dechiffrement)
+run_test("Deux chiffrements différents (IV)",      test_aes_deux_chiffrements_differents)
+run_test("Rejet avec mauvaise clé AES",            test_aes_mauvaise_cle)
+run_test("Chiffrement description réclamation",    test_aes_description_reclamation)
 
 # ════════════════════════════════════════════════════════════
 # 4. TESTS AUDIT TRAIL
@@ -231,11 +238,11 @@ def test_audit_details_stockes():
     entry   = enregistrer_audit("robot_uipath", "RPA_SUCCESS", details)
     assert entry["details"] == details
 
-test("Enregistrement action LOGIN",       test_audit_login)
-test("Enregistrement action RPA",         test_audit_action_rpa)
-test("5 actions avec IDs uniques",        test_audit_multiple_actions)
-test("Timestamp présent et formaté",      test_audit_timestamp_present)
-test("Détails stockés correctement",      test_audit_details_stockes)
+run_test("Enregistrement action LOGIN",       test_audit_login)
+run_test("Enregistrement action RPA",         test_audit_action_rpa)
+run_test("5 actions avec IDs uniques",        test_audit_multiple_actions)
+run_test("Timestamp présent et formaté",      test_audit_timestamp_present)
+run_test("Détails stockés correctement",      test_audit_details_stockes)
 
 # ════════════════════════════════════════════════════════════
 # 5. TEST BACKUP pg_dump
@@ -256,9 +263,9 @@ def test_backup_script_existe():
     assert os.path.exists("scripts/backup_db.py"), \
         "scripts/backup_db.py manquant — créer ce fichier"
 
-test("pg_dump disponible dans le PATH",  test_pgdump_disponible)
-test("Dossier backups/ créé",            test_backup_path_cree)
-test("Script backup_db.py existe",       test_backup_script_existe)
+run_test("pg_dump disponible dans le PATH",  test_pgdump_disponible)
+run_test("Dossier backups/ créé",            test_backup_path_cree)
+run_test("Script backup_db.py existe",       test_backup_script_existe)
 
 # ════════════════════════════════════════════════════════════
 # RÉSUMÉ FINAL
