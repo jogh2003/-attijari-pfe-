@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio de Meriam — AI & Data Science Engineer spécialisé en IA bancaire, FastAPI et automatisation RPA." />
+    <title>Meriam | AI & Data Science Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav container">
+        <a href="#home" class="brand">Meriam</a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <section id="home" class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">AI & Data Science Engineer</p>
+          <h1>Building intelligent solutions for banking, automation, and data-driven decisions.</h1>
+          <p class="hero-text">
+            Je conçois des plateformes IA, des APIs sécurisées et des workflows d’automatisation pour transformer des données complexes en actions concrètes.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-secondary">Contact Me</a>
+          </div>
+          <ul class="hero-highlights">
+            <li>FastAPI</li>
+            <li>Machine Learning</li>
+            <li>NLP</li>
+            <li>UiPath</li>
+          </ul>
+        </div>
+
+        <div class="hero-card">
+          <img src="assets/hero-illustration.svg" alt="Illustration portfolio IA" />
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section id="about" class="section container">
+        <div class="section-title">
+          <p class="eyebrow">About</p>
+          <h2>Étudiante ingénieure passionnée par l’IA appliquée</h2>
+        </div>
+        <div class="about-grid">
+          <p>
+            Je suis titulaire d’un parcours en génie logiciel avec un fort intérêt pour la data science, l’intelligence artificielle et l’automatisation.
+            Mon projet de fin d’études a porté sur la détection intelligente d’incidents IT dans un contexte bancaire, en combinant XGBoost, LightGBM, NLP et UiPath.
+          </p>
+          <p>
+            Mon objectif est de créer des solutions fiables, explicables et utiles pour les entreprises, avec un focus sur la qualité de l’expérience utilisateur,
+            la sécurité des données et l’impact métier.
+          </p>
+        </div>
+      </section>
+
+      <section id="skills" class="section section-alt">
+        <div class="container">
+          <div class="section-title">
+            <p class="eyebrow">Skills</p>
+            <h2>Compétences clés</h2>
+          </div>
+
+          <div class="skills-grid">
+            <article class="card">
+              <h3>Data Science</h3>
+              <ul>
+                <li>Python</li>
+                <li>Pandas</li>
+                <li>Scikit-learn</li>
+                <li>XGBoost</li>
+                <li>LightGBM</li>
+                <li>NLP</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Backend</h3>
+              <ul>
+                <li>FastAPI</li>
+                <li>PostgreSQL</li>
+                <li>JWT</li>
+                <li>REST API</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Automation</h3>
+              <ul>
+                <li>UiPath</li>
+                <li>n8n</li>
+                <li>Workflow automation</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Tools</h3>
+              <ul>
+                <li>GitHub</li>
+                <li>Docker</li>
+                <li>VS Code</li>
+                <li>Linux / Windows</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section container">
+        <div class="section-title">
+          <p class="eyebrow">Projects</p>
+          <h2>Projet principal</h2>
+        </div>
+
+        <article class="project-card">
+          <div class="project-content">
+            <h3>AI IT Incident Detection System</h3>
+            <p>
+              Plateforme intelligente de détection d’incidents IT pour un contexte bancaire, construite autour d’une architecture hybride combinant score d’anomalie,
+              XGBoost, LightGBM, NLP et automatisation UiPath.
+            </p>
+            <ul>
+              <li>1507 tickets IT analysés</li>
+              <li>Prédiction robuste avec XGBoost</li>
+              <li>Recommandations automatisées avec LightGBM + KNN</li>
+              <li>Dashboard et API sécurisée avec FastAPI</li>
+            </ul>
+            <div class="project-metrics">
+              <div><strong>99.67%</strong><span>Accuracy XGBoost</span></div>
+              <div><strong>62.91%</strong><span>Top-1 LightGBM</span></div>
+              <div><strong>35</strong><span>Actions recommandées</span></div>
+            </div>
+            <div class="hero-actions">
+              <a href="https://github.com/jogh2003/-attijari-pfe-" class="btn btn-primary">GitHub Repo</a>
+              <a href="https://github.com/jogh2003/-attijari-pfe-/blob/main/README.md" class="btn btn-secondary">Read README</a>
+            </div>
+          </div>
+          <div class="project-gallery">
+            <img src="assets/architecture.svg" alt="Architecture du système IA hybride" />
+            <img src="assets/dashboard.svg" alt="Aperçu du dashboard de monitoring" />
+          </div>
+        </article>
+      </section>
+
+      <section id="contact" class="section section-alt">
+        <div class="container contact-box">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>Discutons de votre prochain projet.</h2>
+            <p>Vous pouvez me contacter pour des collaborations autour de l’IA, du backend ou de l’automatisation.</p>
+          </div>
+          <div class="contact-links">
+            <a href="mailto:meriam@example.com">meriam@example.com</a>
+            <a href="https://github.com/jogh2003">GitHub</a>
+            <a href="https://www.linkedin.com/">LinkedIn</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-row">
+        <p>© <span id="year"></span> Meriam — AI & Data Science Engineer</p>
+        <p>Built with HTML, CSS and JavaScript</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
