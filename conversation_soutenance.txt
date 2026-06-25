@@ -1,0 +1,47 @@
+Conversation de préparation à la soutenance technique
+====================================================
+
+Utilisateur : bonsoir demain j'ai un soutenance technique je vais recontrer mon rapporteur et il va tester mon trvaille a cause de ca je veux donner des questions et je veux des reponses pour preparer a cet soutenance 1) une presentation genrales a mon project avec le objectif de chaque fichier de code 2) les diffucultes que je trouve au deroulement de preparationde project 3) les limies de projet et les ponit fort et comment je peux l'ameliore 4) comment je nettoie les donnes (resultats +fichiers ou il contient le code + fonction )5) comment je fais les robots dans ui path et comment j'integre dans projet (uipath studio +resultats + les codes +ou les fichier +fonction) 6) comment j'ai entraine mes models (comment le calcule de score d'anomalie et prediction et recommandation )code les fichiers ou je trouve + fonction + resultats 7) quand je faire la prediction en temps relle quelle partie de code travaille 8) dans l'interface quel sont les taches de admin user responsable it robots 9) comment faire la base de donnes et comment je lie dans mon project  10) quand user soummetre un nouvel reclamation donne moi comment l'interface et le project interagir (le chemin dans le code (resultats + fonction + code ) 11)donne moi les scenario que je peux le faire avec des donnes solides pour le teste dans la soutenance
+
+Assistant : Je vérifie rapidement la structure du projet et les fichiers principaux pour te donner des réponses précises pour le flux, la data cleaning, l’IA et l’intégration UiPath.
+
+Assistant : [Requête de fichiers internes et analyse du code]
+
+Assistant : Je complète les parties restantes de recommandations, d’authentification, de nettoyage des données et d’entraînement pour te répondre point par point.
+
+Assistant : Je collecte les fichiers de code clés pour te donner des réponses exactes sur le flux, la data cleaning, l’IA et l’intégration UiPath.
+
+Utilisateur : oui faire ca
+
+Assistant : [Synthèse courte et structurée de la présentation pour la soutenance]
+
+Utilisateur : est ce que un nouveau ticket ajouter il change le dashbord
+
+Assistant : Oui — un nouveau ticket ajouté peut changer le dashboard
+- Dans `app/routers/reclamations.py`, `soumettre_reclamation()` ajoute le ticket à `DF_RECLAMATIONS` et sauvegarde en PostgreSQL.
+- Les endpoints `GET /reclamations/stats`, `GET /reclamations`, et `GET /api/alertes` utilisent ces données.
+- Si le dashboard interroge ces endpoints, le nouveau ticket est pris en compte. Si la page ne recharge pas, il faut rafraîchir l’interface.
+
+Utilisateur : comment lightgbm donne une solution
+
+Assistant : Comment LightGBM donne une solution
+- Localisation : `app/routers/recommandations.py`, fonction `recommander_lgbm(...)`
+- Charge `models/lgbm_reco_model.pkl`, `models/vec_reco.pkl`, `models/le_action.pkl`
+- Combine description + groupe + catégorie, transforme en TF-IDF, encode groupe/catégorie, ajoute sévérité
+- Prédit les probabilités, choisit la meilleure action valide
+- Retourne `action_suggeree`, `taux_succes`, alternatives, priorite
+- Si le modèle ne peut pas répondre, fallback métier
+
+Utilisateur : comment predire une action
+
+Assistant : Comment prédire une action
+- Fonction `recommander_lgbm(...)`
+- Utilise texte + groupe + catégorie + sévérité
+- TF-IDF + encodeurs + modèle LightGBM
+- `model.predict_proba(X)` retourne les probabilités
+- Choisit l’action la plus probable et valide
+- Retourne la prédiction via les endpoints `POST /reclamations/soumettre` ou `POST /api/recommandations/analyser`
+
+Utilisateur : rendre ce conversation en fichier text
+
+Assistant : [Fichier texte créé : conversation_soutenance.txt]

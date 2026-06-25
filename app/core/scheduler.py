@@ -3,7 +3,7 @@ scheduler.py — Planificateur de tâches automatiques
 PFE Attijari bank — Sujet 21
 
 Tâches planifiées :
-  - Réentraînement LSTM + KNN : chaque lundi à 02h00
+  - Réentraînement XGBoost + LightGBM : chaque lundi à 02h00
   - Nettoyage des logs anciens : chaque dimanche à 03h00
 """
 import subprocess
@@ -22,15 +22,15 @@ _scheduler: BackgroundScheduler | None = None
 # ── Tâche 1 : Réentraînement des modèles ─────────────────────
 def retrain_models() -> None:
     """
-    Réentraîne le modèle LSTM et recalcule les recommandations KNN.
+    Réentraîne le modèle XGBoost et recalcule les recommandations LightGBM.
     Planifié chaque lundi à 02h00 — utilise les nouveaux tickets clôturés.
     """
-    logger.info("═══ SCHEDULER : démarrage réentraînement LSTM + KNN ═══")
+    logger.info("═══ SCHEDULER : démarrage réentraînement XGBoost + LightGBM ═══")
     start = datetime.now()
 
     for script, label in [
-        ("scripts/entrainer_lstm.py",      "LSTM"),
-        ("scripts/recommandations_knn.py", "KNN"),
+        ("scripts/entrainer_xgboost.py",        "XGBoost"),
+        ("scripts/entrainer_lightgbm_reco.py",  "LightGBM Reco"),
     ]:
         try:
             result = subprocess.run(
@@ -95,7 +95,7 @@ def start_scheduler() -> BackgroundScheduler:
         retrain_models,
         CronTrigger(day_of_week="mon", hour=2, minute=0),
         id="retrain_models",
-        name="Réentraînement LSTM + KNN",
+        name="Reentrainement XGBoost + LightGBM Reco",
         replace_existing=True,
         misfire_grace_time=3600,
     )

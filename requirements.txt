@@ -19,13 +19,16 @@ redis==5.0.1
 elasticsearch==8.11.1
 
 # ── NLP ──────────────────────────────────────────────────────
-spacy==3.7.2
-sentence-transformers==2.2.2
-transformers==4.36.2
-torch==2.1.2              # requis par sentence-transformers
+spacy==3.8.0
+fr_core_news_md==3.8.0
+sentence-transformers==5.5.0
+transformers==4.57.6
+huggingface_hub==0.36.2
+torch==2.2.0              # requis par sentence-transformers
 
-# ── Machine Learning & Deep Learning ─────────────────────────
-tensorflow==2.14.0
+# ── Machine Learning ─────────────────────────────────────────
+xgboost==2.0.3
+lightgbm==4.3.0
 scikit-learn==1.3.2
 mlflow==2.9.2
 
@@ -33,12 +36,14 @@ mlflow==2.9.2
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
 python-multipart==0.0.6   # upload de fichiers
+aiofiles==23.2.1          # service fichiers statiques (StaticFiles + FileResponse)
 websockets==12.0
 httpx==0.25.2             # client HTTP async
 
 # ── Sécurité ─────────────────────────────────────────────────
 python-jose[cryptography]==3.3.0
-passlib[bcrypt]==1.7.4
+passlib==1.7.4
+bcrypt==4.1.1             # compatible avec passlib 1.7.4
 cryptography==41.0.7      # AES-256
 
 # ── Variables d'environnement ────────────────────────────────
@@ -56,4 +61,4 @@ python-dateutil==2.8.2
 tqdm==4.66.1              # barres de progression
 loguru==0.7.2             # logging avancé
 schedule==1.2.1           # scheduler CRON Python (simple)
-apscheduler==3.10.4       # scheduler avancé en arrière-plan (réentraînement LSTM)
+apscheduler==3.10.4       # scheduler avancé en arrière-plan (réentraînement XGBoost + KNN)

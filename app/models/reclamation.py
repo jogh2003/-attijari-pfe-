@@ -22,4 +22,5 @@ class Reclamation(Base):
     duree_resolution_min = Column(Float,        nullable=True)
     score_anomalie       = Column(Float,        nullable=True)
     score_risque         = Column(Float,        nullable=True)
+    soumis_par           = Column(String(150),  nullable=True, index=True)
     created_at           = Column(DateTime,     server_default=func.now())

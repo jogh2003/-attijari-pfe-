@@ -11,7 +11,7 @@
 Ce projet implémente un système intelligent de gestion des réclamations IT pour Attijari Bank (Tunisie).  
 Il combine trois technologies :
 
-- **IA** : Architecture Hybride 3 niveaux (Score Anomalie + XGBoost + LightGBM)
+- **IA** : Architecture Hybride 3 niveaux (Score Anomalie + XGBoost + LightGBM + KNN)
 - **RPA** : Robot UiPath pour le traitement automatique des alertes critiques
 - **Backend** : API REST FastAPI sécurisée avec PostgreSQL, JWT et audit trail complet
 
@@ -42,8 +42,12 @@ python scripts/init_db.py       # Créer les tables
 python scripts/import_csv.py    # Importer les 1507 tickets
 
 # 5. Lancer l'API
-uvicorn app.main:app --reload
-```
+# Si uvicorn.exe est cassé, utiliser le Python du venv directement :
+.\venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --log-level info
+
+# 6. Démarrage automatique propre
+# Si le port 8000 est occupé, utiliser le script PowerShell :
+.\start_api.ps1
 
 L'API démarre sur **http://localhost:8000**
 
@@ -58,7 +62,7 @@ docker-compose up -d
 
 | URL | Description |
 |-----|-------------|
-| http://localhost:8000 | Frontend HTML (tableau de bord) |
+| http://localhost:8000 | Frontend HTML (tableau de bord + live chart XGBoost) |
 | http://localhost:8000/docs | Swagger UI — Tester tous les endpoints |
 | http://localhost:8000/redoc | Documentation ReDoc |
 | http://localhost:8000/health | État du système (DB + modèles) |
@@ -77,7 +81,7 @@ docker-compose up -d
 | admin@attijaribank.tn | Admin@2026! | Administrateur |
 | responsable.it@attijaribank.tn | Resp@2026! | Responsable IT |
 | meriam@attijaribank.tn | Stage@2026! | Utilisateur |
-| robot@attijaribank.tn | Robot@2026! | Robot UiPath |
+| robot@attijaribank.tn | Robot@2026! | Robot UiPath (`robot_uipath`) |
 
 ---
 
@@ -120,9 +124,9 @@ Le cœur du système est une architecture hybride qui combine vitesse, précisio
      ALERTE_CONFIRME      SURVEILLANCE / NORMAL
             │
          ┌──▼────────────────────────────────────┐
-         │  LightGBM — Recommandation Action      │
+         │  LightGBM + KNN — Recommandation Action │
          │  35 classes d'action corrective        │
-         │  TF-IDF + encodeurs + sévérité         │
+         │  TF-IDF + encodeurs + similarité KNN   │
          └──┬────────────────────────────────────┘
             │
          ┌──▼────────────────────────────────────┐
@@ -165,13 +169,13 @@ Le cœur du système est une architecture hybride qui combine vitesse, précisio
 - **Features** : score_risque (47%), score_anomalie (29%), type_operation_enc (9%), sévérité (8%), durée (5%), catégorie (2%)
 - **Usage dans hybride** : Niveau 2 (confirmation zone grise)
 
-### LightGBM (Recommandation Action Corrective)
+### LightGBM + KNN (Recommandation Action Corrective)
 - **Fichier** : `models/lgbm_reco_model.pkl`
 - **Classes** : 35 actions correctives
 - **Précision Top-1** : 62.91% — **Top-3** : 64.36%
 - **Entraînement** : 1374 tickets
 - **Features** : TF-IDF(500 bigrams) + type_operation_enc + categorie_enc + sévérité
-- **Usage** : Recommandation action après toute alerte détectée
+- **Usage** : Recommandation action après toute alerte détectée, enrichie par similarité KNN pour incidents similaires
 
 ### Encodeurs & Vectoriseurs
 | Fichier | Rôle |
@@ -306,6 +310,8 @@ projet/
 | GET | /api/predictions/modele | Informations modèle XGBoost |
 | GET | /api/predictions/evolution | **Évolution temporelle** hebdomadaire (Niveau 3) |
 
+- La page `Prédictions XGBoost` du frontend inclut désormais une courbe live de prédictions et un mode auto-refresh.
+
 ---
 
 **Préparation à la soutenance**
@@ -316,7 +322,7 @@ projet/
   - Ouvrir le dashboard : `http://localhost:8000`
   - Compte démo : `responsable.it@attijaribank.tn / Resp@2026!`
   - Simuler une soumission sur la page `Soumettre une réclamation` puis aller sur `Alertes UiPath` pour montrer le déclenchement.
-  - Montrer la page `Prédictions XGBoost` : prédire un groupe, vérifier l'apparition du marqueur "Prédiction récente" sur la courbe.
+  - Montrer la page `Prédictions XGBoost` : prédire un groupe, activer le mode live, et vérifier la courbe live des prédictions.
   - Montrer la section `Robots UiPath` et expliquer le flux `CheckAlerte → NotifierIT → ConfirmerResolution`.
 
 **Commandes utiles (démo)**

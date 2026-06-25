@@ -37,7 +37,7 @@ _RAW_USERS = [
     {"id": "user-001", "nom": "Administrateur",  "email": "admin@attijaribank.tn",            "password": "Admin@2026!",  "role": "admin"},
     {"id": "user-002", "nom": "Responsable IT",  "email": "responsable.it@attijaribank.tn",   "password": "Resp@2026!",   "role": "responsable_it"},
     {"id": "user-003", "nom": "Meriam",          "email": "meriam@attijaribank.tn",            "password": "Stage@2026!",  "role": "utilisateur"},
-    {"id": "user-rpa", "nom": "Robot UiPath",    "email": "robot@attijaribank.tn",             "password": "Robot@2026!",  "role": "responsable_it"},
+    {"id": "user-rpa", "nom": "Robot UiPath",    "email": "robot@attijaribank.tn",             "password": "Robot@2026!",  "role": "robot_uipath"},
 ]
 
 USERS: dict[str, dict] = {

@@ -1,0 +1,1508 @@
+id,date,type_operation,severite,en_retard,duree_resolution_min,score_anomalie,statut
+03287db5-1356-4589-a550-502bbfa7ad8d,2026-03-01 11:32:00,Helpdesk,2,False,360,0.5,resolue
+1dc4858b-c770-45f3-98f1-34af8233caff,2026-03-02 07:41:00,Sécurité Opérationnelle,1,False,240,0.9,resolue
+0c67294d-cdc9-4d32-8c8d-f7f2499fe66e,2026-03-02 07:57:00,SM Commercial,1,False,240,0.7,resolue
+c8e5da76-c863-4579-8eec-21cb3edd41b3,2026-03-02 07:58:00,SM Commercial,1,False,360,0.7,resolue
+0561237f-e7f8-4d05-901d-2fed42721469,2026-03-02 08:05:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+21737939-dfb0-47c3-8394-64413f929e5e,2026-03-02 08:07:00,Intervention-sur-site-déploiement,1,False,0,0.5,resolue
+d143a847-5c4a-4bb6-bbd7-36df610776cd,2026-03-02 08:09:00,Sécurité Opérationnelle,2,False,120,0.6,annulee
+7d785600-a7c3-41a8-a352-354153211ac8,2026-03-02 08:13:00,SWIFT,1,False,240,0.85,resolue
+8ce2f99c-dafb-4d3c-a0fe-c5b57fe98470,2026-03-02 08:14:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+1e98594f-d351-4919-8c30-f1b13212b15a,2026-03-02 08:15:00,Helpdesk,1,False,600,0.8,resolue
+9a044323-25f5-4d91-9f6a-eaef554d167f,2026-03-02 08:18:00,Helpdesk,1,False,600,0.8,resolue
+a7bd89d3-ef7b-43d4-8611-852d447631e5,2026-03-02 08:20:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+10b39eea-bdbc-4191-ba3c-48342d1d07ab,2026-03-02 08:21:00,Intervention-sur-site-déploiement,2,False,0,0.3,resolue
+44360a4d-794d-490e-8384-f8437aeda6ed,2026-03-02 08:26:00,SM Commercial,1,False,360,0.7,resolue
+2b10bf32-d1ea-41ad-850d-b562d2400386,2026-03-02 08:30:00,Intervention-sur-site-déploiement,2,False,240,0.4,resolue
+762b9adc-25e5-42cb-933a-ca1fea0c7c27,2026-03-02 08:30:00,Sécurité Opérationnelle,2,False,360,0.8,resolue
+e7ce0494-b6b5-4eec-bd1a-dd569a5443ae,2026-03-02 08:34:00,Non attribué,2,False,0,0.3,soumise
+b9fad569-8ee0-48b9-8d85-2f507b184670,2026-03-02 08:34:00,Non attribué,2,False,0,0.3,soumise
+348ba327-3352-4930-b971-4120665c28c9,2026-03-02 08:34:00,Non attribué,2,False,0,0.3,soumise
+ab02c3d3-0e45-4784-8d0c-67491d75aae0,2026-03-02 08:34:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2ee33d8e-4a1a-4f3b-8378-0b24bffeb6a3,2026-03-02 08:36:00,Helpdesk,1,False,600,0.8,resolue
+444aa3aa-9e2c-4168-aff2-f1d3f32b5827,2026-03-02 08:37:00,Intervention-sur-site-déploiement,2,True,240,0.4,resolue
+b5d5dd96-7bb5-45ba-9972-f4af24cd02c4,2026-03-02 08:38:00,Intervention-sur-site-déploiement,1,True,240,0.6,resolue
+20bd037c-67c8-406f-ab1b-f12b82d9ab56,2026-03-02 08:40:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+dcaace1f-c7ed-4cc9-80de-0af4d7440464,2026-03-02 08:42:00,Helpdesk,1,False,120,0.5,resolue
+94986328-fbda-4106-8dc7-892abaef5656,2026-03-02 08:45:00,Helpdesk,1,True,150,0.6,resolue
+5ffa4840-7282-4dc2-99f6-da60cfc8e9c1,2026-03-02 08:45:00,Intervention-sur-site-déploiement,1,False,240,0.6,resolue
+5499b15d-e120-4e21-9410-fd5efbfc7c73,2026-03-02 08:48:00,Intervention-sur-site-déploiement,1,False,600,0.8,resolue
+bcc55cd6-5c9e-4007-830c-9fb95570e9bb,2026-03-02 08:49:00,Data Office,1,False,480,0.7,resolue
+7dda9f77-4e68-4629-ae22-47af74921f48,2026-03-02 08:50:00,Helpdesk,1,False,240,0.7,resolue
+56689078-a093-42e8-82e6-e15fb29a20b7,2026-03-02 08:52:00,Helpdesk,2,False,390,0.6,resolue
+7b39f37c-7146-4cc8-890f-75340c672078,2026-03-02 08:53:00,Salle Informatique,1,True,180,0.6,resolue
+d469f103-b513-4abb-8077-178739026a2f,2026-03-02 08:56:00,Helpdesk,1,False,600,0.8,resolue
+8bb28d04-1f5e-44a5-a557-a71d2e094a90,2026-03-02 09:02:00,Helpdesk,1,True,150,0.6,resolue
+abebb8e5-a360-4f64-87ab-cc9407a51df7,2026-03-02 09:05:00,Helpdesk,1,True,240,0.6,resolue
+bbf6f605-35ce-4110-b629-caa31774e4a5,2026-03-02 09:12:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b2128f8d-f62f-4d81-b42e-911e1938705e,2026-03-02 09:14:00,Helpdesk,2,False,720,0.6,resolue
+fbfe9aa1-035c-4adf-bb0e-63552eee698d,2026-03-02 09:15:00,Intervention-sur-site-déploiement,2,True,360,0.5,resolue
+52134cc4-328e-4732-a0ed-2f0d5fc33655,2026-03-02 09:18:00,Helpdesk,1,True,240,0.6,resolue
+785391c5-d044-46cb-9ed5-dfe1366b2ab4,2026-03-02 09:20:00,Helpdesk,1,False,240,0.6,resolue
+e151d522-ec11-4e57-8a76-bb189e0ed1f2,2026-03-02 09:25:00,Helpdesk,1,False,180,0.7,resolue
+7d58c61a-a02f-406d-a1e9-ce0f1dd6f374,2026-03-02 09:27:00,Helpdesk,1,False,150,0.6,resolue
+e47183e7-1aa0-464b-864c-b500d7d89e65,2026-03-02 09:28:00,Equipe-Etudes,1,True,60,0.5,annulee
+6da52e79-e873-4cc7-a93a-b1f9b951fbb5,2026-03-02 09:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+80a80d58-e637-4c56-9d30-f4cfa8b6797d,2026-03-02 09:32:00,Helpdesk,1,False,240,0.6,resolue
+ce308634-f6a3-4014-a304-1db331e8c030,2026-03-02 09:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+ea23e9b3-0f4c-44c8-97c8-c00e71c8022e,2026-03-02 09:37:00,Helpdesk,1,False,600,0.8,resolue
+b88c02fa-7661-4448-a9c5-80ec8424d388,2026-03-02 09:40:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+cde69078-982c-409d-af1b-d0d1c41a020c,2026-03-02 09:44:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a5a82234-75b1-4fd1-ac92-e7fd62f0319b,2026-03-02 09:48:00,Helpdesk,2,True,240,0.4,resolue
+6e60fb97-a73b-4ab6-9116-280e00afb8e9,2026-03-02 09:53:00,Helpdesk,1,False,150,0.6,resolue
+31205365-f22f-40de-8611-61f9bc5b3eb3,2026-03-02 09:58:00,Helpdesk,2,False,390,0.6,resolue
+2a47c595-9988-410e-88e8-62a8a3b2ef6c,2026-03-02 09:59:00,Intervention-sur-site-déploiement,1,True,165,0.6,resolue
+7158f8b5-f163-4e64-8efb-8a184e897459,2026-03-02 10:01:00,Sécurité Opérationnelle,2,False,360,0.7,resolue
+fd4f82ac-331a-4457-9bf1-c8a864bbcd8c,2026-03-02 10:07:00,Helpdesk,2,False,390,0.5,resolue
+597def53-8165-42d7-8507-2e6f44384001,2026-03-02 10:14:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+ce61c3d3-24ba-463b-aaf7-901f46773f7e,2026-03-02 10:30:00,Sécurité Opérationnelle,1,False,240,0.9,resolue
+137a057a-60de-4509-8312-a8c6bfa8884e,2026-03-02 10:30:00,Helpdesk,2,False,390,0.6,resolue
+03c28e6e-0cee-4236-abb6-ce92cf12a2c3,2026-03-02 10:30:00,Sécurité Opérationnelle,1,False,1440,0.99,resolue
+984fd816-e197-4ea0-883e-a320c3561eea,2026-03-02 10:30:00,Helpdesk,2,False,360,0.5,resolue
+798878a2-6401-4978-ae36-4d61a7aa11a0,2026-03-02 10:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+10af02fd-1460-45b3-90f3-631eda81fde7,2026-03-02 10:31:00,Sécurité Opérationnelle,1,False,240,0.9,resolue
+7f108646-b2d1-473b-9532-20440d63f2f8,2026-03-02 10:34:00,Helpdesk,2,False,600,0.5,resolue
+32b27a27-5528-4ff9-995e-af2bdff70c53,2026-03-02 10:38:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c0989625-68bb-4d37-bf04-73b2b940f091,2026-03-02 10:39:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+e3b0c67a-86d4-44cb-8bdd-92c24c4cafc4,2026-03-02 10:40:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+69a548cd-2146-4615-84cf-b02fd1756b2f,2026-03-02 10:41:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+f72d83cd-4da6-4377-b3d8-9c399c26f87d,2026-03-02 10:43:00,Helpdesk,1,False,600,0.8,resolue
+b2aa9983-d02d-4788-a3e1-787c5baa9d19,2026-03-02 10:47:00,Helpdesk,2,False,240,0.4,resolue
+6ebce6c3-27b4-4e83-8571-c6155681b149,2026-03-02 10:49:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c02dc48b-bec1-44cd-8990-553ae094dcb9,2026-03-02 10:50:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+0990f05b-f8e0-4c10-aefd-09d27b196e6c,2026-03-02 10:52:00,Sécurité Opérationnelle,2,False,360,0.8,resolue
+fc697dc2-255c-4b59-8eb7-629f75cfdc11,2026-03-02 10:52:00,Sécurité Opérationnelle,1,False,240,0.9,resolue
+5716f6bf-354d-486e-b292-2bc6881a7684,2026-03-02 10:53:00,Helpdesk,2,False,240,0.4,resolue
+207a99c9-a40d-482b-be81-72e8a27e4d04,2026-03-02 10:54:00,Equipe-Etudes,2,True,360,0.5,resolue
+b5d88498-9fe9-4804-8306-ec81cf6943c6,2026-03-02 10:58:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+1995a2ed-42ad-43cc-a664-40ae096a5bc2,2026-03-02 10:59:00,Helpdesk,1,False,150,0.6,resolue
+c627e62b-2e17-4ed2-a739-aa76f06ba079,2026-03-02 11:06:00,Helpdesk,2,False,240,0.4,resolue
+0dbb677e-b84a-45fe-85a7-c1a180372220,2026-03-02 11:06:00,Helpdesk,1,False,600,0.8,resolue
+aae64ccb-3aa4-4461-9ce2-012118d858e3,2026-03-02 11:06:00,Helpdesk,1,False,240,0.6,resolue
+045fb747-ae81-43a3-b59d-45c6f5b71a9c,2026-03-02 11:10:00,Helpdesk,1,False,240,0.6,resolue
+daae2417-78d3-4e76-bc71-52411a238279,2026-03-02 11:10:00,Helpdesk,1,True,240,0.6,resolue
+24d11ed5-4efe-410c-8604-02872b2bda72,2026-03-02 11:14:00,Helpdesk,2,False,150,0.4,resolue
+93c31499-668e-4e54-9e3d-2cc0fcc255ae,2026-03-02 11:16:00,Helpdesk,2,False,120,0.3,resolue
+9c3bda47-c50d-436a-9691-1d042892271e,2026-03-02 11:16:00,Helpdesk,2,False,720,0.6,resolue
+179c167f-8c71-44d6-95cd-8f542d780747,2026-03-02 11:23:00,Helpdesk,1,False,0,0.5,resolue
+e3d6d71a-348f-42cd-935e-6e3bf802165e,2026-03-02 11:25:00,Helpdesk,2,False,390,0.6,resolue
+2c675433-fc73-4983-8381-a303cd0fae38,2026-03-02 11:28:00,Sécurité Opérationnelle,2,False,720,0.8,resolue
+a6ac6bcd-cfd8-40d6-b950-a475dbbee00f,2026-03-02 11:31:00,Intervention-sur-site-déploiement,2,False,240,0.4,resolue
+c6a692e3-8c5d-4899-90d4-0a74a4badc08,2026-03-02 11:35:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+fd5fb8a6-55d2-4443-b737-74b63e8f409b,2026-03-02 11:36:00,Helpdesk,1,False,0,0.6,resolue
+0cb7a160-60ff-4f5f-8e39-921b513b1d4f,2026-03-02 11:36:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2e1176f0-b916-4d54-9561-d1a9afa1e46f,2026-03-02 11:37:00,Helpdesk,1,False,150,0.6,resolue
+6147f056-997e-4e58-98fd-52fec8ba7372,2026-03-02 11:38:00,Helpdesk,2,False,240,0.4,resolue
+48d03674-0857-4a32-83ca-9639b49f4338,2026-03-02 11:43:00,Sécurité Opérationnelle,2,False,360,0.8,resolue
+3f12bb2c-e716-4d58-83c6-b1bb7420dbea,2026-03-02 11:53:00,Intervention-sur-site-déploiement,1,False,120,0.5,resolue
+a9f64136-cd3b-4892-9208-ee2b2c3e2d91,2026-03-02 11:54:00,Préparation,1,False,180,0.6,resolue
+7599c18c-2e7e-4e09-a24b-fefe65472778,2026-03-02 12:01:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+0942bbad-b95f-429b-86fc-c070f1794e79,2026-03-02 12:08:00,Sécurité Opérationnelle,2,False,360,0.7,resolue
+9eccaef5-1f63-42f2-a562-1ee8d4b4cf5e,2026-03-02 12:09:00,Equipe-Etudes,1,True,180,0.6,annulee
+b5bd95ee-5e99-4630-b98f-5e55800f13a7,2026-03-02 12:18:00,Sécurité Opérationnelle,1,False,240,0.8,resolue
+8530680c-1e41-4aeb-9ed6-bb162f4812ba,2026-03-02 12:30:00,Sécurité Opérationnelle,1,False,1440,0.9,resolue
+ebc39f7d-1888-4c37-a13f-d587977ebf82,2026-03-02 12:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b6fd308b-c07e-4642-9e3b-dc74f27704a8,2026-03-02 12:55:00,Développement-Digital,2,False,360,0.5,resolue
+0c79dec1-f1a0-4512-b582-e2cb0ad1ca80,2026-03-02 13:06:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+8fc74377-42b1-48b5-bac2-55d55bacb8f1,2026-03-02 13:07:00,Helpdesk,2,False,0,0.3,resolue
+7e581df8-9858-4584-b331-369f70420196,2026-03-02 13:35:00,Intervention-sur-site-déploiement,2,False,240,0.4,resolue
+693270b2-3637-45af-9d74-47dac98df2a1,2026-03-02 13:35:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+4dbe0bd8-8a2b-4b49-aeb3-8f1d6c72aeda,2026-03-02 13:35:00,Sécurité Opérationnelle,1,False,120,0.7,resolue
+b0dd226f-ea1d-466e-a374-d9f8d36d2057,2026-03-02 13:44:00,Sécurité Opérationnelle,1,False,120,0.7,resolue
+1635a38a-7a86-42e8-ba97-659c2b605756,2026-03-02 14:24:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+60efab80-ae9a-40fd-b089-5f87dfcae81e,2026-03-03 07:41:00,Sécurité Opérationnelle,2,True,120,0.6,resolue
+33bab4a6-091a-4ddb-ba31-6b5dd677e558,2026-03-03 07:58:00,Intervention-sur-site-déploiement,1,False,240,0.6,resolue
+1d6bd3cd-7194-47d2-8996-e50e8e89d44b,2026-03-03 08:00:00,Sécurité Opérationnelle,2,True,120,0.6,resolue
+23ec2e38-69ac-4f39-befa-c6b55b2a5797,2026-03-03 08:00:00,Sécurité Opérationnelle,2,True,120,0.6,resolue
+7b54a9cf-6902-4198-9897-016a049ed77a,2026-03-03 08:00:00,Sécurité Opérationnelle,2,True,120,0.6,resolue
+7426b38c-6827-4ba0-91bc-070e86a1bf85,2026-03-03 08:08:00,Helpdesk,1,True,180,0.6,resolue
+64766d85-29fb-4df5-89e2-9a7d1fa32f5a,2026-03-03 08:17:00,Data Office,1,True,480,0.7,resolue
+a80afbc5-687e-4d1a-90f9-f48a0ec9de60,2026-03-03 08:24:00,Helpdesk,2,False,0,0.3,resolue
+3ae9e6ec-7451-47f3-a389-2dad8850e59d,2026-03-03 08:26:00,Helpdesk,2,True,360,0.5,resolue
+0fd7cb68-8141-43a2-938f-5eda71c6c65e,2026-03-03 08:26:00,Helpdesk,2,False,390,0.6,resolue
+0d09aa84-3c0f-45bf-b508-a0d9ea502006,2026-03-03 08:27:00,Helpdesk,2,True,360,0.5,resolue
+55122c99-9d05-4928-bfd4-05e516e3dc3c,2026-03-03 08:27:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+48bf9668-0756-4046-b44d-dce0195c6f9e,2026-03-03 08:29:00,Helpdesk,2,False,240,0.5,resolue
+d10d14de-ee3f-4559-a6b0-4b051bbf8fef,2026-03-03 08:30:00,Non attribué,2,False,0,0.3,soumise
+db607bff-7438-4d20-abcf-07f435eea8dc,2026-03-03 08:30:00,Non attribué,2,False,0,0.3,soumise
+c040de6e-b510-4f58-ada9-2870e997128c,2026-03-03 08:33:00,Helpdesk,1,False,240,0.6,resolue
+59a07984-675d-4e88-aec5-d96f6d7e528e,2026-03-03 08:34:00,Intervention-sur-site-déploiement,1,False,240,0.6,resolue
+ce9f6c36-7af1-42d8-98c2-0a8d483cf5f8,2026-03-03 08:38:00,Equipe-Etudes,1,True,165,0.6,annulee
+1d4fcc14-b570-4039-9e74-d5b1ac1eb2ca,2026-03-03 08:38:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+154e6e49-8e3b-4470-a89c-b71e89ad1810,2026-03-03 08:45:00,Développement-Digital,2,False,1080,0.5,resolue
+82fee723-b391-4c22-9ef5-f28bd5026ac0,2026-03-03 08:46:00,Helpdesk,1,False,360,0.7,resolue
+e749b8bd-e826-4326-a01e-6966c64b5032,2026-03-03 08:48:00,Helpdesk,1,False,600,0.8,resolue
+8b7ba632-14fc-4241-8062-6cc40ab322e5,2026-03-03 08:48:00,Helpdesk,2,False,390,0.6,resolue
+249b240e-4f7b-41a8-bb63-058f851106f3,2026-03-03 08:52:00,Sécurité Opérationnelle,2,False,240,0.7,resolue
+7a3b4483-c8b8-4614-8f54-16815dc6bdd4,2026-03-03 08:53:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+89699cee-3312-4dd9-bbcd-95fe9cbcaaf6,2026-03-03 08:54:00,Helpdesk,2,False,150,0.4,resolue
+9237b08f-9762-40e6-b744-0ef09d091dc0,2026-03-03 08:55:00,Téléphonie,2,False,5400,0.5,resolue
+ed8cfd2f-e878-4507-8e19-ef99e85ab7f5,2026-03-03 09:00:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+6823c476-dc24-429e-9cd8-c53c44680a05,2026-03-03 09:01:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+febdc81d-9645-4a78-96ea-f185607c63a0,2026-03-03 09:14:00,Helpdesk,2,False,120,0.3,resolue
+9a632d2c-3bcf-4dbb-8924-e5563e5c1ed8,2026-03-03 09:18:00,Intervention-sur-site-déploiement,1,False,120,0.5,resolue
+8af301e0-70cd-44b8-a8c2-8ad84711dbc5,2026-03-03 09:18:00,Intervention-sur-site-déploiement,2,False,240,0.4,resolue
+823b71d3-2d6a-41a8-827c-44cc7db3eb78,2026-03-03 09:19:00,Event Multi-Media.,2,False,240,0.5,resolue
+19d98be9-bc2b-4447-b6b6-f57514f5bb08,2026-03-03 09:25:00,Réseau,2,False,5400,0.5,resolue
+5f1515ee-e25c-4fb0-8a69-d4752075047a,2026-03-03 09:26:00,Helpdesk,2,False,120,0.3,resolue
+ab9a6ac3-8dc2-49aa-952a-b02baf9cd22d,2026-03-03 09:27:00,Helpdesk,2,False,0,0.3,resolue
+0ced5eff-f6c1-493b-acf7-319006e075ea,2026-03-03 09:28:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+cb502933-7d13-4f56-a8c0-675bbb798885,2026-03-03 09:32:00,Sécurité Opérationnelle,1,False,360,0.9,resolue
+20efe556-ec62-4e63-a414-20d7b2689945,2026-03-03 09:37:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+222525e2-861b-4f00-9e60-8fbc8910a55f,2026-03-03 09:44:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+3ce06b92-5db9-4073-893d-8df4a573da4d,2026-03-03 09:46:00,Equipe-Etudes,1,True,165,0.6,resolue
+fd8a5080-5494-4dbb-8b5b-b0378f9f7be5,2026-03-03 09:52:00,Helpdesk,1,False,180,0.7,resolue
+3a3ba110-8f99-4dd9-a359-8275e1c56182,2026-03-03 09:55:00,Data Office,1,True,360,0.8,resolue
+13ae0eac-a1f8-48ea-b745-6c2e4f3b42d0,2026-03-03 09:57:00,Helpdesk,1,False,0,0.6,resolue
+272b485a-69d2-497c-b3f0-a10f4fb96bfb,2026-03-03 09:57:00,Helpdesk,1,False,150,0.6,resolue
+1adf51c8-d127-4a19-a460-142d6efb03c6,2026-03-03 10:00:00,Helpdesk,2,True,390,0.6,resolue
+31a73baf-2cd1-4788-b4a6-ef09491493a3,2026-03-03 10:00:00,Helpdesk,2,False,0,0.3,resolue
+fc338dd2-e2c5-424f-95d2-33c278d9de43,2026-03-03 10:01:00,Helpdesk,2,False,390,0.6,resolue
+3d1ece20-9aa1-4a76-b585-1c2f75062480,2026-03-03 10:05:00,Helpdesk,1,True,240,0.6,resolue
+94254db8-64ad-4a61-b9f4-92d6aedd6b50,2026-03-03 10:09:00,Système,1,False,600,0.8,resolue
+60291217-f484-4b62-b51c-cc4685ef96f4,2026-03-03 10:12:00,Helpdesk,1,False,240,0.6,resolue
+3831d482-8b1d-4c3d-9a82-c6f6989bb634,2026-03-03 10:17:00,Sécurité Opérationnelle,2,False,0,0.5,annulee
+6676ee19-0fb9-45d7-bce1-5cd8ab473a31,2026-03-03 10:18:00,Helpdesk,1,False,240,0.6,resolue
+a537b61d-7ae5-474b-adc6-1d0afb93ca9c,2026-03-03 10:20:00,Non attribué,2,False,0,0.4,soumise
+a9be1193-3f2b-495c-a7de-f00a862b7ad6,2026-03-03 10:20:00,Intervention-sur-site-déploiement,2,False,240,0.4,resolue
+ef6219ed-dc5e-406f-9c66-f8f601d0507e,2026-03-03 10:21:00,Helpdesk,1,False,600,0.8,resolue
+73a5e757-5e0d-4653-9b7f-0d14ecee26ed,2026-03-03 10:23:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2e328e13-b2dc-4006-91bd-16588665868b,2026-03-03 10:28:00,Helpdesk,3,False,0,0.2,resolue
+9613f626-929f-4045-b176-a591eda4fe85,2026-03-03 10:29:00,Helpdesk,2,True,120,0.4,resolue
+658e32b1-75d8-4ac8-b8fa-a5550875a856,2026-03-03 10:31:00,Helpdesk,2,False,600,0.5,resolue
+1ff0b748-5316-4fcc-aaac-fb82138ccafb,2026-03-03 10:33:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+53ebac33-0b5c-405c-b278-d9d0e95a6703,2026-03-03 10:36:00,Helpdesk,2,False,720,0.6,resolue
+8e7a9c13-c8aa-4e0c-a5e5-a95b2019470a,2026-03-03 10:40:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+0d2266f2-2258-4c76-9472-5e0bfcbf1051,2026-03-03 10:40:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+aede8ebf-6cbc-4dda-bc5f-189ba0c66bb0,2026-03-03 10:41:00,Intervention-sur-site-déploiement,2,False,1440,0.5,resolue
+90cb48fd-6373-4c48-99f1-ee6dcb509f67,2026-03-03 10:46:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b0a493b7-56c7-486e-87d9-60af14da1b01,2026-03-03 10:48:00,Helpdesk,3,False,0,0.2,resolue
+27833345-7288-47d4-8932-b0a425c603cb,2026-03-03 10:49:00,Helpdesk,1,False,0,0.6,resolue
+29f6755f-25b4-435f-8bcd-fdd50fc59d16,2026-03-03 10:58:00,Développement-Digital,2,False,360,0.5,resolue
+d15e4de1-39e5-48e3-a47b-2e985c7a29f4,2026-03-03 11:05:00,Helpdesk,2,False,1440,0.5,resolue
+7b8cc155-0c2f-45ad-8bcf-a8be7b086dc1,2026-03-03 11:06:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2abea881-8a7f-4cf6-a2ac-6f95b6e4bb97,2026-03-03 11:07:00,Helpdesk,2,False,720,0.6,resolue
+f7a39c2a-aeb6-44ba-abf2-6070f0730989,2026-03-03 11:18:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+0c48dedb-650c-44f5-a8b1-428a7aa0afb0,2026-03-03 11:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a0be331b-65d6-4f53-83d4-0bc7b1494d48,2026-03-03 11:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+ceb3e24c-2738-4f11-8363-9505c5bcc5aa,2026-03-03 11:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+ba07024b-40d6-4f62-9bf1-6dd276567b90,2026-03-03 11:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+d07d7c27-eed9-408f-841c-67093c0e446d,2026-03-03 11:33:00,Helpdesk,1,False,600,0.8,resolue
+a6608a29-9f60-4b0c-92da-d1049bd71ce2,2026-03-03 11:34:00,Intervention-sur-site-déploiement,1,True,150,0.6,resolue
+d8f73953-cd1e-44d2-8b5d-e742b8cc27b8,2026-03-03 11:36:00,Helpdesk,2,False,240,0.4,resolue
+8f981a21-ed94-4e17-a59b-045d461ea04b,2026-03-03 11:37:00,Sécurité Opérationnelle,2,False,240,0.7,resolue
+71c3a74f-452d-4b7a-9d41-bcc1ac4464be,2026-03-03 11:37:00,Helpdesk,2,True,390,0.6,resolue
+c43dbcc1-2b7c-4284-96ad-69f12872dc2c,2026-03-03 11:46:00,Sécurité Opérationnelle,2,False,240,0.6,resolue
+cf2c5a5e-ceaf-484e-9ba6-91bc486d2c1e,2026-03-03 11:46:00,Sécurité Opérationnelle,2,False,240,0.7,resolue
+40dde305-46be-4c18-859b-b149ddb4fb02,2026-03-03 11:49:00,Helpdesk,1,False,0,0.6,resolue
+741314a6-8f01-4271-bbf7-56ac36f2cbc3,2026-03-03 11:49:00,Sécurité Opérationnelle,2,False,360,0.8,resolue
+881c5642-058f-4b17-ae4c-413016177c85,2026-03-03 11:53:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+3992e505-0d49-415b-8051-1da7d407cbee,2026-03-03 12:01:00,Helpdesk,2,False,720,0.6,resolue
+15124886-df2b-4707-8d9f-9b12359b2abd,2026-03-03 12:01:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+d2c6071a-3008-4511-b06a-f025cbd1cc54,2026-03-03 12:13:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+6a9381bc-319d-423a-af83-dc0c4241c67e,2026-03-03 12:14:00,Sécurité Opérationnelle,2,False,360,0.8,resolue
+6c096b8e-b452-4815-b642-d384a08cb36d,2026-03-03 12:20:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+60ff5da4-d29a-44c4-b451-25680a73c9df,2026-03-03 12:23:00,Helpdesk,1,False,600,0.8,resolue
+b85f869c-c589-4518-9a77-3d77a7764e8e,2026-03-03 12:23:00,Sécurité Opérationnelle,2,False,240,0.6,annulee
+1936e6d6-946f-44e2-bb93-f5dc92904c8a,2026-03-03 12:26:00,Helpdesk,1,False,0,0.6,resolue
+e152ca87-436c-4a84-9d38-5619bf872625,2026-03-03 12:33:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+cfbbd756-6258-445d-8161-11080e58a3ff,2026-03-03 12:37:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+22ae084b-6faf-4103-998f-37dbced33d0c,2026-03-03 12:37:00,Intervention-sur-site-déploiement,1,False,150,0.6,resolue
+1578074d-41af-4fb1-b3ca-0a0047fd5578,2026-03-03 12:42:00,SM Commercial,1,True,360,0.7,resolue
+590abfcc-b5ae-4809-86e7-07aaf5526c2c,2026-03-03 12:43:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2da8e483-529a-4ded-bd55-bb45be40df5c,2026-03-03 12:45:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+5d8b6654-5894-40fd-9409-f8540487757d,2026-03-03 12:50:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b02dfe6a-7042-4439-a88b-f38029b50fc7,2026-03-03 12:55:00,Intervention-sur-site-déploiement,2,False,240,0.4,resolue
+df0ef63a-d1a2-46a1-9ed3-33026e6c6669,2026-03-03 13:04:00,Intervention-sur-site-déploiement,1,False,0,0.5,resolue
+e6dbc198-f6b7-4c03-8b15-8113f55d4318,2026-03-03 13:27:00,Sécurité Opérationnelle,1,False,240,0.9,resolue
+e6d6bfbf-a001-42f4-b2f5-fbc560c0652c,2026-03-03 13:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+63ede4a0-3e62-4bd1-945e-2679006fbdbf,2026-03-03 13:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+0fdf9d18-68ee-49a8-acb8-caf5c71ca692,2026-03-03 13:34:00,Helpdesk,2,True,120,0.4,resolue
+dac42b6b-d9c6-4c71-b737-bf7ed8d850d6,2026-03-03 13:34:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+9b3caad7-854f-45f8-af29-fae791a7a32d,2026-03-03 13:35:00,Helpdesk,1,False,0,0.6,resolue
+68d0639b-3b65-4f7f-88db-87dd2fa5be92,2026-03-03 13:35:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+31849c59-fba2-4fd3-ba4c-5c66ff9a3ab6,2026-03-03 13:40:00,Helpdesk,1,False,0,0.5,resolue
+ac5f704a-4b63-43cd-895d-50cb3dd907b5,2026-03-03 13:43:00,Helpdesk,2,True,390,0.5,resolue
+ad00bedf-3af3-4ceb-b67f-92d17f24df51,2026-03-03 13:43:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+41a2cca5-a95b-459f-8d2c-2344c5036a98,2026-03-03 13:52:00,Développement-Digital,2,False,1080,0.5,annulee
+0e1f117c-3269-471f-b611-b558aa83b170,2026-03-03 14:06:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+ee22fc8f-222f-42d7-8641-0086e75ba69d,2026-03-03 14:09:00,Sécurité Opérationnelle,1,False,240,0.9,resolue
+2407faef-40d7-45a5-998b-00e94752387f,2026-03-03 14:22:00,Helpdesk,2,True,240,0.5,resolue
+dadf25d8-bff0-4004-a006-6f8ad2510971,2026-03-03 14:23:00,Helpdesk,2,True,240,0.5,resolue
+a80fa020-3422-4f0e-95cd-6cb0f7c22d88,2026-03-04 07:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+66342224-2d32-46b3-8431-87dc9b5dc9ab,2026-03-04 07:43:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+ec34664d-9507-46b5-ab6b-a8870556f415,2026-03-04 07:47:00,Helpdesk,2,False,240,0.5,resolue
+ecf21cb2-079b-4ba8-8f5b-d1bc3be1bbbc,2026-03-04 07:50:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+657836df-7b75-461b-9149-f3424799b144,2026-03-04 07:52:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+89b3ae8e-36c9-4cb4-82fe-14ba749d9d02,2026-03-04 07:57:00,Helpdesk,2,True,360,0.5,resolue
+790e6fe1-59c3-41ff-bc26-395289b90d49,2026-03-04 08:08:00,SWIFT,1,False,240,0.85,resolue
+a359fb25-ac27-4871-b8a6-fc2b58046a2e,2026-03-04 08:14:00,Helpdesk,1,False,600,0.8,resolue
+f2491395-395e-42fa-bd01-a60bb544135b,2026-03-04 08:16:00,Intervention-sur-site-déploiement,1,False,120,0.5,resolue
+ed6ae828-d889-4dc7-af47-e4bb878d4a5e,2026-03-04 08:17:00,Helpdesk,1,False,150,0.6,resolue
+02a6a7cd-0dd8-408f-93ca-41a0672c61a7,2026-03-04 08:20:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+d422b97b-9825-421b-9ad0-95f52975c2ee,2026-03-04 08:22:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+cb9a670c-a98d-4153-9673-6359bc158c68,2026-03-04 08:26:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+9db4cfe2-bf6f-4f82-a158-adeffac1ae43,2026-03-04 08:27:00,Développement-Digital,2,False,1080,0.5,resolue
+552d49a0-7577-4d2c-a9ab-eebc61ecae52,2026-03-04 08:28:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a98c16ec-7cf4-4cb2-b3ea-acd5229bc222,2026-03-04 08:29:00,Helpdesk,2,False,360,0.5,resolue
+43ab9d83-a679-4ce8-a516-13c41b187ec5,2026-03-04 08:30:00,Non attribué,2,False,0,0.3,soumise
+7308f313-f45e-4d86-8479-6bec06d10b21,2026-03-04 08:30:00,Non attribué,2,False,0,0.3,soumise
+7ac5cc5e-4928-463a-8fe2-ce7ca6e97942,2026-03-04 08:30:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b16dd300-1327-4e67-b5a6-2c334974916b,2026-03-04 08:39:00,Helpdesk,1,False,180,0.7,resolue
+84965a71-5a03-4c4c-b284-401c6e3300f8,2026-03-04 08:44:00,Helpdesk,2,False,360,0.5,resolue
+afb42806-ccbe-445f-be9e-0b57f8fbb8b0,2026-03-04 08:45:00,Intervention-sur-site-déploiement,2,True,240,0.4,resolue
+e9f158c8-bef3-452c-884a-1b817474637e,2026-03-04 08:47:00,Sécurité Opérationnelle,2,False,720,0.8,resolue
+c44882a0-9d55-4062-831f-e2b687e88be3,2026-03-04 08:48:00,Sécurité Opérationnelle,2,False,240,0.6,resolue
+20f62297-7b0f-428e-8ffe-a1e74a071d14,2026-03-04 08:49:00,Helpdesk,2,False,360,0.5,resolue
+0eb8108f-5aef-4c65-8e27-824dcb2ac337,2026-03-04 08:58:00,Sécurité Opérationnelle,2,False,120,0.6,annulee
+802910a7-a5e7-46a5-8e8a-a6c2f19112df,2026-03-04 09:00:00,Sécurité Opérationnelle,1,False,1440,0.9,resolue
+7a458fa7-c39b-4b9a-b596-d8d1f15abc3e,2026-03-04 09:01:00,Helpdesk,1,False,240,0.6,resolue
+045e2ce7-03b5-4ec6-a61c-61301537edd6,2026-03-04 09:02:00,Equipe-Etudes,2,True,600,0.5,annulee
+682e8efd-df72-4ffb-96c5-c80c39be36f4,2026-03-04 09:04:00,Téléphonie,2,False,360,0.6,resolue
+157a1f68-5131-4262-b87f-c66249acf0cc,2026-03-04 09:05:00,Helpdesk,1,True,240,0.6,resolue
+5ce2bc00-eeb1-4942-a48f-4fc79f5bf7a9,2026-03-04 09:09:00,Helpdesk,1,False,0,0.5,resolue
+942f65d6-b6c3-4afe-a04f-a4d000ab143c,2026-03-04 09:12:00,Helpdesk,2,False,240,0.5,resolue
+b80ae360-d3c4-4ec3-8efb-46ed3350405e,2026-03-04 09:14:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+7a62a2c1-0205-4ca1-b80d-8900376f480c,2026-03-04 09:15:00,Helpdesk,1,False,0,0.6,resolue
+5c9fb51a-af55-4acd-83f8-e3e0e9a97bca,2026-03-04 09:16:00,Helpdesk,2,True,120,0.4,resolue
+a8cb6135-509a-4baa-8bfc-6fafa0de2c9d,2026-03-04 09:17:00,Helpdesk,1,False,0,0.6,resolue
+b5878a14-25e3-4696-b17e-7c54d73626fd,2026-03-04 09:18:00,Helpdesk,1,False,360,0.7,resolue
+22e0b0b9-52ef-4f14-a41e-974f407de3d8,2026-03-04 09:19:00,Helpdesk,1,False,360,0.7,resolue
+9ebb62d6-2dc9-466e-b079-3cd08e175d48,2026-03-04 09:22:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+e7c5cf4d-e207-4542-abce-ba96cb75848c,2026-03-04 09:24:00,Sécurité Opérationnelle,2,False,360,0.7,resolue
+8802e4ef-aa22-41d0-ac10-05d759bca980,2026-03-04 09:28:00,Téléphonie,1,False,1800,0.7,resolue
+dd9f2356-a5aa-4c20-adde-972728191bc3,2026-03-04 09:30:00,Stock,2,False,360,0.5,resolue
+0b562c10-9b99-4eb6-b95a-3214691c224f,2026-03-04 09:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+eea19279-bb40-42c6-b245-01afd090c630,2026-03-04 09:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+8ce8b5c5-203e-4ca5-9ad3-8e7756179233,2026-03-04 09:32:00,Equipe-Etudes,2,True,600,0.5,resolue
+77398c3d-cb1d-447a-8a48-dd9b8ba9fd19,2026-03-04 09:34:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+15f4b666-7a98-4805-a78b-11bd2cd3610b,2026-03-04 09:34:00,Sécurité Opérationnelle,1,False,360,0.99,resolue
+030e6e7e-eb19-4c14-af02-cbb1a062aff7,2026-03-04 09:35:00,Helpdesk,1,True,150,0.6,resolue
+21382c14-20bc-4d8f-9ae7-27f424238e0c,2026-03-04 09:44:00,Helpdesk,1,True,150,0.6,resolue
+50fb3bd7-eaea-4c27-b4eb-51a3b03a5a50,2026-03-04 09:45:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+059038b1-265a-4de6-9330-cd6af20fa6c5,2026-03-04 09:46:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+34f8d5fa-a3ae-4b45-9230-fbc4a914d522,2026-03-04 09:52:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+ab12d41b-c3ab-4064-b4f1-f57e01cc7817,2026-03-04 09:54:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2ab20058-9104-454a-a92d-60b8fc99577f,2026-03-04 09:56:00,Helpdesk,2,False,240,0.5,resolue
+504613c0-1a1f-4a6b-b7b4-b32a42ceec53,2026-03-04 10:02:00,Helpdesk,2,False,390,0.6,resolue
+c9c9c0e1-f790-419f-8d18-8d617143d4d2,2026-03-04 10:05:00,Helpdesk,1,False,600,0.8,resolue
+165459ff-99c3-43bc-a5a5-b216018c4eae,2026-03-04 10:06:00,Helpdesk,2,False,390,0.6,resolue
+69c31b6a-cc65-4720-9dc9-fa83a9ce81dc,2026-03-04 10:07:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+08b57f24-09ea-48f4-ad47-f28d1e733406,2026-03-04 10:09:00,Réseau,2,False,360,0.6,resolue
+3b45fe2b-97f6-44cd-b0b3-0d214f2a35b8,2026-03-04 10:15:00,Helpdesk,2,False,390,0.6,resolue
+bb539e93-7266-49e2-a16f-1335b719b148,2026-03-04 10:20:00,Helpdesk,2,False,600,0.5,resolue
+d0b04af2-f1a6-46be-9fb1-16cd20a2fc65,2026-03-04 10:21:00,Helpdesk,1,False,0,0.6,resolue
+9596aacb-b77d-40b3-acfd-33d11341ac91,2026-03-04 10:28:00,Système,1,False,600,0.8,resolue
+b43f9417-4fc8-4564-9735-eb9416d69bdc,2026-03-04 10:29:00,Téléphonie,2,False,5400,0.5,resolue
+6a131949-afc9-4f46-a80c-71be8bb87a11,2026-03-04 10:29:00,Helpdesk,1,False,0,0.6,resolue
+01e09676-430a-4bc9-817b-0ed13635ab1a,2026-03-04 10:36:00,Système,2,False,360,0.5,resolue
+f1e1ba4f-2734-479b-b95b-0f0f04d1780d,2026-03-04 10:37:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+eae3e727-3b7f-45ef-977e-7e3b61cf3531,2026-03-04 10:38:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+cb9d0d84-dcd5-414d-8809-88f0e3aad7f4,2026-03-04 10:42:00,Helpdesk,1,False,600,0.7,resolue
+677f9139-7556-4874-baed-9388f4b15cd9,2026-03-04 10:43:00,Helpdesk,1,False,600,0.8,resolue
+fa548424-0847-46ee-bfa9-440aa71773d0,2026-03-04 10:45:00,Helpdesk,2,False,720,0.5,resolue
+da242a46-8fe9-4651-a4b0-893f9d56e5fd,2026-03-04 10:49:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2e3027c9-7f1e-46b4-875c-4d8019313692,2026-03-04 10:50:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+9d9b2f59-66b3-4c05-aa97-55b164dd2a9a,2026-03-04 10:51:00,Helpdesk,1,False,0,0.5,resolue
+a5f4a1e7-2b83-4ec5-9a58-75eba5e65f2e,2026-03-04 10:53:00,Helpdesk,1,False,0,0.6,resolue
+6a2ba8eb-3595-4457-9728-60cb40eecdb2,2026-03-04 10:56:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+212f1c9a-4f50-48c2-8240-2cd3562f4f45,2026-03-04 11:03:00,Helpdesk,2,False,240,0.4,resolue
+9d19ae1b-f9b6-4a54-905e-04a5b674d2cb,2026-03-04 11:26:00,Système,2,False,360,0.5,resolue
+c901bf77-27a8-419b-9df2-387161217563,2026-03-04 11:30:00,Sécurité Opérationnelle,1,False,60,0.8,resolue
+ab10f48f-e664-4c72-a615-b3089a66057c,2026-03-04 11:33:00,Sécurité Opérationnelle,1,False,60,0.8,resolue
+c0efcb95-491b-4f6d-a184-0ada4dcf55ce,2026-03-04 11:34:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2eb8eae7-6e78-417f-a618-240e31b9db32,2026-03-04 11:35:00,Sécurité Opérationnelle,1,False,60,0.8,resolue
+da7b94e0-914b-4a8b-b83c-9e00b05986a5,2026-03-04 11:36:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+d67a9091-0c8f-4b27-85f9-4ab529b3f26e,2026-03-04 11:36:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b26cce76-5e34-43ce-ae0f-bc5724e98ac7,2026-03-04 11:36:00,Sécurité Opérationnelle,1,False,60,0.8,resolue
+3af57aa4-8d6f-4f7f-a89a-477a6c94b7e1,2026-03-04 11:40:00,Sécurité Opérationnelle,1,False,60,0.8,resolue
+af287f52-cb42-40b0-828d-1764364b87ef,2026-03-04 11:41:00,Helpdesk,2,False,390,0.6,resolue
+98fe99ad-bc1c-4fd2-8acf-c822d44d12b4,2026-03-04 11:41:00,Sécurité Opérationnelle,1,False,60,0.8,resolue
+c8d11467-47e5-46a9-88b7-3dee2703844d,2026-03-04 11:42:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+3b18a9c8-69ac-4442-89c3-6719fc0334c9,2026-03-04 11:43:00,Sécurité Opérationnelle,1,False,60,0.8,resolue
+1fd79412-5f33-4277-8b28-eccf36d5e53e,2026-03-04 11:45:00,Intervention-sur-site-déploiement,1,True,120,0.5,resolue
+a0cf66fd-4282-44ce-8513-5e6f286e2a35,2026-03-04 11:45:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+da22bade-1f88-438c-9b3f-2ba1d889e1f7,2026-03-04 11:45:00,Sécurité Opérationnelle,1,False,60,0.8,resolue
+dd764071-4f2f-4a78-87a3-6f1c5149f814,2026-03-04 11:47:00,Sécurité Opérationnelle,1,False,60,0.8,resolue
+345a5473-5f3b-4846-abf7-7aa7a3852cb6,2026-03-04 11:48:00,Sécurité Opérationnelle,1,False,60,0.8,resolue
+e9548817-a9fb-4dc2-9ee5-5702ee1e9b89,2026-03-04 11:49:00,Intervention-sur-site-déploiement,2,True,120,0.3,resolue
+2cc53103-2f98-4a62-a3ff-d4a2d99a3739,2026-03-04 11:50:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+71412e36-eed7-4f05-959d-fedccf7d66d0,2026-03-04 11:50:00,Sécurité Opérationnelle,1,False,60,0.8,resolue
+246963f9-9c7d-48f6-b010-52654a3ec42c,2026-03-04 11:53:00,Sécurité Opérationnelle,1,False,60,0.8,resolue
+bdbec61b-580b-483d-b3f4-efbf4fb2d4bc,2026-03-04 11:55:00,Equipe-Etudes,2,True,600,0.5,annulee
+fe5e03b6-255d-4a25-b918-e05de79212a1,2026-03-04 11:57:00,Helpdesk,2,True,120,0.3,annulee
+3aaa07fd-d4ea-4e5f-86e0-a0c6d19d8c86,2026-03-04 12:02:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b12e1358-7dbb-48cf-848d-d5e68aca3f65,2026-03-04 12:03:00,Sécurité Opérationnelle,2,False,120,0.6,annulee
+47e64f71-ef76-4b29-bc58-b061debcea87,2026-03-04 12:03:00,Intervention-sur-site-déploiement,1,False,165,0.6,resolue
+3610e04b-5e6c-4fe1-8ab7-60d70311408a,2026-03-04 12:13:00,Sécurité Opérationnelle,1,False,360,0.9,annulee
+803742bd-b8ce-458e-9c5c-c8100bc3960c,2026-03-04 12:19:00,Helpdesk,2,False,390,0.6,resolue
+a4edc961-23e2-450d-ab62-91f04b249cd5,2026-03-04 12:27:00,Helpdesk,1,False,0,0.5,resolue
+7954a997-9d01-450d-b0b3-a54c2a9b4a7f,2026-03-04 12:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+41679829-8cb2-446d-9961-e837dc49b221,2026-03-04 12:40:00,Sécurité Opérationnelle,1,False,120,0.7,resolue
+16694b0c-7244-4344-85f5-d20af850db98,2026-03-04 12:44:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+faa5f6d5-e35d-4fe0-b894-7732d9197872,2026-03-04 12:48:00,Sécurité Opérationnelle,2,False,360,0.8,resolue
+27eece7f-38e6-4a93-803c-cfaf1298605d,2026-03-04 12:50:00,Data Office,1,False,360,0.7,resolue
+25713967-cbd2-449c-9342-c4d75f081e90,2026-03-04 12:55:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+e2f45d4e-858f-45fd-9546-7f1dd4957415,2026-03-04 12:58:00,Helpdesk,1,False,0,0.5,resolue
+48564625-bb7e-4aff-8380-b73a60df87cc,2026-03-04 13:03:00,Helpdesk,1,False,600,0.7,resolue
+50267645-1ece-4045-a669-cf2739a4e958,2026-03-04 13:04:00,Helpdesk,1,False,600,0.8,resolue
+39894cc5-8f88-4639-a02d-8948f8a5ca89,2026-03-04 13:05:00,Sécurité Opérationnelle,2,False,360,0.8,annulee
+1124e50a-3858-4ee5-8429-891ea8f99c76,2026-03-04 13:12:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+47877d81-9e44-41eb-ad97-a3ca373d03af,2026-03-04 13:31:00,Helpdesk,1,False,0,0.5,resolue
+2ed1e7bb-06d1-496b-9e0e-5c7e6cefde8c,2026-03-04 13:34:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+995f3682-1ba9-4bec-b967-913476ccd71c,2026-03-04 13:44:00,Réseau,3,True,240,0.3,resolue
+991692a6-ffd6-493d-9dce-c3e3a2aecaca,2026-03-04 13:45:00,Helpdesk,1,False,600,0.7,resolue
+e5628dda-c552-4364-9734-59a133d2a183,2026-03-04 13:50:00,Helpdesk,1,False,180,0.7,resolue
+ef6ac254-1138-44fc-aba8-b8555a13f6b5,2026-03-04 13:53:00,Helpdesk,1,False,600,0.8,resolue
+d6530492-f1bd-4e98-8f28-a8b73a77930f,2026-03-04 14:07:00,Helpdesk,1,False,600,0.8,resolue
+01c6e601-7c27-4d7e-a644-23a6beb7feda,2026-03-04 14:16:00,Helpdesk,1,True,240,0.6,resolue
+07d66820-b4b4-458f-9bb7-799a97c701cf,2026-03-04 14:43:00,Helpdesk,2,False,360,0.5,resolue
+1ba7c7c5-a545-4c5e-af94-0bfc7407ca2e,2026-03-04 15:02:00,Helpdesk,1,False,0,0.6,resolue
+74fef803-9f45-49a2-912d-706db605c816,2026-03-04 15:08:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2c7d410c-8fab-4677-b0a8-c7c3a558b49f,2026-03-04 15:09:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+97d0bb11-9256-4c78-bccb-e55a9210f13f,2026-03-04 19:18:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+52de923a-e5be-4d0b-9078-d9075393f3da,2026-03-04 19:20:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a6d2a507-d7d5-4c2a-bff2-77f720c542e5,2026-03-05 07:38:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+80e04a46-8fdb-4ce5-a8b1-470d70db96e5,2026-03-05 07:54:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+9fe9813d-ecf8-457d-9920-ebf16671d56d,2026-03-05 07:59:00,Helpdesk,1,False,150,0.6,resolue
+813f19e5-17d3-4420-9239-8c3784c563ac,2026-03-05 08:05:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+72e03092-69d8-4317-b82b-96de0587a529,2026-03-05 08:12:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+3ee58432-d5b4-4264-945f-72b5cd2b3793,2026-03-05 08:13:00,Intervention-sur-site-déploiement,1,False,240,0.6,resolue
+1951778f-d591-4e97-8343-bd5032f82ded,2026-03-05 08:17:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b69a5254-cbf4-4eab-823c-ef06ed025ddd,2026-03-05 08:17:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c736481e-eafe-49fb-8360-3b8de0826027,2026-03-05 08:18:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2c3690a7-50a2-43e5-b4a8-c4fc370283a5,2026-03-05 08:21:00,Helpdesk,1,False,600,0.8,resolue
+8fc3f3b1-782d-4023-8203-effffbbdeabe,2026-03-05 08:22:00,Helpdesk,2,True,120,0.3,resolue
+41e34784-0691-468a-b8ba-00e2b1f9703f,2026-03-05 08:23:00,Helpdesk,2,False,360,0.5,resolue
+6424e769-582e-4142-ba55-b129390468a4,2026-03-05 08:24:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+62ac2901-418b-4539-bdc3-47e41dd74173,2026-03-05 08:25:00,Helpdesk,2,False,120,0.3,annulee
+4fe688a8-483d-47a1-a164-83b47dcad11c,2026-03-05 08:27:00,Intervention-sur-site-déploiement,2,False,240,0.4,resolue
+de8fca40-bba5-4451-8880-e05b2430083a,2026-03-05 08:27:00,Helpdesk,2,False,360,0.5,resolue
+5fb606bb-edee-4202-a66d-b3dcf5a4d72e,2026-03-05 08:28:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+318c0ea9-342b-4c88-aef4-aaf4d2262962,2026-03-05 08:34:00,Stock,2,False,360,0.5,resolue
+f08dd99d-fdc1-4075-9875-0ea750fef89c,2026-03-05 08:34:00,Data Office,1,False,240,0.6,resolue
+d09ba1bf-6d7b-48f0-af7b-8142a9e71625,2026-03-05 08:35:00,Système,2,False,360,0.6,resolue
+bb30f9a8-fadf-4b6b-847b-18338e615cf8,2026-03-05 08:36:00,Helpdesk,2,False,720,0.6,resolue
+df060df3-5add-48ce-8085-510a81b87a3b,2026-03-05 08:39:00,Helpdesk,1,False,240,0.6,resolue
+ff0b7736-bf7e-44a6-bbfe-96059dcd66b3,2026-03-05 08:40:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b3be5210-02d5-471c-a1e3-9808fcd69b7d,2026-03-05 08:41:00,Helpdesk,2,False,360,0.5,resolue
+bad9bc54-4d04-4346-b860-6bf6bd2dec2b,2026-03-05 08:46:00,Helpdesk,2,False,120,0.4,resolue
+0e055505-960b-4622-a337-cbf846345d00,2026-03-05 08:49:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+204690f5-6e3e-4d5b-a0be-adbb9675932e,2026-03-05 08:50:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+301955d8-9142-44ff-93e5-f43ba40670cc,2026-03-05 08:51:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+53e2a75c-0906-4184-b31e-88cf8d6d42ab,2026-03-05 08:51:00,Intervention-sur-site-déploiement,2,True,240,0.4,resolue
+52a3283f-37e6-4723-abd6-c9fe8c940127,2026-03-05 08:55:00,Helpdesk,1,False,240,0.6,resolue
+d4291e4c-7258-4791-9340-859dd84d19d3,2026-03-05 08:57:00,Stock,2,False,720,0.5,resolue
+40fae944-a4e4-44ab-ba11-8f99ccef1d28,2026-03-05 08:57:00,Helpdesk,1,False,600,0.8,resolue
+0c4cd2e3-114e-47aa-91f8-9e33bfdaeec1,2026-03-05 09:02:00,Helpdesk,3,False,0,0.2,resolue
+1c885297-fbee-4ed4-a4e6-992f765a3b78,2026-03-05 09:03:00,SM Commercial,1,False,360,0.7,resolue
+c1e972dc-000b-477a-a1a6-97b4a51df811,2026-03-05 09:11:00,Helpdesk,1,False,240,0.7,resolue
+9618237a-c21c-4183-b699-22b88fabebd5,2026-03-05 09:12:00,Réseau,1,False,120,0.5,resolue
+db74b8ca-871b-4bdb-8811-bc48909ae34d,2026-03-05 09:16:00,Système,3,True,120,0.2,resolue
+8c7f555c-0504-49ee-a657-acf7fc32a5ea,2026-03-05 09:18:00,Système,3,False,240,0.3,resolue
+4b2d308b-91fe-43d5-99ed-dfa3d873d0b9,2026-03-05 09:19:00,Sécurité Opérationnelle,1,False,120,0.7,resolue
+786859fd-507a-45df-8ac3-22e0c03a5a4c,2026-03-05 09:19:00,Sécurité Opérationnelle,2,False,240,0.7,resolue
+f9cd5011-4a82-4d32-a2cd-b04858f0dfe4,2026-03-05 09:20:00,Intervention-sur-site-déploiement,1,True,150,0.6,resolue
+d04f0c5b-3b64-4342-9168-691dffe6913c,2026-03-05 09:21:00,Sécurité Opérationnelle,1,False,120,0.7,resolue
+606b7927-3cfe-48d3-a71c-429310fc36e2,2026-03-05 09:23:00,Helpdesk,2,True,120,0.3,resolue
+47d30a02-5eca-417f-9cd3-6617afe96d26,2026-03-05 09:23:00,Helpdesk,3,False,0,0.2,resolue
+19edeb3d-5f7a-4cc8-a18a-b43e340040b2,2026-03-05 09:25:00,Helpdesk,2,False,390,0.6,resolue
+9a04e646-e662-4a43-9b71-6fe3f8e0fcac,2026-03-05 09:28:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+3f7ff975-238f-4cad-b5d8-ba7c37359d5e,2026-03-05 09:29:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b9ca0853-7058-4be8-b69e-153c96cd052a,2026-03-05 09:33:00,Système,3,False,240,0.3,resolue
+4c5e6e49-df38-4c6b-af08-478962a46c8d,2026-03-05 09:34:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+8b0d4160-453e-4d2e-894d-391fa8926402,2026-03-05 09:39:00,Système,3,False,240,0.3,resolue
+791b639b-7e8b-4a0f-b611-f315fc822469,2026-03-05 09:45:00,Helpdesk,2,False,600,0.5,resolue
+fcba4a72-f9e8-4e53-a785-621b1e6678f7,2026-03-05 09:46:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2b3db796-26b1-4a36-b691-6dc3133e6b21,2026-03-05 09:46:00,Helpdesk,2,True,120,0.4,resolue
+d6c2fc19-b354-4ddc-a07d-eca3b89a9c61,2026-03-05 09:47:00,Helpdesk,2,False,1800,0.6,resolue
+cf977155-10e5-441e-967b-d7f93cbcb5b0,2026-03-05 09:47:00,Sécurité Opérationnelle,2,False,360,0.7,resolue
+53ba1355-0203-425a-9388-974a9cf5892b,2026-03-05 09:48:00,Intervention-sur-site-déploiement,1,False,0,0.5,resolue
+bf7a3293-15fe-4d10-9476-d7e8ac149b54,2026-03-05 09:49:00,Sécurité Opérationnelle,2,False,120,0.6,annulee
+87e14e95-d864-4e52-86be-5ee9808811a8,2026-03-05 09:50:00,Intervention-sur-site-déploiement,2,False,150,0.4,resolue
+e0616f9a-9901-4896-af34-f9b2da1ecbc9,2026-03-05 09:51:00,Helpdesk,2,True,240,0.4,resolue
+844750d2-bb37-4988-9457-e075f20e854e,2026-03-05 09:54:00,Sécurité Opérationnelle,2,False,0,0.5,resolue
+add540d8-f09f-432e-afe4-ad5afa44fb2a,2026-03-05 09:55:00,Helpdesk,2,True,120,0.3,resolue
+f96eb390-5afe-4355-97a2-29e68403961d,2026-03-05 09:56:00,Helpdesk,2,True,240,0.5,resolue
+5c24de56-cb69-42bc-9c0e-2c7de9f5cc06,2026-03-05 09:59:00,Helpdesk,1,False,240,0.6,resolue
+3dd93990-3b04-46e7-8545-8b0aaef55598,2026-03-05 10:01:00,Système,3,False,240,0.3,resolue
+1480c6f7-fb94-4db6-ae34-f6c7fb0aebe5,2026-03-05 10:03:00,Helpdesk,2,False,1800,0.6,resolue
+26610972-2c7b-492e-835a-ba483261cb07,2026-03-05 10:04:00,Intervention-sur-site-déploiement,2,False,720,0.5,resolue
+3dc4afce-c68d-4cf1-ab36-179a37899b8d,2026-03-05 10:04:00,Sécurité Opérationnelle,2,False,360,0.8,resolue
+072a412f-ebc9-4e4a-a062-d1765d7d712e,2026-03-05 10:06:00,Helpdesk,1,False,0,0.5,resolue
+28a2e0a8-c4cb-4675-9c25-c1af7f8629c8,2026-03-05 10:09:00,Helpdesk,1,False,600,0.8,resolue
+450fd34c-15c3-4336-8fe8-74193d502eda,2026-03-05 10:12:00,Téléphonie,2,False,1440,0.5,resolue
+59440da3-b8fa-4eef-ad9d-8e6d6fa7f888,2026-03-05 10:13:00,Intervention-sur-site-déploiement,1,False,360,0.7,resolue
+d292be8f-dcb0-4fa8-b2a1-c5dbff9d0b8d,2026-03-05 10:15:00,Helpdesk,1,False,0,0.6,resolue
+82034ca6-df18-49ed-aa1c-25c8e9eec54c,2026-03-05 10:21:00,Téléphonie,1,False,1800,0.7,resolue
+f480bef6-541b-4fa5-83f3-dcb5cb6a9b1b,2026-03-05 10:23:00,Téléphonie,1,False,1800,0.7,resolue
+0f991a5b-f072-44bb-9df5-6a578aaa257d,2026-03-05 10:28:00,Intervention-sur-site-déploiement,1,False,360,0.7,resolue
+62271f16-cc2f-41b5-9f6f-35d46be71f6e,2026-03-05 10:31:00,Sécurité Opérationnelle,2,False,360,0.7,resolue
+1874129b-b2de-4d97-abf3-e985b7af97c3,2026-03-05 10:32:00,Système,1,False,360,0.8,resolue
+91bfd4e5-57ee-4712-9f17-5bb003b542b5,2026-03-05 10:34:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c741ed1e-c765-4880-897d-75f866597314,2026-03-05 10:37:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+dfdf5812-ae51-42fd-adbd-5ea50c7a9911,2026-03-05 10:37:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+efa17d2b-de47-4bdd-95a4-ba846789eef8,2026-03-05 10:39:00,Helpdesk,1,False,600,0.8,resolue
+a776e59d-fa9d-45c3-ad9a-b6a65ca10582,2026-03-05 10:42:00,Sécurité Opérationnelle,2,False,360,0.8,resolue
+8b81b986-7400-4caf-8b64-c8292174f075,2026-03-05 10:42:00,Helpdesk,1,False,0,0.6,resolue
+8dbb4126-b6a6-4898-ade3-085801806199,2026-03-05 10:44:00,Helpdesk,1,False,0,0.6,resolue
+482efcfb-0a99-45c5-8a93-5a60bdccf8fd,2026-03-05 10:49:00,Equipe-Etudes,1,True,240,0.6,resolue
+959b70f2-caa5-415d-a8c0-8794c3d845ab,2026-03-05 10:49:00,Helpdesk,3,False,720,0.4,resolue
+35e06360-bf04-4b97-8783-6ca6dc86c487,2026-03-05 10:56:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+de2718b4-4f6c-4050-ba7b-02f6db23e36e,2026-03-05 10:56:00,Sécurité Opérationnelle,2,False,120,0.6,annulee
+705a5e70-ad80-4d8b-baeb-43485cafcf30,2026-03-05 11:06:00,Sécurité Opérationnelle,2,False,120,0.6,annulee
+71d7f66a-1c90-4b41-8af3-0cc9fba85743,2026-03-05 11:13:00,Développement-Digital,2,False,360,0.5,annulee
+e89ab232-566b-4765-90c9-a58c60158b73,2026-03-05 11:19:00,Helpdesk,1,False,0,0.5,resolue
+5f0ffdb2-212e-4d90-844a-37529e5c033a,2026-03-05 11:21:00,Helpdesk,2,False,0,0.3,resolue
+beb73d93-019e-4e37-8152-4bb50fbffc01,2026-03-05 11:23:00,Helpdesk,2,False,120,0.3,resolue
+5d2721d4-dc79-4a64-b8e9-ff6f3e209af0,2026-03-05 11:24:00,Intervention-sur-site-déploiement,2,False,720,0.5,resolue
+9ec61438-e794-4518-af78-1c127c2e2f56,2026-03-05 11:29:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+23a9ac96-fc9e-458f-8f47-76458565f085,2026-03-05 11:29:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+bc34125f-d346-4611-8189-39face22ee8a,2026-03-05 11:30:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+8097058f-7619-49e6-80cf-d1fa37b2b7fb,2026-03-05 11:30:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b4c5d1e6-f995-4edc-a65a-27692a56d32a,2026-03-05 11:30:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+e7b08e42-2ec9-4163-929a-9e3137e64bab,2026-03-05 11:31:00,Intervention-sur-site-déploiement,1,False,360,0.7,resolue
+4dbe12e4-9bba-467b-b79d-2004a7946aec,2026-03-05 11:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+3217e58f-9427-4564-8c3e-10e953e32fb1,2026-03-05 11:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+24c5d629-2c9e-4f99-941f-c9416e167b82,2026-03-05 11:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+81bc9fc5-2062-4118-8640-176b5b254fda,2026-03-05 11:34:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+71d987a9-5cef-4a82-b170-9a31fbdc084d,2026-03-05 11:35:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2a3610eb-b968-4bb9-8132-9f6bb057fc43,2026-03-05 11:36:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+3f0f345c-21e7-4259-9c1b-726c3bc88f3c,2026-03-05 11:36:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+451c395e-297a-4392-b19d-7330ff7fe0f9,2026-03-05 11:38:00,Sécurité Opérationnelle,2,False,240,0.6,resolue
+cd539b68-75da-42f6-a6a7-b241d4527815,2026-03-05 11:39:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+23f8039e-f515-4cad-a622-e041d7d5f6c0,2026-03-05 11:39:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+e67394b3-379e-4c2e-b237-f9865b8528fb,2026-03-05 11:40:00,Helpdesk,1,False,150,0.6,resolue
+abb23c4b-e477-49ca-aa71-3f6f400afd95,2026-03-05 11:40:00,Système,2,False,120,0.3,resolue
+4378ca6f-f7df-4de0-9a30-b1ecb5f39991,2026-03-05 11:43:00,Helpdesk,3,False,240,0.3,resolue
+6f301221-9c00-4223-a458-53ef37466a9f,2026-03-05 11:44:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+f0b394f1-58c6-4c17-b393-ba81c7a2f807,2026-03-05 11:45:00,Intervention-sur-site-déploiement,1,False,120,0.5,resolue
+251c21f4-d1e5-4cfa-bedf-8b3b27d619e9,2026-03-05 11:45:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+8b650b3c-e56a-42d4-b064-02c4b294edde,2026-03-05 11:46:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+38700636-ad08-431c-a432-e5941c2ab2df,2026-03-05 11:51:00,Système,1,False,240,0.6,resolue
+d49e6527-117d-47ee-908f-3c1cb8b993bd,2026-03-05 12:13:00,Equipe-Etudes,1,True,180,0.6,annulee
+e5187475-0625-466b-ab8d-97e3c333146d,2026-03-05 12:16:00,Intervention-sur-site-déploiement,1,False,120,0.5,resolue
+c9c57f8a-0142-4983-a894-8113a9ac7b91,2026-03-05 12:23:00,Helpdesk,1,False,0,0.5,resolue
+62f55e46-d5d1-4f30-975b-afb686db33f7,2026-03-05 12:25:00,Système,3,False,240,0.3,resolue
+61d96f2a-36e7-4c6a-8f4b-cfe8d16fd8f6,2026-03-05 12:26:00,Helpdesk,1,False,600,0.8,resolue
+a0d0091c-d00d-49e6-b602-3e14a8cbf7c5,2026-03-05 12:27:00,Sécurité Opérationnelle,2,False,0,0.5,resolue
+8259b4ea-b2be-49c2-8041-eab43e498e26,2026-03-05 12:28:00,Helpdesk,2,False,390,0.5,resolue
+dbb14bb4-3e6a-417b-ae12-2df00ef9508f,2026-03-05 12:29:00,Helpdesk,2,False,390,0.5,resolue
+80d1fc3a-09b6-49bb-887e-f299fcb69f1b,2026-03-05 12:30:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+9d3db6a2-8ad7-4e99-93c6-33b95a393015,2026-03-05 12:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+7dbcf991-bcce-44d1-8659-7d9292ead0eb,2026-03-05 12:33:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+ed09d6a5-54b8-4d9b-877d-85310620f5ce,2026-03-05 12:35:00,Helpdesk,2,True,120,0.3,resolue
+8ff08733-41c3-42bf-a29a-6d3cfd231ea0,2026-03-05 12:35:00,Helpdesk,1,False,240,0.7,resolue
+03e9b737-8cf3-4b05-993d-3e13ac9a2ac2,2026-03-05 12:36:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+525c2e20-3dc2-4d63-a5c3-00e798e00fa6,2026-03-05 12:38:00,Sécurité Opérationnelle,1,False,240,0.9,resolue
+520a58e1-7f5b-4bca-aa7a-2a353777df3d,2026-03-05 12:42:00,Stock,2,False,720,0.5,resolue
+a954f4e8-ce69-4347-a851-eeb58222afa0,2026-03-05 12:46:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a9656a1d-6c46-413a-94cf-412572dfc338,2026-03-05 12:47:00,Développement-Digital,2,False,360,0.5,annulee
+21059b4a-dbad-49a7-8dca-69134b201805,2026-03-05 12:47:00,Sécurité Opérationnelle,2,False,0,0.5,resolue
+7cf03264-f021-4ce6-aa17-58930dc8fa3d,2026-03-05 12:49:00,Helpdesk,1,False,600,0.8,resolue
+7c01cbc1-bc95-44ab-a656-52c386e01044,2026-03-05 12:50:00,Helpdesk,2,False,0,0.3,resolue
+3a49baa0-b04b-41bd-b807-e3516d2f2ada,2026-03-05 12:55:00,Helpdesk,2,False,360,0.5,resolue
+39a46c9d-dc52-4c78-9309-2cbd33fd7173,2026-03-05 13:14:00,Helpdesk,2,False,600,0.5,resolue
+f0422e71-cc73-418b-a2de-f154006e7f0a,2026-03-05 13:16:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+67f23421-34db-436b-9f26-eddacc8efb5a,2026-03-05 13:17:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+74f013c1-0b1c-4dfc-ace4-3436de5ddb5e,2026-03-05 13:22:00,Sécurité Opérationnelle,2,False,0,0.5,resolue
+879dd5b5-d2e9-4a79-a368-8d8af169ac5c,2026-03-05 13:30:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+1a7adb89-c349-49be-86e8-869442d20647,2026-03-05 13:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c84a2f6d-38c7-41da-80e2-a281a857edef,2026-03-05 13:32:00,Helpdesk,2,False,150,0.4,resolue
+82b4ee87-081a-4770-9ffb-e47054a61b6c,2026-03-05 13:33:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+e5a818d8-645b-4d49-8d4d-a550339b8b0d,2026-03-05 13:34:00,Sécurité Opérationnelle,2,False,120,0.6,annulee
+8c847a8c-bb77-472f-9b97-4847499070af,2026-03-05 13:36:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+87c2c3ab-d0f5-47fd-9143-2d1e6e943a22,2026-03-05 13:38:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+81b1909f-1675-4916-bfeb-c1a5d8387d7c,2026-03-05 13:38:00,Intervention-sur-site-déploiement,2,False,720,0.6,resolue
+0dd05d7f-7c67-4b5d-8b44-be7384819604,2026-03-05 13:45:00,Helpdesk,2,False,360,0.5,annulee
+10246374-d925-4f7b-b5ce-e3106ea3f01f,2026-03-05 13:46:00,Helpdesk,2,False,360,0.5,annulee
+cef764b3-5165-4e22-b3a9-4e4e83075045,2026-03-05 13:46:00,Helpdesk,2,False,360,0.5,annulee
+6005f54b-4895-4d79-b60c-c41be8195746,2026-03-05 13:47:00,Helpdesk,2,False,360,0.5,annulee
+ffdd114f-7ab6-41b3-be9d-65bf03b92ad6,2026-03-05 13:47:00,Helpdesk,2,False,360,0.5,annulee
+4f8f90f0-8a82-47e6-98f5-52622730e6d5,2026-03-05 13:50:00,Helpdesk,2,False,240,0.5,resolue
+9cb361a1-f4fb-4a8e-aafe-44fa08121902,2026-03-05 14:00:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c8b486e2-002b-4d90-b2d6-2dd4f74ea96c,2026-03-05 14:00:00,Helpdesk,1,False,0,0.6,resolue
+23d38cb5-c688-415f-a6da-a43a470d1f95,2026-03-05 14:01:00,Helpdesk,1,False,150,0.6,resolue
+694f9178-fcfc-44fb-913e-f494c80c5c70,2026-03-05 14:09:00,Intervention-sur-site-déploiement,3,False,240,0.3,resolue
+1f64af59-8b94-45b5-9d70-159e39258968,2026-03-05 14:12:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+ea64911f-3c36-4337-8e90-d6c9a758afe7,2026-03-05 14:16:00,Helpdesk,2,False,360,0.5,annulee
+e97c9195-0cfa-43fd-a2ac-5f4e048ce6b5,2026-03-05 14:23:00,Helpdesk,2,False,120,0.3,resolue
+fcdf4680-f36f-43aa-aad2-df788667a3f9,2026-03-05 14:32:00,Data Office,1,True,360,0.7,soumise
+ea440792-b8cb-45e7-b3f6-615d0f7abb1a,2026-03-05 14:36:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+5b57606a-023b-4298-9569-0688451b9d96,2026-03-05 14:39:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+574e61e1-7402-4400-a773-42a0bf4337c7,2026-03-05 15:57:00,Helpdesk,1,False,0,0.6,resolue
+47a7a2e2-cdc3-4d13-9b2e-f61305123769,2026-03-06 07:07:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+ec433ff7-79cc-49a3-aec7-a9cf95e82597,2026-03-06 07:12:00,Sécurité Opérationnelle,1,False,240,0.9,resolue
+4c08556c-578b-4d1c-be30-a362c6805ed7,2026-03-06 07:32:00,Helpdesk,2,False,600,0.5,resolue
+af22845f-67df-44cd-a4f5-b99032740d36,2026-03-06 07:50:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c811e470-2efe-4408-90a3-83d8930ca1f0,2026-03-06 07:56:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+6d579f0b-ffbb-4dc7-89d2-42ac0502051e,2026-03-06 08:14:00,Intervention-sur-site-déploiement,2,False,720,0.5,resolue
+c8de5db1-7ef2-4928-af42-418ec287630f,2026-03-06 08:16:00,Intervention-sur-site-déploiement,2,False,720,0.5,resolue
+7ce9a36c-9029-4557-8310-5c08fb85268c,2026-03-06 08:16:00,Helpdesk,3,False,0,0.2,resolue
+840596bf-341e-457a-9a7b-70674ae11001,2026-03-06 08:17:00,Intervention-sur-site-déploiement,1,True,120,0.5,resolue
+39e5f702-8ad5-4dae-b5a3-cb676d60664d,2026-03-06 08:18:00,Helpdesk,2,True,120,0.4,resolue
+7b4ccc7f-d367-47b5-981a-d9cef54be59e,2026-03-06 08:23:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+784acf0d-c733-4210-ba6a-71e1125c438d,2026-03-06 08:24:00,Helpdesk,1,False,165,0.6,resolue
+127837e1-82bc-409f-bcd6-69a45dda431e,2026-03-06 08:25:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+6c9951f6-795f-4d2d-b775-2602d06abdf3,2026-03-06 08:26:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+81cfedb9-d352-47fa-aa63-fa4732a35b76,2026-03-06 08:33:00,Helpdesk,2,False,0,0.3,resolue
+57b7de00-c3d3-4c40-be13-ac36cc7a359e,2026-03-06 08:37:00,Intervention-sur-site-déploiement,3,False,240,0.3,resolue
+6610afcf-99c4-43f7-9981-41b2dfb4165e,2026-03-06 08:38:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+55012c48-b795-4761-a678-8678145b5a57,2026-03-06 08:42:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b961be2c-6279-4892-92d9-d396e21381ba,2026-03-06 08:42:00,Système,1,False,240,0.6,resolue
+203cb65b-b49e-417f-9f13-087294dbd046,2026-03-06 08:47:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+6f05ae5f-8f75-4d77-bbb0-edeacdc22b3e,2026-03-06 08:51:00,Helpdesk,2,False,120,0.4,resolue
+21b07e31-dec9-4c34-ba1f-85008098b8d2,2026-03-06 08:52:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+5712622a-9a09-4532-aa13-ef098d7cafc6,2026-03-06 08:54:00,Intervention-sur-site-déploiement,1,True,240,0.6,resolue
+eb16f8b1-ec6a-4453-a6bc-316801015424,2026-03-06 08:54:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+245195d5-00a0-4004-9187-d37a5f8b018a,2026-03-06 08:55:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+32c618fd-5a52-4651-a11d-ddc028baa436,2026-03-06 08:56:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a9b0c56e-c52e-44ba-9e21-b2d766780e0c,2026-03-06 09:01:00,Développement-Digital,2,False,120,0.4,resolue
+53602b1b-0a59-49b2-a819-0f6b5eefad22,2026-03-06 09:01:00,Helpdesk,2,False,390,0.6,resolue
+b6c49b98-6d01-43fa-b79d-e882c41edab8,2026-03-06 09:03:00,Développement-Digital,2,False,360,0.5,resolue
+b2d0a9d3-5ad1-4ff2-bf8c-61e6f0ee6840,2026-03-06 09:06:00,Helpdesk,1,True,240,0.6,resolue
+5e7b1049-1884-40ad-9b05-aede433f9684,2026-03-06 09:07:00,Helpdesk,1,True,240,0.6,resolue
+50edf00f-aa53-4192-800d-244896d4770d,2026-03-06 09:23:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+e80f7571-a409-47da-a141-a0332a375939,2026-03-06 09:29:00,Helpdesk,2,False,0,0.3,resolue
+1602db31-997a-447c-8ff7-825a2c584b58,2026-03-06 09:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+51a9863c-9169-4dae-8b1b-39bbe67391e1,2026-03-06 09:33:00,Intervention-sur-site-déploiement,1,False,150,0.6,resolue
+fd1914eb-2e62-4aa5-8e7c-790bc770ee39,2026-03-06 09:38:00,Intervention-sur-site-déploiement,1,False,165,0.6,resolue
+d1aedce4-6be9-4fc5-8b6f-ce237097b497,2026-03-06 09:46:00,Sécurité Opérationnelle,2,False,240,0.7,resolue
+5ba906fb-319a-44c2-97a9-f2622e8db153,2026-03-06 09:46:00,Intervention-sur-site-déploiement,2,False,720,0.5,resolue
+904a9d1c-fdf3-45d1-82bd-dd0f1eed3410,2026-03-06 09:52:00,Helpdesk,2,True,120,0.4,resolue
+38b38b27-7ab4-4cbb-936c-26f8d91a86f7,2026-03-06 09:58:00,Helpdesk,1,False,180,0.7,resolue
+081c5ac8-64e0-4a8a-92a9-d2053a7c526c,2026-03-06 10:04:00,Intervention-sur-site-déploiement,1,True,240,0.6,resolue
+e4874348-589b-4842-8b4a-e54a70548125,2026-03-06 10:08:00,Helpdesk,2,False,0,0.3,resolue
+2e4fd567-1bb6-4d5b-ad83-4a0e891a3f05,2026-03-06 10:13:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+bfeb2270-dd56-465b-a8c8-63e7ce31018b,2026-03-06 10:13:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+aa3e5cbe-843f-4f5c-8561-252327e92ef9,2026-03-06 10:13:00,Helpdesk,2,False,390,0.6,resolue
+0353f446-164f-419b-8c4a-b695627f0842,2026-03-06 10:17:00,Helpdesk,1,False,240,0.6,resolue
+fadb7e59-dadb-43a0-9bb3-88f81bd002b4,2026-03-06 10:19:00,Helpdesk,2,False,240,0.4,resolue
+356c22a6-fe6c-4135-ac4b-ce31f730e5be,2026-03-06 10:23:00,Stock,2,False,720,0.5,resolue
+d142f995-d0b4-4653-8d74-16848a835b61,2026-03-06 10:26:00,Sécurité Opérationnelle,2,False,720,0.8,resolue
+6a613753-3e61-4406-bc39-2e6a2441f45b,2026-03-06 10:27:00,Système,2,False,0,0.3,resolue
+8b38cc8a-71c8-4acc-b5b1-70bddb444aac,2026-03-06 10:29:00,Helpdesk,1,False,240,0.6,resolue
+6ab9b420-3fdb-4f0f-91fc-23ea51dc2701,2026-03-06 10:33:00,Helpdesk,2,False,0,0.3,resolue
+12a6b839-fa0f-482e-9238-31948be6cc78,2026-03-06 10:38:00,Helpdesk,2,False,390,0.6,resolue
+f1f01460-60a6-4a53-bdda-9050683e64bb,2026-03-06 10:40:00,Helpdesk,1,False,240,0.6,resolue
+10e32dbf-f32b-44c7-a680-21ed30f3ecf0,2026-03-06 10:42:00,Helpdesk,2,False,240,0.4,resolue
+f01f3c3c-be9e-4c68-93a1-e245d355e134,2026-03-06 10:44:00,Téléphonie,2,True,240,0.4,resolue
+b863e4b7-7e8f-4f76-8bc8-1cfecfdf7022,2026-03-06 10:45:00,Stock,2,False,720,0.5,annulee
+9da0c049-d360-47fa-b678-6013b3b2f976,2026-03-06 11:01:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+fb67b2dd-7298-4b21-9a15-ba5c100b341c,2026-03-06 11:01:00,Téléphonie,1,False,1800,0.7,resolue
+4913eb2f-0e5c-40ad-9d91-b8632f1b2fd1,2026-03-06 11:01:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+22f7e37e-b519-4188-8c99-3e9cb2672c4e,2026-03-06 11:02:00,Sécurité Opérationnelle,2,False,720,0.8,resolue
+58033638-2a38-4464-aa41-210422e85e2d,2026-03-06 11:12:00,Helpdesk,1,False,240,0.6,resolue
+8397bb75-9788-4d20-80e6-472c4093863a,2026-03-06 11:28:00,Helpdesk,2,False,150,0.4,resolue
+240ce6f2-5814-4b46-94e7-1db6d1e87b56,2026-03-06 11:33:00,Helpdesk,2,False,0,0.3,resolue
+0dfe1905-de7f-4e7c-b1e6-ed35d12c130f,2026-03-06 11:34:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c7ab1378-ad24-41fb-b3cd-736e2ca56e83,2026-03-06 11:35:00,Sécurité Opérationnelle,2,False,0,0.5,resolue
+a4a3fb01-cb2a-4049-8fb1-963ee0749435,2026-03-06 11:40:00,Helpdesk,1,False,0,0.5,resolue
+fad2268a-7226-4862-bad7-df0e9d174f25,2026-03-06 11:49:00,Helpdesk,1,False,150,0.6,resolue
+d41b49e6-4516-417b-b0e7-3be7ab3d5a41,2026-03-06 12:05:00,Helpdesk,1,False,0,0.5,resolue
+739a98d6-53c9-42f4-85dd-c03ac4efbb47,2026-03-06 12:05:00,Helpdesk,2,True,120,0.3,resolue
+9a49e75f-6669-4f39-81fa-6b4fb9654bbe,2026-03-06 12:07:00,Téléphonie,1,False,1800,0.7,resolue
+27d60e09-bb8a-4764-8f36-ca6d831e4730,2026-03-06 12:19:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+4270c19e-fdba-4bec-afb0-51f7f64a0052,2026-03-06 12:33:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+744f35fc-651d-4339-a0b3-e895e2c1b001,2026-03-06 12:34:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+fa48cb19-cf7f-4e4f-ac12-9f55271fc811,2026-03-06 12:48:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+85e70599-0c2a-4ece-8f07-cceda92e191f,2026-03-06 12:49:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+372f5975-a810-4f9e-ad39-8a0a44e012c6,2026-03-06 12:54:00,Helpdesk,2,True,120,0.3,resolue
+4d8cb033-76b3-496f-8b0b-0720366ad2c4,2026-03-06 13:05:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+428ac5c8-d39d-40d6-9e03-a1ce477141f3,2026-03-06 13:07:00,Helpdesk,2,False,240,0.5,resolue
+5eeb3b70-4369-441f-9d54-e4516874297d,2026-03-06 13:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+4b48881e-7d2c-4066-89fe-b4c2390827f3,2026-03-06 13:36:00,Sécurité Opérationnelle,1,False,240,0.9,resolue
+fd8d2555-c98c-4183-bf53-a64c469404ff,2026-03-06 13:49:00,Helpdesk,2,False,240,0.4,resolue
+c3e0b5fa-f1ab-4503-a953-73440f20f452,2026-03-06 13:50:00,Sécurité Opérationnelle,2,False,240,0.6,resolue
+fb44f7ca-6687-4210-983b-90ff5a208094,2026-03-06 13:58:00,Helpdesk,2,False,240,0.5,resolue
+4f5f6aa2-e437-4117-bc73-3f90f7b12d97,2026-03-06 14:03:00,Intervention-sur-site-déploiement,1,False,165,0.6,resolue
+f62d4abb-6895-46a7-bb33-0f63a86f7df9,2026-03-06 14:21:00,Sécurité Opérationnelle,1,False,240,0.9,resolue
+965cd394-e022-4d96-aa7a-98e54b8be638,2026-03-06 14:22:00,SWIFT,2,False,240,0.55,soumise
+6629a50e-c686-452e-b0db-0d86462a7857,2026-03-06 14:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+68284011-ff93-46e7-90d9-56c9279f2b87,2026-03-06 14:35:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+fc6316f2-c867-4cc4-ae36-b8902ef9928e,2026-03-06 14:53:00,Helpdesk,1,False,240,0.7,resolue
+83ba75f3-460f-404f-b76f-7ca843fd18e9,2026-03-06 15:28:00,Helpdesk,2,True,240,0.4,resolue
+dbf35cef-a06e-48a1-80d7-135fe8cd0d97,2026-03-06 15:33:00,Sécurité Opérationnelle,2,False,240,0.7,annulee
+45aa87ee-7207-4112-81a5-1ca1646015f7,2026-03-06 15:34:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+dbeccfbd-6f4f-4721-aeea-b310c9d99292,2026-03-07 09:49:00,Sécurité Opérationnelle,2,False,120,0.6,annulee
+3e1b4a33-9e2e-49cb-8316-b4697ec16df7,2026-03-07 17:10:00,Helpdesk,2,True,120,0.3,resolue
+761f494a-8e0b-461b-a254-c01f88ec6786,2026-03-07 17:14:00,Helpdesk,2,True,120,0.3,resolue
+6ff32deb-f5f7-435b-81aa-e490091abd6b,2026-03-07 17:51:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+183eee04-b159-47e2-ad45-5f427e7aebfe,2026-03-08 11:56:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c38cc95e-888c-4a3d-b53b-6871fc99fd49,2026-03-08 12:21:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+45c922dd-062e-4643-9208-02531b875318,2026-03-08 12:25:00,Sécurité Opérationnelle,1,False,240,0.9,resolue
+6f31638c-e351-4eb0-ab36-9c5b8a6ed83e,2026-03-08 12:25:00,Sécurité Opérationnelle,1,False,1440,0.99,resolue
+d738f8a3-0523-436e-879e-dde2fbac12a2,2026-03-08 12:30:00,Sécurité Opérationnelle,1,False,1440,0.99,resolue
+9d433b13-452c-4ec1-bcc2-4ab80766cca5,2026-03-09 07:25:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+d6803359-1a8d-486c-9cf0-a25537bc5132,2026-03-09 07:25:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+850e0720-0bea-4027-af89-d0931f8baa2a,2026-03-09 07:42:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+061a6b62-bc03-448e-8eba-ff6b2b8aae15,2026-03-09 07:43:00,Système,1,False,0,0.5,resolue
+d8a75950-49ce-452b-a636-f419c60bbd1d,2026-03-09 07:57:00,Sécurité Opérationnelle,1,False,1440,0.9,resolue
+4ee92d95-b428-439d-9ec0-c11350d00ff8,2026-03-09 07:59:00,SWIFT,1,False,240,0.85,resolue
+e55dfa23-28f0-4b7b-a124-ee48b48b6cc5,2026-03-09 08:02:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a04ec499-2365-4f3a-8fa9-2c0adb3dcb14,2026-03-09 08:02:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+3b092774-dcca-412b-b4a5-35627d9dd0ce,2026-03-09 08:05:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a15d9c61-8fed-467e-ae58-633d875bb8e4,2026-03-09 08:12:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+39103287-cedf-47fd-ad2e-94233ebef9c7,2026-03-09 08:12:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c8c99a35-612e-48be-96cf-f0feccd97ebd,2026-03-09 08:18:00,Sécurité Opérationnelle,2,False,0,0.5,resolue
+de10ac65-5562-4de9-afff-ecc9ace4bd47,2026-03-09 08:19:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+9d252d58-a5ca-49da-b6cc-d6164a40dd6d,2026-03-09 08:29:00,Intervention-sur-site-déploiement,2,False,720,0.5,resolue
+ef28f087-da29-481f-b6fb-d7ee9a1850b7,2026-03-09 08:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+dca4c673-ed5f-4245-80de-e9136d433b44,2026-03-09 08:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+504673c3-a9df-466b-85ab-8938ec5b06bc,2026-03-09 08:35:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+f64eceb9-15ea-4aa1-9781-28e190ad8ec3,2026-03-09 08:35:00,Helpdesk,2,False,120,0.4,resolue
+b1cc1907-8269-42ef-8326-81ac5fe120d3,2026-03-09 08:37:00,Helpdesk,1,False,240,0.7,resolue
+842fe208-7c33-40d5-8966-c01c9e316ce7,2026-03-09 08:38:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c1b44cf0-852f-4325-aac2-04b6c7f16e74,2026-03-09 08:42:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c4ce3b4d-c5ca-467d-b1a7-d68d306a2c2c,2026-03-09 08:46:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+e95bceb4-ee8b-4731-9be6-52a551ea7de0,2026-03-09 08:46:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+1efbd980-e866-46af-84e6-eafe1db06115,2026-03-09 08:47:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c8efdd68-66e9-4c90-8981-1ea9c69eb535,2026-03-09 08:49:00,Helpdesk,1,False,0,0.6,resolue
+0951762d-4832-4bd1-9ccd-d9f2eb253266,2026-03-09 08:51:00,Développement-Digital,2,False,1080,0.5,resolue
+7e1c7394-fc2c-4abf-8a07-ed0f258e79c1,2026-03-09 08:51:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+537b00ed-5718-4d94-9dd1-16a767b81e36,2026-03-09 08:52:00,Intervention-sur-site-déploiement,1,True,240,0.6,resolue
+20ba7853-204a-435a-9917-2d248e5b3a0d,2026-03-09 08:53:00,Développement-Digital,2,True,120,0.4,resolue
+98aad5b7-7d6c-4fe4-a579-2023c91c13ab,2026-03-09 09:00:00,Intervention-sur-site-déploiement,1,True,240,0.6,resolue
+ad48bc85-ecd6-4f88-930d-ac5dba9ae76d,2026-03-09 09:04:00,Helpdesk,1,True,360,0.7,resolue
+7d32cd30-0902-4541-b792-a7030b413f23,2026-03-09 09:07:00,Event Multi-Media.,2,False,240,0.5,resolue
+69a08a1d-f45d-43c9-b42e-227d6ef451d3,2026-03-09 09:09:00,Helpdesk,2,False,240,0.5,resolue
+ad5b5846-1947-44fb-87da-75629683d42a,2026-03-09 09:09:00,Helpdesk,2,False,0,0.3,resolue
+4b059b6b-bbdc-4b1b-bd51-6d9ae6c003d4,2026-03-09 09:10:00,Helpdesk,2,False,1800,0.6,resolue
+d321ff04-df68-4401-9c2c-5627b0cc6b8a,2026-03-09 09:17:00,Intervention-sur-site-déploiement,1,True,165,0.6,resolue
+c3ab8700-c717-45f8-84e2-64ad16fccabe,2026-03-09 09:19:00,Sécurité Opérationnelle,2,False,0,0.5,resolue
+bc00a126-9367-4dd0-8ee9-663412991c3f,2026-03-09 09:21:00,Intervention-sur-site-déploiement,3,False,0,0.2,resolue
+2acce3b5-6c70-43c8-af31-2aeffd0bb814,2026-03-09 09:22:00,Helpdesk,1,False,600,0.7,resolue
+4ae8b7eb-3f1f-4969-b6d2-21512b061591,2026-03-09 09:27:00,Helpdesk,1,True,150,0.6,resolue
+ea153232-72a8-41d5-9e0c-eb9de157d241,2026-03-09 09:30:00,Helpdesk,2,False,390,0.6,resolue
+cdc1a234-e660-4fd0-812f-6757402cb33c,2026-03-09 09:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+120afd1a-d6cd-4d40-b8ff-9c45338ae16a,2026-03-09 09:33:00,Développement-Digital,2,False,360,0.5,resolue
+ae667bce-df04-4aac-948d-16372fbdf474,2026-03-09 09:34:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a9bf21c2-f912-446a-a075-da8e11ccad3f,2026-03-09 09:41:00,Développement-Digital,2,False,360,0.5,resolue
+8f563af5-90a0-404f-b7df-a9ef0569df34,2026-03-09 09:54:00,Intervention-sur-site-déploiement,2,False,0,0.3,resolue
+eef041f0-a8c7-47c3-b523-b6ea0839b91e,2026-03-09 09:57:00,Intervention-sur-site-déploiement,1,True,120,0.5,resolue
+1c9036a6-af02-4fde-b724-6c3e1fd3763e,2026-03-09 09:59:00,Helpdesk,1,False,600,0.8,resolue
+71bf861d-5280-491e-ac89-aecf250af545,2026-03-09 09:59:00,Equipe-Etudes,1,True,165,0.6,resolue
+cd606703-6f28-40ef-ac96-1712303d6baa,2026-03-09 10:00:00,Téléphonie,1,False,0,0.5,resolue
+f14aeb9c-81a7-4e5d-9235-e7942e3b0ee3,2026-03-09 10:02:00,Helpdesk,1,False,150,0.6,resolue
+f97b86a1-2f4b-416f-a14b-71e4d747b4cc,2026-03-09 10:03:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+73e7a7ba-1cc6-4314-a2a0-f1c025856bf5,2026-03-09 10:04:00,Téléphonie,2,False,1800,0.5,resolue
+c07140b5-bb5f-47e3-a306-c66347de03c9,2026-03-09 10:05:00,Helpdesk,2,False,360,0.5,resolue
+96587ec8-c437-4a22-b29a-0c708406b2d1,2026-03-09 10:06:00,Système,1,False,600,0.7,resolue
+ab009a0d-3756-4a19-9668-96055f6af208,2026-03-09 10:07:00,Helpdesk,1,False,600,0.8,resolue
+67e17932-4ce4-455b-a46a-029a51a13d69,2026-03-09 10:10:00,Helpdesk,2,False,240,0.4,resolue
+40946c89-bf30-4d9f-9063-14a1e9f23f8c,2026-03-09 10:25:00,Equipe-Etudes,1,True,240,0.6,resolue
+5991b8f4-2639-4e5b-895b-6a2a5aa600ff,2026-03-09 10:30:00,Data Office,1,True,360,0.7,resolue
+2b22d6e3-69a0-4dc1-a626-9d26fe3cc053,2026-03-09 10:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+7015c62a-0f3e-469b-8d47-93cc865f93a8,2026-03-09 10:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+6538f0b4-ee6d-4a18-9493-9fc63d02f01d,2026-03-09 10:32:00,Helpdesk,2,False,0,0.3,resolue
+f0dd148e-7cff-405c-be0c-c93e7a867338,2026-03-09 10:33:00,Réseau,1,False,600,0.8,resolue
+b6942b6d-9bb2-4551-b4c8-ac338272f02b,2026-03-09 10:33:00,Intervention-sur-site-déploiement,1,True,120,0.5,resolue
+d92f6836-1546-45ae-bcd5-14a4abddbef2,2026-03-09 10:33:00,Helpdesk,2,False,120,0.4,resolue
+cc08f9df-8130-4e3b-be05-f04b24929cea,2026-03-09 10:33:00,Intervention-sur-site-déploiement,2,True,360,0.5,resolue
+8916d2d6-caaa-4810-ad73-6e45d2220724,2026-03-09 10:34:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+5729e225-00db-4b6f-b655-77353104d077,2026-03-09 10:34:00,Téléphonie,1,False,0,0.5,resolue
+24a52195-7698-49b4-8a40-b3d42a0b814a,2026-03-09 10:38:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+eda056f7-278c-4ec6-8cb3-2fac4ab2d52d,2026-03-09 10:39:00,Equipe-Etudes,2,True,390,0.6,annulee
+21381070-030b-43c3-bfe3-701decf27a50,2026-03-09 10:41:00,Helpdesk,1,False,0,0.6,resolue
+4bca9360-8edb-42d3-aff2-5f268cab8fcc,2026-03-09 10:42:00,Helpdesk,1,False,0,0.5,resolue
+12e6faa8-eec6-4350-9e07-a33f45bc7f3a,2026-03-09 10:43:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+26e7b379-b30f-4830-ac2b-c09aaedc6bc8,2026-03-09 10:46:00,Helpdesk,2,False,240,0.5,resolue
+803134a0-34ba-460a-813e-e99498ccdf78,2026-03-09 10:46:00,Helpdesk,1,False,0,0.5,resolue
+a26851e8-1e3c-4bba-9856-09ba1c721288,2026-03-09 10:48:00,Helpdesk,2,True,240,0.5,resolue
+17a1247a-2018-4b2e-bac9-0370982b463d,2026-03-09 10:48:00,Helpdesk,2,True,120,0.3,resolue
+980010f2-a9c8-4a02-9118-ffc4fb028b70,2026-03-09 11:03:00,Helpdesk,2,False,390,0.6,resolue
+8d19b4eb-7c98-48f6-bddc-67c6ea9a6369,2026-03-09 11:07:00,Helpdesk,2,False,240,0.5,resolue
+2830d628-69ea-4ff7-bce9-8757f6557b6a,2026-03-09 11:08:00,Helpdesk,2,True,240,0.5,resolue
+0d13033f-0b78-42ab-844b-053bf410fbb3,2026-03-09 11:13:00,Helpdesk,2,False,240,0.5,resolue
+5a1bd052-a485-4d93-9457-8c62ce3936f8,2026-03-09 11:21:00,Helpdesk,1,False,0,0.5,resolue
+5f006f2f-1714-4365-916f-e825ecc8a0a8,2026-03-09 11:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2b47a2a2-5fed-403f-8054-623a57613371,2026-03-09 11:40:00,Sécurité Opérationnelle,2,False,360,0.8,resolue
+9d115628-c43e-43d9-97df-2c3192a1e9f4,2026-03-09 11:43:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+313edd8b-5a9e-4737-8a00-c3c960a29e3c,2026-03-09 11:45:00,Helpdesk,1,False,0,0.5,resolue
+2500633a-ba0b-448d-b99a-a31502462102,2026-03-09 11:46:00,Sécurité Opérationnelle,2,False,720,0.8,resolue
+bc3bf526-8976-4915-9606-f91981a8f746,2026-03-09 11:48:00,Helpdesk,2,False,5400,0.5,resolue
+dfef9e64-e707-409f-ada9-189a5e031cce,2026-03-09 11:58:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+1d222d51-fa5d-43b4-b2f8-22bca3ab37ca,2026-03-09 12:00:00,Helpdesk,2,True,120,0.4,resolue
+04ee2804-c69b-4090-8673-f9d25b65a0cc,2026-03-09 12:07:00,Sécurité Opérationnelle,1,False,1440,0.99,resolue
+7d5d7bc3-318c-46b6-a896-61e829004f28,2026-03-09 12:07:00,Système,2,False,240,0.5,resolue
+3f363743-6294-40f2-920d-4f47328b4193,2026-03-09 12:08:00,Sécurité Opérationnelle,1,False,1440,0.99,resolue
+470c4e04-8862-4f0a-af78-97d4f3ed6ae7,2026-03-09 12:08:00,Sécurité Opérationnelle,1,False,240,0.9,resolue
+13ac189d-9d4a-4ed0-9956-aa23e2df89ae,2026-03-09 12:13:00,Système,2,False,240,0.5,resolue
+47285d33-e521-43dc-a99d-d2d034d1d691,2026-03-09 12:14:00,Helpdesk,3,False,0,0.2,resolue
+8b5792d8-d11f-4c28-933e-91a981d7c2e7,2026-03-09 12:14:00,Helpdesk,2,False,0,0.3,resolue
+2201a367-009d-4907-ab03-0d40d3d199a2,2026-03-09 12:17:00,Helpdesk,1,False,150,0.6,resolue
+7840b198-b2c9-4016-aa73-ddfa8b0fd705,2026-03-09 12:20:00,Helpdesk,2,False,0,0.3,resolue
+420b532d-fc8a-41d9-be7a-8411a1ae47ea,2026-03-09 12:21:00,Helpdesk,2,False,0,0.3,resolue
+a622e188-65c4-4173-9904-440e2b692334,2026-03-09 12:24:00,Event Multi-Media.,2,False,240,0.5,resolue
+922220d4-2879-4d80-92b2-9e6b1e5bc80a,2026-03-09 12:25:00,Système,3,False,0,0.2,resolue
+7ce8f1b2-37da-404d-95cc-40da41996fd2,2026-03-09 12:25:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+0fb11000-4c88-468b-8e9d-d221590b91e4,2026-03-09 12:25:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+9df83bad-a99c-4c4e-892d-0651cf77553f,2026-03-09 12:29:00,SM Commercial,1,False,360,0.7,resolue
+618b4fc6-49f3-4245-a193-bb65f8a93c04,2026-03-09 12:30:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+77c98f74-b492-47d9-a884-d5bbbd26c346,2026-03-09 12:33:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2a7f1b11-bfe1-4f1a-8d6a-e0f93a54ea71,2026-03-09 12:35:00,Intervention-sur-site-déploiement,1,False,240,0.6,resolue
+139a4b49-1a33-4d70-b85f-59bf904ef061,2026-03-09 12:35:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a033d18c-344e-41da-96bb-bdd09d0699b2,2026-03-09 12:37:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+3c0caff7-d9c6-48d3-b5a9-0b33a0def830,2026-03-09 12:39:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+57d93bb8-8c0e-4006-a2b7-720e3fc0db2f,2026-03-09 12:44:00,Helpdesk,2,True,240,0.5,resolue
+9a20e948-9a72-452a-8858-e39fccac3acb,2026-03-09 12:50:00,Développement-Digital,2,False,360,0.5,resolue
+4de1abfa-b824-48ea-942d-61328d9fb581,2026-03-09 12:50:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+641d45e8-6b54-4a96-9bee-d0278ec77cd6,2026-03-09 12:51:00,Développement-Digital,2,False,360,0.5,resolue
+d14b466b-fe54-4a56-a18f-7841a9c8766c,2026-03-09 12:52:00,Intervention-sur-site-déploiement,2,True,240,0.4,resolue
+3b5fe766-930b-4119-9431-098b9e11088f,2026-03-09 12:55:00,Helpdesk,2,False,240,0.5,resolue
+b8dcf08c-5190-4511-9072-9ceabf02d18d,2026-03-09 13:01:00,Helpdesk,2,False,1800,0.6,resolue
+2f5da176-3a51-4788-a9b3-5c5271bb37c3,2026-03-09 13:04:00,Intervention-sur-site-déploiement,1,False,120,0.5,resolue
+1a1fb6a8-d926-4aed-89bb-0c002e2019cc,2026-03-09 13:07:00,Helpdesk,1,False,150,0.6,resolue
+d15f433a-d00f-4b92-aa93-5b5d775bf689,2026-03-09 13:09:00,Intervention-sur-site-déploiement,1,False,240,0.6,resolue
+e9e7336b-8bf7-4f04-a6a8-0529b11bbf27,2026-03-09 13:17:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c7284bb5-aacc-4bfc-a737-479afb5c3cb5,2026-03-09 13:24:00,Système,2,False,120,0.3,resolue
+4e46c068-6c8f-4b51-8aa6-820f02e94a36,2026-03-09 13:26:00,Helpdesk,1,False,0,0.6,resolue
+d7423a2c-3bad-46a5-822a-93e34fc6f09e,2026-03-09 13:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+0f340baa-7d68-422e-aae0-e296d6189fb8,2026-03-09 13:39:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+8b0d528c-8466-4aa4-8003-e9f457d7bc96,2026-03-09 13:39:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c0f69ce6-e95f-4d6c-aafa-d33f16055f8a,2026-03-09 13:39:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+71897969-6c79-48ee-a6e4-47e864f86c06,2026-03-09 13:40:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+8617d7d5-2945-4a1e-9d6a-6a71eff1f59b,2026-03-09 13:49:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+98075edd-833a-490e-bfd5-5940377df15b,2026-03-09 13:49:00,Helpdesk,1,False,240,0.6,resolue
+ddbe2812-76fd-4bb3-8a5b-27e7981ca4d3,2026-03-09 13:51:00,Helpdesk,3,False,0,0.2,resolue
+f4307421-f91e-4373-8e3b-8537021bd761,2026-03-09 13:52:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+07314fc6-571d-4dcf-a794-c3b2ca42cced,2026-03-09 13:54:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+368b722f-5edd-4c77-9020-9a1c76f999e4,2026-03-09 14:17:00,Intervention-sur-site-déploiement,2,True,150,0.4,resolue
+3db7fce4-696a-4ca9-8e52-4a79ac282ccc,2026-03-09 14:40:00,Helpdesk,1,False,0,0.5,resolue
+186704d0-d369-40eb-a49f-67900f997bbb,2026-03-09 14:40:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+fbbd7c94-12ab-4cf4-bb11-1549d211222d,2026-03-09 21:39:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+e6446eca-34c5-487d-8366-53bed828fcec,2026-03-10 07:51:00,Système,3,False,720,0.4,resolue
+1033629d-e606-48f3-b907-748533d97480,2026-03-10 07:51:00,SWIFT,1,False,240,0.85,resolue
+4cfd7af2-1e86-4ccb-b5c2-a137b768471f,2026-03-10 07:53:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c10dfe63-0d36-4f1f-97fe-e1336f282874,2026-03-10 08:04:00,Helpdesk,1,False,240,0.6,resolue
+8be9d105-1129-43ad-a438-6101f15f05fb,2026-03-10 08:05:00,Helpdesk,1,False,240,0.6,resolue
+30414d83-3efb-4ec4-98d7-3cd5787e8c0e,2026-03-10 08:10:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a9268978-51b0-4298-a923-a96ce37b71f9,2026-03-10 08:10:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+d58d8359-9c39-4ba5-9d73-f4367d98f053,2026-03-10 08:12:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a4e025b8-f14f-408a-8402-9c18a7a13572,2026-03-10 08:17:00,Helpdesk,1,False,240,0.6,resolue
+f8a78b74-c36a-45c6-8e13-3e0fb8f346ec,2026-03-10 08:25:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+531e98ba-a355-406a-9d7b-f10140b2d5e2,2026-03-10 08:27:00,Helpdesk,2,False,120,0.4,resolue
+31e85dc2-b1a3-4c02-bde4-e264d2c4be33,2026-03-10 08:30:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+f6c2c8ee-e883-4494-91a1-c0d07d875e9b,2026-03-10 08:30:00,Helpdesk,1,False,240,0.6,resolue
+ea643f89-200e-496e-b9b7-2cc170120bc0,2026-03-10 08:31:00,Helpdesk,2,False,240,0.4,resolue
+d68886fa-8995-42a5-add5-063c86010c89,2026-03-10 08:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+92e9f680-9075-4ee6-9a31-5ab446b15f6b,2026-03-10 08:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+fa224f0e-ea8d-4bb8-b5ac-cd29bfb167cd,2026-03-10 08:35:00,Helpdesk,2,True,120,0.4,resolue
+1ad1ad95-3c97-431f-8cf3-05b6cc9f5a33,2026-03-10 08:35:00,Helpdesk,1,False,0,0.5,resolue
+8756c225-8460-46fb-81be-be9229d2f5a4,2026-03-10 08:38:00,Intervention-sur-site-déploiement,2,False,600,0.5,resolue
+b32ae0b3-aef7-4f97-9a7a-b63799291508,2026-03-10 08:39:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+95122ad1-b012-4b66-a8eb-befda7079c1a,2026-03-10 08:44:00,Stock,2,False,720,0.5,resolue
+10974f28-742f-4612-8c86-fe8adb2cd566,2026-03-10 08:47:00,Helpdesk,2,False,600,0.5,resolue
+cfd0ce17-8d0c-4439-9497-7daa9e14a8a4,2026-03-10 08:47:00,Développement-Digital,2,False,120,0.4,resolue
+313b3cfe-a2e0-4d7c-bcf4-1c0745ea2c69,2026-03-10 08:49:00,Développement-Digital,2,False,120,0.4,annulee
+343db72b-7572-434d-b8bc-c6a77d9e11c5,2026-03-10 08:49:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+989b54a1-66e6-4b19-9839-5ae9f1e01a12,2026-03-10 08:50:00,Helpdesk,1,False,150,0.6,resolue
+4223a282-52a6-48c8-ab18-84255f0c4724,2026-03-10 08:52:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+809dc500-d471-478b-8f77-b51380fc9700,2026-03-10 08:53:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+49636a8c-6e46-4ecd-a37a-11e67016ddec,2026-03-10 08:54:00,Téléphonie,1,False,1800,0.7,resolue
+68084707-0f83-488b-b68a-8fd18f2885ae,2026-03-10 08:58:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+1125d9ec-4bd5-4ee0-aa28-ee435198f462,2026-03-10 08:59:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+870523e4-f799-465e-a3ba-207cacc25130,2026-03-10 08:59:00,Intervention-sur-site-déploiement,2,False,240,0.4,resolue
+690f0e62-d959-4351-859a-4a0092838a69,2026-03-10 09:01:00,Sécurité Opérationnelle,2,False,240,0.7,resolue
+958ffc8c-6476-4c6e-a3ca-5e90310669a9,2026-03-10 09:03:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+445442d0-bcfe-4246-a3ea-3b75e1bfbb70,2026-03-10 09:07:00,Helpdesk,2,False,120,0.4,resolue
+7224c68a-fb0c-4c95-a234-cd67d5d8ba33,2026-03-10 09:08:00,Helpdesk,1,True,150,0.6,resolue
+d526de13-c5a2-4b4a-97f2-276b877c9cf1,2026-03-10 09:09:00,Data Office,1,True,240,0.6,resolue
+2ca636c6-f5e1-4f32-9705-fb119220c11a,2026-03-10 09:12:00,Helpdesk,2,False,360,0.5,resolue
+1aa3c3e1-bac1-4ad5-9c00-8a0fe66f0f84,2026-03-10 09:17:00,Helpdesk,1,False,180,0.6,resolue
+90bb1a5f-2b6a-4c28-877e-1ea115f11e00,2026-03-10 09:20:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a9547ad4-dd1f-4d6b-b889-2994a82bb6dc,2026-03-10 09:21:00,Intervention-sur-site-déploiement,2,False,240,0.4,resolue
+812884e3-e1fd-41b8-8bbd-4b2bca4d2944,2026-03-10 09:34:00,Equipe-Etudes,3,False,240,0.3,resolue
+04f96e5d-b0c1-48f9-b3b4-4fa82315bd95,2026-03-10 09:43:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+84c1d0d3-13c0-4e15-8e91-4570940c5acf,2026-03-10 10:03:00,Helpdesk,2,False,120,0.3,resolue
+2ced43b6-24c4-44fb-bcb7-3af4285f5fb7,2026-03-10 10:04:00,Helpdesk,1,False,180,0.6,resolue
+9c39aa41-93c7-48ed-b162-9eba3b71297f,2026-03-10 10:07:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+270b7134-8cf0-408f-beb4-7739e632f5ca,2026-03-10 10:08:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+432bae74-c00a-4ad5-9839-c213a0087860,2026-03-10 10:11:00,Data Office,3,False,360,0.4,resolue
+6de5be0d-0228-46ef-8268-1369287d25e7,2026-03-10 10:19:00,Helpdesk,2,False,1800,0.6,resolue
+37f609e9-67c0-44fc-bd25-e8be59534ffa,2026-03-10 10:20:00,Intervention-sur-site-déploiement,2,True,150,0.4,resolue
+7258483a-fe67-49ec-822e-16fd3e7886e4,2026-03-10 10:22:00,Stock,2,False,360,0.5,annulee
+59173a62-9c80-44bf-91db-2bb56517b147,2026-03-10 10:28:00,Helpdesk,2,True,120,0.3,resolue
+234dc659-0af6-4b19-9ff7-b12c8ff9a377,2026-03-10 10:31:00,Helpdesk,1,False,0,0.5,resolue
+14703ffb-90b0-4d17-8494-36c0132249c8,2026-03-10 10:32:00,Sécurité Opérationnelle,2,False,240,0.7,resolue
+6f0e047c-0b60-4fe4-8076-53a626bb3b37,2026-03-10 10:33:00,Helpdesk,2,False,240,0.5,resolue
+979e5a17-5db7-486a-b82b-a097688ae1c8,2026-03-10 10:36:00,Stock,2,False,360,0.5,annulee
+71b73d17-734b-4c23-a128-68b491ce0022,2026-03-10 10:40:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+9b5ed740-71dc-4b2e-a7a5-b6cc04a86f75,2026-03-10 10:40:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a0d793fd-f0d8-4e6d-9c42-efcc1396d18c,2026-03-10 10:42:00,Sécurité Opérationnelle,1,False,0,0.8,resolue
+62ef8245-0f98-43e9-af14-ca7fb222a65b,2026-03-10 10:49:00,Intervention-sur-site-déploiement,1,False,360,0.7,resolue
+78c3769f-9fc4-49bd-80fe-a6a6bbea6490,2026-03-10 10:50:00,Helpdesk,1,False,600,0.8,resolue
+ca4c8521-db08-4678-bb9a-84593914aa20,2026-03-10 10:53:00,Helpdesk,1,True,600,0.8,resolue
+cd85ced3-9b33-4c6d-ab26-a1d8d7c20ac8,2026-03-10 10:58:00,Intervention-sur-site-déploiement,1,True,60,0.5,resolue
+6b832ea8-b587-44f3-bd83-7f3c5d63a59d,2026-03-10 11:01:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b0eafd1e-b388-4a9b-b58f-737cdb27eb18,2026-03-10 11:02:00,Helpdesk,2,False,390,0.6,resolue
+249cbd69-5037-497a-b60e-cc80495837bb,2026-03-10 11:12:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a202ecf4-d941-4c86-aae0-30cd6f091eda,2026-03-10 11:16:00,Helpdesk,1,False,0,0.6,resolue
+2f87957e-ddb2-4a90-93ba-84fb55ccb68d,2026-03-10 11:18:00,Sécurité Opérationnelle,2,False,240,0.7,resolue
+fff978e1-4468-4291-a7d3-c00df6885aef,2026-03-10 11:34:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+bc92a772-83b0-47aa-8294-9be96738dcf6,2026-03-10 11:38:00,Equipe-Etudes,1,True,240,0.6,resolue
+ce25bcd7-3b99-4bd8-a381-73a49a696a38,2026-03-10 11:39:00,Equipe-Etudes,1,True,165,0.6,resolue
+efd8ada7-ef7e-46a5-92a0-338df0f5bc3b,2026-03-10 11:39:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+e77988d9-b5cf-4380-ba45-cc40cd06554e,2026-03-10 11:44:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+fe1c013b-ae24-482e-a3ae-84b977bbd3df,2026-03-10 11:45:00,Helpdesk,2,False,240,0.5,resolue
+95f46bd0-14de-4360-af61-a65714dcbf19,2026-03-10 11:50:00,Sécurité Opérationnelle,2,False,360,0.7,annulee
+c506b951-3a57-44a0-b5be-9871e5f8eab4,2026-03-10 11:51:00,Helpdesk,2,True,120,0.4,resolue
+52dbc247-2879-4eed-b441-f43d1a17178b,2026-03-10 11:51:00,Helpdesk,2,False,0,0.3,resolue
+4054801e-7a40-4ed2-aeac-c524043bf475,2026-03-10 12:00:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+5233a2fd-9e3e-406a-aa13-e3e1b944e867,2026-03-10 12:00:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+fa0615ef-c64c-4540-9c57-ee10c247540b,2026-03-10 12:04:00,Helpdesk,2,False,600,0.5,resolue
+7a61f6f8-2986-4c2f-bf16-abab9c37da55,2026-03-10 12:05:00,Helpdesk,1,False,0,0.6,resolue
+e1e630b2-e3aa-4338-a732-4a6bfa98edeb,2026-03-10 12:07:00,Sécurité Opérationnelle,1,False,0,0.7,resolue
+f85db3e2-b46e-4fc1-a85a-4bfc4ecdf5e5,2026-03-10 12:07:00,Helpdesk,1,False,0,0.6,resolue
+ae209537-264a-41fa-84d6-0da2228e1864,2026-03-10 12:10:00,SM Commercial,1,False,480,0.8,resolue
+e1c83300-fa2f-4c0d-ac1e-a080bb3b0413,2026-03-10 12:12:00,Helpdesk,1,False,0,0.5,resolue
+d3b65df1-9390-485c-8c35-2a5b38c3d239,2026-03-10 12:15:00,Sécurité Opérationnelle,2,False,0,0.5,resolue
+8a9cacc2-0848-4455-b087-0f3014fa53cc,2026-03-10 12:30:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+0529cd6b-d920-4752-8fac-a7e5b401506f,2026-03-10 12:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2ad4a0c6-843b-496f-a688-5230eb3ec159,2026-03-10 12:33:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+46679203-96e5-45d8-bfb7-f272845c94fe,2026-03-10 12:33:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+d0c79124-83dc-42da-b06d-b63ee296de60,2026-03-10 12:34:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+642f7ca8-84bf-41e0-8a05-88adf0bf605d,2026-03-10 12:36:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+3d48057b-8273-45b4-b218-4355b593d320,2026-03-10 12:37:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+6d3eaa0d-8cbf-4e70-854d-65f1c102bcf5,2026-03-10 12:37:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+84270e0f-e849-491e-8124-b5ab22cbba8b,2026-03-10 12:38:00,Helpdesk,1,False,0,0.6,resolue
+314b6e9f-5bf5-4640-87d6-537494738463,2026-03-10 12:56:00,Sécurité Opérationnelle,2,False,240,0.7,resolue
+32aa8ae2-2da7-4a69-a653-c8daf1cb274d,2026-03-10 12:58:00,Helpdesk,1,False,600,0.7,resolue
+750bd230-f3e7-414a-bc42-6ec4e078c359,2026-03-10 13:04:00,Helpdesk,1,False,0,0.6,resolue
+bd0fa959-955c-49a1-be78-53da113ab5da,2026-03-10 13:13:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+8f044c3b-784f-4dfe-b312-44d4ab3bb612,2026-03-10 13:15:00,Intervention-sur-site-déploiement,1,False,360,0.7,resolue
+a7396b2a-c558-47b5-8776-3d7eab6e158d,2026-03-10 13:26:00,Intervention-sur-site-déploiement,2,False,240,0.4,resolue
+4376ab1c-1c9d-4151-901e-a3e69cb71ec4,2026-03-10 13:27:00,Helpdesk,2,False,120,0.3,resolue
+9835a012-5bcf-49ff-85a6-ba6e3a913559,2026-03-10 13:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+9bc7e9d5-0221-4e91-9cb4-fe1ddc28cf72,2026-03-10 13:41:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+dd989083-064f-4f0a-b725-c6d9ce7565a6,2026-03-10 13:53:00,Intervention-sur-site-déploiement,1,True,165,0.6,resolue
+bd0520ae-d43c-45ff-9161-9f27df641f76,2026-03-10 13:58:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+3a546c50-0e0a-4c55-86a1-1819bba00385,2026-03-10 14:04:00,Réseau,2,True,120,0.4,annulee
+7b4f998c-c9a8-461b-a07f-f149ce6483fc,2026-03-10 14:41:00,Helpdesk,1,False,600,0.8,resolue
+11535322-285b-4fdd-88d6-c761d029da4b,2026-03-10 17:34:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+40945b9c-c903-49da-9efb-478b016bf44a,2026-03-11 00:58:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+29fc6ec3-c408-49af-8728-196b8331b77e,2026-03-11 07:35:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+5247d02e-2f3f-4b69-bc22-5515e4fe2dc8,2026-03-11 07:55:00,Helpdesk,2,False,720,0.6,resolue
+93d41937-db52-4aa0-a6c3-a5718b677f12,2026-03-11 07:59:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+34efa9b8-daf6-40d7-8d9a-108900cda881,2026-03-11 08:00:00,Intervention-sur-site-déploiement,1,False,120,0.5,resolue
+d9625f79-97d2-425c-a2d1-099e9b8b2afb,2026-03-11 08:01:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+189ecb59-5077-464e-89f1-c2dd9a8f3963,2026-03-11 08:02:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+7c67719f-c777-4e7d-a069-411f9a5cbe17,2026-03-11 08:06:00,Intervention-sur-site-déploiement,3,True,240,0.3,resolue
+ac082229-6f1c-4794-826f-f437f96a01f4,2026-03-11 08:07:00,Helpdesk,2,True,120,0.4,resolue
+03ee33f8-5aa8-4c16-8732-bb6b8075629c,2026-03-11 08:08:00,Intervention-sur-site-déploiement,2,True,120,0.3,resolue
+7aa17b63-f2f5-4afb-8407-e6dfefddc720,2026-03-11 08:14:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+5c61dd36-51b9-4065-8b26-f244fbc8fe29,2026-03-11 08:16:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+5b5f58ba-a561-46d2-ac8e-2b27ee3294f4,2026-03-11 08:18:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+6e31a180-b59d-4bd1-9c03-ff1dba117b23,2026-03-11 08:18:00,Helpdesk,1,False,600,0.8,resolue
+d6763910-5f20-46d8-9cbc-ce760404256f,2026-03-11 08:21:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+57767373-d84d-4e54-bfd7-8761d0fb3b63,2026-03-11 08:24:00,Helpdesk,1,False,0,0.5,resolue
+4fd86b8a-51ae-4232-a7f7-31d762d6198f,2026-03-11 08:26:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+5586e941-0bea-4a59-bdb8-c9c73ecfdade,2026-03-11 08:27:00,Data Office,1,False,360,0.7,resolue
+3d169aa1-972b-4ce8-b36d-1fc91d9d4c39,2026-03-11 08:27:00,Sécurité Opérationnelle,1,False,1440,0.99,resolue
+b94964cd-a206-424f-b106-c51cc21b32ab,2026-03-11 08:30:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+260fffef-dad4-4afb-bdbb-5e69f23cdc89,2026-03-11 08:32:00,Helpdesk,1,True,360,0.7,resolue
+4d3cbbd6-33ac-4e9d-9283-bfce7158e0ab,2026-03-11 08:34:00,Helpdesk,1,False,600,0.7,resolue
+f58d105b-1dca-4330-82f1-d2cc21d7d396,2026-03-11 08:35:00,Helpdesk,1,False,600,0.8,resolue
+405dc54e-69ed-42e4-a694-de3977d2aded,2026-03-11 08:36:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+d373569e-89c2-4da4-8654-01fe52048b44,2026-03-11 08:40:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a4b2a477-b9f6-4642-a7be-7ee03f3e990f,2026-03-11 08:40:00,Sécurité Opérationnelle,2,False,0,0.5,resolue
+592c832a-28f3-481a-8aa5-b6bcf19e3247,2026-03-11 08:42:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+ef3c7257-f1ca-4468-a593-578b597af692,2026-03-11 08:46:00,Intervention-sur-site-déploiement,1,True,120,0.5,resolue
+4cb0fa40-b0b2-4a1e-b60d-3554e1036a7d,2026-03-11 08:48:00,Helpdesk,2,False,240,0.5,resolue
+57dd7f15-c540-4758-8dbc-44d76582d7b7,2026-03-11 08:48:00,Intervention-sur-site-déploiement,2,True,150,0.4,resolue
+4828936b-e61d-4f32-87c0-2a720a0cc598,2026-03-11 08:48:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+68e2d4d0-bd94-466a-90c5-3f9fb5b99e40,2026-03-11 08:48:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+3e76ee11-2594-494d-945a-ef561989e726,2026-03-11 08:50:00,Intervention-sur-site-déploiement,1,True,165,0.6,resolue
+e5b141bb-8235-4999-a1a8-a4df04dec12d,2026-03-11 08:50:00,Helpdesk,1,False,150,0.6,resolue
+3a41d8be-04b5-4bf0-b3f4-951535b78b48,2026-03-11 08:52:00,Equipe-Etudes,1,True,165,0.6,resolue
+d10f3bb9-efcc-4888-a680-4c32119fe5ba,2026-03-11 09:08:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2fd41cf9-6c02-4ae6-8ecd-4e8d4429bd50,2026-03-11 09:11:00,Sécurité Opérationnelle,2,False,240,0.6,resolue
+10dfe764-43a7-4255-aab2-59b18e9d960e,2026-03-11 09:15:00,Helpdesk,1,True,180,0.6,resolue
+58254fb8-4550-4759-aba3-c541549a15ec,2026-03-11 09:16:00,Sécurité Opérationnelle,2,False,360,0.8,resolue
+0fea5b36-ea0d-4b41-a66d-f77ebb586626,2026-03-11 09:16:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+743c85d9-e4a2-41e8-bea4-611d84f46443,2026-03-11 09:19:00,Sécurité Opérationnelle,2,False,720,0.8,resolue
+ca1bcb25-c4b8-49a8-af78-9a1801a0f6ed,2026-03-11 09:23:00,Helpdesk,2,False,240,0.5,resolue
+a2e84c24-364b-4b36-be67-847b618a4cb3,2026-03-11 09:24:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a2695bd9-a23c-4749-8b2e-dfbe64602b81,2026-03-11 09:24:00,Intervention-sur-site-déploiement,1,False,150,0.6,resolue
+1a679a94-14c9-4c93-bc21-cc85c561d81d,2026-03-11 09:25:00,Helpdesk,1,False,240,0.6,resolue
+5d467341-eda5-4892-86cd-299029017d0b,2026-03-11 09:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+9daf8323-1e44-46a4-abc9-f79f1786145a,2026-03-11 09:33:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+fe739dec-52ae-4cb5-bcb3-dd98064a2137,2026-03-11 09:33:00,Helpdesk,2,False,720,0.6,resolue
+d35591e1-15ac-4f07-986e-3559e9645da3,2026-03-11 09:35:00,Intervention-sur-site-déploiement,2,False,720,0.5,resolue
+335607ea-8930-46b2-b979-114aefba7794,2026-03-11 09:36:00,Intervention-sur-site-déploiement,3,False,0,0.2,resolue
+df7c0a72-3115-44f1-beb9-c8bb6ec32b4f,2026-03-11 09:46:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+508a80a0-e7f9-421a-9a73-27bbb4bd43d7,2026-03-11 09:54:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+de1d8254-a6c6-4ee1-99ea-24229d8db0ad,2026-03-11 09:55:00,Helpdesk,2,False,390,0.6,resolue
+9cf28a1f-ae0f-45e6-b94c-3a064dca0c9b,2026-03-11 09:55:00,Stock,2,False,720,0.5,resolue
+b29c8dfe-a4e0-426c-935d-c704acee11b3,2026-03-11 10:00:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+fb8e02de-741c-4db9-887b-14f3606ed26f,2026-03-11 10:01:00,Intervention-sur-site-déploiement,1,True,150,0.6,resolue
+8fe46e79-3932-47b0-96c8-70cd26649b21,2026-03-11 10:04:00,Intervention-sur-site-déploiement,2,True,720,0.5,resolue
+1e0bfeca-f0fe-4494-ac16-e54de110aac4,2026-03-11 10:16:00,Helpdesk,2,False,240,0.4,resolue
+30ddc6ba-6bcb-4d64-9b15-5106bbf691c2,2026-03-11 10:18:00,Helpdesk,2,False,0,0.3,resolue
+0f9724d6-bf28-4823-a330-a1e688d752ea,2026-03-11 10:21:00,Intervention-sur-site-déploiement,2,True,240,0.4,resolue
+ab1f03c9-0a37-4b27-b7d7-8d9051a3e93e,2026-03-11 10:29:00,Helpdesk,1,True,360,0.7,resolue
+84fb6686-44e0-4de0-bc1d-643d30283316,2026-03-11 10:33:00,Helpdesk,2,False,390,0.6,resolue
+3437bc1e-5661-47fe-8ebf-c9bc5759af86,2026-03-11 10:41:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+32807ec4-6e44-4f19-9201-428b92e47836,2026-03-11 10:41:00,Sécurité Opérationnelle,1,True,120,0.7,resolue
+6f7b1236-dcd2-4c83-ad66-c67f2c4a55a0,2026-03-11 10:42:00,Helpdesk,1,False,0,0.6,resolue
+afdc25f7-b87f-403f-ae90-34450940a0b1,2026-03-11 10:44:00,Helpdesk,2,False,120,0.3,resolue
+80ea4e84-9877-45c9-a15b-ba337464ecc1,2026-03-11 10:44:00,Helpdesk,1,False,120,0.5,resolue
+62126a72-7a4f-4aa2-b07f-4567c39f0e65,2026-03-11 10:46:00,Helpdesk,1,False,120,0.5,resolue
+b5f8ab66-bbc7-42c2-ae3a-a9aca5bbebb7,2026-03-11 10:47:00,Helpdesk,1,False,120,0.5,resolue
+a717e764-ae01-4625-a52d-3866c071876d,2026-03-11 10:48:00,Intervention-sur-site-déploiement,1,False,120,0.5,resolue
+e3b13f5b-c004-4bda-a083-40897a81e4fd,2026-03-11 10:48:00,Helpdesk,1,False,120,0.5,resolue
+e3774b15-c342-4e9a-911f-0d398fd3bfeb,2026-03-11 10:49:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+47b5e2a2-345e-43fe-b27b-4e7cafe5b163,2026-03-11 10:49:00,Helpdesk,1,False,120,0.5,resolue
+4923e901-8827-4af3-a1e4-e74caabeafea,2026-03-11 10:51:00,Helpdesk,1,False,120,0.5,resolue
+6e6f6032-2089-454d-80f0-303254f56fa3,2026-03-11 10:56:00,Helpdesk,2,True,240,0.5,resolue
+9e669071-b36d-43e4-8755-3e734d63128f,2026-03-11 10:57:00,Sécurité Opérationnelle,1,False,120,0.7,resolue
+23020c2b-ad54-49a1-a141-e366a65ce5f1,2026-03-11 10:57:00,Système,1,False,240,0.6,resolue
+188c71bf-b327-430d-b99e-1a78c87b1045,2026-03-11 10:58:00,Helpdesk,1,True,600,0.7,resolue
+43933ab2-f951-4437-aed0-a7f58ce3f6ab,2026-03-11 10:58:00,Helpdesk,1,False,360,0.7,resolue
+2c141d67-7c4d-4eff-abec-24c415c58b7e,2026-03-11 10:59:00,Helpdesk,1,False,600,0.8,resolue
+7e2b8c9d-31d1-404e-97bc-568488c22dff,2026-03-11 11:01:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+f09a4641-dcc0-436a-85be-cee6407a33df,2026-03-11 11:03:00,Développement-Digital,2,False,360,0.5,resolue
+e850e9da-4ab3-4a2b-aefa-8945df04837f,2026-03-11 11:07:00,Développement-Digital,2,False,360,0.5,resolue
+c2124411-178c-4901-9aa9-a05e64c110f2,2026-03-11 11:09:00,Helpdesk,2,False,240,0.5,resolue
+cf55a5d7-3827-44da-a7da-4792589580e5,2026-03-11 11:11:00,Helpdesk,1,False,240,0.6,resolue
+79d6c552-f7e2-4131-9bae-d4af19033b6b,2026-03-11 11:12:00,Helpdesk,1,False,0,0.6,resolue
+9bde8da8-d671-48ef-ace1-a1e5f68a4ce8,2026-03-11 11:19:00,Sécurité Opérationnelle,1,False,120,0.7,resolue
+d6c2f39a-632d-4182-b826-893a68179031,2026-03-11 11:21:00,Stock,2,False,720,0.5,resolue
+f93a3a8c-e003-4070-8b07-33801cb02553,2026-03-11 11:21:00,Sécurité Opérationnelle,2,False,240,0.7,resolue
+60042a8d-5f06-4843-b53d-54d88c38a4d4,2026-03-11 11:22:00,Sécurité Opérationnelle,1,False,120,0.7,resolue
+2a5ae571-f6f7-4b02-a7c1-899cd20f79c7,2026-03-11 11:23:00,Sécurité Opérationnelle,1,False,120,0.7,resolue
+efbefd85-d6ef-4685-899c-65d63771100c,2026-03-11 11:24:00,Sécurité Opérationnelle,1,False,120,0.7,resolue
+894a2017-fb60-4403-92bc-ac24ed3e774d,2026-03-11 11:25:00,Sécurité Opérationnelle,1,False,120,0.7,resolue
+f7ddd127-58e5-4960-8a2d-2dfbde9d7783,2026-03-11 11:27:00,Sécurité Opérationnelle,2,False,240,0.7,resolue
+372d3f0d-cf06-4c08-9f7f-671496ce51b9,2026-03-11 11:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+6e3b75c0-a711-415d-a98b-4c1facf24254,2026-03-11 11:33:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+0b1fc894-b336-4115-a046-0904493b10ce,2026-03-11 11:34:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b0075045-63c2-4ab4-a594-e317b630c128,2026-03-11 11:34:00,Helpdesk,2,False,390,0.6,resolue
+a0237534-3ed3-4db4-8e6b-2ac0ca659765,2026-03-11 11:35:00,Helpdesk,1,False,240,0.6,resolue
+06c8f948-6832-46e7-bca3-3ada770771e7,2026-03-11 11:38:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+0efb206d-f2b8-4f5a-8c8f-af64dbf566de,2026-03-11 11:39:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+6ede4e5c-5465-46ee-8414-c45992c16c06,2026-03-11 11:39:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a98d632a-c6ee-4c93-aa37-b895968761b8,2026-03-11 11:41:00,Sécurité Opérationnelle,2,False,360,0.7,resolue
+df0343a8-6f3b-4fd7-9236-ba277a3c678b,2026-03-11 11:43:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c1747d98-c25f-4464-bd8a-f9b81114cba3,2026-03-11 11:43:00,Sécurité Opérationnelle,2,False,240,0.6,resolue
+706a651f-d76f-4864-a101-73a9f1a27a2c,2026-03-11 11:47:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+8b617255-15d3-44c0-b1f2-403a0626badd,2026-03-11 11:54:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c2046812-4558-4907-bac4-686b8c623837,2026-03-11 12:01:00,Helpdesk,2,False,240,0.5,resolue
+e20e14ca-f624-4663-9799-8697ae3aa60a,2026-03-11 12:07:00,Intervention-sur-site-déploiement,2,False,240,0.4,resolue
+213c311e-fbcd-4acc-8f03-e03d55abefd5,2026-03-11 12:07:00,Intervention-sur-site-déploiement,1,False,165,0.6,resolue
+0fc0f67b-0467-4e65-997c-804f0291bd5d,2026-03-11 12:15:00,Helpdesk,2,True,120,0.4,resolue
+c2593b6c-0226-4f26-bd04-cadbd052f820,2026-03-11 12:17:00,Intervention-sur-site-déploiement,2,False,720,0.5,resolue
+84cd5f93-7bd7-41fb-8f03-dd4917b469eb,2026-03-11 12:19:00,Helpdesk,2,False,150,0.4,resolue
+79876f45-8a6a-4082-a5e9-25a48b9faa17,2026-03-11 12:22:00,Helpdesk,2,False,720,0.5,resolue
+74782c1d-853b-40b4-8c39-8e49ebb53a87,2026-03-11 12:24:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+aaa573a9-0d38-4e27-a728-7fcd236dc1fe,2026-03-11 12:27:00,Helpdesk,2,False,240,0.5,resolue
+746f263f-85eb-4712-a187-fdc29dd693c1,2026-03-11 12:30:00,Helpdesk,1,False,180,0.7,resolue
+52b84527-d8a7-4882-8c88-138c5c8d3764,2026-03-11 12:33:00,Téléphonie,2,False,5400,0.5,resolue
+78be1415-fb48-48c4-b601-7ac4d048f73d,2026-03-11 12:36:00,Helpdesk,1,False,600,0.8,resolue
+800ae20d-3ba2-4bd2-91ee-2de61ebc7ee9,2026-03-11 12:41:00,Sécurité Opérationnelle,2,False,240,0.6,resolue
+5edcc949-01a6-4111-8b40-234a579fa53d,2026-03-11 12:45:00,Sécurité Opérationnelle,2,False,240,0.6,resolue
+5557b1b2-c4c8-42cd-a952-d9529439b8b1,2026-03-11 12:45:00,Helpdesk,2,False,360,0.5,resolue
+7118f4b1-40e3-46a8-aed5-56c3f1c875d6,2026-03-11 12:51:00,Intervention-sur-site-déploiement,1,False,240,0.6,resolue
+c695a9db-115d-4ddb-8846-72ea11aa0d4b,2026-03-11 12:56:00,Helpdesk,1,False,0,0.5,resolue
+0644a63e-fe46-498a-a1e2-a95453359c3b,2026-03-11 12:59:00,Helpdesk,2,False,150,0.4,resolue
+c1044b19-7d35-46be-87d9-27fad1310729,2026-03-11 13:04:00,Sécurité Opérationnelle,2,False,720,0.8,resolue
+7e2099d7-ac0b-4bae-9c7a-fc3eadb3f23d,2026-03-11 13:09:00,Helpdesk,2,False,390,0.6,resolue
+16f3994f-cc7a-4bd4-8b33-3b9ee7040bb6,2026-03-11 13:16:00,Helpdesk,1,False,240,0.7,resolue
+12567d9f-24f6-4393-9d36-88476115ffa7,2026-03-11 13:17:00,Helpdesk,2,False,720,0.6,resolue
+9c42e59d-e220-48f6-b84c-8657650d1d12,2026-03-11 13:23:00,Helpdesk,2,False,390,0.6,resolue
+56172c9e-ff42-4fd8-a848-3ec6cd64961e,2026-03-11 13:26:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+fb33a015-00b4-4ca2-8871-26d15d11a4e2,2026-03-11 13:31:00,Helpdesk,2,False,390,0.6,resolue
+00927bbc-3c7c-4669-84ad-70de15c68301,2026-03-11 13:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+972eb209-f643-45df-b56d-93472366f6fa,2026-03-11 13:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c5f56137-e599-4360-941b-604bdf7a82dc,2026-03-11 13:41:00,Helpdesk,1,False,600,0.8,resolue
+8bb852a8-8592-42e4-8ca1-c9044def98fa,2026-03-11 13:47:00,Non attribué,2,False,0,0.3,soumise
+87dcf1f4-e7e9-4f8d-866c-172199397f1c,2026-03-11 13:47:00,Data Office,1,False,360,0.7,soumise
+f5c5c93d-21d6-4134-b426-32460c335316,2026-03-11 13:48:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+de335f91-bfc6-4f4e-a79e-c3f63e3ef06d,2026-03-11 14:06:00,Helpdesk,1,False,0,0.6,resolue
+8916c6aa-b99a-4ac2-a9aa-331cbeeea6a2,2026-03-11 14:31:00,Intervention-sur-site-déploiement,2,False,720,0.5,resolue
+ae3ba74a-23f8-4a1b-ad0b-d9531aa578a0,2026-03-11 16:06:00,Helpdesk,1,False,0,0.5,resolue
+845064e9-38a1-4065-8bf3-eb7087e366ff,2026-03-11 23:32:00,Helpdesk,1,False,600,0.8,resolue
+9a832733-e3e3-43c6-8c1e-3fe7af26bafd,2026-03-12 07:47:00,Sécurité Opérationnelle,2,False,720,0.8,resolue
+40189b44-13d2-4401-84c6-c8748c8c4be5,2026-03-12 07:58:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+486e7d58-2df2-4953-9f47-b603cebddb6f,2026-03-12 08:05:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+066c08fa-55af-49c2-9a79-bedc9589070f,2026-03-12 08:08:00,Helpdesk,2,False,720,0.6,resolue
+37e74f81-142f-4162-8217-7eb8c172bf57,2026-03-12 08:13:00,Helpdesk,1,False,240,0.6,resolue
+f034af17-e6fd-4dd5-9291-4addcafe9825,2026-03-12 08:15:00,Helpdesk,2,False,240,0.5,resolue
+23b6f9ed-f450-4626-a1c9-4696bda3cf69,2026-03-12 08:16:00,Helpdesk,2,False,240,0.5,resolue
+2e779465-839d-42fa-bb06-9f0a2d7c4792,2026-03-12 08:22:00,Data Office,1,False,600,0.8,resolue
+ae03a59a-1f0a-4f02-9348-05f9d52c0988,2026-03-12 08:22:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+0b67fee9-78f1-4f1c-ba82-f0d1695b232b,2026-03-12 08:24:00,SM Commercial,1,False,240,0.7,resolue
+28b60d51-1b49-415f-b136-37cb146350c2,2026-03-12 08:27:00,Helpdesk,1,True,360,0.7,resolue
+b1b9aea8-093d-41ec-9ad4-7c2513317205,2026-03-12 08:28:00,Sécurité Opérationnelle,2,False,360,0.8,resolue
+884a42c4-f02c-4088-aa09-f70468bf6a33,2026-03-12 08:29:00,Helpdesk,1,True,600,0.8,resolue
+60fe127f-9200-4884-b133-f68dd5a069d8,2026-03-12 08:31:00,Sécurité Opérationnelle,1,False,0,0.7,resolue
+5c696c8c-3ab9-4381-bb63-0adacc85c4bf,2026-03-12 08:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b616ce02-3f4c-4ca9-8b84-c26b369b248d,2026-03-12 08:33:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a9220a7f-cb55-461a-8e8e-f17b956cf74f,2026-03-12 08:35:00,Helpdesk,1,True,360,0.7,resolue
+d32a07b4-a2c2-4ed6-8c2f-f6802ccbf094,2026-03-12 08:39:00,Helpdesk,2,False,0,0.3,resolue
+9a0e2a53-1d40-426f-b975-cf64e9e13423,2026-03-12 08:40:00,Intervention-sur-site-déploiement,2,True,240,0.4,resolue
+03ef4609-7c4f-4f6a-ac06-4bde07b14e18,2026-03-12 08:43:00,Helpdesk,2,False,720,0.6,resolue
+9d86df50-de78-4179-8e47-e9ab392744c0,2026-03-12 08:44:00,Helpdesk,3,False,0,0.2,resolue
+a649c7f4-7bc4-4b2b-97dd-b40cb9cfcce9,2026-03-12 08:44:00,Helpdesk,1,False,165,0.6,resolue
+b3cde554-d543-40e0-be47-b6eb77170a07,2026-03-12 08:44:00,Helpdesk,2,True,150,0.4,resolue
+71c36269-4b83-4b1f-a81b-1355e8fc1d1e,2026-03-12 08:45:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+473dab42-cf74-4233-a3d4-69a5417427df,2026-03-12 08:48:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+f3085093-41eb-4d00-ad33-3d7684c26205,2026-03-12 08:52:00,Intervention-sur-site-déploiement,2,False,1440,0.5,resolue
+a6d49ec8-d33e-4bce-9c28-9779d6270787,2026-03-12 08:53:00,Helpdesk,2,True,720,0.6,resolue
+55c0f998-5202-43fd-835e-0e6e7078fe38,2026-03-12 09:06:00,Intervention-sur-site-déploiement,1,True,240,0.6,resolue
+44ffe405-8bbd-4866-854c-a83e9250c107,2026-03-12 09:07:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+52cf836b-e22f-48ac-bd57-e7cb325a7d8a,2026-03-12 09:08:00,Intervention-sur-site-déploiement,1,False,240,0.6,resolue
+a918bf54-6c2f-4f70-b114-24f555c4eed4,2026-03-12 09:08:00,Téléphonie,1,False,360,0.7,resolue
+c319bad5-4289-4299-abdb-889f973ff852,2026-03-12 09:10:00,Helpdesk,1,True,600,0.8,resolue
+a1ab0637-34f6-4bf1-8d9a-3b1af31238a0,2026-03-12 09:11:00,Helpdesk,1,False,600,0.8,resolue
+779042eb-87f0-4369-afce-68e82825ce5b,2026-03-12 09:14:00,Helpdesk,1,False,0,0.6,resolue
+7728b0bf-d8ce-4c87-b70d-bc807876fac8,2026-03-12 09:19:00,Data Office,1,False,240,0.7,resolue
+f2940fac-79ce-4872-b839-d1cbcf7a08b7,2026-03-12 09:26:00,Data Office,3,False,360,0.4,soumise
+ccc11662-c429-475b-ae2f-3cd963c4f855,2026-03-12 09:27:00,Helpdesk,1,False,0,0.5,resolue
+c9455661-3629-4ad4-bc7e-d3d3a32c7a0f,2026-03-12 09:37:00,Intervention-sur-site-déploiement,2,False,150,0.4,resolue
+4799438d-5a61-4640-9d65-b39be89b63c8,2026-03-12 09:39:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+19e8c2c2-9854-4165-a1da-589b41cb9684,2026-03-12 09:44:00,Système,1,True,240,0.6,resolue
+06065eb4-a358-465f-9370-b4752da74ce8,2026-03-12 09:49:00,Helpdesk,1,True,150,0.6,resolue
+ae940364-f815-4093-8e4f-bddc97991667,2026-03-12 09:50:00,Helpdesk,1,True,240,0.6,resolue
+8c2e3688-540f-4b08-9fd5-7caa5d031f39,2026-03-12 09:53:00,Helpdesk,1,False,0,0.6,resolue
+c3d1a118-9624-4895-9687-aa8a9c7f462f,2026-03-12 09:53:00,Helpdesk,2,False,240,0.5,resolue
+35593622-3dba-4317-a95e-ed4df82997b3,2026-03-12 10:02:00,Helpdesk,1,False,180,0.7,resolue
+81036294-10ab-4623-9871-343d19afea49,2026-03-12 10:04:00,Intervention-sur-site-déploiement,2,False,720,0.6,resolue
+4f117036-2374-43b9-bb4b-b4aa2487fadc,2026-03-12 10:05:00,Intervention-sur-site-déploiement,1,True,120,0.5,resolue
+f3f58e7d-24ee-4d16-8ad2-44bedfc00609,2026-03-12 10:10:00,Système,2,False,360,0.5,resolue
+1f67d905-1579-4721-8754-f0efa8f09609,2026-03-12 10:20:00,Helpdesk,3,True,240,0.3,resolue
+b0b19d48-3994-4f80-b665-7646aa655743,2026-03-12 10:26:00,Sécurité Opérationnelle,2,False,240,0.6,resolue
+db0b6f7c-ca7c-49a1-9a9a-372e6308c5c9,2026-03-12 10:27:00,Helpdesk,2,True,240,0.5,resolue
+b3bead3d-dc17-4506-9025-a712a4c8b31f,2026-03-12 10:31:00,Intervention-sur-site-déploiement,2,False,240,0.4,resolue
+cca693a3-23d4-44dd-a3de-c153e0288a01,2026-03-12 10:34:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a8af4b43-c86f-4a30-917a-7a13db9465d2,2026-03-12 10:38:00,Helpdesk,1,False,180,0.7,resolue
+f597a12c-30f1-4d53-b8cd-4b09dca4a82b,2026-03-12 10:39:00,Equipe-Etudes,3,False,240,0.3,resolue
+2651c91e-fa8c-476d-93c8-2c46bc481170,2026-03-12 10:39:00,Développement-Digital,2,False,360,0.5,resolue
+3c59d043-2668-4b73-8773-8fac5733000f,2026-03-12 10:49:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+48602503-7833-42b1-94b0-f7a330a349f9,2026-03-12 10:49:00,Sécurité Opérationnelle,2,False,240,0.6,resolue
+1ad78cb4-f179-4af2-8138-89cb64fd51f7,2026-03-12 10:50:00,Helpdesk,1,False,0,0.5,resolue
+571b5b1f-481f-434c-8499-9a21c5cf0b1a,2026-03-12 10:55:00,Helpdesk,1,True,240,0.7,resolue
+3fc7ebb8-aa4f-494e-b33b-0fb336bbe8cb,2026-03-12 10:56:00,Helpdesk,1,False,0,0.6,resolue
+822e0a75-a711-4e11-842e-0d6e81886328,2026-03-12 10:59:00,Helpdesk,1,False,360,0.7,resolue
+2a08faa6-63fb-44da-ba70-e62c5b883981,2026-03-12 11:01:00,Téléphonie,1,True,360,0.7,resolue
+754e222e-9ca9-4440-b8de-ce72f7807f6d,2026-03-12 11:01:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+db53d2ab-c71a-4e23-9aae-5d0ef4582ce1,2026-03-12 11:01:00,SM Commercial,1,False,360,0.7,resolue
+a03dcf3b-7bce-4224-bbb0-550aa1cabbca,2026-03-12 11:07:00,Helpdesk,2,True,240,0.5,resolue
+59601821-f7eb-4034-8694-409a2ce3b78a,2026-03-12 11:10:00,Helpdesk,2,True,240,0.5,resolue
+4db31255-4975-45d0-8413-e50981631d83,2026-03-12 11:10:00,Helpdesk,2,False,240,0.4,resolue
+cf1aef2b-03ba-4daa-bb8a-15a2a2247f6f,2026-03-12 11:11:00,Equipe-Etudes,1,False,240,0.6,resolue
+acadebc3-5a19-4108-b7ba-c2215baff197,2026-03-12 11:12:00,Helpdesk,2,True,240,0.5,resolue
+6b5044cc-3e08-4ad7-aaf2-98390bb23b62,2026-03-12 11:15:00,Helpdesk,2,True,240,0.5,resolue
+fa5f0ba5-a185-4509-8e53-d3102281eb12,2026-03-12 11:16:00,Helpdesk,1,False,240,0.7,resolue
+f4dac537-3804-45d3-8432-95f1dde424ff,2026-03-12 11:16:00,Helpdesk,2,True,240,0.5,resolue
+ee846447-7eb7-424d-af7a-ebf1c4a7c874,2026-03-12 11:20:00,Data Office,2,True,240,0.5,resolue
+891ecca4-2155-4965-8e04-33b36882e761,2026-03-12 11:24:00,Sécurité Opérationnelle,2,False,360,0.7,resolue
+ba6ded59-c39e-47ad-b3ba-a0d3c6b8736f,2026-03-12 11:33:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+da4283b6-f4e8-4cb0-b057-17491fabedbd,2026-03-12 11:34:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+0e44befc-bda2-4900-9ac9-3f6acbf9606a,2026-03-12 11:35:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+617f66de-26ce-4501-b1ce-2d9186ceba99,2026-03-12 11:38:00,Helpdesk,1,False,0,0.6,resolue
+5aad1238-6f51-499b-b35a-8e39609d0ff0,2026-03-12 11:39:00,Développement-Digital,2,False,120,0.4,annulee
+05c0a15d-cf6d-440b-bb85-5f2a833a18dd,2026-03-12 11:48:00,Système,2,True,360,0.5,resolue
+419e6b5e-f3a9-40da-807f-b39ce3d120d6,2026-03-12 11:50:00,Helpdesk,1,False,0,0.6,resolue
+5ce76339-4351-4c51-8cb8-1a5a1b273ad6,2026-03-12 11:56:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+5ef3e30d-4df7-46fe-9c77-9d12172c93f8,2026-03-12 11:56:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+d9db4a35-e4cb-4e59-84f5-a3656100a9c9,2026-03-12 12:00:00,Helpdesk,2,True,120,0.4,resolue
+aa242474-95b2-4e94-a232-16c62e30aace,2026-03-12 12:04:00,Helpdesk,2,False,240,0.4,resolue
+51f12c46-e92f-42d9-b9c2-f28f56c63771,2026-03-12 12:06:00,Intervention-sur-site-déploiement,2,False,720,0.5,resolue
+ef4a6ffd-c792-4872-b7ce-dbd16e7451d0,2026-03-12 12:12:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+061d0e4e-a39e-4225-856d-21642731c3eb,2026-03-12 12:16:00,Intervention-sur-site-déploiement,3,False,0,0.2,resolue
+ca43aef3-babc-400e-b606-350487277dbd,2026-03-12 12:22:00,Helpdesk,1,False,0,0.6,resolue
+ae2053f1-2ccb-4441-a1be-3179e45cedf7,2026-03-12 12:26:00,Helpdesk,2,False,0,0.3,resolue
+1e4b51e9-8e02-404a-a67f-59512b9b22c9,2026-03-12 12:28:00,Helpdesk,1,False,0,0.6,resolue
+c867d19f-9e00-4f1a-aa28-cf7137886783,2026-03-12 12:28:00,Sécurité Opérationnelle,1,False,120,0.7,resolue
+9b1db5be-22b6-4be6-b104-31a19a07d807,2026-03-12 12:29:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+e79ba13d-b75f-4433-9efb-0227dde9b98c,2026-03-12 12:30:00,Helpdesk,1,False,0,0.6,resolue
+51a2df26-d70b-4d0b-a6ef-92dd0a0325ed,2026-03-12 12:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+da9c7fe3-e64c-4fde-a45e-b345464f48d2,2026-03-12 12:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b151a2ae-39ad-43ab-a76f-130f1ce468e7,2026-03-12 12:36:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+6d22c037-0a9d-49df-93b4-90897af30a14,2026-03-12 12:37:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+caf92c45-4abb-40d5-9bf9-7bd223ef7fb7,2026-03-12 12:49:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+0cc8d77a-7342-4b0d-b07e-887f786d6ae4,2026-03-12 12:49:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+111e4484-b89d-4c27-84ce-4b7e4f8656ea,2026-03-12 12:49:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+bcfbd9ab-570e-494b-a38b-6bffa1644340,2026-03-12 12:50:00,Sécurité Opérationnelle,2,False,0,0.5,resolue
+a0fdf2f8-9aa9-4abe-8882-51b36762b268,2026-03-12 12:50:00,Intervention-sur-site-déploiement,2,True,120,0.3,resolue
+050f9736-701a-4490-881d-311de7da4ffc,2026-03-12 12:51:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+461646cb-42c2-4f91-9c5a-2aea26e11bc0,2026-03-12 13:03:00,Helpdesk,2,False,240,0.5,resolue
+f460233b-88ec-4b50-b77a-e5143b53841f,2026-03-12 13:03:00,Helpdesk,2,False,0,0.3,resolue
+afc03954-bf96-449c-97c9-310c7ef83610,2026-03-12 13:05:00,Helpdesk,2,False,240,0.5,resolue
+94e81f49-75de-4822-80f1-d13d4cb590d6,2026-03-12 13:10:00,Helpdesk,1,False,0,0.5,resolue
+753ccfc1-691a-4cca-89e6-2d9cef7f6be5,2026-03-12 13:10:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+5e41cafc-22df-405d-bf5e-cff7feb54da4,2026-03-12 13:11:00,Helpdesk,1,False,0,0.6,resolue
+fe05775d-b098-47d5-9710-a612e07c6626,2026-03-12 13:15:00,Helpdesk,1,False,240,0.6,resolue
+d03ebbe9-9303-48aa-a3e9-1ed90f20ea0e,2026-03-12 13:16:00,Helpdesk,1,False,0,0.5,resolue
+30943df1-f843-4f92-97a5-ee2425d10843,2026-03-12 13:18:00,Helpdesk,1,True,150,0.6,resolue
+bda594f3-c537-4a63-94a7-0609907b604a,2026-03-12 13:19:00,Intervention-sur-site-déploiement,2,False,240,0.4,resolue
+8b72c1b2-c661-483b-85df-e8c9f4374ee0,2026-03-12 13:27:00,Sécurité Opérationnelle,2,False,360,0.8,resolue
+08be7d2a-9390-4329-bf33-76937c159147,2026-03-12 13:29:00,Helpdesk,2,True,240,0.4,resolue
+56f70d4d-db19-4ccf-b32b-d00312cc31e8,2026-03-12 13:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+86286489-a53a-45a6-a7fd-30bb09029c99,2026-03-12 13:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+689c5a67-b588-45b3-8c30-69a2fb26baa4,2026-03-12 13:37:00,Helpdesk,1,False,0,0.5,resolue
+0bc1d325-1bb2-4afe-b3f6-04b83bad78bf,2026-03-12 13:46:00,Helpdesk,2,False,720,0.6,resolue
+8b1f018c-f387-42b5-bab8-0956a9d8d9dc,2026-03-12 13:52:00,Helpdesk,1,False,0,0.5,resolue
+309af7f2-f19c-48fb-80c5-6923852b433d,2026-03-12 13:58:00,Intervention-sur-site-déploiement,1,True,360,0.7,resolue
+c2a486c1-eca6-450b-b4a7-095e9b74caaf,2026-03-12 14:00:00,SM Commercial,1,False,360,0.7,resolue
+d6c439ed-2124-4d76-ab3b-96321ed8df5c,2026-03-12 14:01:00,Helpdesk,2,True,120,0.4,resolue
+1a96a7cf-0bcc-4544-9fbb-b8d688e62a87,2026-03-12 14:04:00,Téléphonie,1,True,360,0.7,resolue
+47b2f198-25b0-44a6-bc17-c079538196e0,2026-03-12 14:18:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a0df78c7-51c6-4a2e-888a-592f217f8fd4,2026-03-12 14:20:00,Equipe-Etudes,1,False,240,0.6,annulee
+6370425a-0b73-404a-b7e7-fd2477d04ef1,2026-03-12 20:09:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+f51e068a-411b-4618-a5af-d0b4d330503f,2026-03-13 07:54:00,Helpdesk,1,False,150,0.6,resolue
+6e9d516b-6fa9-44e3-8062-04b2b51e4509,2026-03-13 08:03:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+58ecc9ed-a317-4945-8b04-371b307e42b8,2026-03-13 08:04:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+dc622a43-d874-424e-8397-e32c3e4f87a4,2026-03-13 08:06:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c25d9ab6-bf4e-4d8f-98df-20ed4a36e9e8,2026-03-13 08:06:00,Réseau,1,False,360,0.7,resolue
+b7959a14-36d9-4643-8098-88c1db6c8b4c,2026-03-13 08:06:00,Helpdesk,2,False,360,0.5,resolue
+2b814563-9c13-43e9-9d1f-8df58eb40e83,2026-03-13 08:07:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+8b9d863d-6622-4123-af87-8374e0fcf0dd,2026-03-13 08:08:00,Helpdesk,2,False,360,0.5,resolue
+18f3c574-d3db-4e1b-871f-435fe49688ce,2026-03-13 08:13:00,Helpdesk,1,False,240,0.6,resolue
+b912573b-9249-43dc-ad63-84bd1da2839d,2026-03-13 08:23:00,Système,3,False,240,0.3,resolue
+a40d9baf-f44c-4df2-b4e9-f1b45e35ff70,2026-03-13 08:28:00,Helpdesk,1,False,0,0.6,resolue
+487b885c-e037-4255-8ec9-eadf0d841c2b,2026-03-13 08:29:00,Helpdesk,2,False,390,0.6,resolue
+14b5e7de-b246-4c9a-bdc3-cb4709895239,2026-03-13 08:33:00,Data Office,1,False,360,0.7,resolue
+3217d3ff-d4e7-4b98-b392-14fb4761423f,2026-03-13 08:37:00,Helpdesk,1,False,600,0.8,resolue
+cedfb6bc-b1c5-41c1-b2b5-3f5bcc54d9a8,2026-03-13 08:37:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+8833fdb5-eacb-4b26-969f-92f5f4da0c4f,2026-03-13 08:38:00,Helpdesk,1,False,240,0.7,resolue
+da462217-c931-4730-aff0-c91a283c3b3c,2026-03-13 08:38:00,Sécurité Opérationnelle,2,False,720,0.8,resolue
+c7eb6900-71fd-4044-8088-1deb374613ae,2026-03-13 08:38:00,Helpdesk,1,False,600,0.8,resolue
+986c41ff-b872-42eb-bb0f-ba22db8f30c0,2026-03-13 08:40:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+5128ea1d-34d4-4839-9b6e-ad0e6a1ada2b,2026-03-13 08:45:00,Helpdesk,1,True,150,0.6,resolue
+b2cfec3e-3575-484c-856e-c6b6dcf16a43,2026-03-13 08:47:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+dc55af1f-59ae-4607-b32a-5085a1d7a9bf,2026-03-13 08:47:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+08d46bf5-9834-4cf4-b7e8-ae0f2214d435,2026-03-13 08:49:00,Sécurité Opérationnelle,2,False,0,0.5,resolue
+7fb7b912-71c1-48bd-82fe-ee95463fddb0,2026-03-13 08:50:00,Helpdesk,1,False,240,0.7,resolue
+89f0d6c8-ec64-4f3f-8f5e-6ef5ab2549c9,2026-03-13 08:56:00,Helpdesk,1,False,0,0.6,resolue
+60626cb5-1bac-47c1-bee7-e879371c324d,2026-03-13 09:00:00,Helpdesk,2,True,240,0.5,resolue
+ae5a56c6-1272-4a76-b5ac-34bed15df036,2026-03-13 09:01:00,Helpdesk,1,False,0,0.6,resolue
+8b164d4a-49a0-415f-a442-033eb27eeff5,2026-03-13 09:05:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+fa5923a9-4ca3-42d3-82c3-1648a4c456f3,2026-03-13 09:05:00,Helpdesk,2,True,240,0.5,annulee
+3a372f23-9b87-4110-8efb-e9cab8c039ca,2026-03-13 09:05:00,Helpdesk,2,True,240,0.4,resolue
+75de3ddf-969f-45ac-8a90-74b59a256203,2026-03-13 09:07:00,Intervention-sur-site-déploiement,1,True,165,0.6,resolue
+8003dc1d-9598-4513-98c9-c5a5570f840d,2026-03-13 09:09:00,Helpdesk,1,False,0,0.5,resolue
+19e817f9-f876-4027-970e-c85270c530cd,2026-03-13 09:10:00,Intervention-sur-site-déploiement,2,False,240,0.4,resolue
+3cac1298-feb0-4a59-aafc-0d44c8cfcd9f,2026-03-13 09:14:00,Helpdesk,1,False,600,0.8,resolue
+d4d0a51a-befd-4f45-926d-ea6d0e2d5619,2026-03-13 09:17:00,Helpdesk,1,False,240,0.6,resolue
+2c950da0-10f0-4f34-ac55-4f36f53b3494,2026-03-13 09:24:00,Helpdesk,1,False,0,0.5,resolue
+5a9f5dad-13d7-4274-91ae-9211da279104,2026-03-13 09:31:00,Helpdesk,1,True,240,0.6,resolue
+6a9b6245-422e-49a0-8456-3a47acc96475,2026-03-13 09:32:00,Helpdesk,1,True,240,0.6,resolue
+41cd698a-7a93-4381-9da0-16a062fbf9d0,2026-03-13 09:33:00,Helpdesk,2,False,360,0.5,resolue
+f8bdaffb-8146-4657-a1d9-44d5ba02a3fe,2026-03-13 09:34:00,Helpdesk,1,True,240,0.7,resolue
+8eff2cac-2c7f-49b0-805a-d840864615df,2026-03-13 09:35:00,Helpdesk,1,True,240,0.7,resolue
+d45555cd-733d-48a9-b9ba-e4f51eff5acd,2026-03-13 09:36:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+82ac0caf-97f0-4301-ac2e-016d144b8df8,2026-03-13 09:36:00,Helpdesk,1,True,240,0.6,resolue
+66e2d1aa-cd8b-4825-b579-87549f59eb33,2026-03-13 09:39:00,Helpdesk,1,False,240,0.7,resolue
+8724d545-f268-422a-986e-ed3e03fd2283,2026-03-13 09:44:00,Intervention-sur-site-déploiement,2,True,360,0.5,resolue
+929d5f7e-4e6c-46a2-b9f4-14852cd350ba,2026-03-13 09:45:00,Intervention-sur-site-déploiement,3,False,0,0.2,resolue
+77d7090c-724e-45cc-aaf1-910d06a36d76,2026-03-13 09:45:00,Helpdesk,2,False,120,0.3,resolue
+b08a7dff-814e-4c92-9b20-7b8687c39213,2026-03-13 09:49:00,Helpdesk,1,False,240,0.7,resolue
+24e87231-c623-4d89-92b9-200ad0150f2f,2026-03-13 09:59:00,Sécurité Opérationnelle,2,False,0,0.5,resolue
+b747d91f-abf2-42de-abd5-7881445483f9,2026-03-13 10:00:00,Helpdesk,1,True,600,0.8,resolue
+b59a1b08-cc32-4a59-9996-1b9c9c6056cc,2026-03-13 10:01:00,Intervention-sur-site-déploiement,1,True,165,0.6,resolue
+78d983c3-10ac-4dd3-9da8-fd4be902cc63,2026-03-13 10:05:00,Sécurité Opérationnelle,2,False,0,0.5,resolue
+a7b70073-5bd3-4bd0-81df-3a88bf8024fa,2026-03-13 10:06:00,Helpdesk,1,False,600,0.8,resolue
+0c2fb4b0-6af6-4436-8663-46ba733d6791,2026-03-13 10:07:00,Réseau,2,False,5400,0.5,resolue
+50b00da4-bd7b-4bae-9d84-a3dd60af654e,2026-03-13 10:09:00,Helpdesk,2,False,720,0.6,resolue
+53715acf-d428-47dd-a306-c67dde9268c4,2026-03-13 10:10:00,Helpdesk,2,True,240,0.4,resolue
+628fcef9-d2bd-44c8-b2bc-5ad708a2757a,2026-03-13 10:11:00,Helpdesk,2,False,390,0.6,resolue
+6d8bf7ee-fbcb-4f12-a4d8-b162cced917d,2026-03-13 10:13:00,Sécurité Opérationnelle,2,False,360,0.7,resolue
+54f8f852-1da9-4882-b952-ab0cac9161d1,2026-03-13 10:14:00,Sécurité Opérationnelle,2,False,240,0.7,annulee
+30678eee-957c-4a92-a3cd-7cc97c9eaba3,2026-03-13 10:18:00,Intervention-sur-site-déploiement,1,True,360,0.7,resolue
+c08df816-6dc0-4753-9281-e17e39ef55ae,2026-03-13 10:23:00,Helpdesk,1,False,0,0.6,resolue
+30d841c4-5f03-4fbe-beba-382884528858,2026-03-13 10:30:00,Téléphonie,2,False,1800,0.5,resolue
+224ad7a5-6b54-4503-a89c-c23e3bc4a801,2026-03-13 10:30:00,Intervention-sur-site-déploiement,2,True,360,0.5,resolue
+c16c69c1-5403-4413-a6c2-369c991be020,2026-03-13 10:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+642cfef5-3b75-4bb7-85b0-afc7297a12b6,2026-03-13 10:37:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+36331d07-1c3f-4e85-95fa-0f5367afbdcf,2026-03-13 10:39:00,Intervention-sur-site-déploiement,2,False,360,0.5,resolue
+0d283b13-ed79-4644-a3f4-92ffcce4be4f,2026-03-13 10:44:00,Helpdesk,2,False,240,0.5,resolue
+4e340b0b-f33b-4ba7-836a-9032d91a56f4,2026-03-13 10:48:00,Helpdesk,2,False,600,0.5,resolue
+323ae8db-3a76-4746-9c39-030c74238ec7,2026-03-13 10:51:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a3b2b217-9b71-4d61-bb31-e7d9d712c0a7,2026-03-13 10:51:00,Helpdesk,1,False,0,0.5,resolue
+70d10c06-037a-44ab-a0f1-0db75b74f2be,2026-03-13 10:52:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+91aff50a-988e-41f1-a93f-f064fe60a856,2026-03-13 11:05:00,Sécurité Opérationnelle,2,False,720,0.8,annulee
+e33658a0-f480-47f5-ac20-8903acece00a,2026-03-13 11:07:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+f2b61385-eec4-4d34-9232-f30028b99dc1,2026-03-13 11:09:00,Sécurité Opérationnelle,1,False,1440,0.99,resolue
+8f479a48-401a-4098-892d-303d60d68d29,2026-03-13 11:10:00,Sécurité Opérationnelle,1,False,240,0.9,resolue
+4fa9c572-8505-4219-b22d-d8d1c980d32a,2026-03-13 11:12:00,Sécurité Opérationnelle,1,False,1440,0.99,resolue
+7a246f5d-99c0-4078-8390-8a4d65447d06,2026-03-13 11:14:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+55712486-ba9f-4fe2-a050-9418b4ea3c2c,2026-03-13 11:17:00,Data Office,1,False,480,0.7,resolue
+71b5e0de-b771-42df-804e-758eb39a9288,2026-03-13 11:18:00,Réseau,2,True,120,0.4,annulee
+65ba0841-4f39-4a10-b9ee-5a6811e6e338,2026-03-13 11:19:00,Helpdesk,2,True,120,0.3,resolue
+ac4f7fa0-3fc6-4cfb-92bc-6bee83957c23,2026-03-13 11:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+4e10f03f-94b8-4d2c-a1f2-515c2338259d,2026-03-13 11:34:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+e01f2961-56b7-472c-bc4f-3544126062fb,2026-03-13 11:35:00,Helpdesk,2,False,390,0.6,resolue
+d2333f05-694b-44fb-969e-d847d72d69b3,2026-03-13 11:36:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+fd2098f3-6145-4f47-aa11-48e6acfe3f41,2026-03-13 11:38:00,Sécurité Opérationnelle,1,False,0,0.7,resolue
+12cf7d33-7a9f-46fb-9f53-cec8284c73b4,2026-03-13 11:39:00,Intervention-sur-site-déploiement,2,False,720,0.5,resolue
+44f5e81b-92c0-4f51-a028-e242eb5ff3bf,2026-03-13 11:40:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2bf2a1d0-be79-4a95-a5c7-526a9dee558d,2026-03-13 11:43:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b7f4629c-1984-425e-bb5c-285ad36cc584,2026-03-13 11:44:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+0832be9f-9156-40bf-904b-2bbc1325ee7a,2026-03-13 11:46:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+fb347c7c-2aa9-466f-8a40-cfaa1abcc0a2,2026-03-13 11:47:00,Helpdesk,2,True,720,0.6,resolue
+4c392da0-44f2-4ba9-9400-c5cb7e93e75a,2026-03-13 11:49:00,Helpdesk,1,False,0,0.6,resolue
+4f65e981-a3c3-43b0-8058-2f12d13d6d09,2026-03-13 11:59:00,Helpdesk,2,True,120,0.3,resolue
+8d41f1ce-b26b-49bc-9436-b8cf98fd72b6,2026-03-13 12:00:00,Helpdesk,1,False,150,0.6,resolue
+d55cbaa0-4c5b-458f-8f6b-c5a8387061bd,2026-03-13 12:05:00,Helpdesk,2,False,0,0.3,resolue
+2d3cfacf-e197-4ceb-8516-2c4d16850ac4,2026-03-13 12:05:00,Equipe-Etudes,1,True,240,0.6,resolue
+fba831ab-190d-4c2a-82f8-83bda7886e2a,2026-03-13 12:08:00,Helpdesk,2,False,240,0.5,resolue
+e468d2e5-d2ca-4f05-8962-40e55b122bb6,2026-03-13 12:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+45234a66-13fe-495a-a0aa-b97912c49094,2026-03-13 12:35:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+ae258716-9ac7-4524-a8ab-409c4ee1f180,2026-03-13 12:36:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+5559e6f6-1963-4330-9c8a-332820702d9a,2026-03-13 12:37:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+7d1e5112-2e72-40c5-918c-28cf3bcfc0ee,2026-03-13 12:37:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+4d440a43-4139-48dd-a765-77792182d810,2026-03-13 12:41:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+108ff53e-9ad6-4e60-9ee8-8683bc985ec9,2026-03-13 12:42:00,Helpdesk,2,False,0,0.3,resolue
+33415500-5832-47fb-bf9e-96d846ab1fd3,2026-03-13 12:44:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+8f80aff2-fa7d-4b7f-9f98-47302e486691,2026-03-13 12:45:00,Helpdesk,2,False,240,0.5,resolue
+b05ab312-5ede-4977-bc53-18274726a8f3,2026-03-13 12:46:00,Helpdesk,1,False,600,0.8,resolue
+7762311c-06f0-4450-9f1b-eb039d0c0c56,2026-03-13 12:56:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2590a05d-1b80-4b84-8dc4-8337bc39f7ca,2026-03-13 12:59:00,Helpdesk,1,False,240,0.6,resolue
+1fc0e7c7-b3f5-4c03-993e-9789a947ed00,2026-03-13 13:15:00,Sécurité Opérationnelle,2,False,360,0.8,resolue
+7dcd0f4c-36a9-4c67-b9e8-66e4a3e626b5,2026-03-13 13:18:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+8d7417e2-5608-4416-964f-e37c57530f09,2026-03-13 13:30:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+ae0ea9a6-8441-491e-9f9e-d18f26150942,2026-03-13 13:30:00,Helpdesk,1,False,240,0.6,resolue
+dc5a77ba-5890-471e-a519-f17a6caef067,2026-03-13 13:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+55d291ea-cade-4864-8e7d-573e4da91ff8,2026-03-13 13:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+e07e25ea-2b5e-455f-9fde-a630945927d8,2026-03-13 13:46:00,Helpdesk,1,False,240,0.6,resolue
+33d523b0-cc82-4e17-ada1-04a5ad37f945,2026-03-13 13:59:00,Data Office,1,False,360,0.7,soumise
+99211a52-ee92-4665-8286-cb86e816acbb,2026-03-13 17:09:00,Helpdesk,1,False,0,0.6,resolue
+7e94f3b2-3b0d-4f89-aefd-f89574cffcd3,2026-03-15 14:14:00,Sécurité Opérationnelle,1,False,240,0.9,resolue
+0442325e-f2ce-4f93-9fad-4041ded25dd6,2026-03-16 07:59:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+96f587f4-0780-4e7f-8ef5-dc65d339b5a8,2026-03-16 08:03:00,Helpdesk,1,False,240,0.6,resolue
+bb78dfce-1dde-467a-aab5-f190bf72217b,2026-03-16 08:05:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+0dac6650-219f-4343-840e-60381e6dae70,2026-03-16 08:06:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+77cbbb5d-01cb-4a03-9b75-77ca0d6603a3,2026-03-16 08:08:00,Système,2,True,360,0.5,resolue
+50480353-a8e0-40f8-8c1d-9c957d72f748,2026-03-16 08:15:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+cd9c1adc-9f17-465e-b7db-71f5c6a1c9c6,2026-03-16 08:15:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+5f2886e7-3f15-4e6c-8472-bcdc2a541c8d,2026-03-16 08:17:00,Téléphonie,2,False,240,0.4,soumise
+b50ae1fd-f64a-446e-80af-75d9cbe71f9b,2026-03-16 08:22:00,SWIFT,1,False,240,0.85,resolue
+57e026af-18b0-43f0-8ce6-6ef30e4c51df,2026-03-16 08:24:00,Sécurité Opérationnelle,1,False,1440,0.99,resolue
+dc71933b-aad1-4f3f-a9c6-45237c89082a,2026-03-16 08:26:00,Helpdesk,1,False,150,0.6,resolue
+6b748b38-a136-42d8-83df-ab30d6ca941c,2026-03-16 08:27:00,Helpdesk,1,False,600,0.8,resolue
+64dbc457-43b7-4730-98c2-43b7ccc4e6e1,2026-03-16 08:28:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+30b212a1-ad56-458c-a44b-e0a07e96758b,2026-03-16 08:29:00,Helpdesk,2,False,120,0.3,resolue
+b0975f25-a2f6-4576-b096-f12cf737b88b,2026-03-16 08:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+697cac78-bee7-4ed2-b84d-b959449b0b7c,2026-03-16 08:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+28284858-ff3a-4ccb-a5d1-bcdacca57d80,2026-03-16 08:35:00,Sécurité Opérationnelle,2,False,240,0.6,resolue
+37256e2b-74cf-4076-be0e-4288874a59d7,2026-03-16 08:36:00,Helpdesk,1,False,600,0.7,resolue
+ae0aab50-9c14-49fa-997b-801f97852430,2026-03-16 08:37:00,Helpdesk,1,False,0,0.6,resolue
+6edd5d21-2014-4401-bfaa-e1eb576be469,2026-03-16 08:42:00,Système,2,False,360,0.5,resolue
+ebaa0696-111b-4391-afad-e8c508ba0e66,2026-03-16 08:44:00,Helpdesk,2,False,120,0.3,resolue
+0b29e9f1-6700-4a9f-b848-3142d8500659,2026-03-16 08:44:00,Helpdesk,1,True,240,0.7,resolue
+0c7d82db-4f0c-459f-9292-ee5ce2eb49b2,2026-03-16 08:44:00,Helpdesk,1,False,240,0.6,resolue
+a6402a41-f8c4-4393-8e24-c2693525205e,2026-03-16 08:46:00,Intervention-sur-site-déploiement,1,True,240,0.6,resolue
+c8e8eb19-2549-43f7-a476-ae52e8d66111,2026-03-16 08:49:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+047553b0-d860-4e8f-ac55-200142076885,2026-03-16 08:50:00,Helpdesk,1,False,0,0.6,resolue
+7ddec0df-00cd-4c02-99ff-baf0308ebbb1,2026-03-16 08:51:00,Téléphonie,2,False,0,0.3,resolue
+f4bb3415-1b69-404a-a3dd-9ac7c526c587,2026-03-16 08:53:00,SM Commercial,1,False,360,0.7,resolue
+552cd25c-7f5d-42d6-84d0-bc6c6d8b78e5,2026-03-16 08:53:00,Helpdesk,2,True,120,0.3,resolue
+cacd38b2-7a6d-4391-a923-f2a3befa22a0,2026-03-16 08:56:00,Helpdesk,1,False,240,0.6,resolue
+89f4d9a1-293e-47b8-a9b1-96cbd8b18a39,2026-03-16 08:56:00,Helpdesk,3,False,0,0.2,resolue
+2b8af57e-853e-426b-91b7-e17e32b7b47b,2026-03-16 08:57:00,Helpdesk,1,False,240,0.6,resolue
+e51c723c-d40a-4d09-871f-506d56997307,2026-03-16 08:58:00,Helpdesk,3,False,0,0.2,resolue
+a1fb8cff-a3a2-4720-80f2-04f244191902,2026-03-16 09:04:00,Intervention-sur-site-déploiement,1,True,240,0.6,resolue
+123e0023-34b5-458a-a7a9-f008f2acef07,2026-03-16 09:05:00,Helpdesk,1,False,240,0.6,resolue
+3fa8c5ee-3c8f-41ac-8bd3-9d87ca090446,2026-03-16 09:06:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+527ef943-7ac0-4342-89c8-34b4c978d8d5,2026-03-16 09:12:00,Système,1,False,240,0.6,resolue
+d75aa128-ab64-4f5d-8053-ca1f29e90bee,2026-03-16 09:12:00,Intervention-sur-site-déploiement,2,False,0,0.3,resolue
+719aa6aa-930d-4d95-b7a3-db7c9d561bc2,2026-03-16 09:13:00,Helpdesk,1,False,240,0.6,resolue
+a31a61ea-c729-4587-9b14-15fbe32cd32c,2026-03-16 09:14:00,Helpdesk,2,False,600,0.5,resolue
+8b34fb88-5482-44e1-8a57-e385f1d07da5,2026-03-16 09:22:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a5198618-8f2f-48cd-8e2a-f81be8f2c288,2026-03-16 09:22:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+4fd1948b-c1b0-4791-ae67-30a9ac8826cd,2026-03-16 09:22:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+9ce4122e-0f5c-40e5-a3d0-f7e562cd5716,2026-03-16 09:37:00,SM Commercial,1,False,360,0.7,resolue
+feb475b9-c0cb-46af-8292-dcff605ab41c,2026-03-16 09:41:00,Sécurité Opérationnelle,2,False,0,0.5,resolue
+f4b1beb6-6394-4f0a-a255-d2ab8521d91b,2026-03-16 09:42:00,Sécurité Opérationnelle,1,False,240,0.9,resolue
+13595207-31c1-4fbb-a04b-3b6e5e657732,2026-03-16 09:42:00,Sécurité Opérationnelle,1,False,1440,0.99,resolue
+166325c5-9cec-47d6-986c-b4a3b4099ca9,2026-03-16 09:43:00,Sécurité Opérationnelle,1,False,1440,0.99,resolue
+de748045-544f-4ab4-a90d-986d4863fc43,2026-03-16 09:45:00,Helpdesk,1,False,0,0.5,resolue
+88779def-170e-41b5-a8d6-676bb8b415b7,2026-03-16 09:52:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+4adb595f-7a6a-465d-8d90-506dfa7be1f6,2026-03-16 09:52:00,Helpdesk,1,False,0,0.6,resolue
+6a34a574-2661-4e7f-84aa-05c0caad71ef,2026-03-16 09:56:00,Helpdesk,1,False,600,0.8,resolue
+287b36ef-e0f4-4482-af00-3a48558aa997,2026-03-16 09:57:00,Helpdesk,1,False,0,0.6,resolue
+76d7dc6f-f33d-4623-bf92-34fbfe38e9cc,2026-03-16 10:01:00,Helpdesk,2,True,240,0.5,resolue
+7cd13f74-3673-4ac7-b1ed-ad574e386004,2026-03-16 10:02:00,Helpdesk,2,False,0,0.3,resolue
+7d5342e5-3a35-4e68-80e3-24a052d23092,2026-03-16 10:02:00,SM Commercial,1,False,480,0.7,resolue
+a76d699c-dd2f-4ef0-a85c-e073be0aace9,2026-03-16 10:03:00,Sécurité Opérationnelle,2,False,240,0.7,resolue
+43eb9795-7821-4801-9485-6c1759b28644,2026-03-16 10:10:00,Sécurité Opérationnelle,2,False,240,0.7,resolue
+950c1ee0-b313-4f1a-9312-fa9d95d707db,2026-03-16 10:11:00,Sécurité Opérationnelle,2,False,0,0.5,resolue
+bc882428-8de5-41dc-957e-1982aeeb01a6,2026-03-16 10:14:00,Système,2,False,240,0.5,resolue
+e73e8d59-1f1f-4135-aa30-c7449203bcbe,2026-03-16 10:17:00,Helpdesk,2,True,120,0.3,annulee
+f4e2320c-8290-436e-ab47-f6f9fa059f43,2026-03-16 10:20:00,Intervention-sur-site-déploiement,1,True,120,0.5,resolue
+a189cc5e-3e58-41b6-927c-873b3220e350,2026-03-16 10:20:00,Helpdesk,1,False,0,0.6,resolue
+c844762a-357c-4226-971a-b19d2ab65d59,2026-03-16 10:24:00,Sécurité Opérationnelle,2,False,240,0.6,resolue
+445ef876-0051-488d-b32b-e81a06e23e85,2026-03-16 10:24:00,Helpdesk,2,True,120,0.3,resolue
+cd6973db-a52c-4e46-acfe-ada339131415,2026-03-16 10:27:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+639d11a6-edae-434e-8fa9-fbd8cc37e934,2026-03-16 10:30:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+00dee63b-ec6a-40d7-b3ce-49e57ba34705,2026-03-16 10:30:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+0a4a2913-fa98-4408-8039-5d6a91114d55,2026-03-16 10:31:00,Helpdesk,2,False,240,0.4,resolue
+4742cbab-6afb-4aaf-8419-e9fdbed15028,2026-03-16 10:33:00,Intervention-sur-site-déploiement,2,False,360,0.5,resolue
+5884daa1-6a01-43dc-898c-c4caa9e412e1,2026-03-16 10:37:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+50ceea6f-9f9d-44f9-a7ed-c6677590a35e,2026-03-16 10:37:00,Helpdesk,2,False,720,0.6,resolue
+0b3149f3-8843-41d0-ab20-cd8b48214e99,2026-03-16 10:39:00,Sécurité Opérationnelle,2,False,360,0.8,annulee
+d9a2bdac-a874-4b3c-a2d5-e52f744de966,2026-03-16 10:40:00,Helpdesk,2,False,240,0.5,resolue
+1551deb4-ba68-42fc-9f25-c5f7f0675c5e,2026-03-16 10:41:00,Helpdesk,1,False,600,0.8,resolue
+182bddab-eac6-439e-af3e-852553dd281f,2026-03-16 10:44:00,Helpdesk,2,False,0,0.4,resolue
+bfda74bd-c5ba-460c-9c01-58b7d01a58e3,2026-03-16 10:45:00,Sécurité Opérationnelle,2,False,240,0.7,resolue
+80f96037-84e9-4e40-bc84-3a3a95272c17,2026-03-16 10:46:00,Helpdesk,2,False,390,0.6,resolue
+5fc7b252-d706-4019-8135-47e109cf6152,2026-03-16 10:47:00,Helpdesk,1,False,600,0.8,resolue
+5c6a874e-c8ef-4e98-96d7-a2e2f41a9ee5,2026-03-16 10:49:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+e43168c8-7e37-4609-a0dd-be4049c9342b,2026-03-16 10:54:00,Helpdesk,1,False,0,0.5,resolue
+b696e53d-e1ff-43bb-8eda-ca17544eb563,2026-03-16 10:56:00,Helpdesk,2,False,390,0.5,resolue
+9c75f855-acd5-434c-9a9b-55d750ad3dd6,2026-03-16 11:03:00,Helpdesk,2,False,240,0.5,resolue
+7690afdc-5484-4da1-a7ab-c4cd67f94610,2026-03-16 11:03:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c8dd2a81-2b87-4b63-9f55-88349a1c13cf,2026-03-16 11:05:00,Intervention-sur-site-déploiement,1,False,0,0.6,resolue
+9e36930a-65ea-469e-b1e8-ddb8caf8380b,2026-03-16 11:06:00,Helpdesk,1,False,0,0.6,resolue
+d8ea08d6-5f40-4dd7-8d8b-d5a6ff3cde25,2026-03-16 11:10:00,Helpdesk,2,False,240,0.5,resolue
+a77cf699-8f34-4b46-af26-95b2b7e24ff5,2026-03-16 11:11:00,Equipe-Etudes,1,False,240,0.6,resolue
+6b0db6cb-ed50-4d17-ad76-f078a951b954,2026-03-16 11:17:00,Système,2,True,360,0.5,resolue
+18393bfb-3d4a-4fae-9b0e-4d8c09ac4af9,2026-03-16 11:26:00,Intervention-sur-site-déploiement,1,False,165,0.6,resolue
+fef333b0-65a5-434a-985a-296e87c89c14,2026-03-16 11:32:00,Système,2,False,360,0.5,resolue
+ad7fedaa-b566-42ec-9234-2b77402317ad,2026-03-16 11:35:00,Sécurité Opérationnelle,2,True,120,0.6,resolue
+dda671a1-7579-4e59-a39a-cb564e0c49f8,2026-03-16 11:43:00,Sécurité Opérationnelle,2,False,360,0.8,resolue
+20280644-abbe-49fb-b975-ae7ec7147e1c,2026-03-16 11:47:00,Helpdesk,2,False,240,0.5,resolue
+7bac621f-f613-48f2-a13f-eab0011d6800,2026-03-16 11:51:00,Helpdesk,2,False,240,0.4,resolue
+64992cb0-b4b3-4439-bb72-1674191ba2b8,2026-03-16 11:53:00,Salle Informatique,1,False,180,0.6,resolue
+73f93b89-1690-4da0-9361-319b692b1859,2026-03-16 11:54:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b6d3890a-ccab-49f4-a028-c83294ffa39f,2026-03-16 11:55:00,Système,2,False,360,0.5,resolue
+343cff4e-727a-4b4b-b44a-9f12c9ef4f1e,2026-03-16 12:13:00,Sécurité Opérationnelle,2,False,240,0.6,resolue
+e23b9bd7-e1ed-4249-99cb-421f8a9cc32a,2026-03-16 12:14:00,Helpdesk,2,True,120,0.3,resolue
+edd67772-2d5e-4c84-af0d-d869800eb63b,2026-03-16 12:14:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+d4e59fcb-8bf2-44b7-9699-fb216914fc41,2026-03-16 12:14:00,Sécurité Opérationnelle,2,False,0,0.5,resolue
+3879d697-1e10-4103-a1aa-0df4f30a3e8c,2026-03-16 12:18:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+ed0aa08e-5b23-4b14-8860-448f0d88df91,2026-03-16 12:21:00,Helpdesk,2,False,0,0.4,resolue
+c95bd12a-b475-4210-b1f3-fc8d65452131,2026-03-16 12:22:00,Helpdesk,2,False,390,0.6,resolue
+4b27595a-a010-40d9-848e-1a5b14834626,2026-03-16 12:23:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+3166211d-d9d7-4d90-b754-69626e1b3ee0,2026-03-16 12:29:00,Helpdesk,2,False,390,0.5,resolue
+3e5cf0a1-9541-49e9-b7ee-d8083816206d,2026-03-16 12:31:00,Sécurité Opérationnelle,2,False,240,0.6,resolue
+63f7d915-18c2-481b-be99-7602d0745432,2026-03-16 12:38:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+54b4e4e2-f9db-4f22-9a90-8fe5191ddd8a,2026-03-16 12:41:00,Helpdesk,1,False,240,0.6,resolue
+8b7af034-ee5b-4452-96cf-a6daf2b4587e,2026-03-16 12:43:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+69b86069-5442-4b6d-b0b9-a0fa091c04cf,2026-03-16 12:43:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+f40789f9-06f3-43d5-87e7-41f27f2bc87b,2026-03-16 12:44:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+a9f7af62-37cb-4a8d-9a0d-359cf8b33927,2026-03-16 12:44:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+00d999e5-70cb-4faa-be8f-3a162ddc562d,2026-03-16 12:45:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+4f78a7b8-9f0e-4392-9304-edc7c62f1ea1,2026-03-16 12:45:00,Sécurité Opérationnelle,2,False,0,0.5,resolue
+e26aeed6-76a8-4cec-a277-dc3843fd07a1,2026-03-16 12:45:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+38416293-4ac6-4a80-bff2-59791ead080e,2026-03-16 12:45:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+bce41d8e-c611-4d68-9ab6-9400358e329f,2026-03-16 12:45:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+7209e0ac-bb58-42fb-b32b-6b20acef3f1b,2026-03-16 12:46:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+42cde376-11bc-41ef-b82b-41dbe904eeae,2026-03-16 12:48:00,Helpdesk,1,False,600,0.8,resolue
+cf1d28c8-ca26-457c-8bf7-0a31c66e8ce5,2026-03-16 12:59:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+64ea132f-6672-497e-90f2-8eb0bacb4ce0,2026-03-16 13:08:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+58b85f24-f102-4ca5-87e8-91bc8425e670,2026-03-16 13:10:00,Helpdesk,3,True,240,0.3,resolue
+ac134d72-6f8a-489f-bdc3-6f2d178e2e43,2026-03-16 13:17:00,Data Office,1,False,360,0.7,soumise
+78b7e92d-2452-44bf-b2cd-7957c2245953,2026-03-16 13:18:00,Helpdesk,2,False,0,0.3,resolue
+3679581d-5acc-4d27-8b3c-88b7cd4c3de1,2026-03-16 13:27:00,Helpdesk,3,False,360,0.4,resolue
+502eaea8-576b-49c1-a7de-c417ae020587,2026-03-16 13:28:00,Sécurité Opérationnelle,2,False,120,0.6,annulee
+6f40b300-43a1-49a4-bd19-baee13c9d292,2026-03-16 13:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+5b77d495-e0a4-4a63-a770-ea623a2daf9a,2026-03-16 13:33:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+119ad03b-88cc-47e2-b87f-ae2bcb85f48c,2026-03-16 13:36:00,Stock,2,False,1440,0.5,annulee
+bb2ba0ab-56fe-49a5-86da-08eff635c8cc,2026-03-16 13:51:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+800ce5db-6b2e-4315-bac0-36c993ad200c,2026-03-16 14:01:00,Helpdesk,2,True,120,0.3,resolue
+90f64be0-6718-4f00-ab36-23f57caade93,2026-03-16 14:05:00,Event Multi-Media.,2,False,360,0.5,soumise
+a8426dd3-5a65-40e3-a568-24b15d839a3f,2026-03-16 14:05:00,Helpdesk,1,False,165,0.6,resolue
+495e9670-5b94-45e4-ac40-aece961822d7,2026-03-16 14:06:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2d2a56ef-b668-4bc5-b137-470f5e40bd53,2026-03-16 14:12:00,Helpdesk,2,False,240,0.5,resolue
+b3921a13-d74d-4d14-b819-fc844c7df6f5,2026-03-16 14:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+db3c268e-76f9-4754-8807-96c5a19b0257,2026-03-16 14:35:00,Sécurité Opérationnelle,2,False,120,0.6,annulee
+5be7ac0e-50e5-446e-945d-beda7793212e,2026-03-17 07:30:00,SWIFT,1,False,240,0.85,resolue
+bf5a3045-1af0-45cc-acaf-e3d7ece7a14e,2026-03-17 07:49:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+f77769b6-6ccb-45b5-94ec-d3ef74f72de6,2026-03-17 07:54:00,Helpdesk,1,False,0,0.6,resolue
+516bb427-4194-4847-ad3e-288c23b1aa30,2026-03-17 08:00:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+3b713f20-6f71-4e56-8a5c-7876662c8711,2026-03-17 08:05:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2fa8185b-38c7-46b4-a8f9-bd7d557803d6,2026-03-17 08:07:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+2051071a-2830-423f-8db9-62676b9cabd2,2026-03-17 08:07:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+9ed3bd96-fc09-493e-9e03-398e93ea7fd4,2026-03-17 08:09:00,Intervention-sur-site-déploiement,3,False,0,0.2,resolue
+f24d4397-aa51-43b3-a991-b38e3614ea12,2026-03-17 08:10:00,Helpdesk,1,False,240,0.6,resolue
+c2f38b4e-395d-4872-bb72-08601cae00a0,2026-03-17 08:10:00,Système,1,False,240,0.6,resolue
+a79a5fdb-23d2-4a9f-b9b9-0c3461885c98,2026-03-17 08:11:00,Sécurité Opérationnelle,2,False,240,0.7,resolue
+350e1e85-ea03-48e7-bf00-2caae4f3b8fd,2026-03-17 08:15:00,Helpdesk,2,False,240,0.4,resolue
+395154c2-55d4-4016-8998-cee3cfd8d4ba,2026-03-17 08:15:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+d6c787db-73fa-46de-a347-a1a1c648c3b5,2026-03-17 08:16:00,Helpdesk,1,False,240,0.6,resolue
+008736b4-d3f0-460e-90c3-2d56222fed7b,2026-03-17 08:20:00,Helpdesk,1,False,240,0.7,resolue
+8001fb08-c07b-43e8-9fb6-fac1ce709375,2026-03-17 08:22:00,Helpdesk,2,False,120,0.3,resolue
+ce0b06be-7c45-4baa-ac2d-7e3c7a4fadfc,2026-03-17 08:26:00,Helpdesk,1,False,360,0.7,resolue
+5905b792-2303-4f54-a53f-a734b762cf1a,2026-03-17 08:28:00,Helpdesk,1,False,240,0.6,resolue
+6e148757-8940-4ee9-819e-4e7e25759725,2026-03-17 08:33:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+295255c9-1dc0-4343-97df-c22ec5e4ef1a,2026-03-17 08:36:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+239d6f31-c3cd-478d-b06a-a7a9eaf02bee,2026-03-17 08:36:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+350c2019-490f-43d7-b6f2-01dfe2559115,2026-03-17 08:37:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b547389d-5cd2-4d6c-8295-91da3dfd85b5,2026-03-17 08:37:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+f2c0cb36-7f92-4fe5-8c3a-7c56d1256e5f,2026-03-17 08:40:00,Développement-Digital,2,False,360,0.5,resolue
+3f13d588-1998-49e1-b032-5b822e6731d9,2026-03-17 08:41:00,Helpdesk,1,False,0,0.6,resolue
+4d96b974-4ea3-48dd-8acb-ce0128ce599d,2026-03-17 08:46:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+62370e05-06f4-4821-9055-f75152ee7efe,2026-03-17 08:47:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+301a0efb-5cfb-4b03-a195-9bc772669f87,2026-03-17 08:53:00,Helpdesk,2,False,0,0.3,resolue
+24592661-cd7b-448b-8699-e5221af94679,2026-03-17 08:53:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+41e13263-bcef-4011-b5c0-dd8efa078d96,2026-03-17 08:56:00,Helpdesk,2,False,360,0.5,resolue
+4724e2ef-d4c2-49bb-b1a3-817bf3a45173,2026-03-17 08:56:00,Intervention-sur-site-déploiement,1,False,165,0.6,resolue
+4e663a88-5a28-42d6-a704-e900fc1cae2f,2026-03-17 08:57:00,Helpdesk,1,True,360,0.7,resolue
+7a29513a-e9cc-4407-ad6b-c78360f412a8,2026-03-17 08:59:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+97ee69e4-344e-4baf-a3be-26752c4c84fa,2026-03-17 09:03:00,Développement-Digital,2,False,360,0.5,resolue
+8a8f3447-ccb3-4ef1-8780-891286bd550c,2026-03-17 09:06:00,Helpdesk,1,True,240,0.6,resolue
+e4c56ad3-1835-42c7-bce3-bd90c268c134,2026-03-17 09:10:00,Helpdesk,2,False,360,0.5,resolue
+c8849768-e742-4d82-ac21-eced091e9e7e,2026-03-17 09:11:00,Stock,2,False,720,0.5,resolue
+d215f2ce-3ebc-44d0-a13e-b7bd04ae34f3,2026-03-17 09:14:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b8f7b6a6-82b5-46d5-936e-e2c036246780,2026-03-17 09:14:00,Helpdesk,2,True,240,0.5,resolue
+56dd0d75-c3a0-4fee-bbb4-09a491ca083b,2026-03-17 09:15:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+bec8cd1a-3cf5-48a8-995a-470d975762e2,2026-03-17 09:17:00,Helpdesk,2,False,360,0.5,resolue
+77fc7631-eefe-44f5-983e-01b31ab75fd0,2026-03-17 09:20:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+7a2f0461-4f34-45a8-afef-6af9841c9a8a,2026-03-17 09:21:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+47fe6276-3797-4de8-a7aa-455e8c4a7421,2026-03-17 09:24:00,Intervention-sur-site-déploiement,1,False,0,0.6,resolue
+458ce242-f371-4764-8d6c-fb07cd4779ae,2026-03-17 09:28:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+6406dd14-460e-40ee-828a-6f8d282c70d2,2026-03-17 09:37:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+b643a33d-69b7-4110-a279-fcd08ea22b30,2026-03-17 09:40:00,Système,2,False,360,0.5,resolue
+1f68844d-e7c0-4c99-ba84-7f9f95d1930a,2026-03-17 09:41:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+e1beca52-7359-4ed9-aa92-9dd3fa62506d,2026-03-17 09:52:00,Sécurité Opérationnelle,1,False,120,0.7,resolue
+9cad7395-21e9-4553-840e-4d6fbce1b758,2026-03-17 09:52:00,Helpdesk,1,False,240,0.6,resolue
+254acdfa-3318-441e-961d-f09fa9ce6c63,2026-03-17 10:05:00,Helpdesk,2,False,120,0.4,annulee
+68f309a0-7725-42a5-b753-94d877fee476,2026-03-17 10:07:00,Helpdesk,1,False,600,0.8,resolue
+c143d8be-0557-4bf5-9f9c-298902da8f01,2026-03-17 10:07:00,Helpdesk,2,False,240,0.4,resolue
+071ea20e-b7cd-46ef-a19c-7c4ad26de40b,2026-03-17 10:07:00,Helpdesk,1,False,0,0.5,annulee
+dff0c657-81a1-4e54-88eb-8229b799cc47,2026-03-17 10:09:00,Helpdesk,2,False,360,0.5,resolue
+e105f507-942c-47b9-928f-18ce3a83d8ac,2026-03-17 10:11:00,Helpdesk,1,False,0,0.6,resolue
+2f92515c-6b38-4e68-9cf4-200c98a4588c,2026-03-17 10:12:00,Intervention-sur-site-déploiement,1,False,165,0.6,resolue
+8d8b5c1b-d5c9-495d-9ae6-10b23bf3f1c4,2026-03-17 10:13:00,Helpdesk,2,False,360,0.5,resolue
+f57f8ee7-5257-49c3-bd24-82ce0e668d16,2026-03-17 10:14:00,Helpdesk,2,False,360,0.5,resolue
+ef66b256-c830-4ee8-8ad9-6acd0d3b1329,2026-03-17 10:15:00,Helpdesk,2,False,360,0.5,resolue
+7549814e-c6dd-49c9-b5e3-3c7af5f16db6,2026-03-17 10:16:00,Helpdesk,2,False,360,0.5,resolue
+2ca8c01e-6c39-48d0-ad28-ee2b33db8ab4,2026-03-17 10:16:00,Téléphonie,2,False,1800,0.5,resolue
+ccd507bd-043f-4c12-900e-58dd06c6fe61,2026-03-17 10:17:00,Helpdesk,2,False,360,0.5,resolue
+4e7f7f0f-dfaf-4f7e-9f01-ac93735cde4f,2026-03-17 10:18:00,Helpdesk,2,False,360,0.5,resolue
+ac1d1d94-0547-4c69-a75d-d56e3d29c7e8,2026-03-17 10:21:00,Helpdesk,1,False,360,0.8,annulee
+e6ebd1ec-3ff1-40d5-8c7f-7a821eff92be,2026-03-17 10:22:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c0e9d5ef-91f5-486d-b640-05865cf4dcf6,2026-03-17 10:30:00,Helpdesk,2,True,120,0.3,resolue
+02a29a04-0042-40aa-a2d5-cef805c8fecf,2026-03-17 10:30:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c24c1d07-8cc8-411b-aff1-6a82e158d662,2026-03-17 10:31:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c2939c27-7cc2-400f-95c3-8be5e0555e2c,2026-03-17 10:31:00,Helpdesk,2,False,720,0.6,resolue
+b8ca144d-9fe9-46e2-9abe-086c5ba498d0,2026-03-17 10:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+40b85e02-a98e-44e6-837a-e6abeb5dfdbc,2026-03-17 10:32:00,Helpdesk,1,False,240,0.6,resolue
+bcd9666f-5a63-4ed2-b679-627aaf2a068f,2026-03-17 10:37:00,Téléphonie,1,False,1800,0.7,resolue
+742deb1f-3f63-44e7-87e6-6052eccbd3b5,2026-03-17 10:37:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+5e6e1e7f-2d54-4395-b330-b89ae677948a,2026-03-17 10:39:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+8018e700-4f33-40cf-ae4d-06258a1e9369,2026-03-17 10:40:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+7114cd3d-b94d-4824-ba4b-5c9fb579981f,2026-03-17 10:44:00,Développement-Digital,3,False,120,0.3,resolue
+a972326a-386e-4ff8-9edc-675d2c366404,2026-03-17 10:46:00,SWIFT,1,False,120,0.65,resolue
+bd14c8ed-4231-468b-939b-a82cec9dbb90,2026-03-17 10:52:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c8bf37fd-91dc-4e8f-9e2b-c273eafbe33d,2026-03-17 10:52:00,Sécurité Opérationnelle,2,False,0,0.5,resolue
+4c86fb6b-47db-45e2-8056-93b78390dba8,2026-03-17 10:56:00,Helpdesk,1,False,600,0.8,resolue
+78840b76-e3bd-40a6-8370-82919c049c3f,2026-03-17 10:56:00,Sécurité Opérationnelle,2,False,720,0.8,resolue
+fcb9ddf1-49e3-4db2-ab41-dfaed405d1dc,2026-03-17 11:03:00,Helpdesk,1,False,600,0.8,resolue
+ac421dce-450e-41f5-a2f5-3ac81b067908,2026-03-17 11:07:00,Helpdesk,2,False,240,0.5,resolue
+c376d3ea-d4f4-4aef-92a7-11b017498eb4,2026-03-17 11:10:00,Sécurité Opérationnelle,2,False,360,0.8,resolue
+7fc3752c-a44f-450f-a514-73add5d0feb8,2026-03-17 11:23:00,Helpdesk,1,False,180,0.7,resolue
+b83e6d97-4c01-4f17-b198-5b49b04236fb,2026-03-17 11:25:00,Helpdesk,3,False,240,0.3,resolue
+00a8c5ff-1f09-4da6-bd13-39a5ea0974e8,2026-03-17 11:30:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+43ab6995-5964-4cf0-a207-85f4dfe5bac7,2026-03-17 11:32:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+3157e6bc-d44e-4867-a80b-b97acb6835bd,2026-03-17 11:33:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+39b15afe-139c-449c-a733-69f4c6370835,2026-03-17 11:37:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+fe0f42c5-cbc9-4300-8800-6cf259aa1dcd,2026-03-17 11:37:00,Helpdesk,2,False,240,0.4,resolue
+b1d4684a-a5f5-4c96-9e36-c2e93c083e27,2026-03-17 11:39:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+033c701f-29c3-4f10-b239-56b8bee0e78a,2026-03-17 11:40:00,Sécurité Opérationnelle,2,False,120,0.6,resolue
+c2cbbe57-2175-4f0f-a5df-d8a6a2b13ac5,2026-03-17 11:41:00,Helpdesk,2,False,390,0.6,resolue
+2f49c3dd-778f-4b95-8e74-8a0e966f5be3,2026-03-17 11:44:00,Helpdesk,2,False,390,0.6,resolue
+dc96aa88-69b4-4833-a855-019959c584de,2026-03-17 11:44:00,Intervention-sur-site-déploiement,1,False,360,0.8,resolue

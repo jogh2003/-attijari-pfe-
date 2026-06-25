@@ -1,0 +1,12 @@
+{
+  "date_entrainement": "2026-05-18T22:55:35.834561",
+  "modele": "LightGBM",
+  "accuracy_top1": 0.3935,
+  "accuracy_top3": 0.574,
+  "n_tickets": 1382,
+  "n_classes": 33,
+  "min_samples_classe": 3,
+  "features": "TF-IDF(500) + type_operation_enc + categorie_enc + severite",
+  "ngram_range": "(1,2)",
+  "source": "Donnees reelles Attijari bank Feb-Mars 2026"
+}

@@ -193,6 +193,31 @@ class TestReclamations:
         assert data["score_anomalie"] >= 0.5
         assert data["niveau"] in ("CRITIQUE", "SURVEILLANCE", "NORMAL")
         assert "alerte_declenchee" in data
+        assert "solution_knn" in data
+        assert "similarite_knn" in data
+        assert "incidents_similaires" in data
+
+    def test_soumettre_reclamation_hybride(self, client, auth_admin):
+        """POST /reclamations/soumettre retourne solution LightGBM + KNN."""
+        r = client.post(
+            "/reclamations/soumettre",
+            json={
+                "description": "Blocage transactions SWIFT et timeout connexion réseau",
+                "type_operation": "SWIFT",
+                "categorie": "Erreur connexion",
+                "severite": 1,
+            },
+            headers=auth_admin,
+        )
+        assert r.status_code == 200
+        data = r.json()
+        assert "solution" in data
+        assert "confidence_lightgbm" in data
+        assert "alternatives_lightgbm" in data
+        assert "action_similaire_knn" in data
+        assert "similarite_knn" in data
+        assert isinstance(data["incidents_similaires"], list)
+        assert data["methode_recommandation"] == "LightGBM + KNN"
 
     def test_analyser_reclamation_normal(self, client, auth_admin):
         """POST /reclamations/analyser — ticket normal."""
@@ -317,6 +342,10 @@ class TestPredictions:
         assert "score_risque" in data
         assert data["score_risque"] > 0.0
         assert data["est_alerte"] is True
+        assert "action_recommandee" in data
+        assert "action_similaire_knn" in data
+        assert "similarite_knn" in data
+        assert data["methode_recommandation"] == "LightGBM + KNN"
 
     def test_predire_ticket_normal(self, client, auth_admin):
         """POST /api/predictions/predire — groupe à faible risque."""
@@ -379,6 +408,27 @@ class TestRecommandations:
         assert "action_suggeree" in data
         assert "taux_succes" in data
         assert "priorite" in data
+        assert "action_similaire_knn" in data
+        assert "similarite_moyenne" in data
+        assert "incidents_similaires" in data
+
+    def test_recommandation_similaire_knn(self, client, auth_admin):
+        """POST /api/recommandations/similaire retourne une recommandation KNN et incidents proches."""
+        r = client.post(
+            "/api/recommandations/similaire",
+            json={
+                "texte": "Erreur authentification VPN et blocage réseau",
+                "groupe": "Réseau",
+                "categorie": "Connexion",
+                "severite": 2,
+            },
+            headers=auth_admin,
+        )
+        assert r.status_code == 200
+        data = r.json()
+        assert data["taux_succes"] >= 0.0
+        assert "similarite_moyenne" in data
+        assert isinstance(data["incidents_similaires"], list)
 
     def test_get_recommandation_par_id(self, client, auth_admin):
         """GET /api/recommandations/{id} retourne une recommandation."""

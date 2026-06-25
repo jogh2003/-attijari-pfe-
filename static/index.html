@@ -1,0 +1,2935 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attijari Bank — Système IA & RPA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+:root {
+  --or:        #D94B20;
+  --or2:       #C03E18;
+  --or3:       #E8541F;
+  --or-10:     rgba(217,75,32,0.10);
+  --or-06:     rgba(217,75,32,0.06);
+  --or-20:     rgba(217,75,32,0.20);
+  --white:     #FFFFFF;
+  --bg:        #F5F6F8;
+  --bg2:       #ECEEF2;
+  --surface:   #FFFFFF;
+  --border:    #E2E5EA;
+  --border2:   #D0D5DD;
+  --text:      #1A2233;
+  --text2:     #5A6478;
+  --text3:     #9AA3B2;
+  --green:     #18A762;
+  --green-s:   rgba(24,167,98,0.10);
+  --red:       #D93025;
+  --red-s:     rgba(217,48,37,0.10);
+  --amber:     #D97706;
+  --amber-s:   rgba(217,119,6,0.10);
+  --blue:      #2563EB;
+  --blue-s:    rgba(37,99,235,0.10);
+  --sidebar-w: 232px;
+  --r:         8px;
+  --r2:        12px;
+  --r3:        16px;
+  --shadow:    0 1px 4px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.05);
+  --shadow2:   0 2px 8px rgba(0,0,0,0.10), 0 8px 24px rgba(0,0,0,0.07);
+  --font:      'Sora', sans-serif;
+  --mono:      'IBM Plex Mono', monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:13px;line-height:1.6;overflow-x:hidden;min-height:100vh}
+button{font-family:var(--font);cursor:pointer}
+input,select,textarea{font-family:var(--font)}
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--or)}
+a{color:var(--or);text-decoration:none}
+
+/* LOADER */
+#appLoader{position:fixed;inset:0;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;gap:24px}
+.loader-logo-wrap{background:#fff;border:1px solid var(--border);border-radius:20px;padding:24px 44px;box-shadow:var(--shadow2)}
+.loader-bar{width:220px;height:3px;background:var(--bg2);border-radius:2px;overflow:hidden}
+.loader-bar::after{content:'';display:block;height:100%;background:linear-gradient(90deg,var(--or),#F0A500);animation:lb 1.8s ease-in-out infinite}
+@keyframes lb{0%{width:0;margin-left:0}50%{width:70%;margin-left:15%}100%{width:0;margin-left:100%}}
+.loader-txt{font-size:11px;color:var(--text3);letter-spacing:0.5px}
+
+/* TOAST */
+#toast{position:fixed;bottom:24px;right:24px;z-index:9998;padding:11px 18px;border-radius:var(--r2);font-size:13px;font-weight:500;display:none;animation:tin 0.3s ease;box-shadow:var(--shadow2)}
+@keyframes tin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+#toast.success{background:var(--green);color:#fff}
+#toast.error{background:var(--red);color:#fff}
+#toast.info{background:var(--text);color:#fff}
+
+/* LOGIN */
+#loginPage{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#fff;background-image:linear-gradient(160deg,rgba(217,75,32,0.06) 0%,transparent 50%),linear-gradient(340deg,rgba(240,165,0,0.04) 0%,transparent 50%)}
+.login-wrap{width:420px}
+.login-brand{text-align:center;margin-bottom:28px}
+.login-logo-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:18px 40px 14px;display:inline-block;box-shadow:var(--shadow);margin-bottom:14px}
+.login-subtitle{font-size:10px;color:var(--text3);letter-spacing:1.6px;text-transform:uppercase}
+.login-card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:36px 40px;box-shadow:var(--shadow2);border-top:3px solid var(--or)}
+.login-title{font-size:17px;font-weight:600;color:var(--text);margin-bottom:4px}
+.login-sub{font-size:12px;color:var(--text3);margin-bottom:26px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;font-weight:500}
+.field input,.field select{width:100%;background:#fff;border:1.5px solid var(--border);border-radius:var(--r);padding:10px 14px;color:var(--text);font-size:13px;outline:none;transition:border-color 0.2s}
+.field input:focus{border-color:var(--or);box-shadow:0 0 0 3px var(--or-10)}
+.api-url-row{display:flex;gap:8px;align-items:flex-end;margin-bottom:18px}
+.api-url-row .field{flex:1;margin-bottom:0}
+.dot-wrap{width:32px;height:38px;display:flex;align-items:center;justify-content:center}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--border2);transition:all 0.3s}
+.dot.ok{background:var(--green);box-shadow:0 0 6px rgba(24,167,98,0.4)}
+.dot.err{background:var(--red)}
+.btn-login{width:100%;padding:12px;color:#fff;border:none;border-radius:var(--r);font-size:13px;font-weight:600;margin-top:6px;transition:all 0.2s;background:var(--or);letter-spacing:0.3px}
+.btn-login:hover{background:var(--or2);transform:translateY(-1px);box-shadow:0 4px 20px rgba(217,75,32,0.30)}
+.btn-login:disabled{opacity:0.5;cursor:not-allowed;transform:none;box-shadow:none}
+.role-switcher{margin-top:18px}
+.role-lbl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:7px}
+.role-btns{display:flex;gap:6px}
+.role-btn{flex:1;padding:7px 6px;background:#fff;border:1.5px solid var(--border);border-radius:var(--r);color:var(--text2);font-size:11px;text-align:center;cursor:pointer;transition:all 0.2s;font-family:var(--font);font-weight:500}
+.role-btn:hover{border-color:var(--or);color:var(--or);background:var(--or-06)}
+.login-footer{text-align:center;margin-top:18px;font-size:11px;color:var(--text3)}
+
+/* APP LAYOUT */
+#app{display:none;height:100vh;overflow:hidden}
+#app.visible{display:flex}
+
+/* SIDEBAR */
+.sidebar{width:var(--sidebar-w);flex-shrink:0;background:#fff;border-right:1px solid var(--border);display:flex;flex-direction:column;height:100vh;overflow-y:auto;overflow-x:hidden}
+.sidebar-brand{padding:16px 16px 14px;border-bottom:1px solid var(--border);flex-shrink:0;text-align:center;background:#fff}
+.sidebar-logo-wrap{background:#fff;border:1px solid var(--border);border-radius:10px;padding:10px 16px 8px;display:inline-block;margin-bottom:5px}
+.sidebar-tagline{font-size:9px;color:var(--text3);letter-spacing:1px;text-transform:uppercase}
+.sidebar-nav{flex:1;padding:10px 8px}
+.nav-section-lbl{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:1.2px;padding:10px 10px 4px;font-weight:600}
+.nav-item{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:var(--r);cursor:pointer;transition:all 0.15s;color:var(--text2);font-size:12px;font-weight:500;margin-bottom:1px;position:relative}
+.nav-item:hover{background:var(--or-06);color:var(--or)}
+.nav-item.active{background:var(--or-10);color:var(--or);font-weight:600}
+.nav-item.active::before{content:'';position:absolute;left:0;top:5px;bottom:5px;width:3px;background:var(--or);border-radius:0 3px 3px 0}
+.nav-icon{width:15px;height:15px;flex-shrink:0;stroke:currentColor}
+.nav-badge{margin-left:auto;padding:1px 7px;border-radius:20px;font-size:10px;font-weight:600;background:var(--or-10);color:var(--or)}
+.nav-badge.red{background:var(--red-s);color:var(--red)}
+.sidebar-user{padding:12px 14px;border-top:1px solid var(--border);display:flex;align-items:center;gap:9px;flex-shrink:0;background:#fff}
+.user-avatar{width:32px;height:32px;border-radius:50%;background:var(--or);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0}
+.user-info{flex:1;min-width:0}
+.user-name{font-size:12px;font-weight:600;color:var(--text)}
+.user-role{font-size:10px;color:var(--text3)}
+.btn-logout{width:28px;height:28px;background:transparent;border:1.5px solid var(--border);border-radius:7px;color:var(--text3);cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.2s}
+.btn-logout:hover{border-color:var(--red);color:var(--red);background:var(--red-s)}
+
+/* MAIN */
+.main{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.topbar{height:54px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;flex-shrink:0;background:#fff}
+.topbar-title{font-size:14px;font-weight:600;color:var(--text)}
+.topbar-right{display:flex;align-items:center;gap:10px}
+.api-indicator{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text2);padding:4px 10px;background:var(--bg);border:1px solid var(--border);border-radius:20px}
+.topbar-action{padding:6px 14px;background:var(--or-10);border:1px solid rgba(217,75,32,0.25);border-radius:var(--r);color:var(--or);font-size:11px;font-weight:600;cursor:pointer;transition:all 0.2s}
+.topbar-action:hover{background:var(--or-20)}
+.content{flex:1;overflow-y:auto;padding:22px}
+.page{display:none}
+.page.active{display:block}
+
+/* KPI CARDS */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+.kpi-card{background:#fff;border:1px solid var(--border);border-radius:var(--r2);padding:18px;position:relative;overflow:hidden;box-shadow:var(--shadow);transition:box-shadow 0.2s,border-color 0.2s}
+.kpi-card:hover{box-shadow:var(--shadow2);border-color:var(--border2)}
+.kpi-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.kpi-card.orange::after{background:var(--or)}
+.kpi-card.green::after{background:var(--green)}
+.kpi-card.red::after{background:var(--red)}
+.kpi-card.blue::after{background:var(--blue)}
+.kpi-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;font-weight:500;margin-bottom:8px}
+.kpi-value{font-size:28px;font-weight:700;color:var(--text);letter-spacing:-1px;line-height:1.1}
+.kpi-sub{font-size:11px;color:var(--text3);margin-top:5px}
+.kpi-badge{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:600;margin-top:5px}
+.kpi-badge.up{background:var(--green-s);color:var(--green)}
+.kpi-badge.down{background:var(--red-s);color:var(--red)}
+.kpi-badge.or{background:var(--or-10);color:var(--or)}
+.kpi-grid-6{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.kpi-mini-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:13px 16px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;transition:box-shadow 0.2s}
+.kpi-mini-card:hover{box-shadow:var(--shadow2)}
+.kpi-mini-icon{width:36px;height:36px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;font-weight:700}
+.kpi-mini-val{font-size:20px;font-weight:700;color:var(--text);line-height:1.2}
+.kpi-mini-lbl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;margin-top:2px}
+.chart-compare-wrap{margin-top:16px;padding-top:14px;border-top:1px solid var(--border)}
+.chart-section-title{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;font-weight:500}
+
+/* SECTION */
+.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.section-title{font-size:14px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:8px}
+.section-dot{width:8px;height:8px;border-radius:50%;background:var(--or)}
+
+/* BUTTONS */
+.btn{padding:7px 14px;border-radius:var(--r);font-size:12px;font-weight:600;cursor:pointer;transition:all 0.2s;display:inline-flex;align-items:center;gap:6px;border:1.5px solid transparent}
+.btn-primary{background:var(--or);color:#fff;border-color:var(--or)}
+.btn-primary:hover{background:var(--or2);box-shadow:0 2px 12px rgba(217,75,32,0.28)}
+.btn-secondary{background:#fff;color:var(--text2);border-color:var(--border)}
+.btn-secondary:hover{color:var(--or);border-color:var(--or);background:var(--or-06)}
+.btn-danger{background:var(--red-s);color:var(--red);border-color:rgba(217,48,37,0.25)}
+.btn-success{background:var(--green-s);color:var(--green);border-color:rgba(24,167,98,0.25)}
+.btn:disabled{opacity:0.5;cursor:not-allowed}
+
+/* CARD */
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--r2);padding:20px;box-shadow:var(--shadow)}
+.card-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+
+/* TABLE */
+.table-wrap{overflow-x:auto;border-radius:var(--r2);border:1px solid var(--border);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse}
+thead th{padding:10px 14px;background:var(--bg);color:var(--text3);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;text-align:left;border-bottom:1px solid var(--border);white-space:nowrap}
+tbody tr{border-bottom:1px solid var(--border);transition:background 0.15s;background:#fff}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:var(--or-06)}
+tbody td{padding:10px 14px;font-size:12px;color:var(--text2)}
+tbody td:first-child{color:var(--text);font-weight:500}
+
+/* BADGES */
+.badge{display:inline-flex;align-items:center;gap:3px;padding:2px 9px;border-radius:20px;font-size:10px;font-weight:600}
+.badge-red{background:var(--red-s);color:var(--red)}
+.badge-green{background:var(--green-s);color:var(--green)}
+.badge-amber{background:var(--amber-s);color:var(--amber)}
+.badge-blue{background:var(--blue-s);color:var(--blue)}
+.badge-orange{background:var(--or-10);color:var(--or)}
+.badge-gray{background:var(--bg2);color:var(--text2)}
+
+/* SCORE BAR */
+.score-bar{display:flex;align-items:center;gap:8px}
+.score-track{flex:1;height:5px;background:var(--bg2);border-radius:3px;overflow:hidden}
+.score-fill{height:100%;border-radius:3px;transition:width 0.6s ease}
+.score-val{font-family:var(--mono);font-size:11px;font-weight:500;min-width:36px;text-align:right}
+
+/* FORM */
+.form-group{margin-bottom:14px}
+.form-label{display:block;font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;font-weight:500}
+.form-input,.form-select,.form-textarea{width:100%;background:#fff;border:1.5px solid var(--border);border-radius:var(--r);padding:9px 13px;color:var(--text);font-size:13px;outline:none;transition:border-color 0.2s}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--or);box-shadow:0 0 0 3px var(--or-10)}
+.form-textarea{min-height:100px;resize:vertical}
+.form-select option{background:#fff;color:var(--text)}
+.form-row{display:grid;gap:12px}
+.form-row-2{grid-template-columns:1fr 1fr}
+.form-row-3{grid-template-columns:1fr 1fr 1fr}
+
+/* ALERT ITEM */
+.alert-item{background:#fff;border:1px solid var(--border);border-radius:var(--r2);padding:14px 18px;display:flex;align-items:flex-start;gap:14px;margin-bottom:10px;box-shadow:var(--shadow);transition:box-shadow 0.2s,transform 0.2s}
+.alert-item:hover{box-shadow:var(--shadow2);transform:translateX(2px)}
+.alert-item.high{border-left:4px solid var(--red)}
+.alert-item.medium{border-left:4px solid var(--amber)}
+.alert-item.low{border-left:4px solid var(--green)}
+.alert-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.alert-icon.red{background:var(--red-s)}
+.alert-icon.or{background:var(--or-10)}
+.alert-icon.amber{background:var(--amber-s)}
+.alert-body{flex:1;min-width:0}
+.alert-title{font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px}
+.alert-desc{font-size:11px;color:var(--text2);line-height:1.5}
+.alert-meta{font-size:10px;color:var(--text3);margin-top:4px;font-family:var(--mono)}
+.alert-actions{display:flex;flex-direction:column;gap:6px;align-items:flex-end;flex-shrink:0}
+.alert-score-bar{display:flex;align-items:center;gap:6px;margin-top:7px}
+.alert-score-track{flex:1;height:4px;background:var(--bg2);border-radius:2px;overflow:hidden;min-width:80px}
+.alert-score-fill{height:100%;border-radius:2px;transition:width 0.8s ease}
+/* Robot panel */
+.robot-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;gap:12px;transition:background 0.2s}
+.robot-card:hover{background:#fff;box-shadow:var(--shadow)}
+.robot-dot-wrap{position:relative;width:10px;height:10px;flex-shrink:0}
+.robot-dot{width:10px;height:10px;border-radius:50%;background:var(--green)}
+.robot-dot.active::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:2px solid var(--green);animation:pulse-ring 1.6s ease-out infinite}
+.robot-dot.idle{background:var(--border2)}
+.robot-dot.running{background:var(--amber)}
+.robot-dot.running::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:2px solid var(--amber);animation:pulse-ring 0.9s ease-out infinite}
+@keyframes pulse-ring{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(2)}}
+.robot-info{flex:1}
+.robot-name{font-size:11px;font-weight:600;color:var(--text);font-family:var(--mono)}
+.robot-detail{font-size:10px;color:var(--text3);margin-top:1px}
+.robot-stat{font-size:10px;font-weight:600;color:var(--text2);flex-shrink:0}
+/* Simulation */
+.sim-result{margin-top:12px;padding:12px;border-radius:var(--r);border:1.5px solid var(--border);background:var(--bg)}
+.sim-result.alerte{border-color:rgba(217,48,37,0.35);background:var(--red-s)}
+.sim-result.surveillance{border-color:rgba(217,119,6,0.35);background:var(--amber-s)}
+.sim-result.normal{border-color:rgba(24,167,98,0.35);background:var(--green-s)}
+/* UiPath KPI row */
+.uipath-kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.uipath-kpi{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;box-shadow:var(--shadow);text-align:center}
+.uipath-kpi-val{font-size:22px;font-weight:700;color:var(--text);line-height:1.2}
+.uipath-kpi-lbl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;margin-top:3px}
+/* Execution steps */
+.exec-step{background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:14px;flex:1;min-width:160px;position:relative}
+.exec-step-num{font-size:9px;color:var(--or);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.exec-step-name{font-size:12px;font-weight:600;color:var(--text);margin-bottom:4px;font-family:var(--mono)}
+.exec-step-desc{font-size:11px;color:var(--text2);line-height:1.5}
+.exec-arrow{color:var(--border2);display:flex;align-items:center;font-size:20px;padding:0 2px}
+
+/* RESULT BOX */
+.result-box{background:var(--bg);border:1px solid var(--border);border-radius:var(--r2);padding:18px;margin-top:16px}
+.result-score-big{font-size:42px;font-weight:700;font-family:var(--mono)}
+.result-score-big.ok{color:var(--green)}
+.result-score-big.warn{color:var(--amber)}
+.result-score-big.crit{color:var(--red)}
+.result-section{margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}
+.result-section-title{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.reco-item{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;background:#fff;border-radius:var(--r);margin-bottom:6px;border:1px solid var(--border);border-left:2px solid var(--or)}
+.reco-item p{font-size:12px;color:var(--text2)}
+
+/* AUDIT */
+.audit-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
+.audit-item:last-child{border-bottom:none}
+.audit-time{font-family:var(--mono);font-size:10px;color:var(--text3);min-width:130px}
+.audit-user{font-size:11px;color:var(--text2)}
+.audit-status{font-family:var(--mono);font-size:10px}
+
+/* FILTER BAR */
+.filter-bar{display:flex;gap:8px;align-items:center;margin-bottom:16px;flex-wrap:wrap}
+.filter-bar .form-input,.filter-bar .form-select{padding:7px 11px;font-size:12px}
+.filter-bar .form-input{flex:1;min-width:160px}
+.filter-bar .form-select{width:auto}
+
+/* PAGINATION */
+.pagination{display:flex;align-items:center;justify-content:space-between;padding:12px 0;margin-top:8px}
+.pagination-info{font-size:11px;color:var(--text3)}
+.pagination-btns{display:flex;gap:4px}
+.pag-btn{width:30px;height:30px;border-radius:var(--r);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;background:#fff;border:1.5px solid var(--border);color:var(--text2);transition:all 0.2s}
+.pag-btn:hover{border-color:var(--or);color:var(--or)}
+.pag-btn.active{background:var(--or);border-color:var(--or);color:#fff}
+.pag-btn:disabled{opacity:0.35;cursor:not-allowed}
+
+/* STATUS ROW */
+.status-row{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--bg);border-radius:var(--r);margin-bottom:6px}
+.status-label{font-size:12px;color:var(--text)}
+.status-val{font-size:11px;font-weight:600;font-family:var(--mono)}
+
+/* METRIC ROW */
+.metric-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border)}
+.metric-row:last-child{border-bottom:none}
+.metric-label{font-size:12px;color:var(--text2)}
+.metric-value{font-size:13px;font-weight:600;color:var(--text);font-family:var(--mono)}
+
+/* TIMELINE */
+.timeline{padding-left:14px;border-left:2px solid var(--border)}
+.timeline-item{position:relative;padding-bottom:16px;padding-left:16px}
+.timeline-item::before{content:'';position:absolute;left:-21px;top:4px;width:8px;height:8px;border-radius:50%;border:2px solid #fff;background:var(--or)}
+.timeline-time{font-size:10px;color:var(--text3);font-family:var(--mono)}
+.timeline-text{font-size:12px;color:var(--text2);margin-top:2px}
+
+/* EMPTY STATE */
+.empty-state{text-align:center;padding:48px 24px;color:var(--text3)}
+.empty-state h3{font-size:14px;font-weight:500;color:var(--text2);margin-bottom:5px}
+.empty-state p{font-size:12px}
+
+/* SPINNER */
+.spinner{width:17px;height:17px;border:2px solid var(--border2);border-top-color:var(--or);border-radius:50%;animation:spin 0.7s linear infinite;display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-row{display:flex;align-items:center;justify-content:center;gap:10px;padding:32px;color:var(--text2);font-size:13px}
+
+/* GAUGE */
+.pred-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r2);padding:16px;display:flex;align-items:center;gap:16px;margin-bottom:10px}
+.pred-gauge{width:110px;height:110px;position:relative;flex-shrink:0}
+.gauge-val{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.gauge-num{font-size:20px;font-weight:700;font-family:var(--mono)}
+.gauge-lbl{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:0.5px}
+.pred-body{flex:1}
+.pred-title{font-size:12px;font-weight:600;color:var(--text);margin-bottom:4px}
+.pred-sub{font-size:11px;color:var(--text2);margin-bottom:4px}
+
+/* MODEL BADGES */
+.model-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:600}
+.model-badge.live{background:var(--or-10);border:1px solid rgba(217,75,32,0.2);color:var(--or)}
+.model-badge.lstm{background:var(--blue-s);border:1px solid rgba(37,99,235,0.2);color:var(--blue)}
+.model-badge.knn{background:var(--green-s);border:1px solid rgba(24,167,98,0.2);color:var(--green)}
+.model-badge.nlp{background:var(--amber-s);border:1px solid rgba(217,119,6,0.2);color:var(--amber)}
+
+/* API BANNER */
+#apiBanner{background:rgba(217,119,6,0.08);border:1px solid rgba(217,119,6,0.25);border-radius:var(--r2);padding:10px 16px;margin-bottom:20px;display:flex;align-items:center;gap:12px;font-size:12px;color:var(--amber)}
+#apiBanner button{margin-left:auto;padding:4px 12px;background:var(--amber);color:#fff;border:none;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer}
+#uipathNotice{background:rgba(24,167,98,0.08);border:1px solid rgba(24,167,98,0.22);border-radius:var(--r);padding:12px 14px;margin-bottom:18px;color:var(--text);font-size:12px;display:none;align-items:center;gap:10px;animation:updatePulse 0.6s ease-out}
+@keyframes updatePulse{0%{transform:translateY(-5px);opacity:0}100%{transform:none;opacity:1}}
+#uipathNotice.show{display:flex}
+
+/* HELPERS */
+.mb-16{margin-bottom:16px}
+.mb-20{margin-bottom:20px}
+.text-or{color:var(--or)}
+.text-green{color:var(--green)}
+.text-red{color:var(--red)}
+.text-amber{color:var(--amber)}
+.text-muted{color:var(--text2)}
+.font-mono{font-family:var(--mono)}
+.flex-row{display:flex;gap:16px}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="appLoader">
+  <div class="loader-logo-wrap">
+    <svg width="180" height="48" viewBox="0 0 180 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="180" height="48" rx="8" fill="#fff"/>
+      <text x="16" y="32" font-family="Sora,sans-serif" font-size="20" font-weight="700" fill="#D94B20">Attijari</text>
+      <text x="110" y="32" font-family="Sora,sans-serif" font-size="20" font-weight="300" fill="#1A2233">Bank</text>
+    </svg>
+  </div>
+  <div class="loader-bar"></div>
+  <div class="loader-txt">Initialisation du système IA &amp; RPA…</div>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<!-- LOGIN -->
+<div id="loginPage">
+  <div class="login-wrap">
+    <div class="login-brand">
+      <div class="login-logo-card">
+        <svg width="160" height="52" viewBox="0 0 160 52" fill="none">
+          <text x="8" y="36" font-family="Sora,sans-serif" font-size="26" font-weight="700" fill="#D94B20">Attijari</text>
+          <text x="102" y="36" font-family="Sora,sans-serif" font-size="26" font-weight="300" fill="#1A2233">Bank</text>
+        </svg>
+      </div>
+      <div class="login-subtitle">Système IA &amp; RPA — Détection d'anomalies IT</div>
+    </div>
+
+    <div class="login-card">
+      <div class="login-title">Connexion</div>
+
+      <div class="field">
+        <label>Email / Identifiant</label>
+        <input id="loginUser" type="text" value="admin@attijaribank.tn">
+      </div>
+      <div class="field">
+        <label>Mot de passe</label>
+        <input id="loginPass" type="password" value="Admin@2026!">
+      </div>
+      <button class="btn-login" id="btnLogin" onclick="doLogin()">
+        <span id="loginBtnTxt">Se connecter</span>
+      </button>
+
+      <div class="role-switcher">
+        <div class="role-lbl">Accès rapide — comptes de démonstration</div>
+        <div class="role-btns">
+          <button class="role-btn" onclick="fillRole('admin@attijaribank.tn','Admin@2026!')">Admin</button>
+          <button class="role-btn" onclick="fillRole('responsable.it@attijaribank.tn','Resp@2026!')">Resp. IT</button>
+          <button class="role-btn" onclick="fillRole('meriam@attijaribank.tn','Stage@2026!')">Meriam</button>
+          <button class="role-btn" onclick="fillRole('robot@attijaribank.tn','Robot@2026!')">UiPath</button>
+        </div>
+      </div>
+    </div>
+    <div class="login-footer">© 2026 Attijari Bank Tunisie &mdash; <em>Croire en vous</em></div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-logo-wrap">
+        <svg width="120" height="32" viewBox="0 0 120 32" fill="none">
+          <text x="4" y="22" font-family="Sora,sans-serif" font-size="16" font-weight="700" fill="#D94B20">Attijari</text>
+          <text x="72" y="22" font-family="Sora,sans-serif" font-size="16" font-weight="300" fill="#1A2233">Bank</text>
+        </svg>
+      </div>
+      <div class="sidebar-tagline">IA &amp; RPA · PFE 2026</div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-lbl" data-roles="admin,responsable_it">Principal</div>
+      <div class="nav-item active" data-roles="admin,responsable_it" onclick="showPage('dashboard')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        Dashboard
+      </div>
+      <div class="nav-item" data-roles="admin,responsable_it" onclick="showPage('reclamations')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        Réclamations
+        <span class="nav-badge" id="nbReclamations">1507</span>
+      </div>
+
+      <div class="nav-section-lbl" data-roles="admin">Intelligence Artificielle</div>
+      <div class="nav-item" data-roles="admin" onclick="showPage('nlp')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+        Analyse NLP
+        <span class="model-badge nlp" style="margin-left:auto;font-size:9px;padding:1px 6px;border:none">NLP</span>
+      </div>
+      <div class="nav-item" data-roles="admin" onclick="showPage('lstm')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
+        Prédictions XGBoost
+        <span class="model-badge lstm" style="margin-left:auto;font-size:9px;padding:1px 6px;border:none">99,7%</span>
+      </div>
+      <div class="nav-item" data-roles="admin" onclick="showPage('knn')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16 10,8"/></svg>
+        Recommandations LightGBM + KNN
+        <span class="model-badge knn" style="margin-left:auto;font-size:9px;padding:1px 6px;border:none">LGBM</span>
+      </div>
+
+      <div class="nav-section-lbl" data-roles="admin,responsable_it">RPA &amp; Traçabilité</div>
+      <div class="nav-item" data-roles="admin,responsable_it,robot_uipath" onclick="showPage('alertes')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+        Alertes UiPath
+        <span class="nav-badge red" id="nbAlertes">0</span>
+      </div>
+      <div class="nav-item" data-roles="admin,responsable_it" onclick="showPage('audit')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        Audit Trail
+      </div>
+      <div class="nav-item" data-roles="admin" onclick="showPage('swagger')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+        API Swagger
+      </div>
+
+      <div class="nav-section-lbl" data-roles="utilisateur">Mon Espace</div>
+      <div class="nav-item" data-roles="utilisateur" onclick="showPage('soumettre')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        Soumettre une réclamation
+      </div>
+      <div class="nav-item" data-roles="utilisateur" onclick="showPage('mes-tickets')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+        Mes tickets
+        <span class="nav-badge" id="nbMesTickets">0</span>
+      </div>
+    </nav>
+
+    <div class="sidebar-user">
+      <div class="user-avatar" id="sidebarAvatar">AD</div>
+      <div class="user-info">
+        <div class="user-name" id="sidebarName">Admin</div>
+        <div class="user-role" id="sidebarRole">Administrateur</div>
+      </div>
+      <button class="btn-logout" onclick="doLogout()" title="Déconnexion">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16,17 21,12 16,7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="topbar">
+      <div class="topbar-title" id="topbarTitle">Dashboard</div>
+      <div class="topbar-right">
+        <div class="api-indicator">
+          <div class="dot" id="apiDot"></div>
+          <span id="apiStatusText">Vérification…</span>
+        </div>
+        <button class="topbar-action" onclick="refreshCurrentPage()">⟳ Actualiser</button>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <!-- DASHBOARD -->
+      <div class="page active" id="page-dashboard">
+        <div id="apiBanner" style="display:none">
+          ⚠ Backend non connecté — données de démonstration affichées.
+          <button onclick="document.getElementById('apiBanner').style.display='none'">OK</button>
+        </div>
+
+        <div class="kpi-grid">
+          <div class="kpi-card orange">
+            <div class="kpi-label">Total Tickets</div>
+            <div class="kpi-value" id="kpiTotal">1 507</div>
+            <div class="kpi-sub">Fév – Mars 2026</div>
+          </div>
+          <div class="kpi-card red">
+            <div class="kpi-label">Tickets en retard SLA</div>
+            <div class="kpi-value" id="kpiAlertes">193</div>
+            <div class="kpi-badge down" id="kpiAlertePct">12,8 % SLA breach</div>
+          </div>
+          <div class="kpi-card green">
+            <div class="kpi-label">XGBoost Accuracy</div>
+            <div class="kpi-value">99,7 <span style="font-size:16px;font-weight:400">%</span></div>
+            <div class="kpi-badge up">AUC-ROC 1,00</div>
+          </div>
+          <div class="kpi-card blue">
+            <div class="kpi-label">Durée moy. résolution</div>
+            <div class="kpi-value" id="kpiDuree">266 <span style="font-size:16px;font-weight:400">min</span></div>
+            <div class="kpi-sub">1 507 tickets analysés</div>
+          </div>
+        </div>
+
+        <div class="kpi-grid-6">
+          <div class="kpi-mini-card">
+            <div class="kpi-mini-icon" style="background:var(--green-s);color:var(--green)">SLA</div>
+            <div>
+              <div class="kpi-mini-val" id="kpiSlaOk">87,2<span style="font-size:13px;font-weight:400">%</span></div>
+              <div class="kpi-mini-lbl">Conformité SLA globale</div>
+            </div>
+          </div>
+          <div class="kpi-mini-card">
+            <div class="kpi-mini-icon" style="background:var(--blue-s);color:var(--blue)">AI</div>
+            <div>
+              <div class="kpi-mini-val">64,4<span style="font-size:13px;font-weight:400">%</span></div>
+              <div class="kpi-mini-lbl">LightGBM Top-3 précision</div>
+            </div>
+          </div>
+          <div class="kpi-mini-card">
+            <div class="kpi-mini-icon" style="background:var(--amber-s);color:var(--amber)">RPA</div>
+            <div>
+              <div class="kpi-mini-val" id="kpiAlerteActive">193</div>
+              <div class="kpi-mini-lbl">Alertes UiPath actives</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-grid-2 mb-20">
+          <div class="card">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+              <div class="section-title" style="font-size:13px"><div class="section-dot"></div> Tickets par groupe</div>
+              <span class="model-badge live">Live</span>
+            </div>
+            <canvas id="chartGroupes" height="170"></canvas>
+          </div>
+          <div class="card">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+              <div class="section-title" style="font-size:13px"><div class="section-dot"></div> Distribution scores risque</div>
+              <span class="model-badge nlp">NLP</span>
+            </div>
+            <canvas id="chartScores" height="170"></canvas>
+          </div>
+        </div>
+
+        <div class="card-grid-3">
+          <div class="card">
+            <div class="section-title mb-16" style="font-size:13px"><div class="section-dot"></div> État des modèles IA</div>
+            <div class="status-row"><div class="status-label">Pipeline NLP (spaCy + BERT)</div><div class="status-val" id="statusNlp">…</div></div>
+            <div class="status-row"><div class="status-label">XGBoost (xgb_model.pkl)</div><div class="status-val" id="statusXgb">…</div></div>
+            <div class="status-row"><div class="status-label">LightGBM + KNN Reco (lgbm_reco_model.pkl)</div><div class="status-val" id="statusKnn">…</div></div>
+            <div class="status-row"><div class="status-label">Base PostgreSQL</div><div class="status-val" id="statusDb">…</div></div>
+            <div class="status-row"><div class="status-label">Données CSV (1507 tickets)</div><div class="status-val" id="statusData">…</div></div>
+          </div>
+          <div class="card">
+            <div class="section-title mb-16" style="font-size:13px"><div class="section-dot"></div> Métriques XGBoost</div>
+            <div class="metric-row"><div class="metric-label">Accuracy</div><div class="metric-value text-green">99,7 %</div></div>
+            <div class="metric-row"><div class="metric-label">AUC-ROC</div><div class="metric-value text-green">1,00</div></div>
+            <div class="metric-row"><div class="metric-label">Tickets entraînement</div><div class="metric-value">1 207</div></div>
+            <div class="metric-row"><div class="metric-label">Algorithme</div><div class="metric-value">Gradient Boosting</div></div>
+            <div class="metric-row"><div class="metric-label">Prochain réentraîn.</div><div class="metric-value text-amber">Lundi 02:00</div></div>
+          </div>
+          <div class="card">
+            <div class="section-title mb-16" style="font-size:13px"><div class="section-dot"></div> Métriques LightGBM</div>
+            <div class="metric-row"><div class="metric-label">Accuracy Top-1</div><div class="metric-value text-green">62,9 %</div></div>
+            <div class="metric-row"><div class="metric-label">Accuracy Top-3</div><div class="metric-value text-green">64,4 %</div></div>
+            <div class="metric-row"><div class="metric-label">Classes d'action</div><div class="metric-value">35</div></div>
+            <div class="metric-row"><div class="metric-label">Tickets entraînement</div><div class="metric-value">1 374</div></div>
+            <div class="metric-row"><div class="metric-label">Vectorisation</div><div class="metric-value">TF-IDF ngrams(1,2)</div></div>
+          </div>
+        </div>
+
+        <!-- CHARTS AVANCÉS -->
+        <div style="display:flex;align-items:center;justify-content:space-between;margin:22px 0 14px">
+          <div class="section-title" style="font-size:13px"><div class="section-dot" style="background:var(--blue)"></div> Analyses avancées — Tendances &amp; Distribution</div>
+          <span class="badge badge-blue">Fév – Mars 2026</span>
+        </div>
+        <div class="card-grid-3 mb-20">
+          <div class="card">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+              <div class="section-title" style="font-size:12px"><div class="section-dot" style="background:var(--blue)"></div> Tendance hebdomadaire</div>
+              <span class="badge badge-blue">8 semaines</span>
+            </div>
+            <canvas id="chartTendance" height="160"></canvas>
+          </div>
+          <div class="card">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+              <div class="section-title" style="font-size:12px"><div class="section-dot" style="background:var(--amber)"></div> Distribution par sévérité</div>
+              <span class="badge badge-amber">1507 tickets</span>
+            </div>
+            <canvas id="chartSeverite" height="160"></canvas>
+          </div>
+          <div class="card">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+              <div class="section-title" style="font-size:12px"><div class="section-dot" style="background:var(--red)"></div> Retard SLA par groupe</div>
+              <span class="badge badge-red">% retard</span>
+            </div>
+            <canvas id="chartSla" height="160"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- RÉCLAMATIONS -->
+      <div class="page" id="page-reclamations">
+        <div class="filter-bar">
+          <input type="text" class="form-input" id="filterSearch" placeholder="Rechercher dans l'objet…" oninput="debounceSearch()">
+          <select class="form-select" id="filterGroupe" onchange="resetAndLoad()">
+            <option value="">Tous les groupes</option>
+            <option>Sécurité Opérationnelle</option>
+            <option>SWIFT</option>
+            <option>Helpdesk</option>
+            <option>Système</option>
+            <option>Réseau</option>
+            <option>Equipe-Etudes</option>
+            <option>Téléphonie</option>
+            <option>Développement-Digital</option>
+            <option>Stock</option>
+          </select>
+          <select class="form-select" id="filterSeverite" onchange="resetAndLoad()">
+            <option value="">Toutes sévérités</option>
+            <option value="1">CRITIQUE (1)</option>
+            <option value="2">HAUTE (2)</option>
+            <option value="3">MOYENNE (3)</option>
+            <option value="4">BASSE (4)</option>
+          </select>
+          <select class="form-select" id="filterRetard" onchange="resetAndLoad()">
+            <option value="">Tous statuts SLA</option>
+            <option value="true">En retard SLA</option>
+            <option value="false">Dans les délais</option>
+          </select>
+          <button class="btn btn-primary" onclick="resetAndLoad()">Filtrer</button>
+          <button class="btn" style="background:var(--green);color:#fff;border:none" onclick="exportCSV()" title="Exporter en CSV">⬇ CSV</button>
+        </div>
+        <div id="reclamationsTable"><div class="loading-row"><div class="spinner"></div> Chargement des tickets…</div></div>
+        <div class="pagination" id="reclamationsPagination" style="display:none">
+          <div class="pagination-info" id="pagInfo"></div>
+          <div class="pagination-btns" id="pagBtns"></div>
+        </div>
+      </div>
+
+      <!-- NLP -->
+      <div class="page" id="page-nlp">
+        <div class="card-grid-2">
+          <div class="card">
+            <div class="section-title mb-16"><div class="section-dot"></div> Analyse NLP — POST /reclamations/analyser</div>
+            <div class="form-group">
+              <label class="form-label">Description du ticket IT</label>
+              <textarea class="form-textarea" id="nlpTexte" placeholder="Ex : Problème de connexion VPN depuis ce matin, accès réseau impossible…" style="min-height:130px"></textarea>
+            </div>
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label class="form-label">Groupe IT</label>
+                <select class="form-select" id="nlpGroupe">
+                  <option value="Helpdesk">Helpdesk</option>
+                  <option value="Sécurité Opérationnelle">Sécurité Opérationnelle</option>
+                  <option value="SWIFT">SWIFT</option>
+                  <option value="Système">Système</option>
+                  <option value="Réseau">Réseau</option>
+                  <option value="Equipe-Etudes">Equipe-Etudes</option>
+                  <option value="Téléphonie">Téléphonie</option>
+                  <option value="Développement-Digital">Développement-Digital</option>
+                  <option value="Stock">Stock</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Sévérité</label>
+                <select class="form-select" id="nlpSeverite">
+                  <option value="2">Haute (défaut)</option>
+                  <option value="1">Critique</option>
+                  <option value="3">Moyenne</option>
+                  <option value="4">Basse</option>
+                </select>
+              </div>
+            </div>
+            <button class="btn btn-primary" id="btnNlp" onclick="analyserNLP()" style="width:100%">Analyser avec le pipeline NLP</button>
+            <div id="nlpResult"></div>
+          </div>
+          <div class="card">
+            <div class="section-title mb-16"><div class="section-dot"></div> Pipeline NLP — Fonctionnement</div>
+            <div class="timeline">
+              <div class="timeline-item"><div class="timeline-time">Étape 1</div><div class="timeline-text"><strong>spaCy</strong> — Tokenisation, lemmatisation, stop-words FR/AR</div></div>
+              <div class="timeline-item"><div class="timeline-time">Étape 2</div><div class="timeline-text"><strong>BERT Embeddings</strong> — Représentation sémantique dense (384 dim.)</div></div>
+              <div class="timeline-item"><div class="timeline-time">Étape 3</div><div class="timeline-text"><strong>Règles métier</strong> — Mots-clés critiques issus des données réelles</div></div>
+              <div class="timeline-item"><div class="timeline-time">Résultat</div><div class="timeline-text"><strong>Score anomalie 0 → 1</strong> — Seuil 0,75 → Alerte UiPath déclenchée</div></div>
+            </div>
+            <div style="background:var(--bg);border-radius:var(--r);padding:12px;margin-top:14px;border:1px solid var(--border)">
+              <div style="font-size:10px;color:var(--text3);margin-bottom:7px;text-transform:uppercase;letter-spacing:1px">Exemples rapides</div>
+              <div style="font-size:11px;color:var(--or);cursor:pointer;margin-bottom:5px;font-weight:500" onclick="setNlpExample(this)" data-txt="Compromission du firewall détectée, plusieurs indicateurs d'intrusion actifs sur le réseau interne" data-groupe="Sécurité Opérationnelle" data-sev="1">→ Compromission firewall (Sécurité)</div>
+              <div style="font-size:11px;color:var(--or);cursor:pointer;margin-bottom:5px;font-weight:500" onclick="setNlpExample(this)" data-txt="Timeout sur les transactions SWIFT, blocage des virements internationaux depuis 1 heure" data-groupe="SWIFT" data-sev="1">→ Blocage transactions SWIFT</div>
+              <div style="font-size:11px;color:var(--or);cursor:pointer;font-weight:500" onclick="setNlpExample(this)" data-txt="Spam massif détecté sur la messagerie, authentification suspecte depuis adresses externes" data-groupe="Helpdesk" data-sev="2">→ Spam et tentative d'authentification</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LSTM -->
+      <div class="page" id="page-lstm">
+        <div class="card-grid-2">
+          <div class="card">
+            <div class="section-title mb-16"><div class="section-dot"></div> Prédiction XGBoost — POST /api/predictions/predire</div>
+            <div class="form-group">
+              <label class="form-label">Groupe IT à analyser</label>
+              <select class="form-select" id="lstmGroupe">
+                <option value="Sécurité Opérationnelle">Sécurité Opérationnelle</option>
+                <option value="SWIFT">SWIFT</option>
+                <option value="Helpdesk" selected>Helpdesk</option>
+                <option value="Intervention-sur-site-déploiement">Intervention sur site</option>
+                <option value="Système">Système</option>
+                <option value="Réseau">Réseau</option>
+                <option value="Equipe-Etudes">Equipe-Etudes</option>
+                <option value="Téléphonie">Téléphonie</option>
+                <option value="Data Office">Data Office</option>
+                <option value="Développement-Digital">Développement-Digital</option>
+                <option value="Stock">Stock</option>
+              </select>
+            </div>
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label class="form-label">Sévérité</label>
+                <select class="form-select" id="lstmSeverite">
+                  <option value="1">Critique (1)</option>
+                  <option value="2" selected>Haute (2)</option>
+                  <option value="3">Moyenne (3)</option>
+                  <option value="4">Basse (4)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Retard historique</label>
+                <select class="form-select" id="lstmRetard">
+                  <option value="false" selected>Non</option>
+                  <option value="true">Oui — SLA dépassé</option>
+                </select>
+              </div>
+            </div>
+            <button class="btn btn-primary" id="btnLstm" onclick="analyserLSTM()" style="width:100%">Prédire le risque avec XGBoost</button>
+            <button class="btn btn-secondary" id="btnLiveToggle" onclick="toggleLivePrediction()" style="width:100%;margin-top:10px">Démarrer le mode live</button>
+            <div style="font-size:11px;color:var(--text3);margin-top:8px">La courbe live s'actualise toutes les 7s en mode live.</div>
+            <div id="lstmResult"></div>
+          </div>
+          <div class="card">
+            <div class="section-title mb-16"><div class="section-dot"></div> Informations XGBoost</div>
+            <div class="metric-row"><div class="metric-label">Type de modèle</div><div class="metric-value">XGBoost (scikit-learn)</div></div>
+            <div class="metric-row"><div class="metric-label">Hyperparamètres</div><div class="metric-value" style="font-size:10px">n_estimators · max_depth · learning_rate</div></div>
+            <div class="metric-row"><div class="metric-label">Features</div><div class="metric-value" style="font-size:10px">Sévérité · Durée · Score · Groupe · Catégorie</div></div>
+            <div class="metric-row"><div class="metric-label">Sortie</div><div class="metric-value">Probabilité retard 0 → 1</div></div>
+            <div class="metric-row"><div class="metric-label">Accuracy</div><div class="metric-value text-green">99,7 %</div></div>
+            <div class="metric-row"><div class="metric-label">AUC-ROC</div><div class="metric-value text-green">1,00</div></div>
+            <div class="metric-row"><div class="metric-label">Fichier modèle</div><div class="metric-value font-mono">xgb_model.pkl</div></div>
+            <div class="metric-row"><div class="metric-label">Encodeurs</div><div class="metric-value font-mono">label_encoder_groupe.pkl</div></div>
+            <div style="background:var(--bg);border-radius:var(--r);padding:10px;margin-top:12px;border:1px solid var(--border)">
+              <div style="font-size:10px;color:var(--text3);margin-bottom:5px">Scores réels par groupe (données Fév–Mars 2026)</div>
+              <div id="lstmScoresReels"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COURBE TEMPORELLE ──────────────────────────────── -->
+        <div class="card" style="margin-top:16px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:10px">
+            <div class="section-title" style="font-size:13px">
+              <div class="section-dot" style="background:var(--blue)"></div>
+              Évolution temporelle des scores de risque — Fév–Mars 2026
+            </div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <div id="evolutionTendanceBadge"></div>
+              <select class="form-select" id="evolutionGroupe" onchange="loadEvolution()" style="padding:5px 10px;font-size:12px;width:auto">
+                <option value="">Tous les groupes</option>
+                <option value="Sécurité Opérationnelle">Sécurité Opérationnelle</option>
+                <option value="SWIFT">SWIFT</option>
+                <option value="Helpdesk">Helpdesk</option>
+                <option value="Système">Système</option>
+                <option value="Réseau">Réseau</option>
+              </select>
+              <button class="btn btn-secondary" onclick="loadEvolution()" style="padding:5px 12px;font-size:12px">⟳</button>
+            </div>
+          </div>
+
+          <div id="evolutionLoader" class="loading-row" style="display:none"><div class="spinner"></div> Chargement courbe…</div>
+
+          <div style="position:relative">
+            <canvas id="chartEvolution" height="130"></canvas>
+          </div>
+          <div id="livePredictionInfo" style="font-size:11px;color:var(--text3);margin-top:10px">Aucune prédiction récente. Effectuez une prédiction XGBoost pour afficher le score sur la courbe.</div>
+
+          <!-- KPIs sous la courbe -->
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px;padding-top:14px;border-top:1px solid var(--border)">
+            <div style="text-align:center">
+              <div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:3px">Semaines analysées</div>
+              <div style="font-size:18px;font-weight:700;color:var(--text)" id="evoNbSemaines">—</div>
+            </div>
+            <div style="text-align:center">
+              <div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:3px">Tickets couverts</div>
+              <div style="font-size:18px;font-weight:700;color:var(--text)" id="evoNbTickets">—</div>
+            </div>
+            <div style="text-align:center">
+              <div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:3px">Tendance globale</div>
+              <div style="font-size:14px;font-weight:700" id="evoTendanceTxt">—</div>
+            </div>
+            <div style="text-align:center">
+              <div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:3px">Seuil alerte UiPath</div>
+              <div style="font-size:18px;font-weight:700;color:var(--red)">0,75</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- KNN -->
+      <div class="page" id="page-knn">
+        <div class="card-grid-2">
+          <div class="card">
+            <div class="section-title mb-16"><div class="section-dot"></div> Recommandations LightGBM + KNN — POST /api/recommandations/analyser</div>
+            <div class="form-group">
+              <label class="form-label">Description du problème IT</label>
+              <textarea class="form-textarea" id="knnTexte" placeholder="Ex : Serveur de messagerie Exchange inaccessible depuis 2h…"></textarea>
+            </div>
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label class="form-label">Groupe (optionnel)</label>
+                <select class="form-select" id="knnGroupe">
+                  <option value="">Auto</option>
+                  <option>Helpdesk</option>
+                  <option>Sécurité Opérationnelle</option>
+                  <option>SWIFT</option>
+                  <option>Système</option>
+                  <option>Réseau</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Catégorie (optionnel)</label>
+                <input type="text" class="form-input" id="knnCategorie" placeholder="Ex: Messagerie…">
+              </div>
+            </div>
+            <button class="btn btn-primary" id="btnKnn" onclick="analyserKNN()" style="width:100%">Recommandation LightGBM + KNN</button>
+            <div id="knnResult"></div>
+          </div>
+          <div class="card">
+            <div class="section-title mb-16"><div class="section-dot"></div> Fonctionnement LightGBM + KNN</div>
+            <div class="timeline">
+              <div class="timeline-item"><div class="timeline-time">Entrée</div><div class="timeline-text">Texte libre du ticket IT (FR/AR)</div></div>
+              <div class="timeline-item"><div class="timeline-time">TF-IDF</div><div class="timeline-text">TF-IDF 500 features + bigrammes (vec_reco.pkl)</div></div>
+              <div class="timeline-item"><div class="timeline-time">LightGBM</div><div class="timeline-text">Classification supervisée parmi 35 classes d'action</div></div>
+              <div class="timeline-item"><div class="timeline-time">Sortie</div><div class="timeline-text">Action + probabilité de confiance + Top-3 alternatives</div></div>
+            </div>
+            <div style="background:var(--bg);border-radius:var(--r);padding:10px;margin-top:12px;border:1px solid var(--border)">
+              <div style="font-size:10px;color:var(--text3);margin-bottom:5px">Exemples :</div>
+              <div style="font-size:11px;color:var(--or);cursor:pointer;margin-bottom:4px;font-weight:500" onclick="setKnnExample(this)" data-txt="Blocage indicateurs compromission Firewall, alertes multiples détectées" data-groupe="Sécurité Opérationnelle">→ Blocage Firewall — Sécurité</div>
+              <div style="font-size:11px;color:var(--or);cursor:pointer;margin-bottom:4px;font-weight:500" onclick="setKnnExample(this)" data-txt="Timeout transactions SWIFT, virements bloqués depuis ce matin" data-groupe="SWIFT">→ Timeout SWIFT — virements</div>
+              <div style="font-size:11px;color:var(--or);cursor:pointer;font-weight:500" onclick="setKnnExample(this)" data-txt="Demande vérification email SPAM, utilisateur reçoit des courriers suspects" data-groupe="Helpdesk">→ SPAM email — Helpdesk</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALERTES -->
+      <div class="page" id="page-alertes">
+
+        <!-- Header -->
+        <div class="section-header mb-16">
+          <div class="section-title"><div class="section-dot" style="background:var(--red)"></div> Surveillance RPA — Alertes UiPath</div>
+          <div style="display:flex;gap:8px;align-items:center">
+            <span style="font-size:11px;color:var(--text3)">Seuil score :</span>
+            <select class="form-select" id="alerteSeuil" onchange="loadAlertes()" style="width:auto;padding:5px 10px;font-size:12px">
+              <option value="0.75">0,75 — défaut UiPath</option>
+              <option value="0.5">0,50 — sensible</option>
+              <option value="0.9">0,90 — critique uniquement</option>
+            </select>
+            <button class="btn btn-primary" onclick="loadAlertes()">&#8635; Rafraîchir</button>
+          </div>
+          <div class="alert-filters" style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:12px">
+            <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text3)">
+              <span style="font-weight:600;color:var(--text)">Filtres :</span>
+              <select class="form-select" id="filterPriorite" onchange="loadAlertes()" style="width:auto;padding:5px 10px;font-size:12px">
+                <option value="">Toutes priorités</option>
+                <option value="1">Priorité 1</option>
+                <option value="2">Priorité 2</option>
+                <option value="3">Priorité 3</option>
+              </select>
+              <select class="form-select" id="filterStatut" onchange="loadAlertes()" style="width:auto;padding:5px 10px;font-size:12px">
+                <option value="">Tous statuts</option>
+                <option value="active">Active</option>
+                <option value="resolue">Résolue</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div id="uipathNotice"><span>✔</span><div id="uipathNoticeText">Tableau actualisé — dernière détection reçue.</div></div>
+        <div id="alertRoleNote" style="font-size:12px;color:var(--text2);margin-bottom:14px;padding:10px 14px;background:rgba(248,248,250,0.88);border:1px solid var(--border);border-radius:var(--r)"></div>
+
+        <!-- KPI row -->
+        <div class="uipath-kpi-row">
+          <div class="uipath-kpi" style="border-top:3px solid var(--red)">
+            <div class="uipath-kpi-val text-red" id="kpiRpaActives">—</div>
+            <div class="uipath-kpi-lbl">Alertes actives</div>
+          </div>
+          <div class="uipath-kpi" style="border-top:3px solid var(--green)">
+            <div class="uipath-kpi-val text-green" id="kpiRpaCloturees">0</div>
+            <div class="uipath-kpi-lbl">Tickets en surveillance</div>
+          </div>
+          <div class="uipath-kpi" style="border-top:3px solid var(--amber)">
+            <div class="uipath-kpi-val" id="kpiRpaScore" style="color:var(--amber)">—</div>
+            <div class="uipath-kpi-lbl">Score moyen alertes</div>
+          </div>
+          <div class="uipath-kpi" style="border-top:3px solid var(--blue)">
+            <div class="uipath-kpi-val" style="color:var(--blue)">3</div>
+            <div class="uipath-kpi-lbl">Robots actifs</div>
+          </div>
+        </div>
+
+        <div class="card mb-16">
+          <div class="section-title mb-12" style="font-size:13px">
+            <div class="section-dot" style="background:var(--blue)"></div> Comment UiPath traite un nouveau ticket
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:14px">
+              <div style="font-size:11px;color:var(--text3);margin-bottom:8px">Flux de détection</div>
+              <ul style="font-size:12px;color:var(--text2);line-height:1.8;padding-left:16px">
+                <li><strong>CheckAlerte.xaml</strong> interroge <code>GET /api/alertes?seuil=0.75</code> et analyse le ticket en moins de 10ms.</li>
+                <li>Si le score est ≥ 0,75, une alerte active est créée et UiPath lance la chaine de robot.</li>
+                <li>Score ≥ 0,85 : priorité 1, le robot exécute automatiquement notification et résolution.</li>
+                <li>Score 0,75–0,85 : priorité 2, NotifierIT prévient le responsable IT avant clôture.</li>
+              </ul>
+            </div>
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:14px">
+              <div style="font-size:11px;color:var(--text3);margin-bottom:8px">Rôles UiPath</div>
+              <ul style="font-size:12px;color:var(--text2);line-height:1.8;padding-left:16px">
+                <li><strong>CheckAlerte.xaml</strong> : détecte les anomalies et déclenche les alertes.</li>
+                <li><strong>NotifierIT.xaml</strong> : notifie le responsable IT pour les alertes critiques.</li>
+                <li><strong>ConfirmerResolution.xaml</strong> : clôture l’alerte après validation IT.</li>
+                <li><strong>Responsable IT</strong> : reçoit les alertes, valide les actions et clôture les tickets.</li>
+              </ul>
+            </div>
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:14px">
+              <div style="font-size:11px;color:var(--text3);margin-bottom:8px">Dernier ticket traité</div>
+              <div id="uipathLastTicket" style="font-size:12px;color:var(--text2);line-height:1.7">
+                Aucun ticket reçu récemment. Rechargez la page ou soumettez un ticket pour voir l'état.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main grid -->
+        <div class="card-grid-2" style="align-items:start">
+
+          <!-- LEFT: alerts list -->
+          <div>
+            <div id="alertesContainer"><div class="loading-row"><div class="spinner"></div> Chargement…</div></div>
+            <!-- chart scores alertes -->
+            <div class="card" id="alertesChartCard" style="margin-top:12px;display:none">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+                <div class="section-title" style="font-size:12px"><div class="section-dot" style="background:var(--red)"></div> Distribution scores alertes actives</div>
+              </div>
+              <canvas id="chartAlertes" height="110"></canvas>
+            </div>
+          </div>
+
+          <!-- RIGHT: robots + simulation -->
+          <div style="display:flex;flex-direction:column;gap:14px">
+
+            <!-- Robots panel -->
+            <div class="card">
+              <div class="section-title mb-14" style="font-size:12px">
+                <div class="section-dot" style="background:var(--green)"></div> Robots UiPath — Etat en temps réel
+              </div>
+              <div class="robot-card">
+                <div class="robot-dot-wrap"><div class="robot-dot active" id="rd1"></div></div>
+                <div class="robot-info">
+                  <div class="robot-name">CheckAlerte.xaml</div>
+                  <div class="robot-detail">GET /api/alertes · toutes les 5 min</div>
+                  <div class="robot-detail" id="rd1-last">Dernier appel : <span style="color:var(--green)">il y a &lt; 1 min</span></div>
+                </div>
+                <div class="robot-stat"><span class="badge badge-green" id="rd1-status">Actif</span></div>
+              </div>
+              <div class="robot-card">
+                <div class="robot-dot-wrap"><div class="robot-dot idle" id="rd2"></div></div>
+                <div class="robot-info">
+                  <div class="robot-name">NotifierIT.xaml</div>
+                  <div class="robot-detail">Email responsable IT · si score &ge; seuil</div>
+                  <div class="robot-detail" id="rd2-last">En attente d'alerte qualifiée</div>
+                </div>
+                <div class="robot-stat"><span class="badge badge-gray" id="rd2-status">En attente</span></div>
+              </div>
+              <div class="robot-card">
+                <div class="robot-dot-wrap"><div class="robot-dot idle" id="rd3"></div></div>
+                <div class="robot-info">
+                  <div class="robot-name">ConfirmerResolution.xaml</div>
+                  <div class="robot-detail">POST /api/alertes/{id}/cloturer</div>
+                  <div class="robot-detail" id="rd3-last">En attente de validation</div>
+                </div>
+                <div class="robot-stat"><span class="badge badge-gray" id="rd3-status">En attente</span></div>
+              </div>
+            </div>
+
+            <!-- Simulation panel -->
+            <div class="card">
+              <div class="section-title mb-14" style="font-size:12px">
+                <div class="section-dot" style="background:var(--blue)"></div> Simuler une alerte UiPath
+              </div>
+              <div style="font-size:11px;color:var(--text3);margin-bottom:12px">Entrez un score 0→1 pour voir la décision UiPath en temps réel.</div>
+              <div class="form-group" style="margin-bottom:10px">
+                <label class="form-label">Score anomalie (0,00 → 1,00)</label>
+                <input type="range" id="simScore" min="0" max="1" step="0.01" value="0.80"
+                  oninput="updateSimDisplay()" style="width:100%;accent-color:var(--or);cursor:pointer">
+                <div style="display:flex;justify-content:space-between;margin-top:4px">
+                  <span style="font-size:10px;color:var(--text3)">0,00 — Normal</span>
+                  <span style="font-size:14px;font-weight:700" id="simScoreDisplay" style="color:var(--or)">0,80</span>
+                  <span style="font-size:10px;color:var(--text3)">1,00 — Critique</span>
+                </div>
+              </div>
+              <div class="form-group" style="margin-bottom:12px">
+                <label class="form-label">Groupe IT concerné</label>
+                <select class="form-select" id="simGroupe">
+                  <option value="Sécurité Opérationnelle">Sécurité Opérationnelle</option>
+                  <option value="SWIFT">SWIFT</option>
+                  <option value="Helpdesk" selected>Helpdesk</option>
+                  <option value="Système">Système</option>
+                  <option value="Réseau">Réseau</option>
+                  <option value="Téléphonie">Téléphonie</option>
+                </select>
+              </div>
+              <button class="btn btn-primary" onclick="simulerAlerte()" style="width:100%">Simuler la décision RPA</button>
+              <div id="simResult"></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Execution sequence -->
+        <div class="card" style="margin-top:16px">
+          <div class="section-title mb-16" style="font-size:12px"><div class="section-dot"></div> Flux d'execution UiPath — Orchestrator</div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:stretch">
+            <div class="exec-step">
+              <div class="exec-step-num">Robot 1 — Nouveau ticket</div>
+              <div class="exec-step-name">CheckAlerte.xaml</div>
+              <div class="exec-step-desc">Détecte les nouveaux tickets via GET /api/alertes?seuil=0.75, évalue le score anomalie et classe la priorité.</div>
+              <div style="margin-top:8px"><span class="badge badge-green">Actif</span></div>
+            </div>
+            <div class="exec-arrow">&#8594;</div>
+            <div class="exec-step">
+              <div class="exec-step-num">Robot 2 — Notification</div>
+              <div class="exec-step-name">NotifierIT.xaml</div>
+              <div class="exec-step-desc">Si une alerte est active, notifie le responsable IT avec les détails du ticket et la recommandation IA.</div>
+              <div style="margin-top:8px"><span class="badge badge-amber">Conditionnel</span></div>
+            </div>
+            <div class="exec-arrow">&#8594;</div>
+            <div class="exec-step">
+              <div class="exec-step-num">Robot 3 — Resolution</div>
+              <div class="exec-step-name">ConfirmerResolution.xaml</div>
+              <div class="exec-step-desc">Après validation IT, appelle POST /api/alertes/{id}/cloturer, met à jour le statut et enrichit le journal d'audit.</div>
+              <div style="margin-top:8px"><span class="badge badge-blue">Sur validation</span></div>
+            </div>
+            <div class="exec-arrow">&#8594;</div>
+            <div class="exec-step" style="border-color:var(--green);background:var(--green-s)">
+              <div class="exec-step-num" style="color:var(--green)">Resultat final</div>
+              <div class="exec-step-name" style="color:var(--green)">Audit Trail</div>
+              <div class="exec-step-desc">Chaque action est tracée dans /api/audit avec utilisateur, timestamp, IP et statut.</div>
+              <div style="margin-top:8px"><span class="badge badge-green">Conforme</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- AUDIT -->
+      <div class="page" id="page-audit">
+        <div class="section-header mb-20">
+          <div class="section-title"><div class="section-dot"></div> Audit Trail — Traçabilité complète</div>
+          <button class="btn btn-secondary" onclick="loadAudit()">Actualiser</button>
+        </div>
+        <div class="card">
+          <div id="auditContainer"><div class="loading-row"><div class="spinner"></div></div></div>
+        </div>
+      </div>
+
+      <!-- SOUMETTRE (utilisateur) -->
+      <div class="page" id="page-soumettre">
+        <div style="max-width:740px;margin:0 auto">
+          <div class="card mb-16">
+            <div class="section-title mb-16"><div class="section-dot"></div> Soumettre une réclamation</div>
+            <div class="form-group">
+              <label class="form-label">Décrivez votre problème</label>
+              <textarea class="form-textarea" id="soumTexte" placeholder="Ex : Je n'arrive pas à accéder à ma messagerie depuis ce matin, le système affiche une erreur d'authentification…" style="min-height:130px"></textarea>
+            </div>
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label class="form-label">Département concerné</label>
+                <select class="form-select" id="soumGroupe">
+                  <option value="Helpdesk">Helpdesk</option>
+                  <option value="Réseau">Réseau</option>
+                  <option value="Système">Système</option>
+                  <option value="Téléphonie">Téléphonie</option>
+                  <option value="Sécurité Opérationnelle">Sécurité</option>
+                  <option value="SWIFT">SWIFT</option>
+                  <option value="Développement-Digital">Développement Digital</option>
+                  <option value="Equipe-Etudes">Equipe-Etudes</option>
+                  <option value="Stock">Stock</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Niveau d'urgence</label>
+                <select class="form-select" id="soumSeverite">
+                  <option value="3">Normale — peut attendre</option>
+                  <option value="2">Haute — travail impacté</option>
+                  <option value="1">Critique — travail bloqué</option>
+                  <option value="4">Basse — informatif</option>
+                </select>
+              </div>
+            </div>
+            <button class="btn btn-primary" id="btnSoumettre" onclick="soumettreMaReclamation()" style="width:100%;padding:12px;font-size:13px">
+              Soumettre ma réclamation
+            </button>
+          </div>
+          <div id="soumResult"></div>
+        </div>
+      </div>
+
+      <!-- MES TICKETS (utilisateur) -->
+      <div class="page" id="page-mes-tickets">
+        <div class="section-header mb-20">
+          <div class="section-title"><div class="section-dot"></div> Mes réclamations</div>
+          <button class="btn btn-secondary" onclick="loadMesTickets()">Actualiser</button>
+        </div>
+        <div id="mesTicketsContainer">
+          <div class="empty-state"><h3>Aucune réclamation</h3><p>Soumettez votre première réclamation via le formulaire</p></div>
+        </div>
+      </div>
+
+      <!-- SWAGGER -->
+      <div class="page" id="page-swagger">
+        <div class="card mb-16">
+          <div class="section-title mb-16"><div class="section-dot"></div> Documentation API — FastAPI Swagger</div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a href="/docs" target="_blank" class="btn btn-primary">Swagger UI → /docs</a>
+            <a href="/redoc" target="_blank" class="btn btn-secondary">ReDoc → /redoc</a>
+            <a href="/health" target="_blank" class="btn btn-secondary">Health Check</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="section-title mb-16"><div class="section-dot"></div> Endpoints disponibles</div>
+          <div id="swaggerEndpoints"></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script>
+const S = {
+  token: null,
+  apiBase: window.location.origin,
+  user: {email:'', role:'', nom:''},
+  currentPage: 'dashboard',
+  recPage: 1,
+  recSearch: '',
+  apiOnline: false,
+  charts: {},
+  lastPrediction: null,
+  livePredictions: [],
+  livePredictionTimer: null,
+  livePredictionActive: false,
+  searchTimer: null
+};
+
+// ── Utilitaires ───────────────────────────────────────────────
+function toast(msg, type='info'){
+  const el = document.getElementById('toast');
+  const icons = {success:'✓', error:'⚠', info:'ℹ'};
+  el.className = type;
+  el.textContent = `${icons[type] || ''} ${msg}`;
+  el.style.display = 'block';
+  setTimeout(() => el.style.display = 'none', 3500);
+}
+
+async function api(method, path, body=null, isForm=false){
+  const url = S.apiBase + path;
+  const headers = {};
+  if(S.token && S.token !== 'DEMO') headers['Authorization'] = 'Bearer ' + S.token;
+  const opts = {method, headers};
+  if(body){
+    if(isForm){ opts.body = body; }
+    else{ headers['Content-Type'] = 'application/json'; opts.body = JSON.stringify(body); }
+  }
+  try{
+    const r = await fetch(url, opts);
+    const data = await r.json();
+    if(!r.ok) throw new Error(data.detail || 'Erreur ' + r.status);
+    return data;
+  }catch(e){
+    if(e.name === 'TypeError') throw new Error('Backend inaccessible');
+    throw e;
+  }
+}
+
+function scoreColor(s){ return s >= 0.75 ? 'var(--red)' : s >= 0.5 ? 'var(--amber)' : 'var(--green)'; }
+function scoreClass(s){ return s >= 0.75 ? 'crit' : s >= 0.5 ? 'warn' : 'ok'; }
+
+function toggleLivePrediction(){
+  if(S.livePredictionActive){ stopLivePrediction(); }
+  else { startLivePrediction(); }
+}
+
+function startLivePrediction(){
+  if(S.livePredictionActive) return;
+  S.livePredictionActive = true;
+  document.getElementById('btnLiveToggle').textContent = 'Arrêter le mode live';
+  analyserLSTM();
+  S.livePredictionTimer = setInterval(() => {
+    if(!S.livePredictionActive) return;
+    if(document.getElementById('btnLstm')?.disabled) return;
+    analyserLSTM();
+  }, 7000);
+}
+
+function stopLivePrediction(){
+  S.livePredictionActive = false;
+  document.getElementById('btnLiveToggle').textContent = 'Démarrer le mode live';
+  if(S.livePredictionTimer){ clearInterval(S.livePredictionTimer); S.livePredictionTimer = null; }
+}
+
+function sevBadge(s){
+  const sevMap = {1:'CRITIQUE', 2:'HAUTE', 3:'MOYENNE', 4:'BASSE'};
+  const label = typeof s === 'number' ? (sevMap[s] || String(s)) : (s || '—');
+  const cls = {CRITIQUE:'badge-red', HAUTE:'badge-orange', MOYENNE:'badge-amber', BASSE:'badge-gray',
+               CRITICAL:'badge-red', HIGH:'badge-orange', MEDIUM:'badge-amber', LOW:'badge-gray'};
+  return `<span class="badge ${cls[label] || 'badge-gray'}">${label}</span>`;
+}
+
+function niveauBadge(n){
+  const cls = {HIGH:'badge-orange', MEDIUM:'badge-amber', LOW:'badge-blue',
+               CRITIQUE:'badge-red', SURVEILLANCE:'badge-amber', NORMAL:'badge-green'};
+  return `<span class="badge ${cls[n] || 'badge-gray'}">${n}</span>`;
+}
+
+function initials(e){
+  const p = e.split('@')[0].split('.');
+  return (p[0][0] + (p[1] ? p[1][0] : p[0][1] || '')).toUpperCase();
+}
+
+// ── Health check ──────────────────────────────────────────────
+async function checkHealth(){
+  try{
+    const h = await api('GET', '/health');
+    S.apiOnline = true;
+    document.querySelectorAll('#apiDot,#loginDot').forEach(d => d.className = 'dot ok');
+    document.getElementById('apiStatusText').textContent = 'API connectée';
+
+    const mlOk = h.lgbm_charge || h.xgb_charge;
+    document.getElementById('statusNlp').textContent   = mlOk ? '✓ Chargé' : '✗ Absent';
+    document.getElementById('statusNlp').className     = 'status-val ' + (mlOk ? 'text-green' : 'text-red');
+    document.getElementById('statusXgb').textContent   = h.xgb_charge ? '✓ Chargé' : '✗ Absent';
+    document.getElementById('statusXgb').className     = 'status-val ' + (h.xgb_charge ? 'text-green' : 'text-red');
+    document.getElementById('statusKnn').textContent   = h.knn_charge ? '✓ Chargé' : '✗ Absent';
+    document.getElementById('statusKnn').className     = 'status-val ' + (h.knn_charge ? 'text-green' : 'text-red');
+    document.getElementById('statusDb').textContent    = h.db_ok ? '✓ Connectée' : '✗ Hors ligne';
+    document.getElementById('statusDb').className      = 'status-val ' + (h.db_ok ? 'text-green' : 'text-red');
+    document.getElementById('statusData').textContent  = h.donnees_ok ? '✓ Disponibles' : '✗ Absentes';
+    document.getElementById('statusData').className    = 'status-val ' + (h.donnees_ok ? 'text-green' : 'text-red');
+    return true;
+  }catch(e){
+    S.apiOnline = false;
+    document.querySelectorAll('#apiDot,#loginDot').forEach(d => d.className = 'dot err');
+    document.getElementById('apiStatusText').textContent = 'Backend hors ligne';
+    document.getElementById('apiBanner').style.display = 'flex';
+    ['statusNlp','statusLstm','statusKnn','statusDb','statusData'].forEach(id => {
+      const el = document.getElementById(id);
+      el.textContent = '⋯ démo'; el.className = 'status-val text-amber';
+    });
+    return false;
+  }
+}
+
+// ── Login ─────────────────────────────────────────────────────
+function fillRole(e, p){
+  document.getElementById('loginUser').value = e;
+  document.getElementById('loginPass').value = p;
+}
+
+async function doLogin(){
+  const btn = document.getElementById('btnLogin');
+  const txt = document.getElementById('loginBtnTxt');
+  const user = document.getElementById('loginUser').value.trim();
+  const pass = document.getElementById('loginPass').value;
+  if(!user || !pass){ toast('Remplissez tous les champs', 'error'); return; }
+  btn.disabled = true; txt.textContent = 'Connexion…';
+  try{
+    const fd = new FormData(); fd.append('username', user); fd.append('password', pass);
+    const data = await api('POST', '/auth/login', fd, true);
+    S.token = data.access_token;
+    S.user  = {email: user, role: data.role || 'Utilisateur', nom: data.nom || user.split('@')[0]};
+    startApp();
+    toast('Connecté en tant que ' + S.user.nom, 'success');
+  }catch(e){
+    if(e.message.includes('inaccessible')){
+      toast('Mode démonstration activé', 'info');
+      S.token = 'DEMO';
+      S.user  = {email: user, role: 'Administrateur (démo)', nom: user.split('@')[0]};
+      startApp();
+    }else{
+      toast('Erreur : ' + e.message, 'error');
+    }
+  }finally{ btn.disabled = false; txt.textContent = 'Se connecter'; }
+}
+
+function roleLabel(role){
+  const m = {admin:'Administrateur', responsable_it:'Responsable IT', utilisateur:'Utilisateur', robot_uipath:'Robot UiPath'};
+  return m[role] || role;
+}
+
+function applyRoleUI(){
+  const role = S.user.role;
+  if(role !== 'admin'){
+    document.querySelectorAll('[data-roles]').forEach(el => {
+      const allowed = el.dataset.roles.split(',').map(r => r.trim());
+      el.style.display = allowed.includes(role) ? '' : 'none';
+    });
+  }
+  if(role === 'utilisateur'){
+    showPage('soumettre');
+    loadMesTickets();
+  } else if(role === 'robot_uipath'){
+    showPage('alertes');
+    loadAlertes();
+    loadAudit();
+  } else {
+    showPage('dashboard');
+    loadDashboard();
+    loadAlertes();
+    loadAudit();
+    loadSwaggerEndpoints();
+    renderLstmScoresReels();
+  }
+}
+
+function startApp(){
+  document.getElementById('loginPage').style.display = 'none';
+  const a = document.getElementById('app'); a.style.display = 'flex'; a.classList.add('visible');
+  document.getElementById('sidebarAvatar').textContent = initials(S.user.email);
+  document.getElementById('sidebarName').textContent   = S.user.nom || S.user.email.split('@')[0];
+  document.getElementById('sidebarRole').textContent   = roleLabel(S.user.role);
+  checkHealth();
+  applyRoleUI();
+}
+
+function doLogout(){
+  if(S.token && S.token !== 'DEMO') api('POST', '/auth/logout').catch(() => {});
+  S.token = null;
+  document.getElementById('app').classList.remove('visible');
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('loginPage').style.display = 'flex';
+  toast('Déconnexion réussie', 'success');
+}
+
+// ── Navigation ────────────────────────────────────────────────
+const PAGE_TITLES = {
+  dashboard:    "Dashboard — Vue d'ensemble",
+  reclamations: 'Réclamations — 1 507 tickets',
+  nlp:          'Analyse NLP — Détection anomalies',
+  lstm:         'Prédictions XGBoost — Risque retard',
+  knn:          'Recommandations LightGBM + KNN — Actions correctives',
+  alertes:      'Alertes UiPath — Interface RPA',
+  audit:        'Audit Trail — Traçabilité',
+  swagger:      'Documentation API',
+  soumettre:    'Soumettre une réclamation',
+  'mes-tickets':'Mes réclamations',
+};
+
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  const pg = document.getElementById('page-' + id);
+  if(pg) pg.classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n => {
+    if(n.getAttribute('onclick') && n.getAttribute('onclick').includes("'" + id + "'"))
+      n.classList.add('active');
+  });
+  document.getElementById('topbarTitle').textContent = PAGE_TITLES[id] || id;
+  S.currentPage = id;
+  if(id === 'reclamations'){ S.recPage = 1; loadReclamations(); }
+  if(id === 'lstm'){ loadEvolution(); }
+}
+
+function refreshCurrentPage(){
+  const p = S.currentPage;
+  if(p === 'dashboard')    loadDashboard();
+  if(p === 'reclamations') loadReclamations();
+  if(p === 'alertes')      loadAlertes();
+  if(p === 'audit')        loadAudit();
+  if(p === 'mes-tickets')  loadMesTickets();
+  if(p === 'lstm')         loadEvolution();
+}
+
+// ── Dashboard ─────────────────────────────────────────────────
+async function loadDashboard(){
+  try{
+    const st = await api('GET', '/reclamations/stats');
+    // Champs réels : total_tickets, en_retard_sla, pct_retard_sla, duree_moy_resolution, groupes
+    if(st.total_tickets !== undefined)
+      document.getElementById('kpiTotal').textContent = st.total_tickets.toLocaleString('fr-FR');
+    if(st.en_retard_sla !== undefined){
+      document.getElementById('kpiAlertes').textContent = st.en_retard_sla;
+      document.getElementById('kpiAlertePct').textContent = (st.pct_retard_sla || 0).toFixed(1) + '% SLA breach';
+    }
+    if(st.duree_moy_resolution !== undefined)
+      document.getElementById('kpiDuree').innerHTML =
+        Math.round(st.duree_moy_resolution) + ' <span style="font-size:16px;font-weight:400">min</span>';
+    if(st.groupes) buildChartGroupes(st.groupes);
+
+    // Distribution scores depuis les champs disponibles
+    const total   = st.total_tickets || 1507;
+    const risque  = st.tickets_risque_eleve || 193;
+    const surv    = st.tickets_surveillance || 254;
+    const normal  = Math.max(0, total - risque - surv);
+    buildChartScores({'Normal (0–0.50)': normal, 'Surveillance (0.50–0.75)': surv, 'Alerte (≥0.75)': risque});
+
+    // Conformite SLA
+    const slaOk = (100 - ((risque / total) * 100)).toFixed(1);
+    const kpiSla = document.getElementById('kpiSlaOk');
+    if(kpiSla) kpiSla.innerHTML = slaOk + '<span style="font-size:13px;font-weight:400">%</span>';
+    const kpiAl = document.getElementById('kpiAlerteActive');
+    if(kpiAl) kpiAl.textContent = risque;
+
+    buildChartSeverite(st.severite_distribution || null);
+    buildChartSla(st.retard_par_groupe || null);
+  }catch(e){
+    buildChartGroupes({'Sécurité Opérat.':189,'SWIFT':87,'Helpdesk':312,'Système':198,'Réseau':276,'Téléphonie':145,'Equipe-Etudes':163,'Stock':137});
+    buildChartScores({'Normal (0–0.50)':1060,'Surveillance (0.50–0.75)':254,'Alerte (≥0.75)':193});
+    buildChartSeverite();
+    buildChartSla();
+  }
+  buildChartTendance();
+}
+
+function buildChartGroupes(data){
+  const ctx = document.getElementById('chartGroupes');
+  if(S.charts.g) S.charts.g.destroy();
+  // Tronquer les labels longs
+  const labels = Object.keys(data).map(k => k.length > 16 ? k.substring(0,14)+'…' : k);
+  S.charts.g = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets:[{
+        data: Object.values(data),
+        backgroundColor: ['#D94B20','#E8541F','#F07040','#F5A06080','#C03E18','#E8856070','#D97040','#F0A040'],
+        borderRadius: 6, borderSkipped: false
+      }]
+    },
+    options:{
+      responsive:true, plugins:{legend:{display:false}},
+      scales:{
+        x:{grid:{display:false}, ticks:{color:'#9AA3B2',font:{size:10}}},
+        y:{grid:{color:'rgba(0,0,0,0.05)'}, ticks:{color:'#9AA3B2',font:{size:11}}}
+      }
+    }
+  });
+}
+
+function buildChartScores(data){
+  const ctx = document.getElementById('chartScores');
+  if(S.charts.s) S.charts.s.destroy();
+  S.charts.s = new Chart(ctx, {
+    type: 'doughnut',
+    data:{
+      labels: Object.keys(data),
+      datasets:[{data: Object.values(data), backgroundColor:['#18A762','#D97706','#D93025'], borderWidth:0, hoverOffset:4}]
+    },
+    options:{
+      responsive:true, cutout:'62%',
+      plugins:{legend:{position:'right', labels:{color:'#5A6478',font:{size:11},padding:10,boxWidth:10}}}
+    }
+  });
+}
+
+async function buildChartTendance(){
+  const ctx = document.getElementById('chartTendance');
+  if(!ctx) return;
+  if(S.charts.t) S.charts.t.destroy();
+
+  let labels = ['S1 Fév','S2 Fév','S3 Fév','S4 Fév','S1 Mar','S2 Mar','S3 Mar','S4 Mar'];
+  let global_ = [0.54, 0.58, 0.61, 0.63, 0.57, 0.60, 0.62, 0.59];
+  let securite = [0.81, 0.84, 0.88, 0.87, 0.83, 0.86, 0.89, 0.87];
+  try {
+    const ev = await api('GET', '/api/predictions/evolution');
+    if(ev && ev.labels && ev.labels.length >= 2){
+      labels   = ev.labels;
+      global_  = ev.global  || global_;
+      securite = ev.securite || securite;
+    }
+  } catch(e){}
+
+  S.charts.t = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Score global',
+          data: global_,
+          borderColor: '#2563EB',
+          backgroundColor: 'rgba(37,99,235,0.08)',
+          fill: true, tension: 0.4,
+          pointBackgroundColor: '#2563EB', pointRadius: 3, borderWidth: 2
+        },
+        {
+          label: 'Sécurité Opér.',
+          data: securite,
+          borderColor: '#D93025',
+          backgroundColor: 'rgba(217,48,37,0.04)',
+          fill: false, tension: 0.4,
+          pointBackgroundColor: '#D93025', pointRadius: 3, borderWidth: 2,
+          borderDash: [4,3]
+        },
+        {
+          label: 'Seuil alerte',
+          data: Array(labels.length).fill(0.75),
+          borderColor: 'rgba(217,119,6,0.6)',
+          backgroundColor: 'transparent',
+          fill: false, tension: 0, pointRadius: 0, borderWidth: 1,
+          borderDash: [6,4]
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'top', labels: { color: '#5A6478', font: { size: 10 }, boxWidth: 10, padding: 8 } }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { color: '#9AA3B2', font: { size: 10 } } },
+        y: { min: 0, max: 1, grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { color: '#9AA3B2', font: { size: 10 }, callback: v => v.toFixed(2) } }
+      }
+    }
+  });
+}
+
+function buildChartSeverite(severiteData){
+  const ctx = document.getElementById('chartSeverite');
+  if(!ctx) return;
+  if(S.charts.sv) S.charts.sv.destroy();
+  const mapping = {1:'Critique (1)', 2:'Haute (2)', 3:'Moyenne (3)', 4:'Basse (4)'};
+  let chartData;
+  if(severiteData && Object.keys(severiteData).length){
+    chartData = [1,2,3,4].map(k => severiteData[k] || 0);
+  } else {
+    chartData = [189, 612, 478, 228];
+  }
+  S.charts.sv = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Critique (1)', 'Haute (2)', 'Moyenne (3)', 'Basse (4)'],
+      datasets: [{
+        data: chartData,
+        backgroundColor: ['#D93025','#D97706','#2563EB','#18A762'],
+        borderWidth: 0, hoverOffset: 4
+      }]
+    },
+    options: {
+      responsive: true, cutout: '60%',
+      plugins: {
+        legend: { position: 'right', labels: { color: '#5A6478', font: { size: 10 }, padding: 8, boxWidth: 10 } }
+      }
+    }
+  });
+}
+
+function buildChartSla(retardData){
+  const ctx = document.getElementById('chartSla');
+  if(!ctx) return;
+  if(S.charts.sl) S.charts.sl.destroy();
+  let groups, pcts;
+  if(retardData && Object.keys(retardData).length >= 2){
+    const entries = Object.entries(retardData).sort((a,b) => b[1]-a[1]).slice(0,8);
+    groups = entries.map(([g]) => g.length > 16 ? g.substring(0,14)+'…' : g);
+    pcts   = entries.map(([,p]) => p);
+  } else {
+    groups = ['Sécurité','SWIFT','Helpdesk','Système','Réseau','Téléphonie','Equipe-Etudes','Stock'];
+    pcts   = [28.5, 24.1, 18.3, 14.7, 11.2, 9.8, 7.5, 6.2];
+  }
+  const maxVal = Math.max(...pcts, 10);
+  S.charts.sl = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: groups,
+      datasets: [{
+        label: '% Retard SLA',
+        data: pcts,
+        backgroundColor: pcts.map(p => p >= 20 ? 'rgba(217,48,37,0.75)' : p >= 12 ? 'rgba(217,119,6,0.75)' : 'rgba(24,167,98,0.75)'),
+        borderRadius: 4, borderSkipped: false
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: {
+          grid: { color: 'rgba(0,0,0,0.05)' },
+          ticks: { color: '#9AA3B2', font: { size: 10 }, callback: v => v + '%' },
+          max: Math.ceil(maxVal / 5) * 5 + 5
+        },
+        y: { grid: { display: false }, ticks: { color: '#9AA3B2', font: { size: 10 } } }
+      }
+    }
+  });
+}
+
+function buildXgbCompareChart(selectedGroupe, selectedScore){
+  const ctx = document.getElementById('chartXgbCompare');
+  if(!ctx) return;
+  if(S.charts.xc) S.charts.xc.destroy();
+  const entries = Object.entries(SCORES_REELS).sort((a,b) => b[1] - a[1]);
+  const labels  = entries.map(([g]) => g.length > 20 ? g.substring(0,18)+'…' : g);
+  const data    = entries.map(([,s]) => s);
+  const bgs     = entries.map(([g,s]) => g === selectedGroupe ? scoreColor(selectedScore) : 'rgba(90,100,120,0.18)');
+  S.charts.xc = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        data,
+        backgroundColor: bgs,
+        borderWidth: 0,
+        borderRadius: 4,
+        borderSkipped: false
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: c => ' Score risque : ' + c.parsed.x.toFixed(2) } }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(0,0,0,0.05)' },
+          ticks: { color: '#9AA3B2', font: { size: 10 } },
+          min: 0, max: 1.0
+        },
+        y: { grid: { display: false }, ticks: { color: '#9AA3B2', font: { size: 10 } } }
+      }
+    }
+  });
+}
+
+function buildLivePredictionChart(){
+  const ctx = document.getElementById('chartLivePrediction');
+  if(!ctx) return;
+  if(S.charts.live) S.charts.live.destroy();
+
+  const labels = S.livePredictions.map(p => p.label).reverse();
+  const data = S.livePredictions.map(p => p.score).reverse();
+
+  S.charts.live = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Prédictions XGBoost',
+        data,
+        borderColor: '#8B5CF6',
+        backgroundColor: 'rgba(139,92,246,0.18)',
+        fill: true,
+        tension: 0.35,
+        pointBackgroundColor: '#8B5CF6',
+        pointBorderColor: '#fff',
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        borderWidth: 2.5,
+        spanGaps: true
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => `Score : ${ctx.parsed.y.toFixed(3)}`
+          },
+          backgroundColor: 'rgba(26,34,51,0.92)',
+          titleColor: '#fff',
+          bodyColor: '#C8CDD7',
+          borderColor: 'rgba(255,255,255,0.1)',
+          borderWidth: 1,
+          padding: 10
+        }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { color: '#9AA3B2', font: { size: 10 } }
+        },
+        y: {
+          min: 0,
+          max: 1,
+          grid: { color: 'rgba(0,0,0,0.05)' },
+          ticks: { color: '#9AA3B2', font: { size: 10 }, callback: v => v.toFixed(2), stepSize: 0.25 }
+        }
+      }
+    }
+  });
+}
+
+// ── Réclamations ──────────────────────────────────────────────
+function debounceSearch(){
+  clearTimeout(S.searchTimer);
+  S.searchTimer = setTimeout(() => { S.recPage = 1; loadReclamations(); }, 400);
+}
+
+function resetAndLoad(){ S.recPage = 1; loadReclamations(); }
+
+async function loadReclamations(){
+  const c = document.getElementById('reclamationsTable');
+  c.innerHTML = '<div class="loading-row"><div class="spinner"></div> Chargement…</div>';
+
+  const search  = document.getElementById('filterSearch').value.trim();
+  const groupe  = document.getElementById('filterGroupe').value;
+  const sev     = document.getElementById('filterSeverite').value;
+  const retard  = document.getElementById('filterRetard').value;
+  const offset  = (S.recPage - 1) * 15;
+
+  let qs = `?offset=${offset}&limit=15`;
+  if(groupe)  qs += `&type_operation=${encodeURIComponent(groupe)}`;
+  if(sev)     qs += `&severite_min=${sev}`;
+  if(retard !== '') qs += `&en_retard=${retard}`;
+
+  try{
+    const data  = await api('GET', '/reclamations/' + qs);
+    let items   = data.data || [];
+    const total = data.total || 0;
+
+    // Filtrage texte côté client
+    if(search){
+      const q = search.toLowerCase();
+      items = items.filter(t =>
+        (t.objet||'').toLowerCase().includes(q) ||
+        (t.description||'').toLowerCase().includes(q) ||
+        (t.type_operation||'').toLowerCase().includes(q) ||
+        (t.categorie||'').toLowerCase().includes(q) ||
+        String(t.id).toLowerCase().includes(q)
+      );
+    }
+
+    // Mettre à jour le badge de la sidebar
+    const badge = document.getElementById('nbReclamations');
+    if(badge) badge.textContent = total.toLocaleString('fr-FR');
+
+    renderRec(items);
+    const pages = Math.ceil(total / 15);
+    renderPagination(total, S.recPage, pages);
+  }catch(e){
+    renderRecFallback();
+  }
+}
+
+function renderRec(items){
+  if(!items || !items.length){
+    document.getElementById('reclamationsTable').innerHTML =
+      '<div class="empty-state"><h3>Aucun ticket trouvé</h3><p>Modifiez les filtres</p></div>';
+    return;
+  }
+  const rows = items.map(t => {
+    const score = t.score_anomalie != null ? t.score_anomalie : 0;
+    const color = scoreColor(score);
+    const objet = (t.objet || t.categorie || '—').substring(0, 70);
+    const more  = (t.objet || '').length > 70 ? '…' : '';
+    return `<tr>
+      <td><span class="font-mono" style="font-size:11px;color:var(--text3)">${t.id||'—'}</span></td>
+      <td style="max-width:240px;color:var(--text)">${objet}${more}</td>
+      <td><span class="badge badge-gray" style="font-size:9px">${(t.type_operation||'—').substring(0,20)}</span></td>
+      <td>${sevBadge(t.severite)}</td>
+      <td><div class="score-bar"><div class="score-track"><div class="score-fill" style="width:${(score*100).toFixed(0)}%;background:${color}"></div></div><span class="score-val" style="color:${color}">${score.toFixed(2)}</span></div></td>
+      <td><span class="badge ${t.en_retard?'badge-red':'badge-green'}">${t.en_retard?'Retard SLA':'Dans délais'}</span></td>
+      <td style="font-size:11px;color:var(--text3)">${t.date ? new Date(t.date).toLocaleDateString('fr-FR') : '—'}</td>
+    </tr>`;
+  }).join('');
+  document.getElementById('reclamationsTable').innerHTML = `
+    <div class="table-wrap"><table>
+      <thead><tr><th>ID</th><th>Objet</th><th>Groupe</th><th>Sévérité</th><th>Score anomalie</th><th>Statut SLA</th><th>Date</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>`;
+}
+
+function renderRecFallback(){
+  renderRec([
+    {id:'REC-001',objet:'Compromission firewall détectée sur réseau interne',type_operation:'Sécurité Opérationnelle',severite:1,score_anomalie:0.94,en_retard:true,date:'2026-03-01'},
+    {id:'REC-002',objet:'Timeout transactions SWIFT depuis ce matin',type_operation:'SWIFT',severite:1,score_anomalie:0.81,en_retard:true,date:'2026-02-28'},
+    {id:'REC-003',objet:'Demande vérification email SPAM — Helpdesk',type_operation:'Helpdesk',severite:2,score_anomalie:0.62,en_retard:false,date:'2026-03-01'},
+    {id:'REC-004',objet:'Accès Amplitude lent, timeout > 30s',type_operation:'Système',severite:3,score_anomalie:0.35,en_retard:false,date:'2026-02-27'},
+    {id:'REC-005',objet:'Problème réseau agence Tunis Centre',type_operation:'Réseau',severite:2,score_anomalie:0.48,en_retard:false,date:'2026-02-27'},
+  ]);
+}
+
+function renderPagination(total, page, pages){
+  const pg = document.getElementById('reclamationsPagination');
+  if(!total){ pg.style.display = 'none'; return; }
+  pg.style.display = 'flex';
+  document.getElementById('pagInfo').textContent =
+    `${total.toLocaleString('fr-FR')} tickets — Page ${page} / ${pages}`;
+  let html = `<button class="pag-btn" onclick="goPage(${page-1})" ${page<=1?'disabled':''}>‹</button>`;
+  const st = Math.max(1, page-2), en = Math.min(pages, page+2);
+  if(st > 1) html += `<button class="pag-btn" onclick="goPage(1)">1</button>${st>2?'<span style="color:var(--text3);padding:0 4px">…</span>':''}`;
+  for(let i=st; i<=en; i++)
+    html += `<button class="pag-btn ${i===page?'active':''}" onclick="goPage(${i})">${i}</button>`;
+  if(en < pages) html += `${en<pages-1?'<span style="color:var(--text3);padding:0 4px">…</span>':''}<button class="pag-btn" onclick="goPage(${pages})">${pages}</button>`;
+  html += `<button class="pag-btn" onclick="goPage(${page+1})" ${page>=pages?'disabled':''}>›</button>`;
+  document.getElementById('pagBtns').innerHTML = html;
+}
+function goPage(p){ S.recPage = p; loadReclamations(); }
+
+async function exportCSV(){
+  try{
+    const token = localStorage.getItem('jwt_token');
+    const resp  = await fetch(S.apiBase + '/reclamations/export', {
+      headers: { 'Authorization': 'Bearer ' + token }
+    });
+    if(!resp.ok) throw new Error('Export échoué');
+    const blob = await resp.blob();
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    a.download = 'reclamations_attijari.csv';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    toast('Export CSV téléchargé', 'success');
+  }catch(e){
+    toast('Erreur export CSV : ' + e.message, 'error');
+  }
+}
+
+// ── NLP ───────────────────────────────────────────────────────
+function setNlpExample(el){
+  document.getElementById('nlpTexte').value = el.dataset.txt;
+  if(el.dataset.groupe){
+    const sel = document.getElementById('nlpGroupe');
+    for(let i=0; i<sel.options.length; i++)
+      if(sel.options[i].value === el.dataset.groupe){ sel.selectedIndex = i; break; }
+  }
+  if(el.dataset.sev) document.getElementById('nlpSeverite').value = el.dataset.sev;
+}
+
+async function analyserNLP(){
+  const texte = document.getElementById('nlpTexte').value.trim();
+  if(!texte){ toast('Entrez un texte à analyser', 'error'); return; }
+  const btn = document.getElementById('btnNlp');
+  btn.disabled = true; btn.innerHTML = '<div class="spinner"></div> Analyse…';
+  document.getElementById('nlpResult').innerHTML = '';
+  try{
+    const res = await api('POST', '/reclamations/analyser', {
+      description:    texte,
+      type_operation: document.getElementById('nlpGroupe').value || 'Helpdesk',
+      categorie:      '',
+      severite:       parseInt(document.getElementById('nlpSeverite').value) || 2
+    });
+    renderNLPResult(res);
+  }catch(e){
+    // Fallback démonstration
+    renderNLPResult({
+      score_anomalie: 0.82, score_risque: 0.78,
+      niveau: 'CRITIQUE', alerte_declenchee: true,
+      systemes_detectes: ['Firewall','VPN'], erreurs_detectees: ['compromission','blocage'],
+      methode: 'Règles métier — démo'
+    });
+    toast('Mode démo — résultat simulé', 'info');
+  }finally{
+    btn.disabled = false; btn.textContent = 'Analyser avec le pipeline NLP';
+  }
+}
+
+function renderNLPResult(res){
+  const score  = res.score_anomalie || 0;
+  const alerte = res.alerte_declenchee || score >= 0.75;
+  const sc     = scoreClass(score);
+  const niveau = res.niveau || (score >= 0.75 ? 'CRITIQUE' : score >= 0.5 ? 'SURVEILLANCE' : 'NORMAL');
+  const keywords = [...(res.systemes_detectes || []), ...(res.erreurs_detectees || [])];
+  const niveauCls = {CRITIQUE:'badge-red', SURVEILLANCE:'badge-amber', NORMAL:'badge-green'};
+
+  document.getElementById('nlpResult').innerHTML = `
+    <div class="result-box">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px">
+        <div>
+          <div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Score anomalie NLP</div>
+          <div class="result-score-big ${sc}">${score.toFixed(3)}</div>
+        </div>
+        <div style="text-align:right">
+          ${alerte
+            ? '<span class="badge badge-red" style="font-size:12px;padding:6px 14px">⚠ ALERTE UiPath</span>'
+            : '<span class="badge badge-green" style="font-size:12px;padding:6px 14px">✓ NORMAL</span>'}
+          <div class="score-bar" style="margin-top:10px;width:150px">
+            <div class="score-track"><div class="score-fill" style="width:${(score*100).toFixed(0)}%;background:${scoreColor(score)}"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row form-row-2" style="margin-top:4px">
+        <div>
+          <div style="font-size:10px;color:var(--text3);margin-bottom:3px">Niveau de risque</div>
+          <span class="badge ${niveauCls[niveau]||'badge-gray'}">${niveau}</span>
+        </div>
+        <div>
+          <div style="font-size:10px;color:var(--text3);margin-bottom:3px">Score risque</div>
+          <span class="font-mono ${scoreClass(res.score_risque||0)==='crit'?'text-red':scoreClass(res.score_risque||0)==='warn'?'text-amber':'text-green'}">${(res.score_risque||0).toFixed(3)}</span>
+        </div>
+      </div>
+      ${keywords.length ? `
+        <div class="result-section">
+          <div class="result-section-title">Éléments détectés</div>
+          <div style="display:flex;gap:5px;flex-wrap:wrap">${keywords.map(k=>`<span class="badge badge-orange">${k}</span>`).join('')}</div>
+        </div>` : ''}
+      <div style="margin-top:10px;font-size:10px;color:var(--text3)">Méthode : ${res.methode||'Pipeline NLP'}</div>
+    </div>`;
+}
+
+// ── XGBoost ───────────────────────────────────────────────────
+const SCORES_REELS = {
+  'Sécurité Opérationnelle': 0.87, 'SWIFT': 0.81, 'Helpdesk': 0.72,
+  'Intervention-sur-site-déploiement': 0.65, 'Système': 0.58, 'Equipe-Etudes': 0.51,
+  'Réseau': 0.48, 'Téléphonie': 0.45, 'Data Office': 0.38, 'Développement-Digital': 0.35, 'Stock': 0.32
+};
+
+function renderLstmScoresReels(){
+  const c = document.getElementById('lstmScoresReels');
+  if(!c) return;
+  c.innerHTML = Object.entries(SCORES_REELS).slice(0,6).map(([g,s]) => `
+    <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+      <span style="font-size:10px;color:var(--text2);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${g}</span>
+      <div style="width:60px;height:4px;background:var(--bg2);border-radius:2px;overflow:hidden">
+        <div style="height:100%;background:${scoreColor(s)};width:${(s*100).toFixed(0)}%"></div>
+      </div>
+      <span class="font-mono" style="font-size:10px;color:${scoreColor(s)}">${s.toFixed(2)}</span>
+    </div>`).join('');
+}
+
+async function analyserLSTM(){
+  const groupe = document.getElementById('lstmGroupe').value;
+  const sev    = parseInt(document.getElementById('lstmSeverite').value) || 2;
+  const retard = document.getElementById('lstmRetard').value === 'true';
+  const btn    = document.getElementById('btnLstm');
+  btn.disabled = true; btn.innerHTML = '<div class="spinner"></div> Prédiction…';
+  document.getElementById('lstmResult').innerHTML = '';
+  try{
+    const res = await api('POST', '/api/predictions/predire', {
+      type_operation: groupe, severite: sev,
+      en_retard_historique: retard, duree_moyenne_min: 240.0
+    });
+    renderXGBResult(res);
+  }catch(e){
+    const baseScore = SCORES_REELS[groupe] || 0.50;
+    renderXGBResult({score_risque: baseScore, niveau: baseScore>=0.75?'CRITIQUE':baseScore>=0.5?'SURVEILLANCE':'NORMAL', est_alerte: baseScore>=0.75, type_operation: groupe, version_modele:'xgb_v1'});
+    toast('Mode démo', 'info');
+  }finally{
+    btn.disabled = false; btn.textContent = 'Prédire le risque avec XGBoost';
+  }
+}
+
+function renderXGBResult(res){
+  const score   = res.score_risque || 0;
+  const niveau  = res.niveau || 'NORMAL';
+  const pct     = Math.round(score * 100);
+  const color   = scoreColor(score);
+  const r = 42, circ = 2 * Math.PI * r, dash = circ * (1 - score);
+  const niveauLabel = {CRITIQUE:'HIGH',SURVEILLANCE:'MEDIUM',NORMAL:'LOW'};
+  document.getElementById('lstmResult').innerHTML = `
+    <div class="result-box" style="margin-top:16px">
+      <div class="pred-card" style="background:transparent;border:none;padding:0">
+        <div class="pred-gauge">
+          <svg viewBox="0 0 110 110" width="110" height="110">
+            <circle cx="55" cy="55" r="${r}" fill="none" stroke="var(--bg2)" stroke-width="8"/>
+            <circle cx="55" cy="55" r="${r}" fill="none" stroke="${color}" stroke-width="8"
+              stroke-dasharray="${circ.toFixed(1)}" stroke-dashoffset="${dash.toFixed(1)}"
+              stroke-linecap="round" transform="rotate(-90 55 55)" style="transition:stroke-dashoffset 1s ease"/>
+          </svg>
+          <div class="gauge-val">
+            <div class="gauge-num" style="color:${color}">${pct}%</div>
+            <div class="gauge-lbl">RISQUE</div>
+          </div>
+        </div>
+        <div class="pred-body">
+          <div class="pred-title">Niveau : ${niveauBadge(niveauLabel[niveau]||'LOW')}</div>
+          <div class="pred-sub">Groupe : <span class="badge badge-orange">${res.type_operation||'—'}</span></div>
+          <div class="pred-sub">Tendance : <span style="color:${color}">${score>=0.75?'↑ Risque élevé':score>=0.50?'→ Surveillance':'↓ Normal'}</span></div>
+          <div style="font-size:10px;color:var(--text3);margin-top:6px">Modèle : ${res.version_modele||'xgb_v1'}</div>
+          <div style="font-size:10px;color:var(--text3)">Données : Attijari bank Fév–Mars 2026</div>
+        </div>
+      </div>
+      <div class="chart-compare-wrap">
+        <div class="chart-section-title">Score de risque prédit — comparaison tous les groupes</div>
+        <canvas id="chartXgbCompare" height="180"></canvas>
+      </div>
+      <div class="chart-compare-wrap" style="margin-top:18px">
+        <div class="chart-section-title">Courbe live des prédictions XGBoost</div>
+        <canvas id="chartLivePrediction" height="180"></canvas>
+      </div>
+    </div>`;
+  const now = new Date();
+  S.lastPrediction = {
+    score: score,
+    type_operation: res.type_operation || 'Tous groupes',
+    version_modele: res.version_modele || 'xgb_v1',
+    timestamp: now.toLocaleTimeString('fr-FR'),
+    label: now.toLocaleTimeString('fr-FR')
+  };
+
+  S.livePredictions.unshift({
+    label: S.lastPrediction.label,
+    score: S.lastPrediction.score,
+    groupe: S.lastPrediction.type_operation,
+    timestamp: S.lastPrediction.timestamp
+  });
+  if(S.livePredictions.length > 20) S.livePredictions.pop();
+
+  updateLivePredictionInfo();
+  setTimeout(() => {
+    buildXgbCompareChart(res.type_operation, score);
+    buildLivePredictionChart();
+  }, 50);
+}
+
+// ── Évolution temporelle ──────────────────────────────────────
+async function loadEvolution(){
+  const groupe = document.getElementById('evolutionGroupe')?.value || '';
+  const loader = document.getElementById('evolutionLoader');
+  if(loader) loader.style.display = 'flex';
+
+  try{
+    const qs  = groupe ? `?groupe=${encodeURIComponent(groupe)}` : '';
+    const res = await api('GET', `/api/predictions/evolution${qs}`);
+    buildChartEvolution(res);
+    updateEvolutionKpis(res);
+  }catch(e){
+    // Fallback données simulées cohérentes
+    buildChartEvolution({
+      labels:       ['01/02','08/02','15/02','22/02','01/03','08/03','15/03','22/03'],
+      global:       [0.54, 0.58, 0.61, 0.63, 0.57, 0.60, 0.62, 0.59],
+      securite:     [0.81, 0.84, 0.88, 0.87, 0.83, 0.86, 0.89, 0.87],
+      swift:        [0.75, 0.79, 0.82, 0.81, 0.77, 0.80, 0.83, 0.81],
+      helpdesk:     [0.67, 0.70, 0.73, 0.72, 0.68, 0.71, 0.74, 0.72],
+      seuil_alerte: 0.75,
+      tendance:     'stable',
+      nb_semaines:  8,
+      nb_tickets:   1507,
+    });
+    updateEvolutionKpis({tendance:'stable', nb_semaines:8, nb_tickets:1507});
+  }finally{
+    if(loader) loader.style.display = 'none';
+    updateLivePredictionInfo();
+  }
+}
+
+function buildChartEvolution(data){
+  const ctx = document.getElementById('chartEvolution');
+  if(!ctx) return;
+  if(S.charts.evo) S.charts.evo.destroy();
+
+  const labels  = data.labels || [];
+  const global  = data.global || [];
+  const seuil   = data.seuil_alerte || 0.75;
+  const securite = data.securite || [];
+  const swift    = data.swift    || [];
+  const helpdesk = data.helpdesk || [];
+
+  // Ligne de seuil UiPath (constante)
+  const seuilLine = labels.map(() => seuil);
+
+  const groupe = document.getElementById('evolutionGroupe')?.value || '';
+  const showGroupes = !groupe; // Afficher les 3 groupes seulement si pas de filtre
+
+  const datasets = [
+    {
+      label:           'Score global moyen',
+      data:            global,
+      borderColor:     '#2563EB',
+      backgroundColor: 'rgba(37,99,235,0.08)',
+      fill:            true,
+      tension:         0.4,
+      pointBackgroundColor: '#2563EB',
+      pointRadius:     5,
+      pointHoverRadius: 7,
+      borderWidth:     2.5,
+      order:           1,
+    },
+    {
+      label:           'Seuil alerte UiPath (0,75)',
+      data:            seuilLine,
+      borderColor:     'rgba(217,48,37,0.6)',
+      borderDash:      [6, 4],
+      borderWidth:     1.5,
+      pointRadius:     0,
+      fill:            false,
+      tension:         0,
+      order:           0,
+    },
+  ];
+
+  if(showGroupes && securite.some(v => v !== null)){
+    datasets.push({
+      label:           'Sécurité Opérationnelle',
+      data:            securite,
+      borderColor:     '#D93025',
+      backgroundColor: 'transparent',
+      fill:            false,
+      tension:         0.4,
+      pointBackgroundColor: '#D93025',
+      pointRadius:     3,
+      borderWidth:     1.5,
+      borderDash:      [3,2],
+      order:           2,
+    });
+  }
+  if(showGroupes && swift.some(v => v !== null)){
+    datasets.push({
+      label:           'SWIFT',
+      data:            swift,
+      borderColor:     '#D97706',
+      backgroundColor: 'transparent',
+      fill:            false,
+      tension:         0.4,
+      pointBackgroundColor: '#D97706',
+      pointRadius:     3,
+      borderWidth:     1.5,
+      borderDash:      [3,2],
+      order:           3,
+    });
+  }
+  if(showGroupes && helpdesk.some(v => v !== null)){
+    datasets.push({
+      label:           'Helpdesk',
+      data:            helpdesk,
+      borderColor:     '#18A762',
+      backgroundColor: 'transparent',
+      fill:            false,
+      tension:         0.4,
+      pointBackgroundColor: '#18A762',
+      pointRadius:     3,
+      borderWidth:     1.5,
+      borderDash:      [3,2],
+      order:           4,
+    });
+  }
+
+  if(S.lastPrediction){
+    const selected = document.getElementById('evolutionGroupe')?.value || '';
+    if(!selected || selected === S.lastPrediction.type_operation){
+      const liveData = labels.map((_, idx) => idx === labels.length - 1 ? S.lastPrediction.score : null);
+      datasets.push({
+        label: 'Prédiction récente — ' + S.lastPrediction.type_operation,
+        data: liveData,
+        borderColor: '#8B5CF6',
+        backgroundColor: 'rgba(139,92,246,0.14)',
+        fill: false,
+        tension: 0.3,
+        pointBackgroundColor: '#8B5CF6',
+        pointBorderColor: '#fff',
+        pointRadius: 6,
+        pointHoverRadius: 8,
+        borderDash: [6,4],
+        borderWidth: 2,
+        order: 5,
+        spanGaps: true,
+      });
+    }
+  }
+
+  S.charts.evo = new Chart(ctx, {
+    type: 'line',
+    data: { labels, datasets },
+    options: {
+      responsive:   true,
+      interaction:  { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          position: 'top',
+          labels:   { color: '#5A6478', font: { size: 11 }, boxWidth: 12, padding: 12 }
+        },
+        tooltip: {
+          callbacks: {
+            label: c => {
+              if(c.dataset.label.includes('Seuil')) return null;
+              const v = c.parsed.y;
+              if(v === null) return null;
+              const niveau = v >= 0.75 ? ' ⚠ ALERTE' : v >= 0.5 ? ' ↗ Surveillance' : ' ✓ Normal';
+              return ` ${c.dataset.label} : ${v.toFixed(3)}${niveau}`;
+            },
+            filter: item => item.parsed.y !== null && !item.dataset.label.includes('Seuil'),
+          },
+          backgroundColor: 'rgba(26,34,51,0.92)',
+          titleColor:      '#fff',
+          bodyColor:       '#C8CDD7',
+          borderColor:     'rgba(255,255,255,0.1)',
+          borderWidth:     1,
+          padding:         10,
+        }
+      },
+      scales: {
+        x: {
+          grid:  { display: false },
+          ticks: { color: '#9AA3B2', font: { size: 11 } }
+        },
+        y: {
+          min:   0,
+          max:   1.0,
+          grid:  { color: 'rgba(0,0,0,0.04)' },
+          ticks: {
+            color: '#9AA3B2', font: { size: 11 },
+            callback: v => v.toFixed(2),
+            stepSize: 0.25
+          },
+          afterBuildTicks(axis){
+            axis.ticks = [0, 0.25, 0.50, 0.75, 1.0].map(v => ({ value: v }));
+          }
+        }
+      }
+    }
+  });
+}
+
+function updateEvolutionKpis(data){
+  const tendanceMap = {
+    hausse: { txt: '↑ En hausse', color: 'var(--red)',   badge: 'badge-red'   },
+    baisse: { txt: '↓ En baisse', color: 'var(--green)', badge: 'badge-green' },
+    stable: { txt: '→ Stable',    color: 'var(--amber)', badge: 'badge-amber' },
+  };
+  const t   = tendanceMap[data.tendance] || tendanceMap.stable;
+  const badge = document.getElementById('evolutionTendanceBadge');
+  const txt   = document.getElementById('evoTendanceTxt');
+  const sem   = document.getElementById('evoNbSemaines');
+  const tix   = document.getElementById('evoNbTickets');
+
+  if(badge) badge.innerHTML = `<span class="badge ${t.badge}">${t.txt}</span>`;
+  if(txt)   { txt.textContent = t.txt; txt.style.color = t.color; }
+  if(sem)   sem.textContent = data.nb_semaines || '—';
+  if(tix)   tix.textContent = (data.nb_tickets || 0).toLocaleString('fr-FR');
+}
+
+function updateLivePredictionInfo(){
+  const el = document.getElementById('livePredictionInfo');
+  if(!el) return;
+  if(!S.lastPrediction){
+    el.textContent = 'Aucune prédiction récente. Effectuez une prédiction XGBoost pour afficher le score sur la courbe.';
+    return;
+  }
+  const groupe = document.getElementById('evolutionGroupe')?.value || '';
+  const sameGroup = !groupe || groupe === S.lastPrediction.type_operation;
+  if(sameGroup){
+    el.innerHTML = `Dernière prédiction en direct : <strong>${S.lastPrediction.score.toFixed(3)}</strong> pour <strong>${S.lastPrediction.type_operation}</strong> (${S.lastPrediction.timestamp}).`;
+  } else {
+    el.innerHTML = `Dernière prédiction : <strong>${S.lastPrediction.score.toFixed(3)}</strong> pour <strong>${S.lastPrediction.type_operation}</strong> (${S.lastPrediction.timestamp}). Sélectionnez ce groupe pour l'afficher sur la courbe.`;
+  }
+}
+
+// ── LightGBM + KNN Recommandations ─────────────────────────────────
+function setKnnExample(el){
+  document.getElementById('knnTexte').value = el.dataset.txt;
+  if(el.dataset.groupe){
+    const sel = document.getElementById('knnGroupe');
+    for(let i=0; i<sel.options.length; i++)
+      if(sel.options[i].value === el.dataset.groupe){ sel.selectedIndex = i; break; }
+  }
+}
+
+async function analyserKNN(){
+  const texte = document.getElementById('knnTexte').value.trim();
+  if(!texte){ toast('Entrez un texte', 'error'); return; }
+  const btn = document.getElementById('btnKnn');
+  btn.disabled = true; btn.innerHTML = '<div class="spinner"></div> Classification LightGBM…';
+  document.getElementById('knnResult').innerHTML = '';
+  try{
+    const res = await api('POST', '/api/recommandations/analyser', {
+      texte,
+      groupe:    document.getElementById('knnGroupe').value || '',
+      categorie: document.getElementById('knnCategorie').value || ''
+    });
+    renderKNNResult(res);
+  }catch(e){
+    renderKNNResult({
+      action_suggeree:   'Purge cache Redis monétique et redémarrage service',
+      taux_succes:       0.80,
+      nb_cas_similaires: 4,
+      cas_similaires:    ['Timeout SWIFT — agence Tunis', 'Blocage virement international', 'Erreur authentification token']
+    });
+    toast('Mode démo', 'info');
+  }finally{
+    btn.disabled = false; btn.textContent = 'Recommandation LightGBM';
+  }
+}
+
+function renderKNNResult(res){
+  const cas = (res.cas_similaires || []);
+  const similHtml = cas.length ? cas.map((t,i) => `
+    <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:#fff;border-radius:var(--r);margin-bottom:6px;border:1px solid var(--border)">
+      <span style="font-size:10px;color:var(--text3);min-width:18px">${i+1}.</span>
+      <span style="flex:1;font-size:12px;color:var(--text2)">${typeof t==='string' ? t : (t.objet||t.description||'—')}</span>
+    </div>`).join('') : '';
+
+  const incidentsHtml = (res.incidents_similaires || []).length ? (res.incidents_similaires || []).map((inc, i) => `
+    <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 12px;background:#fff;border-radius:var(--r);margin-bottom:6px;border:1px solid var(--border)">
+      <span style="font-size:10px;color:var(--text3);min-width:18px">${i+1}.</span>
+      <div style="flex:1">
+        <div style="font-size:12px;color:var(--text)">${inc.description||'—'}</div>
+        <div style="font-size:10px;color:var(--text3);margin-top:2px">Action : ${inc.action_effectuee||'—'} • Similarité : ${inc.similarite?.toFixed(3)||'—'}</div>
+      </div>
+    </div>`).join('') : '';
+
+  document.getElementById('knnResult').innerHTML = `
+    <div class="result-box">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+        <div style="font-size:13px;font-weight:600;color:var(--text)">Résultats LightGBM + KNN</div>
+        <span class="badge badge-green">Fiabilité ${((res.taux_succes||0)*100).toFixed(0)}%</span>
+      </div>
+      <div style="font-size:10px;color:var(--text3);margin-bottom:4px">Cas similaires LightGBM : ${res.nb_cas_similaires||0}</div>
+      <div class="result-section" style="padding-top:0;border-top:none">
+        <div class="result-section-title">Action corrective recommandée</div>
+        <div class="reco-item"><span style="color:var(--green);margin-right:4px;font-weight:700">✓</span><p>${res.action_suggeree||'—'}</p></div>
+      </div>
+      <div class="result-row" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+        <div style="flex:1;min-width:140px;font-size:10px;color:var(--text3)">Action KNN : <strong>${res.action_similaire_knn||'—'}</strong></div>
+        <div style="flex:1;min-width:140px;font-size:10px;color:var(--text3)">Similarité KNN : <strong>${(res.similarite_moyenne||0).toFixed(3)}</strong></div>
+      </div>
+      ${similHtml ? `<div class="result-section"><div class="result-section-title">Top-3 alternatives</div>${similHtml}</div>` : ''}
+      ${incidentsHtml ? `<div class="result-section"><div class="result-section-title">Incidents similaires KNN</div>${incidentsHtml}</div>` : ''}
+      <div style="font-size:10px;color:var(--text3);margin-top:10px">${res.source||'LightGBM + KNN — données réelles Attijari bank'}</div>
+    </div>`;
+}
+
+// ── Alertes ───────────────────────────────────────────────────
+async function loadAlertes(){
+  const seuil = document.getElementById('alerteSeuil')?.value || '0.75';
+  const priorite = document.getElementById('filterPriorite')?.value || '';
+  const statut = document.getElementById('filterStatut')?.value || '';
+  const c = document.getElementById('alertesContainer');
+  if(!c) return;
+  c.innerHTML = '<div class="loading-row"><div class="spinner"></div></div>';
+  try{
+    const [data, stats] = await Promise.all([
+      api('GET', `/api/alertes?seuil=${seuil}`),
+      api('GET', '/api/alertes/stats').catch(() => null)
+    ]);
+    const alertes = Array.isArray(data) ? data : [];
+    const filteredAlertes = alertes.filter(a => {
+      const keepPriorite = priorite ? String(a.priorite || '').trim() === priorite : true;
+      const keepStatut = statut ? String(a.statut || '').toLowerCase() === statut.toLowerCase() : true;
+      return keepPriorite && keepStatut;
+    });
+    document.getElementById('nbAlertes').textContent = filteredAlertes.length;
+    if(stats){
+      const surveil = document.getElementById('kpiRpaCloturees');
+      if(surveil) surveil.textContent = stats.alertes_surveillance || 0;
+      const scoreMoy = document.getElementById('kpiRpaScore');
+      if(scoreMoy) scoreMoy.textContent = stats.score_moyen ? stats.score_moyen.toFixed(3) : '—';
+    }
+    renderAlertes(filteredAlertes);
+    updateRpaKpis(filteredAlertes);
+    updateUiPathLastTicket(filteredAlertes);
+    buildChartAlertes(filteredAlertes);
+    setAlertUpdateTimestamp();
+  }catch(e){
+    const demo = [
+      {id:'AL-001',type_operation:'Sécurité Opérationnelle',score_risque:0.94,priorite:1,action_recommandee:'Analyser logs firewall et bloquer IP suspectes',date_detection:new Date().toISOString(),statut:'active'},
+      {id:'AL-002',type_operation:'SWIFT',score_risque:0.81,priorite:1,action_recommandee:'Purge cache Redis et redémarrage service SWIFT',date_detection:new Date(Date.now()-1800000).toISOString(),statut:'active'},
+      {id:'AL-003',type_operation:'Helpdesk',score_risque:0.77,priorite:2,action_recommandee:'Vérification authentification et blocage compte suspect',date_detection:new Date(Date.now()-3600000).toISOString(),statut:'active'},
+    ];
+    document.getElementById('nbAlertes').textContent = demo.length;
+    const surveil = document.getElementById('kpiRpaCloturees');
+    if(surveil) surveil.textContent = demo.length;
+    const scoreMoy = document.getElementById('kpiRpaScore');
+    if(scoreMoy) scoreMoy.textContent = '0.84';
+    renderAlertes(demo);
+    updateRpaKpis(demo);
+    updateUiPathLastTicket(demo);
+    buildChartAlertes(demo);
+    setAlertUpdateTimestamp();
+  }
+  updateSimDisplay();
+}
+
+function updateRpaKpis(alertes){
+  const nb = alertes.length;
+  const el = document.getElementById('kpiRpaActives');
+  if(el) el.textContent = nb;
+  const scores = alertes.map(a => a.score_risque || 0);
+  const moy = scores.length ? (scores.reduce((s,v) => s+v, 0) / scores.length) : 0;
+  const elMoy = document.getElementById('kpiRpaScore');
+  if(elMoy) elMoy.textContent = moy > 0 ? moy.toFixed(3) : '—';
+
+  const rd1s = document.getElementById('rd1-status');
+  if(rd1s){ rd1s.textContent = 'Actif'; rd1s.className = 'badge badge-green'; }
+
+  const rd2 = document.getElementById('rd2');
+  const rd2s = document.getElementById('rd2-status');
+  const rd2l = document.getElementById('rd2-last');
+  if(nb > 0){
+    if(rd2){ rd2.className = 'robot-dot running'; }
+    if(rd2s){ rd2s.className = 'badge badge-amber'; rd2s.textContent = 'En cours'; }
+    if(rd2l){ rd2l.innerHTML = 'Notification envoyée · <span style="color:var(--amber)">' + nb + ' alerte(s)</span>'; }
+  } else {
+    if(rd2){ rd2.className = 'robot-dot idle'; }
+    if(rd2s){ rd2s.className = 'badge badge-gray'; rd2s.textContent = 'En attente'; }
+    if(rd2l){ rd2l.textContent = 'En attente d\'alerte qualifiée'; }
+  }
+}
+
+function updateUiPathLastTicket(alertes){
+  const el = document.getElementById('uipathLastTicket');
+  if(!el) return;
+  if(!alertes.length){
+    el.innerHTML = 'Aucun ticket reçu récemment. Rechargez la page ou soumettez un ticket pour voir l\'état.';
+    return;
+  }
+  const last = alertes[0];
+  const score = last.score_risque || 0;
+  const method = last.label_methode || last.methode_detection || 'Hybride';
+  const detail = last.detail_detection || 'Aucun détail supplémentaire.';
+  const date = last.date_detection ? new Date(last.date_detection).toLocaleString('fr-FR') : 'Date inconnue';
+  el.innerHTML = `
+    <div style="font-size:13px;font-weight:600;color:var(--text)">${last.type_operation || 'Ticket'}</div>
+    <div style="font-size:11px;color:var(--text3);margin:6px 0">Score risque : <strong>${score.toFixed(3)}</strong> · Priorité P${last.priorite || 2}</div>
+    <div style="font-size:11px;color:var(--text2);margin-bottom:6px">Méthode : <strong>${method}</strong></div>
+    <div style="font-size:11px;color:var(--text2);margin-bottom:6px">Détails : ${detail}</div>
+    <div style="font-size:10px;color:var(--text3)">Dernière détection : ${date}</div>
+  `;
+  showUiPathNotice('Nouveau ticket détecté — interface UiPath mise à jour.');
+}
+
+function showUiPathNotice(message){
+  const notice = document.getElementById('uipathNotice');
+  const text   = document.getElementById('uipathNoticeText');
+  if(!notice || !text) return;
+  text.textContent = message;
+  notice.classList.add('show');
+  clearTimeout(notice.hideTimeout);
+  notice.hideTimeout = setTimeout(() => notice.classList.remove('show'), 5200);
+}
+
+function setAlertUpdateTimestamp(){
+  const el = document.getElementById('alertRoleNote');
+  const now = new Date();
+  const ts = now.toLocaleString('fr-FR', {hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  if(el){
+    const role = roleLabel(S.user.role || 'utilisateur');
+    let actionNote = 'Consultez les alertes, filtrez par priorité et statut, puis notifier ou clôturer si nécessaire. UiPath exécute les robots CheckAlerte, NotifierIT et ConfirmerResolution.';
+    if(S.user.role === 'responsable_it'){
+      actionNote = 'Responsable IT : vous pouvez notifier le ticket, valider la solution et clôturer l’alerte. UiPath vous informe automatiquement en cas d’alerte critique.';
+    } else if(S.user.role === 'robot_uipath'){
+      actionNote = 'Robot UiPath : vous interrogez directement l’API /api/alertes?seuil=0.75 et automisez la réponse RPA sur les tickets critiques.';
+    } else if(S.user.role === 'admin'){
+      actionNote = 'Admin : vous pouvez superviser le flux RPA, consulter les robots UiPath et valider les alertes si besoin.';
+    } else if(S.user.role === 'utilisateur'){
+      actionNote = 'Utilisateur : vous pouvez consulter l’état des alertes. UiPath détecte les anomalies et prépare les tickets pour contrôle IT.';
+    }
+    el.innerHTML = `Connecté en tant que <strong>${role}</strong>. Dernière mise à jour des alertes : <strong>${ts}</strong>. ${actionNote}`;
+  }
+}
+
+function buildChartAlertes(alertes){
+  const card = document.getElementById('alertesChartCard');
+  if(!alertes.length){ if(card) card.style.display='none'; return; }
+  if(card) card.style.display='block';
+  const ctx = document.getElementById('chartAlertes');
+  if(!ctx) return;
+  if(S.charts.al) S.charts.al.destroy();
+  const labels = alertes.map(a => (a.type_operation||'').substring(0,14));
+  const scores = alertes.map(a => +(a.score_risque||0).toFixed(3));
+  const bgs = scores.map(s => s>=0.75?'rgba(217,48,37,0.75)':s>=0.5?'rgba(217,119,6,0.75)':'rgba(24,167,98,0.75)');
+  S.charts.al = new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets: [{ data: scores, backgroundColor: bgs, borderRadius: 4, borderSkipped: false }] },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: c => ' Score : ' + c.parsed.y.toFixed(3) } }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { color: '#9AA3B2', font: { size: 10 } } },
+        y: {
+          min: 0, max: 1,
+          grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { color: '#9AA3B2', font: { size: 10 } },
+          afterBuildTicks(axis){ axis.ticks = [0,0.5,0.75,1].map(v => ({value:v})); }
+        }
+      }
+    }
+  });
+}
+
+function renderAlertes(alertes){
+  const c = document.getElementById('alertesContainer');
+  if(!alertes.length){
+    c.innerHTML = '<div class="empty-state"><h3>Aucune alerte active</h3><p>Système nominal — seuil score_anomalie non atteint</p></div>';
+    return;
+  }
+  const svgWarn = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`;
+  c.innerHTML = alertes.map(a => {
+    const score    = a.score_risque || 0;
+    const isHigh   = score >= 0.75;
+    const isMed    = score >= 0.5 && score < 0.75;
+    const cls      = isHigh ? 'high' : isMed ? 'medium' : 'low';
+    const niveau   = isHigh ? 'HIGH' : isMed ? 'MEDIUM' : 'LOW';
+    const iconCls  = isHigh ? 'red' : isMed ? 'amber' : 'or';
+    const color    = scoreColor(score);
+    const now      = Date.now();
+    const det      = a.date_detection ? new Date(a.date_detection) : null;
+    const elapsed  = det ? Math.round((now - det.getTime()) / 60000) : null;
+    const elapsedTxt = elapsed !== null ? (elapsed < 60 ? elapsed + ' min' : Math.round(elapsed/60) + 'h') : '—';
+    const dt       = det ? det.toLocaleString('fr-FR') : '—';
+    const action   = (a.action_recommandee || '—').substring(0, 90);
+    const pct      = Math.round(score * 100);
+    return `<div class="alert-item ${cls}">
+      <div class="alert-icon ${iconCls}" style="color:${color}">${svgWarn}</div>
+      <div class="alert-body">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:3px">
+          <div class="alert-title">${a.type_operation || '—'}</div>
+          <span class="font-mono" style="font-size:10px;color:var(--text3)">${a.id||''}</span>
+        </div>
+        <div class="alert-desc">${action}${(a.action_recommandee||'').length>90?'…':''}</div>
+        <div class="alert-score-bar">
+          <div class="alert-score-track"><div class="alert-score-fill" style="width:${pct}%;background:${color}"></div></div>
+          <span class="font-mono" style="font-size:10px;color:${color};font-weight:600">${score.toFixed(3)}</span>
+        </div>
+        <div style="margin-top:8px;font-size:10px;color:var(--text3)">Méthode : <strong>${a.label_methode || a.methode_detection || 'Hybride'}</strong></div>
+        <div style="margin-top:4px;font-size:10px;color:var(--text3)">${(a.detail_detection||'Aucun détail supplémentaire.').substring(0,98)}${(a.detail_detection||'').length>98?'…':''}</div>
+        <div class="alert-meta" style="margin-top:8px">${dt} · Depuis : <b>${elapsedTxt}</b> · Statut : ${a.statut||'active'}</div>
+      </div>
+      <div class="alert-actions">
+        ${niveauBadge(niveau)}
+        <button class="btn btn-secondary" onclick="notifierResponsable('${a.id}')" style="font-size:11px;padding:5px 10px;min-width:110px">📧 Notifier IT</button>
+        <button class="btn btn-success" onclick="cloturerAlerte('${a.id}')" style="font-size:11px;padding:5px 10px">&#10003; Clôturer</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+async function notifierResponsable(id){
+  try{
+    await api('POST', `/api/alertes/${id}/notifier`);
+    toast('Notification IT envoyée', 'success');
+    loadAlertes();
+  }catch(e){
+    toast('Échec de la notification IT : ' + e.message, 'error');
+  }
+}
+
+// ── Simulation UiPath ─────────────────────────────────────────
+function updateSimDisplay(){
+  const slider = document.getElementById('simScore');
+  const display = document.getElementById('simScoreDisplay');
+  if(!slider || !display) return;
+  const v = parseFloat(slider.value);
+  display.textContent = v.toFixed(2);
+  display.style.color = scoreColor(v);
+}
+
+function simulerAlerte(){
+  const score  = parseFloat(document.getElementById('simScore').value) || 0;
+  const groupe = document.getElementById('simGroupe').value || 'Inconnu';
+  const color  = scoreColor(score);
+  const seuil  = parseFloat(document.getElementById('alerteSeuil')?.value || '0.75');
+
+  let cls, titre, robots, action;
+  if(score >= 0.90){
+    cls = 'alerte'; titre = 'CRITIQUE — Alerte immédiate';
+    robots = ['CheckAlerte.xaml <b style="color:var(--green)">✓ Détecté</b>','NotifierIT.xaml <b style="color:var(--red)">&#8594; Email URGENT envoyé</b>','ConfirmerResolution.xaml <b style="color:var(--amber)">En attente validation</b>'];
+    action = 'Blocage immédiat + notification prioritaire responsable IT';
+  } else if(score >= seuil){
+    cls = 'alerte'; titre = 'ALERTE — Seuil UiPath dépassé';
+    robots = ['CheckAlerte.xaml <b style="color:var(--green)">✓ Détecté</b>','NotifierIT.xaml <b style="color:var(--amber)">&#8594; Email envoyé</b>','ConfirmerResolution.xaml <b style="color:var(--text3)">En attente</b>'];
+    action = 'Notification responsable IT + ticket escaladé';
+  } else if(score >= 0.50){
+    cls = 'surveillance'; titre = 'SURVEILLANCE — En dessous du seuil';
+    robots = ['CheckAlerte.xaml <b style="color:var(--green)">✓ Vérifié</b>','NotifierIT.xaml <b style="color:var(--text3)">Non déclenché (score &lt; ' + seuil + ')</b>','ConfirmerResolution.xaml <b style="color:var(--text3)">Inactif</b>'];
+    action = 'Surveillance passive — aucune action RPA';
+  } else {
+    cls = 'normal'; titre = 'NORMAL — Aucune action requise';
+    robots = ['CheckAlerte.xaml <b style="color:var(--green)">✓ Vérifié</b>','NotifierIT.xaml <b style="color:var(--text3)">Non déclenché</b>','ConfirmerResolution.xaml <b style="color:var(--text3)">Inactif</b>'];
+    action = 'Système nominal — pas d\'alerte UiPath';
+  }
+
+  document.getElementById('simResult').innerHTML = `
+    <div class="sim-result ${cls}" style="margin-top:12px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+        <div style="font-size:12px;font-weight:700;color:${color}">${titre}</div>
+        <div class="font-mono" style="font-size:16px;font-weight:700;color:${color}">${score.toFixed(2)}</div>
+      </div>
+      <div style="font-size:10px;color:var(--text3);margin-bottom:3px;text-transform:uppercase;letter-spacing:0.8px">Groupe : ${groupe} · Seuil configuré : ${seuil}</div>
+      <div style="margin:10px 0;font-size:11px;font-weight:600">Action déclenchée :</div>
+      <div style="font-size:11px;color:var(--text2);margin-bottom:10px;padding:7px 10px;background:rgba(255,255,255,0.6);border-radius:var(--r)">${action}</div>
+      <div style="font-size:10px;color:var(--text3);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.8px">Etat des robots :</div>
+      ${robots.map(r => `<div style="font-size:11px;color:var(--text2);padding:3px 0;border-bottom:1px solid rgba(0,0,0,0.06)">&#x25B6; ${r}</div>`).join('')}
+    </div>`;
+}
+
+async function cloturerAlerte(id){
+  try{
+    await api('POST', `/api/alertes/${id}/cloturer`, {
+      action_effectuee: 'Clôturé depuis le dashboard IA Attijari',
+      statut_final: 'resolue'
+    });
+    toast('Alerte ' + id + ' clôturée', 'success');
+    loadAlertes();
+  }catch(e){
+    toast('Clôturée (mode démo)', 'success');
+    loadAlertes();
+  }
+}
+
+// ── Audit Trail ───────────────────────────────────────────────
+async function loadAudit(){
+  const c = document.getElementById('auditContainer');
+  if(!c) return;
+  c.innerHTML = '<div class="loading-row"><div class="spinner"></div></div>';
+  try{
+    const data = await api('GET', '/api/audit/?limit=50');
+    const logs = Array.isArray(data) ? data : [];
+    renderAudit(logs);
+  }catch(e){
+    renderAudit([
+      {utilisateur:'admin@attijaribank.tn',role:'admin',action:'LOGIN',details:'Connexion réussie depuis le dashboard',ip_address:'192.168.1.10',timestamp:new Date().toISOString()},
+      {utilisateur:'robot_uipath',role:'system',action:'GET_ALERTES',details:'CheckAlerte — 2 alertes seuil=0.75',ip_address:'127.0.0.1',timestamp:new Date(Date.now()-60000).toISOString()},
+      {utilisateur:'robot_uipath',role:'system',action:'RESOLUTION_CONFIRMEE',details:'Alerte AL-001 → resolue',ip_address:'127.0.0.1',timestamp:new Date(Date.now()-300000).toISOString()},
+      {utilisateur:'responsable.it@attijaribank.tn',role:'responsable_it',action:'VALIDER_RECOMMANDATION',details:'RECO-001 validée — RPA autorisé',ip_address:'192.168.1.15',timestamp:new Date(Date.now()-600000).toISOString()},
+      {utilisateur:'robot_uipath',role:'system',action:'ACTION_RPA_EXECUTEE',details:'Purge Redis monétique — durée 3.2s',ip_address:'127.0.0.1',timestamp:new Date(Date.now()-1200000).toISOString()},
+    ]);
+  }
+}
+
+function renderAudit(logs){
+  const c = document.getElementById('auditContainer');
+  if(!logs.length){ c.innerHTML = '<div class="empty-state"><h3>Aucun log</h3></div>'; return; }
+  const cl = {
+    LOGIN:'text-green', GET_ALERTES:'text-or', RESOLUTION_CONFIRMEE:'text-green',
+    VALIDER_RECOMMANDATION:'text-blue', RECOMMANDATION_LGBM:'text-green',
+    ANALYSE_NLP:'text-or', ACTION_RPA_EXECUTEE:'text-blue',
+    NOTIFICATION_IT:'text-amber', LOGOUT:'text-muted'
+  };
+  c.innerHTML = logs.map(l => {
+    const dt = l.timestamp ? new Date(l.timestamp).toLocaleString('fr-FR') : '—';
+    return `<div class="audit-item">
+      <div class="audit-time">${dt}</div>
+      <span class="badge badge-gray font-mono" style="font-size:10px;min-width:155px;text-align:center;flex-shrink:0">${l.action||'—'}</span>
+      <div style="flex:1;font-size:11px;color:var(--text2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 8px">${l.details||'—'}</div>
+      <div class="audit-user" style="min-width:140px;text-align:right">${l.utilisateur||'—'}</div>
+      <div class="audit-status ${cl[l.action]||'text-muted'} font-mono" style="min-width:80px;text-align:right">${l.role||'—'}</div>
+    </div>`;
+  }).join('');
+}
+
+// ── Swagger endpoints ─────────────────────────────────────────
+function loadSwaggerEndpoints(){
+  const c = document.getElementById('swaggerEndpoints');
+  if(!c) return;
+  const eps = [
+    {m:'GET',  p:'/health',                          d:'Santé système — modèles chargés, DB connectée',              t:'Système'},
+    {m:'POST', p:'/auth/login',                      d:'Authentification JWT (form-data: username + password)',        t:'Auth'},
+    {m:'GET',  p:'/auth/me',                         d:'Informations utilisateur connecté',                           t:'Auth'},
+    {m:'POST', p:'/auth/logout',                     d:'Révocation JWT — blacklist in-memory',                        t:'Auth'},
+    {m:'GET',  p:'/reclamations/',                   d:'Liste paginée — filtres: type_operation, severite_min, en_retard',t:'Réclamations'},
+    {m:'GET',  p:'/reclamations/stats',              d:'KPIs et statistiques agrégées pour le dashboard',             t:'Réclamations'},
+    {m:'GET',  p:'/reclamations/{id}',               d:'Détail d\'un ticket par ID',                                  t:'Réclamations'},
+    {m:'POST', p:'/reclamations/analyser',           d:'Pipeline NLP — score anomalie 0→1 sur description libre',     t:'Réclamations'},
+    {m:'GET',  p:'/api/alertes',                     d:'Alertes actives (seuil=0.75 défaut) — endpoint UiPath',       t:'Alertes'},
+    {m:'GET',  p:'/api/alertes/stats',               d:'Statistiques alertes pour le dashboard',                      t:'Alertes'},
+    {m:'POST', p:'/api/alertes/{id}/cloturer',       d:'Clôturer alerte — UiPath ConfirmerResolution.xaml',           t:'Alertes'},
+    {m:'GET',  p:'/api/predictions',                 d:'Scores de risque par groupe (données réelles)',                  t:'XGBoost'},
+    {m:'POST', p:'/api/predictions/predire',         d:'Prédiction XGBoost — score risque pour un groupe/sévérité',     t:'XGBoost'},
+    {m:'GET',  p:'/api/predictions/dashboard',       d:'Données Chart.js pour le dashboard prédictions',                t:'XGBoost'},
+    {m:'GET',  p:'/api/predictions/modele',          d:'Informations et métriques du modèle XGBoost',                   t:'XGBoost'},
+    {m:'GET',  p:'/api/recommandations',             d:'Liste des recommandations LightGBM + KNN en attente',         t:'LightGBM'},
+    {m:'POST', p:'/api/recommandations/analyser',    d:'LightGBM + KNN — action corrective et incidents similaires', t:'LightGBM'},
+    {m:'GET',  p:'/api/recommandations/{id}',        d:'Recommandation LightGBM + KNN pour un ticket spécifique',   t:'LightGBM'},
+    {m:'POST', p:'/api/recommandations/{id}/valider',d:'Valider ou rejeter une recommandation',                       t:'LightGBM'},
+    {m:'GET',  p:'/api/audit',                       d:'Journal complet des actions système — rôle responsable_it',   t:'Audit'},
+    {m:'GET',  p:'/api/audit/stats',                 d:'Statistiques de l\'audit trail',                              t:'Audit'},
+  ];
+  const mc = {GET:'badge-green',POST:'badge-orange',PUT:'badge-blue',DELETE:'badge-red'};
+  const tc = {Auth:'badge-red',Réclamations:'badge-blue',XGBoost:'badge-amber',Alertes:'badge-orange',LightGBM:'badge-green',Audit:'badge-gray',Système:'badge-gray'};
+  c.innerHTML = eps.map(e => `
+    <div style="display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--border)">
+      <span class="badge ${mc[e.m]||'badge-gray'} font-mono" style="width:50px;text-align:center;flex-shrink:0">${e.m}</span>
+      <span class="font-mono text-or" style="font-size:11px;min-width:240px">${e.p}</span>
+      <span style="font-size:11px;color:var(--text2);flex:1">${e.d}</span>
+      <span class="badge ${tc[e.t]||'badge-gray'}">${e.t}</span>
+    </div>`).join('');
+}
+
+// ── Soumettre (utilisateur) ───────────────────────────────────
+async function soumettreMaReclamation(){
+  const texte = document.getElementById('soumTexte').value.trim();
+  if(!texte){ toast('Décrivez votre problème avant de soumettre', 'error'); return; }
+  const btn = document.getElementById('btnSoumettre');
+  btn.disabled = true; btn.innerHTML = '<div class="spinner"></div> Analyse IA en cours…';
+  document.getElementById('soumResult').innerHTML = '';
+  try{
+    const res = await api('POST', '/reclamations/soumettre', {
+      description:    texte,
+      type_operation: document.getElementById('soumGroupe').value || 'Helpdesk',
+      categorie:      '',
+      severite:       parseInt(document.getElementById('soumSeverite').value) || 3
+    });
+    renderSoumissionResult(res);
+    loadMesTickets();
+    loadDashboard();
+    loadAlertes();
+    if(S.currentPage === 'reclamations') loadReclamations();
+    if(S.currentPage === 'lstm') loadEvolution();
+  }catch(e){
+    renderSoumissionResult({
+      reclamation_id:'REC-DEMO', score_anomalie:0.45, niveau:'NORMAL',
+      alerte_declenchee:false,
+      solution:'Vider le cache du navigateur et redémarrer la session, puis contacter le Helpdesk si le problème persiste.',
+      alternatives:['Contacter le Helpdesk au poste 1234','Réinitialiser les identifiants','Redémarrer le poste de travail'],
+      confidence:0.72,
+      message_utilisateur:'Votre réclamation est enregistrée. Appliquez la solution recommandée ci-dessous.'
+    });
+    toast('Mode démo — backend inaccessible', 'info');
+  }finally{
+    btn.disabled = false; btn.textContent = 'Soumettre ma réclamation';
+  }
+}
+
+function renderSoumissionResult(res){
+  const score   = res.score_anomalie || 0;
+  const niveau  = res.niveau || 'NORMAL';
+  const alerte  = res.alerte_declenchee || false;
+  const conf    = Math.round((res.confidence || 0) * 100);
+  const nCls    = {CRITIQUE:'badge-red', SURVEILLANCE:'badge-amber', NORMAL:'badge-green'};
+  const msgBg   = alerte
+    ? 'background:rgba(217,48,37,0.08);border:1px solid rgba(217,48,37,0.25);color:var(--red)'
+    : niveau === 'SURVEILLANCE'
+      ? 'background:rgba(217,119,6,0.08);border:1px solid rgba(217,119,6,0.25);color:var(--amber)'
+      : 'background:rgba(24,167,98,0.08);border:1px solid rgba(24,167,98,0.25);color:var(--text2)';
+  const altHtml = (res.alternatives || []).map((a,i) => `
+    <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--bg);border-radius:var(--r);margin-bottom:6px;border:1px solid var(--border)">
+      <span style="font-size:10px;color:var(--text3);min-width:16px">${i+1}.</span>
+      <span style="flex:1;font-size:12px;color:var(--text2)">${typeof a==='string'?a:(a.objet||'—')}</span>
+    </div>`).join('');
+
+  const scoreRisque = res.score_risque !== undefined && res.score_risque !== null ? res.score_risque : null;
+  const alerteTexte = alerte ? 'Oui' : 'Non';
+  const methodTxt = res.methode_detection || res.label_methode || 'Hybride';
+  const detailTxt = res.detail_detection || 'Aucun détail supplémentaire.';
+  const systemsTxt = (res.systemes_detectes || []).length > 0
+    ? res.systemes_detectes.join(' • ')
+    : 'Aucun système spécifique détecté.';
+  const scoreRisqueHtml = scoreRisque !== null ? `
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding:12px 14px;background:var(--bg);border-radius:var(--r2);border:1px solid var(--border)">
+          <div style="font-size:11px;color:var(--text3)">Score risque</div>
+          <div style="font-size:13px;font-weight:600;color:${scoreColor(scoreRisque)}">${scoreRisque.toFixed(3)}</div>
+        </div>` : '';
+
+  document.getElementById('soumResult').innerHTML = `
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+        <div class="section-title" style="font-size:13px"><div class="section-dot"></div> Analyse de votre réclamation</div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="font-mono" style="font-size:11px;color:${scoreColor(score)}">${score.toFixed(3)}</span>
+          <span class="badge ${nCls[niveau]||'badge-gray'}" style="font-size:11px;padding:4px 12px">${niveau}</span>
+        </div>
+      </div>
+      <div style="${msgBg};border-radius:var(--r2);padding:12px 16px;margin-bottom:16px;font-size:12px;font-weight:500;display:flex;align-items:flex-start;gap:10px">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span>${res.message_utilisateur||''}</span>
+      </div>
+      <div style="background:var(--bg);border-radius:var(--r2);padding:16px;margin-bottom:16px;border-left:3px solid var(--green)">
+        <div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Solution recommandée par l'IA (confiance ${conf}%)</div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <span style="color:var(--green);font-weight:700;font-size:18px;line-height:1.2">✓</span>
+          <p style="font-size:13px;color:var(--text);font-weight:500;line-height:1.6">${res.solution||'—'}</p>
+        </div>
+        <div style="font-size:10px;color:var(--text3);margin-top:8px;font-family:var(--mono)">Réf. ${res.reclamation_id||'—'} · IA Attijari Bank</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px">
+        <div style="background:var(--bg);border-radius:var(--r2);padding:12px;border:1px solid var(--border)">
+          <div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Score anomalie</div>
+          <div style="font-size:13px;font-weight:600;color:${scoreColor(score)}">${score.toFixed(3)}</div>
+        </div>
+        <div style="background:var(--bg);border-radius:var(--r2);padding:12px;border:1px solid var(--border)">
+          <div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Alerte déclenchée</div>
+          <div style="font-size:13px;font-weight:600;color:${alerte ? 'var(--red)' : 'var(--green)'}">${alerteTexte}</div>
+        </div>
+      </div>
+      ${scoreRisqueHtml}
+      <div style="background:var(--bg);border-radius:var(--r2);padding:16px;margin-bottom:16px;border:1px solid var(--border)">
+        <div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Diagnostics supplémentaires</div>
+        <div style="font-size:12px;color:var(--text2);line-height:1.6;">
+          <strong>Méthode :</strong> ${methodTxt}<br>
+          <strong>Détails :</strong> ${detailTxt}<br>
+          <strong>Systèmes détectés :</strong> ${systemsTxt}
+        </div>
+      </div>
+      ${altHtml ? `<div style="margin-bottom:16px"><div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Alternatives</div>${altHtml}</div>` : ''}
+      <div style="border-top:1px solid var(--border);padding-top:14px">
+        <div style="font-size:11px;color:var(--text2);margin-bottom:10px;font-weight:500">Cette solution a-t-elle résolu votre problème ?</div>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-success" onclick="confirmerResolution('${res.reclamation_id}',true)" style="flex:1">✓ Oui, problème résolu</button>
+          <button class="btn btn-secondary" onclick="confirmerResolution('${res.reclamation_id}',false)" style="flex:1">Besoin d'aide supplémentaire</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+function confirmerResolution(id, resolu){
+  if(resolu){
+    toast('Réclamation ' + id + ' clôturée avec succès !', 'success');
+    document.getElementById('soumResult').innerHTML = `
+      <div class="card" style="text-align:center;padding:40px 24px">
+        <div style="width:56px;height:56px;border-radius:50%;background:var(--green-s);display:flex;align-items:center;justify-content:center;margin:0 auto 16px">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div style="font-size:15px;font-weight:600;color:var(--green);margin-bottom:8px">Problème résolu !</div>
+        <div style="font-size:12px;color:var(--text3);margin-bottom:20px">Votre réclamation ${id} a été clôturée. Merci pour votre retour.</div>
+        <button class="btn btn-primary" onclick="document.getElementById('soumTexte').value='';document.getElementById('soumResult').innerHTML=''" style="padding:10px 24px">Nouvelle réclamation</button>
+      </div>`;
+    loadMesTickets();
+  }else{
+    const existing = document.getElementById('soumResult');
+    const extra = document.createElement('div');
+    extra.className = 'card';
+    extra.style.marginTop = '12px';
+    extra.style.borderLeft = '3px solid var(--amber)';
+    extra.innerHTML = `
+      <div style="font-size:12px;font-weight:600;color:var(--amber);margin-bottom:8px">Escalade vers le support IT</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.6">Votre réclamation <strong>${id}</strong> a été transmise à un technicien IT. Vous serez contacté sous 1 heure.</div>
+      <div style="font-size:11px;color:var(--text3);margin-top:10px;display:flex;gap:16px">
+        <span>📞 Support : poste 1234</span>
+        <span>📧 helpdesk@attijaribank.tn</span>
+      </div>`;
+    existing.appendChild(extra);
+  }
+}
+
+// ── Mes Tickets (utilisateur) ─────────────────────────────────
+async function loadMesTickets(){
+  const c = document.getElementById('mesTicketsContainer');
+  if(!c) return;
+  c.innerHTML = '<div class="loading-row"><div class="spinner"></div> Chargement…</div>';
+  try{
+    const data = await api('GET', '/reclamations/mes-tickets');
+    const tickets = data.data || [];
+    const badge = document.getElementById('nbMesTickets');
+    if(badge) badge.textContent = tickets.length;
+    renderMesTickets(tickets);
+  }catch(e){
+    c.innerHTML = '<div class="empty-state"><h3>Aucune réclamation</h3><p>Soumettez votre première réclamation via le formulaire</p></div>';
+  }
+}
+
+function renderMesTickets(tickets){
+  const c = document.getElementById('mesTicketsContainer');
+  if(!tickets.length){
+    c.innerHTML = '<div class="empty-state"><h3>Aucune réclamation</h3><p>Utilisez le formulaire pour soumettre votre première réclamation</p></div>';
+    return;
+  }
+  const nCls = {CRITIQUE:'badge-red', SURVEILLANCE:'badge-amber', NORMAL:'badge-green'};
+  const rows = tickets.map(t => `<tr>
+    <td><span class="font-mono" style="font-size:11px;color:var(--text3)">${t.id||'—'}</span></td>
+    <td style="max-width:220px;color:var(--text)">${(t.description||'—').substring(0,55)}${(t.description||'').length>55?'…':''}</td>
+    <td><span class="badge badge-gray" style="font-size:9px">${(t.type_operation||'—').substring(0,18)}</span></td>
+    <td><span class="badge ${nCls[t.niveau]||'badge-gray'}">${t.niveau||'—'}</span></td>
+    <td style="max-width:180px;font-size:11px;color:var(--text2)">${(t.solution||'—').substring(0,55)}${(t.solution||'').length>55?'…':''}</td>
+    <td><span class="badge badge-green">${t.statut||'ouverte'}</span></td>
+    <td style="font-size:11px;color:var(--text3)">${t.timestamp ? new Date(t.timestamp).toLocaleDateString('fr-FR') : '—'}</td>
+  </tr>`).join('');
+  c.innerHTML = `<div class="table-wrap"><table>
+    <thead><tr><th>Réf.</th><th>Description</th><th>Groupe</th><th>Niveau</th><th>Solution IA</th><th>Statut</th><th>Date</th></tr></thead>
+    <tbody>${rows}</tbody>
+  </table></div>`;
+}
+
+// ── Init ──────────────────────────────────────────────────────
+window.addEventListener('load', () => {
+  // Initialiser l'URL du backend avec l'origine courante
+  S.apiBase = "http://localhost:8000"; // Valeur par défaut pour le développement local
+
+  setTimeout(() => {
+    const l = document.getElementById('appLoader');
+    l.style.opacity = '0'; l.style.transition = 'opacity 0.4s';
+    setTimeout(() => l.style.display = 'none', 400);
+    checkHealth();
+  }, 1400);
+});
+
+document.getElementById('loginPass').addEventListener('keydown', e => {
+  if(e.key === 'Enter') doLogin();
+});
+</script>
+</body>
+</html>

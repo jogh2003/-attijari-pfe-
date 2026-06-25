@@ -47,7 +47,7 @@ def create_tables() -> None:
     """
     try:
         # Importer les modèles pour que Base.metadata les connaisse
-        from app.models import utilisateur, reclamation, audit_log  # noqa: F401
+        from app.models import utilisateur, reclamation, audit_log, alerte, recommandation, responsable  # noqa: F401
         Base.metadata.create_all(bind=engine)
     except Exception as exc:
         # Ne pas bloquer le démarrage si PostgreSQL est indisponible

@@ -13,7 +13,7 @@ import os
 import pandas as pd
 import pickle
 
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query, Body
 from pydantic import BaseModel, Field
 
 from app.core.audit import log_action
@@ -130,6 +130,11 @@ def calculer_alertes_reelles(seuil: float = 0.75) -> list:
 
 # ── GET /api/alertes — Endpoint principal UiPath ──────────────
 @router.get(
+    "",
+    response_model=List[AlerteSchema],
+    summary="Alertes actives — Appelé par UiPath CheckAlerte.xaml",
+)
+@router.get(
     "/",
     response_model=List[AlerteSchema],
     summary="Alertes actives — Appelé par UiPath CheckAlerte.xaml",
@@ -222,4 +227,35 @@ async def cloturer_alerte(
         "date_resolution":  datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
         "apprentissage":    "Ticket ajouté à la base d'apprentissage LSTM — réentraînement lundi 02h00",
         "prochain_retrain": "Lundi prochain 02:00",
+    }
+
+
+@router.put(
+    "/{alerte_id}/notifier",
+    summary="Notifier une alerte — Appelé par UiPath NotifierIT.xaml",
+)
+async def notifier_alerte(
+    alerte_id: str,
+    notification: dict = Body(default={}),
+    payload: dict = Depends(verifier_token),
+):
+    """
+    Endpoint supporté par UiPath pour signaler qu'une alerte a été notifiée.
+    Le corps peut contenir des détails d'envoi (alerte_id, notifie, timestamp).
+    """
+    utilisateur = payload.get("sub", "anonyme")
+    log_action(
+        utilisateur=utilisateur,
+        role=payload.get("role", ""),
+        action="ALERTE_NOTIFIEE",
+        details=f"Alerte {alerte_id} notifiée | payload={notification}",
+    )
+    logger.info("Alerte {} notifiée par {}", alerte_id, utilisateur)
+
+    return {
+        "message":          f"Alerte {alerte_id} notifiée",
+        "alerte_id":        alerte_id,
+        "statut":           "notifiee",
+        "notification":     notification,
+        "date_notification": datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
     }

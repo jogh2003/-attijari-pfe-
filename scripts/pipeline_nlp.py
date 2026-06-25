@@ -8,6 +8,7 @@ Exécuter   : python scripts/pipeline_nlp.py
 import pandas as pd
 import numpy as np
 import os
+import sys
 import json
 import pickle
 from datetime import datetime
@@ -31,8 +32,8 @@ def charger_spacy():
         nlp = spacy.load("fr_core_news_md")
         print("  Modèle spaCy fr_core_news_md chargé")
     except OSError:
-        print("  Téléchargement modèle spaCy...")
-        os.system("python -m spacy download fr_core_news_md")
+        print("  Modèle spaCy introuvable, installation de fr_core_news_md...")
+        os.system(f"{sys.executable} -m pip install fr_core_news_md")
         nlp = spacy.load("fr_core_news_md")
     return nlp
 
@@ -97,8 +98,9 @@ def calculer_score_anomalie_simple(row) -> float:
     if row.get('severite') == 1:    score += 0.30
     elif row.get('severite') == 2:  score += 0.10
 
-    # En retard SLA
-    if row.get('en_retard') == True:  score += 0.25
+    # Ne pas utiliser la cible `en_retard` dans le calcul du score.
+    # Le score doit rester indépendant de la variable cible pour éviter la fuite de données.
+    # if row.get('en_retard') == True:  score += 0.25
 
     # Groupe sécurité = plus critique
     groupe = str(row.get('type_operation', '')).lower()
@@ -109,8 +111,8 @@ def calculer_score_anomalie_simple(row) -> float:
 
     # Durée de résolution longue (> 60 min = 1h)
     duree = float(row.get('duree_resolution_min', 0) or 0)
-    if duree > 120:    score += 0.10
-    elif duree > 300:  score += 0.20
+    if duree > 300:  score += 0.20
+    elif duree > 120:    score += 0.10
 
     # Erreurs critiques dans l'objet
     objet = str(row.get('objet', '')).lower()
@@ -224,16 +226,19 @@ def traiter_pipeline_nlp():
                 lambda x: json.dumps(x, ensure_ascii=False) if isinstance(x, list) else str(x)
             )
 
+    # Calculer score_risque uniquement à partir de score_anomalie
+    df_sortie["score_risque"] = (df_sortie["score_anomalie"] * 0.95).round(3)
+
     # Mettre à jour le score dans le dataset propre
     df_sortie.to_csv("data/processed/dataset_nlp.csv", index=False, encoding='utf-8')
     print(f"  Sauvegardé : data/processed/dataset_nlp.csv")
 
-    # Sauvegarder la liste des IDs et scores pour le LSTM
+    # Sauvegarder les features pour XGBoost
     df[['id', 'date', 'type_operation', 'severite', 'en_retard',
         'duree_resolution_min', 'score_anomalie', 'statut']].to_csv(
-        "data/processed/features_lstm.csv", index=False
+        "data/processed/features_xgb.csv", index=False
     )
-    print(f"  Features LSTM sauvegardées : data/processed/features_lstm.csv")
+    print(f"  Features XGBoost sauvegardées : data/processed/features_xgb.csv")
 
     print("\n" + "=" * 60)
     print("  RÉSULTATS NLP")
@@ -245,7 +250,7 @@ def traiter_pipeline_nlp():
     print(f"  Tickets NORMAL         : {(df['score_anomalie'] < 0.50).sum()}")
     print(f"  Embeddings shape       : {embeddings.shape}")
     print("=" * 60)
-    print("\nProchaine étape : python scripts/entrainer_lstm.py")
+    print("\nProchaine étape : python scripts/entrainer_xgboost.py")
 
     return df, embeddings
 

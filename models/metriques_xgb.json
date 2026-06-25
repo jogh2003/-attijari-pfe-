@@ -1,0 +1,32 @@
+{
+  "date_entrainement": "2026-05-18T21:17:32.049052",
+  "modele": "XGBoost",
+  "accuracy": 0.9967,
+  "auc": 1.0,
+  "n_train": 1205,
+  "n_test": 302,
+  "features": [
+    "severite",
+    "duree_resolution_min",
+    "score_anomalie",
+    "score_risque",
+    "type_operation_enc",
+    "categorie_enc"
+  ],
+  "best_params": {
+    "colsample_bytree": 0.8,
+    "learning_rate": 0.1,
+    "max_depth": 4,
+    "n_estimators": 400,
+    "subsample": 0.8
+  },
+  "feature_importances": {
+    "severite": 0.08193764835596085,
+    "duree_resolution_min": 0.04976284131407738,
+    "score_anomalie": 0.2868037521839142,
+    "score_risque": 0.4715096354484558,
+    "type_operation_enc": 0.09087152779102325,
+    "categorie_enc": 0.01911459118127823
+  },
+  "source": "Données réelles Attijari bank Fév-Mars 2026"
+}

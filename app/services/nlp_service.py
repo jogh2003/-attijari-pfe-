@@ -1,4 +1,7 @@
 """Service NLP : spaCy + BERT embeddings"""
+import subprocess
+import sys
+
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -9,9 +12,22 @@ class NLPService:
 
     def load_models(self):
         import spacy
-        from sentence_transformers import SentenceTransformer
+        try:
+            self.nlp = spacy.load("fr_core_news_md")
+        except OSError:
+            print("Modèle spaCy fr_core_news_md introuvable, installation...")
+            subprocess.check_call([sys.executable, "-m", "pip", "install", "fr_core_news_md"])
+            self.nlp = spacy.load("fr_core_news_md")
+
+        try:
+            from sentence_transformers import SentenceTransformer
+        except ImportError as exc:
+            raise RuntimeError(
+                "sentence-transformers est requis pour le service NLP. "
+                "Exécutez 'pip install -r requirements.txt' puis relancez.'"
+            ) from exc
+
         print("Chargement spaCy...")
-        self.nlp = spacy.load("fr_core_news_md")
         print("Chargement BERT...")
         self.bert_model = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
         print("Modeles NLP charges.")

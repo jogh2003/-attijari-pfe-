@@ -39,6 +39,7 @@ services:
       - JWT_EXPIRE_MINUTES=480
       - AES_KEY=attijari_pfe_2026_security_key_32
       - DEBUG=false
+      - AUTO_TRAIN=false
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - ES_HOST=elasticsearch

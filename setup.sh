@@ -39,6 +39,15 @@ python scripts/init_db.py
 echo "[6/6] Vérification de l'installation..."
 python scripts/check_setup.py
 
+# 7. Entraînement des modèles si absents (optionnel)
+echo "[7/7] Vérification modèles IA..."
+if [ ! -f models/xgb_model.pkl ] || [ ! -f models/lgbm_reco_model.pkl ] || [ ! -f models/knn_model.pkl ]; then
+    echo "  Modèles absents — lancement de l'entraînement (pipeline + XGBoost + LightGBM + KNN)"
+    python scripts/train_all_models.py || echo "  Entraînement interrompu ou a échoué; vérifier les logs"
+else
+    echo "  Modèles présents — saut de l'entraînement"
+fi
+
 echo ""
 echo "======================================"
 echo "  Installation terminée !"
