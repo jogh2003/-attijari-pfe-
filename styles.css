@@ -25,7 +25,10 @@ img { max-width: 100%; display: block; }
 .hero { padding-bottom: 4rem; }
 .nav {
   display: flex; justify-content: space-between; align-items: center;
-  padding: 1.25rem 0;
+  padding: 1rem 1.2rem; margin-top: 0.8rem;
+  position: sticky; top: 0.8rem; z-index: 20;
+  background: rgba(7, 17, 31, 0.76); backdrop-filter: blur(12px);
+  border: 1px solid var(--border); border-radius: 999px;
 }
 .brand {
   font-size: 1.2rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
@@ -56,7 +59,15 @@ h2 { font-size: clamp(1.5rem, 2.4vw, 2.2rem); margin: 0 0 0.8rem; }
 .hero-card, .card, .project-card, .contact-box {
   background: rgba(255,255,255,0.04); border: 1px solid var(--border); box-shadow: var(--shadow); border-radius: 1.35rem;
 }
-.hero-card { padding: 1rem; }
+.hero-card { padding: 1rem; display: grid; gap: 1rem; }
+.avatar-frame {
+  border-radius: 1.2rem; overflow: hidden; background: linear-gradient(135deg, rgba(255,122,26,0.2), rgba(255,159,67,0.12));
+  border: 1px solid var(--border);
+  padding: 0.7rem;
+}
+.avatar-frame img { width: 100%; border-radius: 0.9rem; }
+.hero-card-copy h3 { margin: 0 0 0.35rem; }
+.hero-card-copy p { margin: 0; color: var(--muted); }
 .section { padding: 4rem 0; }
 .section-alt { background: rgba(255,255,255,0.025); }
 .section-title { margin-bottom: 1.6rem; }
